@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 // 然而，C++和C语言也有一些区别：
 
 // 在C++中，字符字面量的大小是一个字节。
-sizeof('c') == 1
+//sizeof('c') == 1
 
 // 在C语言中，字符字面量的大小与int相同。
 sizeof('c') == sizeof(10)
@@ -106,9 +106,9 @@ int main()
 
 // 默认参数必须放在所有的常规参数之后。
 
-void invalidDeclaration(int a = 1, int b) // 这是错误的！
+/*void invalidDeclaration(int a = 1, int b) // 这是错误的！
 {
-}
+}*/
 
 
 ///////////
@@ -130,14 +130,14 @@ namespace First {
 namespace Second {
     void foo()
     {
-        printf("This is Second::foo\n")
+        printf("This is Second::foo\n");
     }
 }
 
-void foo()
-{
-    printf("This is global foo\n");
-}
+//void foo()
+//{
+    //printf("This is global foo\n");
+//}
 
 int main()
 {
@@ -166,7 +166,7 @@ int main()
    int myInt;
 
    // 在标准输出（终端/显示器）中显示
-   cout << "Enter your favorite number:\n";
+   std::cout << "Enter your favorite number:\n";
    // 从标准输入（键盘）获得一个值
    cin >> myInt;
 
