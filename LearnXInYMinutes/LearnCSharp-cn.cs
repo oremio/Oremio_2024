@@ -342,7 +342,7 @@ on a new line! ""Wow!"", the masses cried";
 
         public // 可见性
         static // 允许直接调用类，无需先创建实例
-        int, //返回值
+        int //返回值
         MethodSignatures(
             int maxCount, // 第一个变量，类型为整型
             int count = 0, // 如果没有传入值，则缺省值为0
