@@ -50,3 +50,8 @@ ____An African proverb **states**, "If you want to go fast, go alone. If you wan
 
 培养服务他人的意识
 
+![img](https://i0.hdslb.com/bfs/note/00f1fa704afebfe052dac90b24a2ec57bfbd107c.jpg)
+
+![img](https://i0.hdslb.com/bfs/note/81d5b741c60d3280880a9cea219c1365bf2e2ab4.jpg)
+
+![img](https://i0.hdslb.com/bfs/note/e2ea9b267dac70bf16b2e83034ed6a5f41c7a90f.jpg)
