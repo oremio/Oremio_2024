@@ -47,6 +47,7 @@ ____My recommendations incorporate two major elements as displayed below. In the
 
 ____All I hope is that you can seriously assess my proposal. I am expecting your prompt response, if it is convenient for you.(不背)
 _______________________________________________Yours sincerely,
+
 ________________________________________________________Li Ming
 
 推荐信/介绍信：
@@ -59,7 +60,14 @@ ____My recommendation or introduction is listed in the following as two essentia
 
 ____The time you have taken to look into this is much appreciated. If you would like to learn more, I am happy to elaborate on it.(背)
 _______________________________________________Yours sincerely,
+
 ________________________________________________________Li Ming
+
+邀请信：不背
+
+____Self-introduction. I write for the very simple reason that I am **tempting** you to do this topic.
+
+
 
 大作文主题词：
 
