@@ -43,7 +43,11 @@ Dear Sir or Madam,
 
 ____Self-introduction.The aim of this letter is to give you some advice on this topic.
 
-____My recommendations incorporate two major elements as displayed below.
+____My recommendations incorporate two major elements as displayed below. In the first instance, comparable of the first instance has been quoted on lots of pivotal episodes by respective specialists. Along with that, doing the second instance, which will keep bringing numerous benefits if carried out accordingly.
+
+____All I hope is that you can seriously assess my proposal. I am expecting your prompt response, if it is convenient for you.
+_______________________________________________Yours sincerely,
+________________________________________________________Li Ming
 
 大作文主题词：
 
