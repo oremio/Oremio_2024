@@ -7,7 +7,7 @@
 - 小作文
     1. 小作文重点背：推荐信/介绍信、建议信、投诉信，询问信/求助信，道歉信。
     2. 称谓：**称呼最后面一定要加逗号**。称呼要**顶格写**，每个**实词的首字母要大写**，虚词的首字母则不需要大写，如冠词，连词，介词等。
-        - 不特定主体：(1)Dear Sir or Madam, (2)To Whom It May Concern, 
+        - 不特定主体：(1)Dear Sir or Madam, (2)*To Whom It May Concern,*
         - 特定主体：(1)Dear + 人名, (2)Dear + 性别 + 姓或者姓名或者职称,
     3. 正文都用缩头式，也就是每段的开头空四个字母。
     4. 第一段：自我介绍或者*写信背景 + 写信目的*。
@@ -37,15 +37,27 @@ ____An African proverb **states**, "If you want to go fast, go alone. If you wan
 
 小作文模板：
 
-小作文1（建议信）：
+建议信：
 
 Dear Sir or Madam,
 
-____Self-introduction.The aim of this letter is to give you some advice on this topic.
+____Self-introduction. The aim of this letter is to give you some advice on this topic.
 
-____My recommendations incorporate two major elements as displayed below. In the first instance, comparable of the first instance has been quoted on lots of pivotal episodes by respective specialists. Along with that, doing the second instance, which will keep bringing numerous benefits if carried out accordingly.
+____My recommendations incorporate two major elements as displayed below. In the first instance, comparable of the first instance has been quoted on lots of pivotal episodes by respective specialists. Along with that, do the second instance, which will keep bringing numerous benefits if carried out accordingly.
 
-____All I hope is that you can seriously assess my proposal. I am expecting your prompt response, if it is convenient for you.
+____All I hope is that you can seriously assess my proposal. I am expecting your prompt response, if it is convenient for you.(不背)
+_______________________________________________Yours sincerely,
+________________________________________________________Li Ming
+
+推荐信/介绍信：
+
+Dear Sir or Madam,
+
+____Self-introduction. With this letter, I wish to convince you by recommending or introducing this topic to you.
+
+____My recommendation or introduction is listed in the following as two essential parts. Foremost, do the first topic, and a considerable amount of people consider it great and are willing to speak highly of it. Moreover, passionately, you will be head over heels in love with the second topic.
+
+____The time you have taken to look into this is much appreciated. If you would like to learn more, I am happy to elaborate on it.(背)
 _______________________________________________Yours sincerely,
 ________________________________________________________Li Ming
 
