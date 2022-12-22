@@ -45,7 +45,7 @@ ____Self-introduction. The aim of this letter is to give you some advice on this
 
 ____My recommendations incorporate two major elements as displayed below. In the first instance, comparable of the first instance has been quoted on lots of pivotal episodes by respective specialists. Along with that, do the second instance, which will keep bringing numerous benefits if carried out accordingly.
 
-____All I hope is that you can seriously assess my proposal. I am expecting your prompt response, if it is convenient for you.(不背)
+____All I hope is that you can seriously assess my proposal. I am expecting your prompt response, if it is convenient for you.(**不背**)
 _______________________________________________Yours sincerely,
 
 ________________________________________________________Li Ming
@@ -63,13 +63,29 @@ _______________________________________________Yours sincerely,
 
 ________________________________________________________Li Ming
 
-邀请信：不背
+邀请信：**去年考了，不背**
 
 ____Self-introduction. I write for the very simple reason that I am **tempting** you to do this topic.
 
 询问信/求助信：
 
-____Self-introduction. I
+____Self-introduction. I am asking a favour from you, which is to give me some details of this topic.
+
+____Primarily, in my opinion, above everything goes with the first information and its significance. Furthermore, doing the second topic, which if one of the most important references for me to make plans. It would be fantastic to receive some pamphlets of detailed information from you.
+
+____I would like to advance my thanks to you for considering my letter. If you have some leaflets on this, please kindly forward me a copy.
+
+道歉信/辞职信：
+
+投诉信：
+
+求职信/申请信：
+
+感谢信/祝贺信：
+
+通知/告示：
+
+大作文模板2：
 
 大作文主题词：
 
