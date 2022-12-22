@@ -67,7 +67,9 @@ ________________________________________________________Li Ming
 
 ____Self-introduction. I write for the very simple reason that I am **tempting** you to do this topic.
 
+询问信/求助信：
 
+____Self-introduction. I
 
 大作文主题词：
 
