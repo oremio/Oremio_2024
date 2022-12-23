@@ -29,7 +29,7 @@
 
 大作文模板：
 
-____Recently, there has been a **surge** of interest in this topic, which has been **dominating** the popular media on the internet. Therefore, it is not out of my expectation to see such a **picture** in this test: (describe the picture). The **usefulness** of this topic is being expressed in a new way **through the media imagery and language**.
+____Recently, there has been a **surge** of interest in this topic, which has been **dominating** the popular media on the internet. Therefore, it is not out of my expectation to see such a **picture** in this test: (describe the picture). The **usefulness** of this topic is being expressed in a new way **through the media imagery and language**. / we can summarize the main content of this essay which is directly bound up with this theme: (describe the essay). I totally support it.
 
 ____My explanations as follows should help you to see where my **point of view** has come from. A primary point is that it is impossible for the youth to develop healthily without the proper guidance from parents and teachers on this topic. Also, it is **realistic to assume** that people who are aware of this topic **outperform** others who show indifference on it. Sociologist Benjamin has already published his findings **with similar opinions as** described in this essay. As a result, the circumstances may change, but **the importance we attach** to this topic should not.
 
@@ -58,7 +58,8 @@ ____Self-introduction. With this letter, I wish to convince you by recommending 
 
 ____My recommendation or introduction is listed in the following as two essential parts. Foremost, do the first topic, and a considerable amount of people consider it great and are willing to speak highly of it. Moreover, passionately, you will be head over heels in love with the second topic.
 
-____The time you have taken to look into this is much appreciated. If you would like to learn more, I am happy to elaborate on it.(背)
+____The time you have taken to look into this is much appreciated. If you would like to learn more, I am happy to elaborate on it.(**不背**)
+
 _______________________________________________Yours sincerely,
 
 ________________________________________________________Li Ming
@@ -69,29 +70,173 @@ ____Self-introduction. I write for the very simple reason that I am **tempting**
 
 询问信/求助信：
 
+Dear Sir or Madam,
+
 ____Self-introduction. I am asking a favour from you, which is to give me some details of this topic.
 
 ____Primarily, in my opinion, above everything goes with the first information and its significance. Furthermore, doing the second topic, which if one of the most important references for me to make plans. It would be fantastic to receive some pamphlets of detailed information from you.
 
-____I would like to advance my thanks to you for considering my letter. If you have some leaflets on this, please kindly forward me a copy.
+____I would like to advance my thanks to you for considering my letter. If you have some leaflets on this, please kindly forward me a copy.(**不背**)
+
+_______________________________________________Yours sincerely,
+
+________________________________________________________Li Ming
 
 道歉信/辞职信：
 
+Dear Sir or Madam,
+
+____I wish to apologise for the inconvenience I have caused by something. I feel that you may better understand my blunder if I spell it out./It took me a long time before I decided to write this resignation letter.
+
+____First of all, I have been experiencing severe and serious insomnia beacuse the first thing, which can't be more disturbing. The truth I am seeing is the second thing, which has only made things worse and made me dismayed.
+
+____There is no other word I can say except "sorry". Your sympathy and absolution is what I wish for.(背)
+
+_______________________________________________Yours sincerely,
+
+________________________________________________________Li Ming
+
 投诉信：
+
+Dear Sir or Madam,
+
+____Self-introduction. Sorry for the disturbance but I have to express my dissatisfaction with this topic.
+
+____The following are the detailed issues I am complaining about. In the first place, do the first issue, which I have got nothing from but found extremely stressful and time-wasting. Besides, the problem stay unresovled even though I have talked to your customer service staff for many times. I insist on a prompt and proper response at your earliest convenience.
+
+____I am grateful for your concern about this matter, knowing you are so busy. I will pay extra attention to my mailbox in anticipation of your response.(背)
+
+_______________________________________________Yours sincerely,
+
+________________________________________________________Li Ming
 
 求职信/申请信：
 
-感谢信/祝贺信：
+Dear Sir or Madam,
+
+____Self-introduction. I feel honoured to have this opportunity to express my wish to get this topic.
+
+____I will reign over my challengers with my effciency, which I firmly acknowledge. To start with, I achieved the top position in the Nation Professional Skills and Knowledge Competition. Besides, I am conscientious and responsible for whatever I do, thus winning the trust of others.
+
+____(不背)
+
+_______________________________________________Yours sincerely,
+
+________________________________________________________Li Ming
+
+感谢信：
+
+Dear Sir or Madam,
+
+____To demonstrate my heartfelt appreciation, I am glad to write to you.
+
+____Most notably, you are always showing people empathy and this principle you are holding touches me the most. Besides, your help on addressing issues has certainly made a brighter future for me to look forward. Lastly, I want to repay your kindness with real actions.
+
+____When articulating my gratitude for your assistance, words fail me. Let us keep in touch later!(背)
+
+_______________________________________________Yours sincerely,
+
+________________________________________________________Li Ming
 
 通知/告示：
 
-大作文模板2：
+_____________________________________Notice
+
+____The event will be conducted at the Conference Hall at 9:00 A.M. on Monday. Herein is all the information you will require for this activity.
+
+____Primarily, the greatest necessary part, which compels the most concentration, is the first information. Following that, we will have a distinguished guest to give the opening address. To wrap it up, there will be a 15-minute section for questions.
+
+____If you are interested in this event, join us immediately! I you need any of my help, I am at your service all the time.(背)
+
+________________________________________________________The Students' Union
+
+大作文模板2：算了
+
+小作文主题词：
+
+建议外国朋友如何学中文
+
+应聘在线的中文教师apply for
+
+介绍一个中国节日给外国朋友
+
+通知留学生参加爬山比赛take part in the mountain climb race
+
+邀请留学生参加新生欢迎会freshman welcome party
+
+招募留学生去敬老院当志愿者recruit international students to volunteer in nursing homes
+
+职位推荐position recommendation
+
+旅游咨询traveling consultation
+
+产品质量投诉
+
+为缺席而道歉absence
+
+中国传统文化展览exhibition
+
+食物浪费
+
+感谢热情款待hospitality
+
+新产品纪要minutes of the new products
 
 大作文主题词：
 
-1、教育类
+独立思考能力、过度依赖科技independent thinking、 over-reliance on the search engine
 
-树立好榜样 a role model
+节约粮食、节约能源、理智消费consumption
+
+职场规则、社交技能、团队合作workplace rules
+
+耐心、细心、打好基础solid foundation
+
+环保、涸泽而渔over-exploitation of resources
+
+可持续发展、绿色地球sustainable development、green planet
+
+追星、崇拜正确偶像chase pop stars、worship the right role model
+
+心理健康
+
+网购
+
+诚信
+
+团结合作
+
+国内游人数/出境游人数the number of inbound tourists / outbound tourists
+
+城市化urbanization
+
+学历与失业率diplomas and unemployment rate
+
+人口老龄化the aging population
+
+知识经济
+
+专注当下;活在当下
+
+保持淡定;克服焦虑
+
+压力管理(应对压力)
+
+自律self-discipline being/self-disciplined/being rational
+
+坚持(永不放弃)persistence/perseverance(never give up)
+
+实践take actions/putting plans into practice
+
+脚踏实地down-to-carth attitude
+
+创新;开拓;与时俱进(和时代一起变化)creativity;innovation;pioneering spirit;keeping pace with the times(changing with the times)
+
+好奇
+
+求知(渴求知识)having a thirst for knowledge
+
+勤奋;努力diligence/hard work;being diligent/industrious
 
 合理规划人生/未来
 
@@ -124,6 +269,115 @@ ____I would like to advance my thanks to you for considering my letter. If you h
 坚持个人的兴趣爱好 stick to
 
 培养服务他人的意识
+
+培养独立思考的能力independently
+
+维持良好的人际关系interpersonal
+
+发扬实干精神hardworking
+
+脚踏实地being earnest and down-to-earth
+
+相信梦想
+
+过度崇拜excessive worship
+
+发扬爱国主义carrying forward patriotism
+
+发扬传统美德carrying forward traditional values
+
+注重文化交流cultural exchange; cultural integration
+
+发扬传统文化carrying forward
+
+相信科学belief in science
+
+遵纪守法abiding by the law; observation of the law
+
+遵守社会公德observing public morality
+
+遵守契约精神adhering to the spirit of contract
+
+发扬敬业精神carrying forward professional dedication; promoting professional ethics
+
+履行责任performing one's responsibility
+
+拒绝赡养老人care for the elders
+
+合作、互助 cooperation
+
+正直诚信being honest ; integrity
+
+自信being confident; confidence
+
+自我挑战self-challenge
+
+勇于挑战courage
+
+不断拼搏keep striving
+
+自律self-discipline
+
+无私奉献selfless dedication
+
+乐于助人ready
+
+创新innovation
+
+坚持being persistent; perseverance; determination
+
+坚强being courageous/staying strong
+
+乐观being optimistic
+
+悲观being pessimistic
+
+缺乏自信a lack of confidence/lacking faith
+
+勤奋diligence; painstaking efforts
+
+感恩
+
+换位思考trans-positional consideration
+
+谦逊being modest
+
+保持简朴 being frugal; simplicity
+
+宽容being tolerant; understanding and tolerance
+
+保持身心健康keeping physical and mental health
+
+保持健康心态state
+
+资源保护energy and resource conservation
+
+环境保护
+
+注重食品安全
+
+知识产权保护intellectual property protection
+
+消费者权益保护the protection of consumers'rights and interests
+
+合理使用网络rational
+
+沉迷网络
+
+合理使用手机rational
+
+沉迷手机 addiction to the mobile phones
+
+理性网上购物shopping online rationally
+
+沉迷网上购物
+
+沉迷网络游戏
+
+合理利用电子书
+
+合理利用科学技术
+
 
 ![img](https://i0.hdslb.com/bfs/note/00f1fa704afebfe052dac90b24a2ec57bfbd107c.jpg)
 
