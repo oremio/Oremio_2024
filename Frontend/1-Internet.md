@@ -88,7 +88,30 @@ Keep in mind that HTTP is a “stateless” protocol, which means that each comm
 
 [HTTP/3 From A To Z: Core Concepts](https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/)
 
-[HTTP/3 Is Now a Standard: Why Use It and How to Get Started](https://thenewstack.io/http-3-is-now-a-standard-why-use-it-and-how-to-get-started/)https://thenewstack.io/http-3-is-now-a-standard-why-use-it-and-how-to-get-started/)
+[HTTP/3 Is Now a Standard: Why Use It and How to Get Started](https://thenewstack.io/http-3-is-now-a-standard-why-use-it-and-how-to-get-started/)
+
+## HTTPS
+
+- Why do we need HTTPS?
+    - privacy
+    - integrity
+    - identification
+- Two types of encryption algorithms
+    - symmetric key algorithm
+    - asymmetric key algorithm
+- the handshake
+    1. Step One: Left clap. AKA Client Hello.
+    2. Step two: Right clap. AKA Server Hello.
+    3. Step three: Vertical shaka. AKA Client Key Exchange.
+    4. Step four: Shaka horizontal rotation. AKA Change Cipher spec.
+    5. Step five: Tickles. AKA Everything is now secured.  
+- SSL/TLS
+    - SSL stands for '**Secure Sockets Layer**'. A protocol created by Netscape.
+    - Before 1999 ended, IETF released TLS version 1.0 (Which was really SSL 3.1).
+    - SSL was renamed to TLS: **Transport Layer Security**. Creating confusion and chaos still to this day.
+- 注意：
+    - 对于数据加密：既然是加密，那肯定是不希望别人知道我的消息，所以只有我才能解密，所以可得出**公钥负责加密**，**私钥负责解密**
+    - 对于数字证书：既然是签名，那肯定是不希望有人冒充我发消息，只有我才能发布这个签名，所以可得出（CA提供的）**私钥负责签名**，（CA提供的）**公钥负责验证**
 
 ## [Browsers and how they work?](https://www.browserstack.com/guide/browser-rendering-engine)
 
@@ -161,4 +184,15 @@ By understanding how a rendering engine works, web developers can gain greater i
 [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
 
 [Populating the Page: How Browsers Work](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work)
+
+## DNS and how it works?
+
+The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
+
+### Extended reading
+
+[What is DNS?](https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/)
+
+[Mess with DNS - DNS Playground](https://messwithdns.net/)
+
 
