@@ -1,5 +1,5 @@
-//url: https://www.acwing.com/problem/content/788/
-//tutorial: https://www.acwing.com/video/228/
+// url: https://www.acwing.com/problem/content/788/
+// tutorial: https://www.acwing.com/video/228/
 
 /*
 1. 找到分界点x, q[L], q[(L + r) / 2], q[R]

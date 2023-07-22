@@ -1,5 +1,6 @@
 // url: https://www.acwing.com/problem/content/787/
 // tutorial: https://www.acwing.com/video/227/
+// TC(time complexity): nlogn
 
 /*
 1.确定分界点: q[1], q[(l+r)/2], q[r], random
