@@ -49,11 +49,11 @@ void merge_sort(int q[], int l, int r)
 
 int main()
 {
-    // ifstream file("input.txt");
-    // if (file.is_open())
-    // {
-    //     cin.rdbuf(file.rdbuf());
-    // }
+    ifstream file("input.txt");
+    if (file.is_open())
+    {
+        cin.rdbuf(file.rdbuf());
+    }
 
     cin >> n;
     for (int i = 0; i < n; i++)
