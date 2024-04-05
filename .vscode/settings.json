@@ -36,6 +36,7 @@
         "ostream": "cpp",
         "iosfwd": "cpp",
         "iostream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "cstdlib": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
