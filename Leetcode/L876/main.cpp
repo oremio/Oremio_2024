@@ -1,4 +1,4 @@
-//url:https://leetcode-cn.com/problems/middle-of-the-linked-list/
+// url: https://leetcode-cn.com/problems/middle-of-the-linked-list/
 struct ListNode
 {
     int val;
@@ -16,7 +16,8 @@ public:
         ListNode *slow, *fast;
         slow = head;
         fast = head;
-        while(fast && fast->next){
+        while (fast && fast->next)
+        {
             slow = slow->next;
             fast = fast->next->next;
         }

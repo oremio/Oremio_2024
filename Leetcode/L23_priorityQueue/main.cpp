@@ -1,4 +1,5 @@
-//url:https://leetcode-cn.com/problems/merge-k-sorted-lists/
+// url: https://leetcode-cn.com/problems/merge-k-sorted-lists/
+
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -20,18 +21,22 @@ public:
     {
         ListNode *dummyHead = new ListNode(0);
         ListNode *temp = dummyHead;
-        auto cmp = [](ListNode* left, ListNode* right) { return left->val > right->val; };
-        std::priority_queue<ListNode*, std::vector<ListNode*>, decltype(cmp)> q(cmp);
+        auto cmp = [](ListNode *left, ListNode *right)
+        { return left->val > right->val; };
+        std::priority_queue<ListNode *, std::vector<ListNode *>, decltype(cmp)> q(cmp);
         for (int i = 0; i < lists.size(); i++)
         {
-            if(lists[i]) q.push(lists[i]);
+            if (lists[i])
+                q.push(lists[i]);
         }
-        while(!q.empty()){
+        while (!q.empty())
+        {
             ListNode *node = q.top();
             q.pop();
             temp->next = node;
             temp = node;
-            if(node->next) q.push(node->next);
+            if (node->next)
+                q.push(node->next);
         }
         return dummyHead->next;
     }

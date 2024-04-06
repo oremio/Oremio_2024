@@ -1,4 +1,5 @@
-//url:https://leetcode-cn.com/problems/reverse-linked-list-ii/comments/
+// url: https://leetcode-cn.com/problems/reverse-linked-list-ii/comments/
+
 #include <iostream>
 #include <vector>
 
@@ -24,7 +25,7 @@ class Solution
 public:
     ListNode *reverseBetween(ListNode *head, int left, int right)
     {
-        ListNode *dummyhead= new ListNode(-1);
+        ListNode *dummyhead = new ListNode(-1);
         dummyhead->next = head;
         ListNode *pre = nullptr, *cur = dummyhead;
         int i = 0;

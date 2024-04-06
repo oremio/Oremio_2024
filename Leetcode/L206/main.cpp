@@ -1,4 +1,5 @@
-//url:https://leetcode-cn.com/problems/reverse-linked-list/submissions/
+// url: https://leetcode-cn.com/problems/reverse-linked-list/submissions/
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -9,13 +10,16 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* reverseList(ListNode* head) {
-        if(head==nullptr || head->next==nullptr){
-            return head; //最末端的结点将传给last
+    ListNode *reverseList(ListNode *head)
+    {
+        if (head == nullptr || head->next == nullptr)
+        {
+            return head; // 最末端的结点将传给last
         }
-        ListNode* last = reverseList(head->next); //递归入口
+        ListNode *last = reverseList(head->next); // 递归入口
         head->next->next = head;
         head->next = nullptr;
         return last;

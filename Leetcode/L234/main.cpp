@@ -1,4 +1,4 @@
-//url:https://leetcode-cn.com/problems/palindrome-linked-list/
+// url: https://leetcode-cn.com/problems/palindrome-linked-list/
 struct ListNode
 {
     int val;
@@ -12,14 +12,16 @@ class Solution
 {
 private:
     ListNode *left;
-    bool traverse(ListNode* right){
-        if(right == nullptr)
+    bool traverse(ListNode *right)
+    {
+        if (right == nullptr)
             return true;
         bool res = traverse(right->next);
         res = res && (right->val == left->val);
         left = left->next;
         return res;
     }
+
 public:
     bool isPalindrome(ListNode *head)
     {
@@ -30,6 +32,7 @@ public:
     }
 };
 
-int main(){
+int main()
+{
     return 0;
 }

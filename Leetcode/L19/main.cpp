@@ -1,4 +1,5 @@
-//url:https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+// url: https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+
 struct ListNode
 {
     int val;
