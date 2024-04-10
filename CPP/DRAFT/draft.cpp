@@ -82,11 +82,25 @@ namespace ns_hanoi
 
 }
 
-int main()
-{
-    int n = 5;                         // 盘子的数量
-    ns_hanoi::hanoi(n, 'A', 'B', 'C'); // 将n个盘子从A通过B移动到C
-    ns_hanoi::hanoiCount(n);
-    ns_hanoi::strangeHanoiCount(n);
+using ConstPointer = const unsigned long*;
+
+// int main()
+// {
+//     int n = 5;                         // 盘子的数量
+//     ns_hanoi::hanoi(n, 'A', 'B', 'C'); // 将n个盘子从A通过B移动到C
+//     ns_hanoi::hanoiCount(n);
+//     ns_hanoi::strangeHanoiCount(n);
+//     return 0;
+// }
+
+#include <iostream>
+using namespace std;
+int fun1() { return 10; }
+auto fun2() { return 'g'; }
+int main(){
+    decltype(fun1()) x;
+    decltype(fun2()) y = fun2();
+    cout << typeid(x).name() << endl;
+    cout << typeid(y).name() << endl;
     return 0;
 }
