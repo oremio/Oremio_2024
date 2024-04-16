@@ -134,7 +134,7 @@ f"{name} is {len(name)} characters long." # => "Reiko is 5 characters long."
 "{0} be nimble, {0} be quick, {0} jump over the {1}".format("Jack", "candle stick")
 # => "Jack be nimble, Jack be quick, Jack jump over the candle stick"
 # 如果不想数参数，可以用关键字
-"{name} wants to eat {food}".format(name="Bob", food="lasagna") 
+"{name} wants to eat {food}".format(name="Bob", food="lasagna")
 # => "Bob wants to eat lasagna"
 
 # 如果你的 Python3 程序也要在 Python2.5 以下环境运行，也可以用老式的格式化语法
@@ -413,7 +413,7 @@ for animal in ["dog", "cat", "mouse"]:
 """
 for i in range(4):
     print(i)
-    
+
 """
 "range(lower, upper)" 会返回一个包含从 lower 到 upper 的数字迭代器
 prints:
@@ -477,7 +477,7 @@ finally:								 # 在任何情况下都会执行
 with open("myfile.txt") as f:
     for line in f:
         print(line)
-        
+
 # 写入文件
 contents = {"aa": 12, "bb": 21}
 with open("myfile1.txt", "w+") as file:
@@ -598,7 +598,7 @@ y = 2
 x, y = swap(x, y)     # => x = 2, y = 1
 # (x, y) = swap(x,y)  # 同上，括号不需要加，但是也可以加
 
-    
+
 # 函数作用域
 x = 5
 
@@ -740,7 +740,7 @@ class Human:
 # 当 Python 解释器在读取源文件的时候，就会执行文件中所有的代码
 # 对 __name__ 的检查可以保证这块代码只会在这个模块是主程序的情况下被运行（而不是在引用时运行）
 if __name__ == '__main__':
-    # 
+    #
     i = Human(name="Ian")
     i.say("hi")                     # "Ian: hi"
     j = Human("Joel")
@@ -788,7 +788,7 @@ from human import Human
 
 # 指定父类作为类初始化的参数
 class Superhero(Human):
-		
+
     # 如果子类需要继承所有父类的定义，并且不需要做任何的修改，
     # 你可以直接使用 "pass" 关键字（并且不需要其他任何语句）
     # 但是在这个例子中会被注释掉，以用来生成不一样的子类。
@@ -796,7 +796,7 @@ class Superhero(Human):
 
     # 子类可以重写父类定义的字段
     species = 'Superhuman'
-		
+
     # 子类会自动的继承父类的构造函数包括它的参数，但同时，子类也可以新增额外的参数或者定义，
     # 甚至去覆盖父类的方法比如说构造函数。
     # 这个构造函数从父类 "Human" 上继承了 "name" 参数，同时又新增了 "superpower" 和
@@ -809,7 +809,7 @@ class Superhero(Human):
         self.movie = movie
         # 注意可变的默认值，因为默认值是共享的
         self.superpowers = superpowers
-				
+
         # "super" 函数让你可以访问父类中被子类重写的方法
         # 在这个例子中，被重写的是 __init__ 方法
         # 这个语句是用来运行父类的构造函数:
