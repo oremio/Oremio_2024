@@ -177,7 +177,7 @@ some_var  # => 5
 
 # 访问未赋值的变量会抛出异常
 # 参考流程控制一段来学习异常处理
-some_unknown_var  # 抛出 NameError
+# some_unknown_var  # 抛出 NameError
 
 # "if" 可以用作表达式，它的作用等同于 C 语言的三元运算符 "?:"
 "yay!" if 0 > 1 else "nay!"  # => "nay!"
@@ -477,6 +477,8 @@ finally:								 # 在任何情况下都会执行
 with open("myfile.txt") as f:
     for line in f:
         print(line)
+
+import json
 
 # 写入文件
 contents = {"aa": 12, "bb": 21}

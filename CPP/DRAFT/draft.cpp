@@ -82,25 +82,122 @@ namespace ns_hanoi
 
 }
 
-using ConstPointer = const unsigned long*;
+namespace ns_decltype
+{
+    //     int fun1() { return 10; }
+    //     auto fun2() { return 'g'; }
+    //     int main()
+    //     {
+    //         decltype(fun1()) x;
+    //         decltype(fun2()) y = fun2();
+    //         cout << typeid(x).name() << endl;
+    //         cout << typeid(y).name() << endl;
 
-// int main()
-// {
-//     int n = 5;                         // 盘子的数量
-//     ns_hanoi::hanoi(n, 'A', 'B', 'C'); // 将n个盘子从A通过B移动到C
-//     ns_hanoi::hanoiCount(n);
-//     ns_hanoi::strangeHanoiCount(n);
-//     return 0;
-// }
+    //         //--------------------------------------------------------------
 
-#include <iostream>
-using namespace std;
-int fun1() { return 10; }
-auto fun2() { return 'g'; }
-int main(){
-    decltype(fun1()) x;
-    decltype(fun2()) y = fun2();
-    cout << typeid(x).name() << endl;
-    cout << typeid(y).name() << endl;
-    return 0;
+    //         // auto忽略最上层的const，decltype则保留最上层的const
+    //         const int x = 10;
+
+    //         // 使用 auto 推断变量类型
+    //         auto a = x; // a 的类型为 int，忽略了顶层 const
+    //         a = 20;     // 合法，可以修改 a 的值
+    //         std::cout << "a: " << a << std::endl;
+
+    //         // 使用 decltype 推断变量类型
+    //         decltype(x) b = x; // b 的类型为 const int，保留了顶层 const
+    //         // b = 20;        // 错误！b 是常量，无法修改
+    //         std::cout << "b: " << b << std::endl;
+
+    //         //--------------------------------------------------------------
+
+    //         // auto忽略原有类型的引用，decltype则保留原有类型的引用
+    //         int x = 10;
+    //         int &ref_x = x;
+
+    //         // 使用 auto 推断变量类型
+    //         auto a = ref_x;                       // a 的类型为 int，忽略了原有类型的引用
+    //         a = 20;                               // 修改 a 的值不影响原有变量 x
+    //         std::cout << "a: " << a << std::endl; // 输出 20
+    //         std::cout << "x: " << x << std::endl; // 输出 10
+
+    //         // 使用 decltype 推断变量类型
+    //         decltype(ref_x) b = ref_x;            // b 的类型为 int&，保留了原有类型的引用
+    //         b = 30;                               // 修改 b 的值会影响原有变量 x
+    //         std::cout << "b: " << b << std::endl; // 输出 30
+    //         std::cout << "x: " << x << std::endl; // 输出 30
+
+    //         //--------------------------------------------------------------
+
+    //         // 对解引用操作，auto推断出原有类型，decltype推断出引用
+
+    //         int x = 10;
+    //         int *ptr = &x;
+
+    //         // 使用 auto 推断变量类型
+    //         auto a = *ptr;                        // a 的类型为 int，推断出原有类型
+    //         a = 20;                               // 修改 a 的值不影响原有变量 x
+    //         std::cout << "a: " << a << std::endl; // 输出 20
+    //         std::cout << "x: " << x << std::endl; // 输出 10
+
+    //         // 使用 decltype 推断变量类型
+    //         decltype(*ptr) b = *ptr;              // b 的类型为 int&，推断出引用
+    //         b = 30;                               // 修改 b 的值会影响原有变量 x
+    //         std::cout << "b: " << b << std::endl; // 输出 30
+    //         std::cout << "x: " << x << std::endl; // 输出 30
+
+    //         return 0;
+    //     }
 }
+
+namespace ns_override
+{
+    class A
+    {
+    public:
+        virtual void foo() {}
+        void bar() {}
+    };
+
+    class B : public A
+    {
+    public:
+        void foo() override {} // OK ： B::foo 覆写 A::foo
+    };
+}
+
+#include <typeinfo>
+
+namespace ns_typeid
+{
+    // 与 RTTI 相关的还有 typeid 运算符，返回 type_info 的引用，该类定义在标准库中。
+    // 如果表达式的类型包含了虚函数，那么 typeid 在返回类型时会进行动态计算；否则在编译时就可以计算。
+    class Base
+    {
+    public:
+        virtual void func() {}
+    };
+
+    class Derived : public Base
+    {
+    };
+
+    int main()
+    {
+        Base base_obj;
+        Derived derived_obj;
+
+        Base *ptr_base = &derived_obj;
+
+        // 对于包含虚函数的类型，typeid 在运行时进行动态计算
+        std::cout << "Type of base_obj: " << typeid(base_obj).name() << std::endl;       // 运行时计算
+        std::cout << "Type of derived_obj: " << typeid(derived_obj).name() << std::endl; // 运行时计算
+        std::cout << "Type of ptr_base: " << typeid(*ptr_base).name() << std::endl;      // 运行时计算
+
+        // 对于不包含虚函数的类型，typeid 在编译时确定
+        int i = 10;
+        std::cout << "Type of i: " << typeid(i).name() << std::endl; // 编译时确定
+
+        return 0;
+    }
+}
+
