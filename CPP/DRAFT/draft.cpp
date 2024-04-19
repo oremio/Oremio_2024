@@ -201,3 +201,20 @@ namespace ns_typeid
     }
 }
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    // auto s = to_string(n);
+    string s;
+    for (int i = 0; n; i++) {
+        s += static_cast<char>('0' + n % 10);
+        n = n / 10;
+    }
+    // reverse(s.begin(), s.end());
+    cout << s;
+    return 0;
+}
