@@ -201,40 +201,24 @@ namespace ns_typeid
     }
 }
 
-const int N = 10010;
-int sum[N];
+#include <iostream>
+#include <string>
+using namespace std;
 
-class Solution {
-public:
-    int pivotIndex(vector<int>& nums) {
-        n = nums.size();
-        for (int i = 1; i <= n; i++) {
-            sum[i] = sum[i - 1] + nums[i - 1];
-        }
-        for (int i = 1; i <= n; i++) {
-            if (check(i))
-                return i - 1;
-        }
-        return -1;
-    }
-
-private:
+int main() {
     int n;
-    static const int N = 10010;
-    static int sum[N];
-    bool check(int idx) {
-        if (sum[idx - 1] == (sum[n] - sum[idx]))
-            return true;
-        else
-            return false;
+    cin >> n;
+    int cnt = 0;
+    for (int i = 1; i <= n; i++) {
+        if (i % 7 == 0)
+            cnt++;
+        else {
+            while (i && i % 10 != 7)
+                i = i / 10;
+            if (i == 7) cnt++;
+        }
     }
-};
-
-int Solution::sum[Solution::N] = {};  // 显式定义和初始化静态成员
-
-int main(){
-    Solution s;
-    vector<int> input{1, 7, 3, 6, 5, 6};
-    cout << s.pivotIndex(input);
+    cout << cnt << endl;
     return 0;
 }
+

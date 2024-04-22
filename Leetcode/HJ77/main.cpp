@@ -6,9 +6,19 @@ using namespace std;
 
 const int N = 15;
 
+/*
+复盘时的聊天记录：
+入站顺序，存一下，check的时候要用到
+然后为了写字典顺序的全排列，我们要把火车号排序一下，然后递归写出来
+所以是这么四个数组，train存排序后的火车号，train_in存入站顺序，visited和out都是递归时要用到
+*/
+
 int n;
+
 int train[N]; // 存储各号的火车
+
 int train_in[N]; // 存储各号的火车的进站顺序
+
 int visited[N];
 int out[N]; // 出站序列号
 
