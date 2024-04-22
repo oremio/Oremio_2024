@@ -201,24 +201,36 @@ namespace ns_typeid
     }
 }
 
+#include <cmath>
 #include <iostream>
-#include <string>
 using namespace std;
+
+const int N = 1010;
+
+int cnt;
+int primes[N];
+bool st[N];
+
+void get_primes(int n) {
+    if (n < 2) return;
+    for (int i = 2; i <= n; i++) {
+        if (!st[i]) { // get
+            primes[cnt++] = i;
+            if (i <= n / i) {
+                int tmp = n << 1;
+                while (tmp <= n) {
+                    st[tmp] = false;
+                    tmp += i;
+                }
+            }
+        }
+    }
+}
 
 int main() {
     int n;
     cin >> n;
-    int cnt = 0;
-    for (int i = 1; i <= n; i++) {
-        if (i % 7 == 0)
-            cnt++;
-        else {
-            while (i && i % 10 != 7)
-                i = i / 10;
-            if (i == 7) cnt++;
-        }
-    }
-    cout << cnt << endl;
+    get_primes(2);
     return 0;
 }
 
