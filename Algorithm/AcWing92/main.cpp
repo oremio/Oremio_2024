@@ -23,8 +23,8 @@ void dfs(int cnt, int state) {
     // 递归应当执行n次才能到达一个结果
     // 换言之，应当加n次1
     // 故：cnt从0开始数
+    dfs(cnt + 1, state | (1 << cnt));
     dfs(cnt + 1, state);
-    dfs(cnt + 1, state | 1 << cnt);
 
 }
 
