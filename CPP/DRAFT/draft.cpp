@@ -211,14 +211,20 @@ int cnt;
 int primes[N];
 bool st[N];
 
-void get_primes(int n) {
-    if (n < 2) return;
-    for (int i = 2; i <= n; i++) {
-        if (!st[i]) { // get
+void get_primes(int n)
+{
+    if (n < 2)
+        return;
+    for (int i = 2; i <= n; i++)
+    {
+        if (!st[i])
+        { // get
             primes[cnt++] = i;
-            if (i <= n / i) {
+            if (i <= n / i)
+            {
                 int tmp = n << 1;
-                while (tmp <= n) {
+                while (tmp <= n)
+                {
                     st[tmp] = false;
                     tmp += i;
                 }
@@ -226,11 +232,3 @@ void get_primes(int n) {
         }
     }
 }
-
-int main() {
-    int n;
-    cin >> n;
-    get_primes(2);
-    return 0;
-}
-
