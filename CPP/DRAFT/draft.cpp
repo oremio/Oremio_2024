@@ -199,3 +199,22 @@ namespace ns_typeid
         return 0;
     }
 }
+
+namespace ns_virtual_inheritance_test
+{
+    class A
+    {
+    public:
+        friend class B;
+
+    private:
+        A() {}
+    };
+
+    class B : virtual public A
+    {
+    };
+
+    // class C : public B {};
+}
+
