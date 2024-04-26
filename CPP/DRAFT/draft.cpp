@@ -2,6 +2,7 @@
 #include <functional>
 #include <iostream>
 #include <string.h>
+#include <typeinfo>
 #include <vector>
 
 using namespace std;
@@ -165,8 +166,6 @@ namespace ns_override
     };
 }
 
-#include <typeinfo>
-
 namespace ns_typeid
 {
     // 与 RTTI 相关的还有 typeid 运算符，返回 type_info 的引用，该类定义在标准库中。
@@ -198,37 +197,5 @@ namespace ns_typeid
         std::cout << "Type of i: " << typeid(i).name() << std::endl; // 编译时确定
 
         return 0;
-    }
-}
-
-#include <cmath>
-#include <iostream>
-using namespace std;
-
-const int N = 1010;
-
-int cnt;
-int primes[N];
-bool st[N];
-
-void get_primes(int n)
-{
-    if (n < 2)
-        return;
-    for (int i = 2; i <= n; i++)
-    {
-        if (!st[i])
-        { // get
-            primes[cnt++] = i;
-            if (i <= n / i)
-            {
-                int tmp = n << 1;
-                while (tmp <= n)
-                {
-                    st[tmp] = false;
-                    tmp += i;
-                }
-            }
-        }
     }
 }
