@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <functional>
 #include <iostream>
+#include <memory>
 #include <string.h>
 #include <typeinfo>
 #include <vector>
@@ -218,3 +219,14 @@ namespace ns_virtual_inheritance_test
     // class C : public B {};
 }
 
+void process(shared_ptr<int> ptr)
+{
+    cout << ptr.use_count() << endl;
+}
+
+int main() {
+    shared_ptr<int> p(new int(32));
+    process(shared_ptr<int>(p));
+    cout << p.use_count() << endl;
+    return 0;
+}
