@@ -201,7 +201,7 @@ namespace ns_typeid
     }
 }
 
-namespace ns_virtual_inheritance_test
+namespace ns_virtual_inheritance
 {
     class A
     {
