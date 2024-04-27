@@ -1,0 +1,163 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 通过基类指针访问同名函数的示例">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 通过基类指针访问同名函数的示例">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: 通过基类指针访问同名函数的示例 (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: 通过基类指针访问同名函数的示例 </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="2574.htm"> - Next</a> - <a href="3338.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="2574.htm">Next sibling</a> - <a href="3338.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: 通过基类指针访问同名函数的示例</li>
+<ol>
+<li>通过基类指针访问同名函数的示例   class P           { public: f(){…} }; //父类 class C: public P { public: f(){…} }; //子类 main () {     P* ptr;   P p;   C c;     ptr = &p;     ptr->f(); . (see <a href="#3406">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,405: &#36890;&#36807;&#22522;&#31867;&#25351;&#38024;&#35775;&#38382;&#21516;&#21517;&#20989;&#25968;&#30340;&#31034;&#20363;</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+&#36890;&#36807;&#22522;&#31867;&#25351;&#38024;&#35775;&#38382;&#21516;&#21517;&#20989;&#25968;&#30340;&#31034;&#20363;<BR>&nbsp;</P>
+<P>class P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { public: f(){&#8230;} }; //&#29238;&#31867;</P>
+<P>class C: public P { public: f(){&#8230;} }; //&#23376;&#31867;</P>
+<P>main () {</P>
+<P>&nbsp;&nbsp;&nbsp; <STRONG>P* ptr;</STRONG>&nbsp;&nbsp; P p;&nbsp;&nbsp; C c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr = &amp;p;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#35843;&#29992;P::f()</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr=&amp;c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#35843;&#29992;<SPAN class=clozed>P::f()</SPAN></P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&#35828;&#26126;: <STRONG>&#25351;&#38024;&#26159;&#20160;&#20040;&#31867;&#22411;&#65292;&#23601;&#35843;&#20160;&#20040;&#31867;&#22411;</STRONG></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&#21160;&#24577;&#32852;&#32534;&#30340;&#31616;&#21333;&#31034;&#20363;-&#25351;&#38024;&#24418;&#24335;<BR>&nbsp;</P>
+<P>class P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<STRONG> { public: virtual f(){&#8230;} }; //&#29238;&#31867;</STRONG></P>
+<P>class C: public P { public: f(){&#8230;} }; //&#23376;&#31867;&#65292;f&#33258;&#21160;virtual</P>
+<P>main () {</P>
+<P>&nbsp;&nbsp;&nbsp; P* ptr;&nbsp;&nbsp; P p;&nbsp;&nbsp; C c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr = &amp;p;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp; //&#35843;&#29992;P::f()</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr=&amp;c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp; //&#35843;&#29992;C::f()</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&#35828;&#26126;: &#20989;&#25968;&#34394;&#65292;&#19981;&#30475;&#25351;&#38024;&#30475;&#30495;&#23545;&#35937;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3406">Item #3,406: &#36890;&#36807;&#22522;&#31867;&#25351;&#38024;&#35775;&#38382;&#21516;&#21517;&#20989;&#25968;&#30340;&#31034;&#20363;   class P           { public: f(){&#8230;} }; //&#29238;&#31867; class C: public P { public: f(){&#8230;} }; //&#23376;&#31867; main () {     P* ptr;   P p;   C c;     ptr = &p;     ptr->f(); .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#36890;&#36807;&#22522;&#31867;&#25351;&#38024;&#35775;&#38382;&#21516;&#21517;&#20989;&#25968;&#30340;&#31034;&#20363;<BR>&nbsp;</P>
+<P>class P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { public: f(){&#8230;} }; //&#29238;&#31867;</P>
+<P>class C: public P { public: f(){&#8230;} }; //&#23376;&#31867;</P>
+<P>main () {</P>
+<P>&nbsp;&nbsp;&nbsp; <STRONG>P* ptr;</STRONG>&nbsp;&nbsp; P p;&nbsp;&nbsp; C c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr = &amp;p;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#35843;&#29992;P::f()</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr=&amp;c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#35843;&#29992;<SPAN class=cloze>[...]</SPAN></P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&#35828;&#26126;: &#25351;&#38024;&#26159;&#20160;&#20040;&#31867;&#22411;&#65292;&#23601;&#35843;&#20160;&#20040;&#31867;&#22411;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&#21160;&#24577;&#32852;&#32534;&#30340;&#31616;&#21333;&#31034;&#20363;-&#25351;&#38024;&#24418;&#24335;<BR>&nbsp;</P>
+<P>class P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { public: virtual f(){&#8230;} }; //&#29238;&#31867;</P>
+<P>class C: public P { public: f(){&#8230;} }; //&#23376;&#31867;&#65292;f&#33258;&#21160;virtual</P>
+<P>main () {</P>
+<P>&nbsp;&nbsp;&nbsp; P* ptr;&nbsp;&nbsp; P p;&nbsp;&nbsp; C c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr = &amp;p;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp; //&#35843;&#29992;P::f()</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr=&amp;c;</P>
+<P>&nbsp;&nbsp;&nbsp; ptr-&gt;f();&nbsp;&nbsp;&nbsp; //&#35843;&#29992;C::f()</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&#35828;&#26126;: &#20989;&#25968;&#34394;&#65292;&#19981;&#30475;&#25351;&#38024;&#30475;&#30495;&#23545;&#35937;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+P::f()
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

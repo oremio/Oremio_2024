@@ -1,0 +1,322 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 字符串相关库函数&string">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 字符串相关库函数&string">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: 字符串相关库函数&string (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: 字符串相关库函数&string </font></b><br>(20 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="1820.htm"> - Next</a> - <a href="3381.htm">Previous</a> - <a href="2547.htm">Parent</a> - <a href="2576.htm">Next sibling</a> - <a href="1671.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2547.htm">基础</a></li>
+<ul>
+<li>This page: 字符串相关库函数&string</li>
+<ol>
+<li><a href="1820.htm">字符数组 字符串就是字符数组加上结束符'\0'。 可以使用字符串来初始化字符数组，但此时要注意，每个字符串结尾会暗含一个'\0'字符，因此字符数组的长度至少要比字符串的长度多 1 1  ！ #include <iostream> using namespace std; int main() {     char a1[] = {'C', '+' .</a> (1 elements)
+<li><a href="2680.htm">读入一行字符串，包括空格： #include <iostream> using namespace std; int main() {     char str[100];     fgets(str, 100, stdin);  // gets函数在新版C++中被移除了，因为不安全。 .</a> (1 elements)
+<li><a href="2682.htm">下面几个函数需要引入头文件: #include <string.h> (1) strlen(str)，求字符串的长度 (2) strcmp(a, b)，比较两个字符串的大小，a < b返回-1，a == b返回0，a > b返回1。这里的比较方式是字典序！ (3) strcpy(a, b)，将字符串b复制给从a开始的字符数组。</a> (1 elements)
+<li>string初始化 (see <a href="#2684">below)</a>
+<li>不能用printf直接输出string，需要写成：printf(“%s”, s.c_str()); (see <a href="#2685">below)</a>
+<li><a href="2686.htm">使用getline读取一整行 #include <iostream> #include <string> using namespace std; int main() {     string s;     getline(cin, s);     cout << s << endl;     return 0; }</a> (1 elements)
+<li>string的empty和size操作（注意size是无符号整数，因此 s.size() <= -1一定成立）： #include <iostream> #include <string> using namespace std; int main() {     string s1, s2 = "abc";     cout << s1 . (see <a href="#2688">below)</a>
+<li>string的比较： 支持 >, <, >=, <=, ==, !=等所有比较操作，按字典序进行比较。 (see <a href="#2689">below)</a>
+<li><a href="2690.htm">(6) 两个string对象相加： string s1 = "hello,  "", s2 = "world\n"; string s3 = s1 + s2;                    // s3的内容是 hello, world\n s1 += s2;                               // s1 = s1 .</a> (1 elements)
+<li>可以将string对象当成字符数组来处理： #include <iostream> #include <string> using namespace std; int main() {     string s = "hello world";     for (int i = 0; i < s.size(); i ++ ) . (see <a href="#2692">below)</a>
+<li><a href="3360.htm">操作string对象中的字符串内容时，有时会用到“index" 很多string的函数接受两个数字参数：index,n (1)index:从index号位置开始 (2)n:之后的n个字符</a> (2 elements)
+<li><a href="3363.htm">string s1{"Welcome"} string s2 "Welcomg") cout <s1.compare(s2)<<endl;/returns -2 cout <s2.compare(s1)<<endl;/returns 2 cout <s1.compare("Welcome")<<endl;/returns 0</a> (1 elements)
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #2,673: &#23383;&#31526;&#20018;&#30456;&#20851;&#24211;&#20989;&#25968;&string</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="1820.htm">Topic #1,820: &#23383;&#31526;&#25968;&#32452; &#23383;&#31526;&#20018;&#23601;&#26159;&#23383;&#31526;&#25968;&#32452;&#21152;&#19978;&#32467;&#26463;&#31526;'\0'&#12290; &#21487;&#20197;&#20351;&#29992;&#23383;&#31526;&#20018;&#26469;&#21021;&#22987;&#21270;&#23383;&#31526;&#25968;&#32452;&#65292;&#20294;&#27492;&#26102;&#35201;&#27880;&#24847;&#65292;&#27599;&#20010;&#23383;&#31526;&#20018;&#32467;&#23614;&#20250;&#26263;&#21547;&#19968;&#20010;'\0'&#23383;&#31526;&#65292;&#22240;&#27492;&#23383;&#31526;&#25968;&#32452;&#30340;&#38271;&#24230;&#33267;&#23569;&#35201;&#27604;&#23383;&#31526;&#20018;&#30340;&#38271;&#24230;&#22810; 1 1  &#65281; #include <iostream> using namespace std; int main() {     char a1[] = {'C', '+' .</a></b> <font size="2">(1 elements)</font></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#23383;&#31526;&#25968;&#32452;<BR>&#23383;&#31526;&#20018;&#23601;&#26159;&#23383;&#31526;&#25968;&#32452;&#21152;&#19978;&#32467;&#26463;&#31526;'\0'&#12290; 
+<P></P>
+<P>&#21487;&#20197;&#20351;&#29992;&#23383;&#31526;&#20018;&#26469;&#21021;&#22987;&#21270;&#23383;&#31526;&#25968;&#32452;&#65292;&#20294;&#27492;&#26102;&#35201;&#27880;&#24847;&#65292;&#27599;&#20010;&#23383;&#31526;&#20018;&#32467;&#23614;&#20250;&#26263;&#21547;&#19968;&#20010;'\0'&#23383;&#31526;&#65292;&#22240;&#27492;&#23383;&#31526;&#25968;&#32452;&#30340;&#38271;&#24230;&#33267;&#23569;&#35201;&#27604;&#23383;&#31526;&#20018;&#30340;&#38271;&#24230;&#22810; 1<BR>1<BR>&nbsp;&#65281;</P>
+<P>#include &lt;iostream&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; char a1[] = {'C', '+', '+'};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#21015;&#34920;&#21021;&#22987;&#21270;&#65292;&#27809;&#26377;&#31354;&#23383;&#31526;<BR>&nbsp;&nbsp;&nbsp; char a2[] = {'C', '+', '+', '\0'};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#21015;&#34920;&#21021;&#22987;&#21270;&#65292;&#21547;&#26377;&#26174;&#31034;&#30340;&#31354;&#23383;&#31526;<BR>&nbsp;&nbsp;&nbsp; char a3[] = "C++";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#33258;&#21160;&#28155;&#21152;<SPAN class=clozed>&#34920;&#31034;&#23383;&#31526;&#20018;&#32467;&#23614;&#30340;&#31354;&#23383;&#31526;</SPAN><BR>&nbsp;&nbsp;&nbsp; char a4[6] = "Daniel";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;&#65306;&#27809;&#26377;&#31354;&#38388;&#21487;&#20197;&#23384;&#25918;&#31354;&#23383;&#31526;</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2680.htm">Topic #2,680: &#35835;&#20837;&#19968;&#34892;&#23383;&#31526;&#20018;&#65292;&#21253;&#25324;&#31354;&#26684;&#65306; #include <iostream> using namespace std; int main() {     char str[100];     fgets(str, 100, stdin);  // gets&#20989;&#25968;&#22312;&#26032;&#29256;C++&#20013;&#34987;&#31227;&#38500;&#20102;&#65292;&#22240;&#20026;&#19981;&#23433;&#20840;&#12290; .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#35835;&#20837;&#19968;&#34892;&#23383;&#31526;&#20018;&#65292;&#21253;&#25324;&#31354;&#26684;&#65306; 
+<P></P>
+<P>#include &lt;iostream&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; char str[100];</P>
+<P>&nbsp;&nbsp;&nbsp; fgets(str, 100, stdin);&nbsp; // gets&#20989;&#25968;&#22312;&#26032;&#29256;C++&#20013;&#34987;&#31227;&#38500;&#20102;&#65292;&#22240;&#20026;&#19981;&#23433;&#20840;&#12290;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#21487;&#20197;&#29992;fgets&#20195;&#26367;&#65292;&#20294;&#27880;&#24847;fgets<SPAN class=clozed>&#19981;&#20250;&#21024;&#38500;&#34892;&#26411;&#30340;&#22238;&#36710;&#23383;&#31526;</SPAN></P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; str &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2682.htm">Topic #2,682: &#19979;&#38754;&#20960;&#20010;&#20989;&#25968;&#38656;&#35201;&#24341;&#20837;&#22836;&#25991;&#20214;: #include <string.h> (1) strlen(str)&#65292;&#27714;&#23383;&#31526;&#20018;&#30340;&#38271;&#24230; (2) strcmp(a, b)&#65292;&#27604;&#36739;&#20004;&#20010;&#23383;&#31526;&#20018;&#30340;&#22823;&#23567;&#65292;a < b&#36820;&#22238;-1&#65292;a == b&#36820;&#22238;0&#65292;a > b&#36820;&#22238;1&#12290;&#36825;&#37324;&#30340;&#27604;&#36739;&#26041;&#24335;&#26159;&#23383;&#20856;&#24207;&#65281; (3) strcpy(a, b)&#65292;&#23558;&#23383;&#31526;&#20018;b&#22797;&#21046;&#32473;&#20174;a&#24320;&#22987;&#30340;&#23383;&#31526;&#25968;&#32452;&#12290;</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#19979;&#38754;&#20960;&#20010;&#20989;&#25968;&#38656;&#35201;&#24341;&#20837;&#22836;&#25991;&#20214;: 
+<P></P>
+<P>#include<SPAN class=clozed> &lt;string.h&gt;</SPAN><BR>(1) strlen(str)&#65292;&#27714;&#23383;&#31526;&#20018;&#30340;&#38271;&#24230;<BR>(2) strcmp(a, b)&#65292;&#27604;&#36739;&#20004;&#20010;&#23383;&#31526;&#20018;&#30340;&#22823;&#23567;&#65292;a &lt; b&#36820;&#22238;-1&#65292;a == b&#36820;&#22238;0&#65292;a &gt; b&#36820;&#22238;1&#12290;&#36825;&#37324;&#30340;&#27604;&#36739;&#26041;&#24335;&#26159;&#23383;&#20856;&#24207;&#65281;<BR>(3) strcpy(a, b)&#65292;&#23558;&#23383;&#31526;&#20018;b&#22797;&#21046;&#32473;&#20174;a&#24320;&#22987;&#30340;&#23383;&#31526;&#25968;&#32452;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2684">Topic #2,684: string&#21021;&#22987;&#21270;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#23450;&#20041;&#21644;&#21021;&#22987;&#21270;<BR>#include &lt;iostream&gt;<BR>#include &lt;string&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; string s1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#40664;&#35748;&#21021;&#22987;&#21270;&#65292;s1&#26159;&#19968;&#20010;&#31354;&#23383;&#31526;&#20018;<BR>&nbsp;&nbsp;&nbsp; string s2 = s1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // s2&#26159;s1&#30340;&#21103;&#26412;&#65292;&#27880;&#24847;s2&#21482;&#26159;&#19982;s1&#30340;&#20540;&#30456;&#21516;&#65292;&#24182;&#19981;&#25351;&#21521;&#21516;&#19968;&#27573;&#22320;&#22336;<BR>&nbsp;&nbsp;&nbsp; string s3 = "hiya";&nbsp;&nbsp;&nbsp;&nbsp; // s3&#26159;&#35813;&#23383;&#31526;&#20018;&#23383;&#38754;&#20540;&#30340;&#21103;&#26412;<BR>&nbsp;&nbsp;&nbsp; string s4(10, 'c');&nbsp;&nbsp;&nbsp;&nbsp; // s4&#30340;&#20869;&#23481;&#26159; "cccccccccc"</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2685">Topic #2,685: &#19981;&#33021;&#29992;printf&#30452;&#25509;&#36755;&#20986;string&#65292;&#38656;&#35201;&#20889;&#25104;&#65306;printf(&#8220;%s&#8221;, s.c_str());</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#19981;&#33021;&#29992;printf&#30452;&#25509;&#36755;&#20986;string&#65292;&#38656;&#35201;&#20889;&#25104;&#65306;printf(&#8220;%s&#8221;, s.c_str());
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2686.htm">Topic #2,686: &#20351;&#29992;getline&#35835;&#21462;&#19968;&#25972;&#34892; #include <iostream> #include <string> using namespace std; int main() {     string s;     getline(cin, s);     cout << s << endl;     return 0; }</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#20351;&#29992;getline&#35835;&#21462;&#19968;&#25972;&#34892; 
+<P></P>
+<P>#include &lt;iostream&gt;<BR>#include &lt;string&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; string s;</P>
+<P>&nbsp;&nbsp;&nbsp; getline<SPAN class=clozed>(cin, s);</SPAN></P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; s &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2688">Topic #2,688: string&#30340;empty&#21644;size&#25805;&#20316;&#65288;&#27880;&#24847;size&#26159;&#26080;&#31526;&#21495;&#25972;&#25968;&#65292;&#22240;&#27492; s.size() <= -1&#19968;&#23450;&#25104;&#31435;&#65289;&#65306; #include <iostream> #include <string> using namespace std; int main() {     string s1, s2 = "abc";     cout << s1 .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+string&#30340;empty&#21644;size&#25805;&#20316;&#65288;&#27880;&#24847;size&#26159;&#26080;&#31526;&#21495;&#25972;&#25968;&#65292;&#22240;&#27492; s.size() &lt;= -1&#19968;&#23450;&#25104;&#31435;&#65289;&#65306;</P>
+<P>#include &lt;iostream&gt;<BR>#include &lt;string&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; string s1, s2 = "abc";</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; s1.empty() &lt;&lt; endl;<BR>&nbsp;&nbsp;&nbsp; cout &lt;&lt; s2.empty() &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; s2.size() &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2689">Topic #2,689: string&#30340;&#27604;&#36739;&#65306; &#25903;&#25345; >, <, >=, <=, ==, !=&#31561;&#25152;&#26377;&#27604;&#36739;&#25805;&#20316;&#65292;&#25353;&#23383;&#20856;&#24207;&#36827;&#34892;&#27604;&#36739;&#12290;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+string&#30340;&#27604;&#36739;&#65306;</P>
+<P>&#25903;&#25345; &gt;, &lt;, &gt;=, &lt;=, ==, !=&#31561;&#25152;&#26377;&#27604;&#36739;&#25805;&#20316;&#65292;&#25353;&#23383;&#20856;&#24207;&#36827;&#34892;&#27604;&#36739;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2690.htm">Topic #2,690: (6) &#20004;&#20010;string&#23545;&#35937;&#30456;&#21152;&#65306; string s1 = "hello,  "", s2 = "world\n"; string s3 = s1 + s2;                    // s3&#30340;&#20869;&#23481;&#26159; hello, world\n s1 += s2;                               // s1 = s1 .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+(6) &#20004;&#20010;string&#23545;&#35937;&#30456;&#21152;&#65306; 
+<P></P>
+<P>string s1 = "hello,&nbsp; "", s2 = "world\n"; 
+<P>string s3 = s1 + s2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // s3&#30340;&#20869;&#23481;&#26159; hello, world\n 
+<P>s1 += s2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // s1 = s1 + s2 
+<P>(7) &#23383;&#38754;&#20540;&#21644;string&#23545;&#35937;&#30456;&#21152;&#65306;</P>
+<P>&#20570;&#21152;&#27861;&#36816;&#31639;&#26102;&#65292;&#23383;&#38754;&#20540;&#21644;&#23383;&#31526;&#37117;&#20250;&#34987;&#36716;&#21270;&#25104;string&#23545;&#35937;&#65292;&#22240;&#27492;&#30452;&#25509;&#30456;&#21152;&#23601;&#26159;&#23558;&#36825;&#20123;&#23383;&#38754;&#20540;&#20018;&#32852;&#36215;&#26469;&#65306;</P>
+<P>string s1 = "hello", s2 = "world";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#22312;s1&#21644;s2&#20013;&#37117;&#27809;&#26377;&#26631;&#28857;&#31526;&#21495; 
+<P>string s3 = s1 + ", " + s2 + '\n';</P>
+<P>&#24403;&#25226;string&#23545;&#35937;&#21644;&#23383;&#31526;&#23383;&#38754;&#20540;&#21450;&#23383;&#31526;&#20018;&#23383;&#38754;&#20540;&#28151;&#22312;&#19968;&#26465;&#35821;&#21477;&#20013;&#20351;&#29992;&#26102;&#65292;&#24517;&#39035;&#30830;&#20445;&#27599;&#20010;&#21152;&#27861;&#36816;&#31639;&#31526;&#30340;&#20004;&#20391;&#30340;&#36816;&#31639;&#23545;&#35937;&#33267;&#23569;&#26377;&#19968;&#20010;&#26159;string&#65306;</P>
+<P>string s4 = s1 + ", ";&nbsp; // &#27491;&#30830;&#65306;&#25226;&#19968;&#20010;string&#23545;&#35937;&#21644;&#26377;&#19968;&#20010;&#23383;&#38754;&#20540;&#30456;&#21152; 
+<P>string s5 = "hello" + ", "; // &#38169;&#35823;&#65306;&#20004;&#20010;&#36816;&#31639;&#23545;&#35937;&#37117;&#19981;&#26159;string</P>
+<P>string s6 = s1 + ", " + "world";&nbsp; // &#27491;&#30830;&#65292;&#27599;&#20010;&#21152;&#27861;&#36816;&#31639;&#37117;&#26377;&#19968;&#20010;&#36816;&#31639;&#31526;&#26159;string 
+<P>string s7 = "hello" + ", " + s2;&nbsp; // <SPAN class=clozed>&#38169;&#35823;&#65306;&#19981;&#33021;&#25226;&#23383;&#38754;&#20540;&#30452;&#25509;&#30456;&#21152;&#65292;&#36816;&#31639;&#26159;&#20174;&#24038;&#21040;&#21491;&#36827;&#34892;&#30340;</SPAN>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2692">Topic #2,692: &#21487;&#20197;&#23558;string&#23545;&#35937;&#24403;&#25104;&#23383;&#31526;&#25968;&#32452;&#26469;&#22788;&#29702;&#65306; #include <iostream> #include <string> using namespace std; int main() {     string s = "hello world";     for (int i = 0; i < s.size(); i ++ ) .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#21487;&#20197;&#23558;string&#23545;&#35937;&#24403;&#25104;&#23383;&#31526;&#25968;&#32452;&#26469;&#22788;&#29702;&#65306;
+<P></P>
+<P>#include &lt;iostream&gt;<BR>#include &lt;string&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; string s = "hello world";</P>
+<P>&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; s.size(); i ++ )<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; s[i] &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}<BR>&#25110;&#32773;&#20351;&#29992;&#22522;&#20110;&#33539;&#22260;&#30340;for&#35821;&#21477;&#65306;</P>
+<P>#include &lt;iostream&gt;<BR>#include &lt;string&gt;</P>
+<P>using namespace std;</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; string s = "hello world";</P>
+<P>&nbsp;&nbsp;&nbsp; for (char c: s) cout &lt;&lt; c &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; for (char&amp; c: s) c = 'a';</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; s &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3360.htm">Topic #3,360: &#25805;&#20316;string&#23545;&#35937;&#20013;&#30340;&#23383;&#31526;&#20018;&#20869;&#23481;&#26102;&#65292;&#26377;&#26102;&#20250;&#29992;&#21040;&#8220;index" &#24456;&#22810;string&#30340;&#20989;&#25968;&#25509;&#21463;&#20004;&#20010;&#25968;&#23383;&#21442;&#25968;&#65306;index,n (1)index:&#20174;index&#21495;&#20301;&#32622;&#24320;&#22987; (2)n:&#20043;&#21518;&#30340;n&#20010;&#23383;&#31526;</a></b> <font size="2">(2 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#25805;&#20316;string&#23545;&#35937;&#20013;&#30340;&#23383;&#31526;&#20018;&#20869;&#23481;&#26102;&#65292;&#26377;&#26102;&#20250;&#29992;&#21040;"index" 
+<P></P>
+<P><SPAN class=extract>&#24456;&#22810;string&#30340;&#20989;&#25968;&#25509;&#21463;&#20004;&#20010;&#25968;&#23383;&#21442;&#25968;&#65306;index, n</SPAN> 
+<P>(1)index: &#20174;index&#21495;&#20301;&#32622;&#24320;&#22987; 
+<P>(2)n: <SPAN class=clozed>&#20043;&#21518;&#30340;n&#20010;&#23383;&#31526;</SPAN>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3363.htm">Topic #3,363: string s1{"Welcome"} string s2 "Welcomg") cout <s1.compare(s2)<<endl;/returns -2 cout <s2.compare(s1)<<endl;/returns 2 cout <s1.compare("Welcome")<<endl;/returns 0</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+string s1{"Welcome"}</P>
+<P>string s2 {"Welcomg"} 
+<P>cout &lt;&lt; s1.compare(s2)&lt;&lt;endl; // returns <SPAN class=clozed>-2</SPAN> 
+<P>cout &lt;&lt; s2.compare(s1)&lt;&lt;endl; // returns ? 
+<P>cout &lt;s1.compare("Welcome")&lt;&lt;endl;/returns 0
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:45 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,828 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: C++标准11-14">
+<meta http-equiv="keywords" content="SuperMemo, all in one, C++标准11-14">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: C++标准11-14 (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: C++标准11-14 </font></b><br>(48 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3379.htm"> - Next</a> - <a href="2932.htm">Previous</a> - <a href="index.htm">Parent</a> - <a href="2967.htm">Next sibling</a> - <a href="3024.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li>This page: C++标准11-14</li>
+<ol>
+<li><a href="3379.htm">constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time. (constexpr说明符声明可在编译时计算函数或变量的值) constexpr int max(int a .</a> (1 elements)
+<li><a href="3165.htm">左值和右值</a> (3 elements)
+<li><a href="3166.htm">move</a> (1 elements)
+<li><a href="3169.htm">test move</a> (1 elements)
+<li><a href="3172.htm">移动语义对于容器的性能优化主要体现在减少了不必要的资源复制和内存分配操作，特别是在涉及到大量元素的情况下，如 vector 中。下面是几个原因： 避免不必要的数据复制：传统的拷贝操 .</a> (1 elements)
+<li>forward（转发） (see <a href="#3167">below)</a>
+<li><a href="3175.htm">完美转发的概念和原理： 动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 testForward 的函数，该函数不做任何操作，只是简单地转调用到 print 函数。 print 函数有两个版本：一个接受左值引用，另一个接受右值引用。 用户希望在 testForward 中，无论参数是左值还是右值，都能正确地调用相应版本的 .</a> (1 elements)
+<li><a href="3309.htm">列表初始化，C++11新增，能使用就尽量使用，因为它不允许“窄化”，即不允许丢失数据精度的隐式类型转换</a> (1 elements)
+<li><a href="3401.htm">C++11: Default Member Initializers 类成员的就地初始化   1. What is Default Member Initializers (什么是就地初始化)   In C++03, only static const members of integral types could be initialized .</a> (1 elements)
+<li><a href="3566.htm">为何需要构造函数初始化列表</a> (1 elements)
+<li>代理构造/委托构造 (see <a href="#3382">below)</a>
+<li>尽量使用auto (see <a href="#3313">below)</a>
+<li><a href="3385.htm">decltype（自动类型推导：decltype关键字）</a> (2 elements)
+<li><a href="3386.htm">auto忽略最上层的const，decltype则保留最上层的const</a> (1 elements)
+<li><a href="3388.htm">auto忽略原有类型的引用，decltype则保留原有类型的引用  int main() {     int x = 10;     int& ref_x = x;       // 使用 auto 推断变量类型     auto a = ref_x; // a 的类型为 int，忽略了原有类型的引用     a = 20; .</a> (1 elements)
+<li><a href="3390.htm">对解引用操作，auto推断出原有类型，decltype推断出引用   int main() {     int x = 10;     int* ptr = &x;       // 使用 auto 推断变量类型     auto a = *ptr; // a 的类型为 int，推断出原有类型     a = 20;        // 修改 a .</a> (2 elements)
+<li>C++11 Raw String literals (C++11“原始/生”字符串字面量)   从名字上就可以看出，这种“Raw String literals”应该长得很原始。那么这个原始该怎么体现出来呢？我们通过语法和简单示例就能看出来。   语法:  R "delimiter( raw_characters )delimiter" . (see <a href="#3395">below)</a>
+<li><a href="3396.htm">C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s 进行了重载，赋予了它新的含义，使得用这种运算符括起来的字符串字面量，自动变成了一个 std::string 类型的对象。   auto hello = "Hello!"s;              // hello is of std .</a> (1 elements)
+<li><a href="3398.htm">Structured Binding Declaration for Array 用于数组的结构化绑定声明     1. What is "structured binding declaration"? (什么是结构化绑定声明)   1.1. It's a declaration statement, which means some .</a> (3 elements)
+<li>Structured Binding Declaration for Object Data Members 用于对象数据成员的结构化绑定声明   1. Structured Binding Declaration for Data Members(用于数据成员的结构化绑定声明)   若初始化表达式为类/结构体类型，则标识符列表中的名字绑定到类 . (see <a href="#3400">below)</a>
+<li><a href="3407.htm">C++11: Using override and final C++11：使用override和final     1. override显式声明覆写   C++11引入override标识符，指定一个虚函数覆写另一个虚函数。     class A { public:   virtual void foo() {}   void bar() .</a> (2 elements)
+<li><a href="3478.htm">使用emplace操作 新标准引入了三个新成员——emplace_ front、emplace和emplace_ back, 这些操作构造而不是拷贝元素。这些操作分别对应push_ front、insert和push_back, 允许我们将元素放置在容器头部、一个指定位置之前或容器尾部。 .</a> (1 elements)
+<li><a href="3479.htm">在范围for循环中使用initializer_list对象时，通常应该将循环控制变量声明为const引用类型。 Initializer_list对象是一个轻量级的对象，它本质上是一个数组，并且其元素是常量。因此，当使用范围for循环迭代initializer .</a> (1 elements)
+</ol>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,163: C++&#26631;&#20934;11-14</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3379.htm">Topic #3,379: constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time. (constexpr&#35828;&#26126;&#31526;&#22768;&#26126;&#21487;&#22312;&#32534;&#35793;&#26102;&#35745;&#31639;&#20989;&#25968;&#25110;&#21464;&#37327;&#30340;&#20540;) constexpr int max(int a .</a></b> <font size="2">(1 elements)</font></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+constexpr&#21487;&#22312;&#32534;&#35793;&#26102;&#35745;&#31639;&#20989;&#25968;&#25110;&#21464;&#37327;&#30340;&#20540; 
+<P></P>
+<P>constexpr int max(int a , int b) {</P>
+<P>if (a &gt; b) return a;&nbsp;&nbsp; // c++14&#25165;&#20801;&#35768;constexpr&#20989;&#25968;&#20013;&#26377;&#20998;&#25903;&#24490;&#29615;&#31561;&nbsp;&nbsp; </P>
+<P>else return b;</P>
+<P>}</P>
+<P>int main() </P>
+<P>{&nbsp; </P>
+<P>int m = 1;&nbsp; </P>
+<P>const int rcm = m++;&nbsp;&nbsp; // rcm&#26159;<SPAN class=clozed>&#36816;&#34892;&#26399;</SPAN>&#24120;&#37327;&nbsp; </P>
+<P>const int cm = 4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#32534;&#35793;&#26399;&#24120;&#37327;&#65292;&#31561;&#20215;&#20110;: constexpr int cm = 4;&nbsp;&nbsp; </P>
+<P>int a1[ max(m , rcm)]; // &#38169;&#35823;&#65306;m &amp; rcm &#19981;&#26159;&#32534;&#35793;&#26399;&#24120;&#37327;&nbsp; </P>
+<P>std::array&lt;char , max(cm , 5)&gt; a2; // OK: cm &#21644; 5 &#26159;&#32534;&#35793;&#26399;&#24120;&#37327;</P>
+<P>}</P>
+<P></P>
+<P>constexpr&#29992;&#27861;&#26377;&#38750;&#24120;&#22810;&#30340;&#32454;&#33410;&#65288;cppreference.com &#21015;&#20986;&#20102;30 &#22810;&#20010;&#26465;&#30446;&#65289;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3165.htm">Topic #3,165: &#24038;&#20540;&#21644;&#21491;&#20540;</a></b> <font size="2">(3 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Lvalue&#65306;&#21487;&#20197;&#20986;&#29694;&#26044; operator=&#24038;&#20391;&#32773; 
+<P></P>
+<P>Rvalue&#65306;&#21482;&#33021;&#20986;&#29694;&#26044; operator=&#21491;&#20391;&#32773; 
+<P>&#24635;&#32780;&#35328;&#20043;&#65292;&#21491;&#20540;&#19981;&#21487;&#20197;&#20986;&#29616;&#22312;&#24038;&#36793;&#65292;&#19981;&#21487;&#20197;&#21462;&#22320;&#22336; 
+<P>&#26368;&#20856;&#22411;&#30340;&#21491;&#20540;&#65306;<SPAN class=clozed>&#20020;&#26102;&#23545;&#35937;</SPAN>&#12289;&#20989;&#25968;<SPAN class=clozed>&#36820;&#22238;&#20540;</SPAN> &#12289;std::<SPAN class=clozed>move(&#24038;&#20540;) </SPAN>
+<P>&nbsp; 
+<P>&#30070;Rvalue&#20986;&#29694;&#26044;operator-(copy assignmen)&#30340;&#21491;&#20596;&#65292;&#25105;&#20497;&#35469;&#28858;&#23565;&#20854;&#36039;&#28304;&#36914;&#34892;&#20599;&#21462;&#25644;&#31227;(move)&#32780;&#38750;&#25335;&#35997;(copy)&#26159;&#21487;&#20197;&#30340;&#65292;&#26159;&#21512;&#29702;&#30340;&#12290; 
+<P>&#37027;&#40636;&#65306; 
+<P>1.&#24517;&#38920;&#26377;&#35486;&#27861;&#35731;&#25105;&#20497;&#22312;&#35519;&#29992;&#31471;&#21578;&#35380;&#32534;&#35695;&#22120;&#8220;&#36889;&#26159;&#20491;Rvalue&#8221;&#12290; 
+<P>2.&#24517;&#38920;&#26377;&#35486;&#27861;&#35731;&#25105;&#20497;&#22312;&#34987;&#35519;&#29992;&#31471;&#23531;&#20986;&#19968;&#20491;&#23560;&#38272;&#34389;&#29702;Rvalue&#30340;&#25152;&#35586;move assignment&#20989;&#25976;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3166.htm">Topic #3,166: move</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<B><B>&#31227;&#21160;&#26500;&#36896;&#20989;&#25968;&#65306;</B></B></P>
+<P><B><B><img alt="Image #496: instantpaste_2024-04-07_11_17_36" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/20/4408.jpg"></B></B></P>
+<P><STRONG>&#31532;&#19968;&#34892;&#30340;++MCtor&#21487;&#20197;&#26080;&#35270;&#12290;</STRONG></P>
+<P><STRONG>&#31532;&#20108;&#34892;&#65292;&#23558;&#21491;&#20540;&#30340;&#38750;&#25351;&#38024;&#25104;&#21592;&#36171;&#20540;&#20026;0&#12290;&#24863;&#35273;&#20063;&#27809;&#26377;&#22826;&#22823;&#24517;&#35201;&#65292;&#22240;&#20026;&#21491;&#20540;&#20250;&#33258;&#21160;&#26512;&#26500;&#12290;</STRONG></P>
+<P><STRONG>&#31532;&#19977;&#34892;&#65292;&#38750;&#24120;&#37325;&#35201;&#65292;&#23558;</STRONG><STRONG>&#21491;&#20540;&#30340;&#25351;&#38024;&#25104;&#21592;&#36171;&#20540;&#20026;<SPAN class=clozed>NULL</SPAN>&#65292;&#38450;&#27490;&#26512;&#26500;&#20989;&#25968;&#25226;&#25351;&#38024;&#25104;&#21592;&#25351;&#21521;&#30340;&#21306;&#22495;delete&#65288;&#24605;&#32771;&#65306;&#20026;&#20160;&#20040;&#19981;&#35753;delete&#36825;&#20010;&#21306;&#22495;&#65311;&#65289;</STRONG></P>
+<P><STRONG>&#31227;&#21160;&#36171;&#20540;&#20989;&#25968;&#65306;</STRONG></P>
+<P><STRONG><img alt="Image #497: instantpaste_2024-04-07_11_26_04" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/20/4410.jpg"></STRONG></P>
+<P><STRONG>&#21035;&#24536;&#20102;&#33258;&#25105;&#36171;&#20540;&#26816;&#26597;&#12290;</STRONG>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3169.htm">Topic #3,169: test move</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #c678dd">#include</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">&lt;ctime&gt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">//clock_t, clock()</SPAN></DIV>
+<DIV><SPAN style="COLOR: #c678dd">template</SPAN><SPAN style="COLOR: #abb2bf"> &lt;</SPAN><SPAN style="COLOR: #c678dd">typename</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">M</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #c678dd">typename</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">NM</SPAN><SPAN style="COLOR: #abb2bf">&gt;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #c678dd">void</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">test_moveable</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e5c07b">M</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e5c07b">NM</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #c678dd">long</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&amp;</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">value</SPAN><SPAN style="COLOR: #abb2bf">)</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">{</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">char</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">buf</SPAN><SPAN style="COLOR: #abb2bf">[</SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">];</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#28204;&#35430; move</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"</SPAN><SPAN style="COLOR: #56b6c2">\n\n</SPAN><SPAN style="COLOR: #98c379">test, with moveable elements"</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">typedef</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">typename</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">iterator_traits</SPAN><SPAN style="COLOR: #abb2bf">&lt;</SPAN><SPAN style="COLOR: #c678dd">typename</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">M</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e5c07b">iterator</SPAN><SPAN style="COLOR: #abb2bf">&gt;::</SPAN><SPAN style="COLOR: #e5c07b">value_type</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">V1type</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">clock_t</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">for</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #c678dd">long</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">i</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">; </SPAN><SPAN style="COLOR: #e06c75">i</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">value</SPAN><SPAN style="COLOR: #abb2bf">; </SPAN><SPAN style="COLOR: #c678dd">++</SPAN><SPAN style="COLOR: #e06c75">i</SPAN><SPAN style="COLOR: #abb2bf">)</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #61afef">snprintf</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">buf</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #98c379">"</SPAN><SPAN style="COLOR: #d19a66">%d</SPAN><SPAN style="COLOR: #98c379">"</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #61afef">rand</SPAN><SPAN style="COLOR: #abb2bf">());</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ite</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">end</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">insert</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">ite</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e5c07b">V1type</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">buf</SPAN><SPAN style="COLOR: #abb2bf">));</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; }</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"construction, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"size()= "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">size</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #61afef">output_static_data</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">begin</SPAN><SPAN style="COLOR: #abb2bf">()));</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">M</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">c11</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">);</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"copy, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">M</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">c12</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">move</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c1</SPAN><SPAN style="COLOR: #abb2bf">));</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"move copy, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">c11</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">swap</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">c12</SPAN><SPAN style="COLOR: #abb2bf">);</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"swap, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#28204;&#35430; non-moveable</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"</SPAN><SPAN style="COLOR: #56b6c2">\n\n</SPAN><SPAN style="COLOR: #98c379">test, with non-moveable elements"</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">typedef</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">typename</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">iterator_traits</SPAN><SPAN style="COLOR: #abb2bf">&lt;</SPAN><SPAN style="COLOR: #c678dd">typename</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">NM</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e5c07b">iterator</SPAN><SPAN style="COLOR: #abb2bf">&gt;::</SPAN><SPAN style="COLOR: #e5c07b">value_type</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">V2type</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">for</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #c678dd">long</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">i</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">; </SPAN><SPAN style="COLOR: #e06c75">i</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">value</SPAN><SPAN style="COLOR: #abb2bf">; </SPAN><SPAN style="COLOR: #c678dd">++</SPAN><SPAN style="COLOR: #e06c75">i</SPAN><SPAN style="COLOR: #abb2bf">)</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #61afef">snprintf</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">buf</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #98c379">"</SPAN><SPAN style="COLOR: #d19a66">%d</SPAN><SPAN style="COLOR: #98c379">"</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #61afef">rand</SPAN><SPAN style="COLOR: #abb2bf">());</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ite</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">end</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">insert</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">ite</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e5c07b">V2type</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">buf</SPAN><SPAN style="COLOR: #abb2bf">));</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; }</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"construction, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"size()= "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">size</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #61afef">output_static_data</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">begin</SPAN><SPAN style="COLOR: #abb2bf">()));</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">NM</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">c21</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">);</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"copy, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">NM</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">c22</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">move</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">c2</SPAN><SPAN style="COLOR: #abb2bf">));</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"move copy, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">();</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">c21</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">swap</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">c22</SPAN><SPAN style="COLOR: #abb2bf">);</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"swap, milli-seconds : "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> (</SPAN><SPAN style="COLOR: #61afef">clock</SPAN><SPAN style="COLOR: #abb2bf">() </SPAN><SPAN style="COLOR: #56b6c2">-</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">timeStart</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">}</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3172.htm">Topic #3,172: &#31227;&#21160;&#35821;&#20041;&#23545;&#20110;&#23481;&#22120;&#30340;&#24615;&#33021;&#20248;&#21270;&#20027;&#35201;&#20307;&#29616;&#22312;&#20943;&#23569;&#20102;&#19981;&#24517;&#35201;&#30340;&#36164;&#28304;&#22797;&#21046;&#21644;&#20869;&#23384;&#20998;&#37197;&#25805;&#20316;&#65292;&#29305;&#21035;&#26159;&#22312;&#28041;&#21450;&#21040;&#22823;&#37327;&#20803;&#32032;&#30340;&#24773;&#20917;&#19979;&#65292;&#22914; vector &#20013;&#12290;&#19979;&#38754;&#26159;&#20960;&#20010;&#21407;&#22240;&#65306; &#36991;&#20813;&#19981;&#24517;&#35201;&#30340;&#25968;&#25454;&#22797;&#21046;&#65306;&#20256;&#32479;&#30340;&#25335;&#36125;&#25805; .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#31227;&#21160;&#35821;&#20041;&#23545;&#20110;&#23481;&#22120;&#30340;&#24615;&#33021;&#20248;&#21270;&#20027;&#35201;&#20307;&#29616;&#22312;&#20943;&#23569;&#20102;&#19981;&#24517;&#35201;&#30340;&#36164;&#28304;&#22797;&#21046;&#21644;&#20869;&#23384;&#20998;&#37197;&#25805;&#20316;&#65292;&#29305;&#21035;&#26159;&#22312;&#28041;&#21450;&#21040;&#22823;&#37327;&#20803;&#32032;&#30340;&#24773;&#20917;&#19979;&#65292;&#22914; <CODE><FONT face="Courier New">vector</FONT></CODE> &#20013;&#12290;&#19979;&#38754;&#26159;&#20960;&#20010;&#21407;&#22240;&#65306; 
+<P></P>
+<OL>
+<LI>
+<P><STRONG>&#36991;&#20813;&#19981;&#24517;&#35201;&#30340;&#25968;&#25454;&#22797;&#21046;</STRONG>&#65306;&#20256;&#32479;&#30340;&#25335;&#36125;&#25805;&#20316;&#20250;&#23558;&#28304;&#23545;&#35937;&#30340;&#20869;&#23481;&#22797;&#21046;&#21040;&#26032;&#23545;&#35937;&#20013;&#65292;&#36825;&#24847;&#21619;&#30528;&#38656;&#35201;&#20998;&#37197;&#26032;&#30340;&#20869;&#23384;&#24182;&#23558;&#25968;&#25454;&#20174;&#28304;&#23545;&#35937;&#22797;&#21046;&#21040;&#26032;&#23545;&#35937;&#12290;&#32780;&#31227;&#21160;&#35821;&#20041;&#20801;&#35768;&#22312;&#19981;&#22797;&#21046;&#25968;&#25454;&#30340;&#24773;&#20917;&#19979;&#36716;&#31227;&#36164;&#28304;&#30340;&#25152;&#26377;&#26435;&#65292;&#36825;&#26679;&#21487;&#20197;&#36991;&#20813;&#19981;&#24517;&#35201;&#30340;&#25968;&#25454;&#22797;&#21046;&#65292;&#25552;&#39640;&#20102;&#25928;&#29575;&#12290;</P>
+<LI>
+<P><STRONG>&#20943;&#23569;&#20869;&#23384;&#20998;&#37197;&#27425;&#25968;</STRONG>&#65306;&#24403;&#23481;&#22120;&#20013;&#30340;&#20803;&#32032;&#38656;&#35201;<SPAN class=clozed>&#21160;&#24577;&#22686;&#38271;</SPAN>&#26102;&#65292;&#20250;&#28041;&#21450;&#21040;&#20869;&#23384;&#37325;&#26032;&#20998;&#37197;&#30340;&#25805;&#20316;&#12290;&#20256;&#32479;&#30340;&#25335;&#36125;&#25805;&#20316;&#20250;&#23548;&#33268;&#27599;&#20010;&#20803;&#32032;&#37117;&#36827;&#34892;&#19968;&#27425;&#20869;&#23384;&#22797;&#21046;&#65292;&#32780;&#31227;&#21160;&#35821;&#20041;&#21017;&#21487;&#20197;&#30452;&#25509;&#23558;&#28304;&#23545;&#35937;&#30340;&#20869;&#37096;&#32531;&#20914;&#21306;&#25351;&#38024;&#31227;&#20132;&#32473;&#26032;&#23545;&#35937;&#65292;&#36991;&#20813;&#20102;&#39069;&#22806;&#30340;&#20869;&#23384;&#20998;&#37197;&#21644;&#37322;&#25918;&#25805;&#20316;&#65292;&#20174;&#32780;&#20943;&#23569;&#20102;&#20869;&#23384;&#20998;&#37197;&#27425;&#25968;&#12290;</P>
+<LI>
+<P><STRONG>&#25552;&#39640;&#23481;&#22120;&#30340;&#24615;&#33021;&#21644;&#25928;&#29575;</STRONG>&#65306;&#31227;&#21160;&#35821;&#20041;&#30340;&#24341;&#20837;&#20351;&#24471;&#23481;&#22120;&#30340;&#25805;&#20316;&#26356;&#21152;&#39640;&#25928;&#65292;&#29305;&#21035;&#26159;&#22312;&#22788;&#29702;&#22823;&#37327;&#20803;&#32032;&#26102;&#12290;&#36890;&#36807;&#31227;&#21160;&#32780;&#19981;&#26159;&#25335;&#36125;&#20803;&#32032;&#65292;&#21487;&#20197;&#22823;&#22823;&#20943;&#23569;&#20869;&#23384;&#20998;&#37197;&#21644;&#25968;&#25454;&#22797;&#21046;&#30340;&#24320;&#38144;&#65292;&#20174;&#32780;&#25552;&#39640;&#20102;&#23481;&#22120;&#30340;&#24615;&#33021;&#21644;&#25928;&#29575;&#12290;</P></LI></OL>
+<P>&#24635;&#30340;&#26469;&#35828;&#65292;&#31227;&#21160;&#35821;&#20041;&#23545;&#20110;&#23481;&#22120;&#30340;&#24615;&#33021;&#20248;&#21270;&#24040;&#22823;&#65292;&#29305;&#21035;&#26159;&#22312;&#28041;&#21450;&#21040;&#22823;&#37327;&#20803;&#32032;&#21644;&#39057;&#32321;&#30340;&#20869;&#23384;&#20998;&#37197;&#25805;&#20316;&#26102;&#65292;&#20854;&#20248;&#21183;&#26356;&#21152;&#26126;&#26174;&#12290;&#22240;&#27492;&#65292;&#22312;&#35774;&#35745;&#21644;&#20351;&#29992;&#23481;&#22120;&#26102;&#65292;&#21512;&#29702;&#22320;&#21033;&#29992;&#31227;&#21160;&#35821;&#20041;&#21487;&#20197;&#26174;&#33879;&#25552;&#21319;&#31243;&#24207;&#30340;&#24615;&#33021;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3167">Topic #3,167: forward&#65288;&#36716;&#21457;&#65289;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<FONT style="BACKGROUND-COLOR: #f9f5e9">&#30475;&#19981;&#25026;&#65306;</FONT></P>
+<P><B><B>&nbsp;<img alt="Image #500: instantpaste_2024-04-07_12_08_02" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/22/4424.jpg"></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3175.htm">Topic #3,175: &#23436;&#32654;&#36716;&#21457;&#30340;&#27010;&#24565;&#21644;&#21407;&#29702;&#65306; &#21160;&#26426;&#65306;C++&#20026;&#20160;&#20040;&#38656;&#35201;&#23436;&#32654;&#36716;&#21457;&#65311; &#20551;&#35774;&#26377;&#36825;&#26679;&#30340;&#24773;&#20917;&#65306;&#29992;&#25143;&#24076;&#26395;&#35843;&#29992;&#19968;&#20010;&#21517;&#20026; testForward &#30340;&#20989;&#25968;&#65292;&#35813;&#20989;&#25968;&#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#65292;&#21482;&#26159;&#31616;&#21333;&#22320;&#36716;&#35843;&#29992;&#21040; print &#20989;&#25968;&#12290; print &#20989;&#25968;&#26377;&#20004;&#20010;&#29256;&#26412;&#65306;&#19968;&#20010;&#25509;&#21463;&#24038;&#20540;&#24341;&#29992;&#65292;&#21478;&#19968;&#20010;&#25509;&#21463;&#21491;&#20540;&#24341;&#29992;&#12290; &#29992;&#25143;&#24076;&#26395;&#22312; testForward &#20013;&#65292;&#26080;&#35770;&#21442;&#25968;&#26159;&#24038;&#20540;&#36824;&#26159;&#21491;&#20540;&#65292;&#37117;&#33021;&#27491;&#30830;&#22320;&#35843;&#29992;&#30456;&#24212;&#29256;&#26412;&#30340; .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#23436;&#32654;&#36716;&#21457;&#30340;&#27010;&#24565;&#21644;&#21407;&#29702;&#65306; 
+<P></P>
+<OL>
+<LI>
+<P><STRONG>&#21160;&#26426;&#65306;C++&#20026;&#20160;&#20040;&#38656;&#35201;&#23436;&#32654;&#36716;&#21457;&#65311;</STRONG></P>
+<UL>
+<LI>&#20551;&#35774;&#26377;&#36825;&#26679;&#30340;&#24773;&#20917;&#65306;&#29992;&#25143;&#24076;&#26395;&#35843;&#29992;&#19968;&#20010;&#21517;&#20026;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#30340;&#20989;&#25968;&#65292;&#35813;&#20989;&#25968;&#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#65292;&#21482;&#26159;&#31616;&#21333;&#22320;&#36716;&#35843;&#29992;&#21040;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#12290; 
+<LI><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#26377;&#20004;&#20010;&#29256;&#26412;&#65306;&#19968;&#20010;&#25509;&#21463;&#24038;&#20540;&#24341;&#29992;&#65292;&#21478;&#19968;&#20010;&#25509;&#21463;&#21491;&#20540;&#24341;&#29992;&#12290; 
+<LI>&#29992;&#25143;&#24076;&#26395;&#22312;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#20013;&#65292;&#26080;&#35770;&#21442;&#25968;&#26159;&#24038;&#20540;&#36824;&#26159;&#21491;&#20540;&#65292;&#37117;&#33021;&#27491;&#30830;&#22320;&#35843;&#29992;&#30456;&#24212;&#29256;&#26412;&#30340;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#12290; 
+<LI>&#28982;&#32780;&#65292;&#30001;&#20110;&#21442;&#25968;&#22312;&#20989;&#25968;&#35843;&#29992;&#26102;&#37117;&#36716;&#21270;&#25104;&#20102;&#24038;&#20540;&#65292;&#23548;&#33268;&#20989;&#25968;&#26080;&#27861;&#21028;&#26029;&#24038;&#20540;&#21644;&#21491;&#20540;&#65292;&#20174;&#32780;&#26080;&#27861;&#23454;&#29616;&#29992;&#25143;&#30340;&#26412;&#24847;&#12290; 
+<LI>&#36825;&#23601;&#26159;&#23436;&#32654;&#36716;&#21457;&#30340;&#21160;&#26426;&#12290;</LI></UL>
+<LI>
+<P><STRONG>&#21407;&#29702;&#65306;&#23436;&#32654;&#36716;&#21457;</STRONG></P>
+<UL>
+<LI>&#23436;&#32654;&#36716;&#21457;&#22522;&#20110;&#19977;&#20010;&#20851;&#38190;&#27010;&#24565;&#65306; 
+<UL>
+<LI><STRONG>&#24341;&#29992;&#25240;&#21472;</STRONG>&#65306;&#23558;&#21491;&#20540;&#24341;&#29992;&#21644;&#24038;&#20540;&#24341;&#29992;&#25240;&#21472;&#25104;&#32479;&#19968;&#30340;&#31867;&#22411;&#12290; 
+<LI><STRONG>&#19975;&#33021;&#24341;&#29992;</STRONG>&#65306;&#20351;&#29992;&#27169;&#26495;&#31867;&#22411;&#25512;&#23548;&#26469;&#20445;&#25345;&#21442;&#25968;&#30340;&#21407;&#22987;&#31867;&#22411;&#12290; 
+<LI><STRONG><CODE><FONT face=NSimsun>std::forward</FONT></CODE></STRONG>&#65306;&#23558;&#21442;&#25968;&#24378;&#21046;&#36716;&#22411;&#25104;&#27491;&#30830;&#30340;&#31867;&#22411;&#65292;&#20197;&#23454;&#29616;&#23436;&#32654;&#36716;&#21457;&#12290;</LI></UL>
+<LI><CODE><FONT face=NSimsun>std::forward</FONT></CODE><SPAN>&nbsp;</SPAN>&#19981;&#26159;&#29420;&#33258;&#36816;&#20316;&#30340;&#65292;&#23427;&#38656;&#35201;&#24341;&#29992;&#25240;&#21472;&#26426;&#21046;&#21644;&#19975;&#33021;&#24341;&#29992;&#30340;&#37197;&#21512;&#12290; 
+<LI>&#36890;&#36807;&#27491;&#30830;&#30340;&#27169;&#26495;&#21442;&#25968;&#65292;<CODE><FONT face=NSimsun>std::forward</FONT></CODE><SPAN>&nbsp;</SPAN>&#36820;&#22238;<SPAN class=clozed>&#27491;&#30830;&#30340;&#31867;&#22411;&#65292;&#20351;&#24471;&#20989;&#25968;&#35843;&#29992;&#26102;&#33021;&#22815;&#21306;&#20998;&#24038;&#20540;&#21644;&#21491;&#20540;</SPAN>&#12290;</LI></UL>
+<LI>
+<P><STRONG>&#31034;&#20363;&#20195;&#30721;</STRONG>&#65306;</P><PRE><DIV><CODE class=language-cpp><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;</SPAN><SPAN> t</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>cout </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> </SPAN><SPAN class=token>"Lvalue ref"</SPAN><SPAN> </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>endl</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;&amp;</SPAN><SPAN> t</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>cout </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> </SPAN><SPAN class=token>"Rvalue ref"</SPAN><SPAN> </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>endl</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;&amp;</SPAN><SPAN> v</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#27704;&#36828;&#35843;&#29992;&#24038;&#20540;&#29256;&#26412;&#30340; print</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class="token generic-function">forward</SPAN><SPAN class="token generic-function generic">&lt;</SPAN><SPAN class="token generic-function generic">T</SPAN><SPAN class="token generic-function generic">&gt;</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#26412;&#25991;&#30340;&#37325;&#28857;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class=token>move</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#27704;&#36828;&#35843;&#29992;&#21491;&#20540;&#29256;&#26412;&#30340; print</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>int</SPAN><SPAN> </SPAN><SPAN class=token>main</SPAN><SPAN class=token>(</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>int</SPAN><SPAN> x </SPAN><SPAN class=token>=</SPAN><SPAN> </SPAN><SPAN class=token>1</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>x</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#23454;&#21442;&#20026;&#24038;&#20540;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class=token>move</SPAN><SPAN class=token>(</SPAN><SPAN>x</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#23454;&#21442;&#20026;&#21491;&#20540;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN></CODE></DIV></PRE>
+<UL>
+<LI>&#22312;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#20013;&#65292;&#21482;&#26377;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun><STRONG>print(std::forward&lt;T&gt;(v))</STRONG></FONT></CODE><SPAN>&nbsp;</SPAN>&#25165;&#31526;&#21512;&#29992;&#25143;&#30340;&#26412;&#24847;&#65292;&#23454;&#29616;&#20102;&#23436;&#32654;&#36716;&#21457;&#12290;</LI></UL></LI></OL>
+<P>&#24635;&#20043;&#65292;&#23436;&#32654;&#36716;&#21457;&#26159;&#19968;&#39033;&#24378;&#22823;&#30340;&#25216;&#26415;&#65292;&#33021;&#22815;&#22312;&#27867;&#22411;&#32534;&#31243;&#20013;&#20445;&#30041;&#21442;&#25968;&#30340;&#31867;&#22411;&#21644;&#20540;&#31867;&#21035;&#65292;&#25552;&#39640;&#20195;&#30721;&#24615;&#33021;&#21644;&#20934;&#30830;&#24615;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3309.htm">Topic #3,309: &#21015;&#34920;&#21021;&#22987;&#21270;&#65292;C++11&#26032;&#22686;&#65292;&#33021;&#20351;&#29992;&#23601;&#23613;&#37327;&#20351;&#29992;&#65292;&#22240;&#20026;&#23427;&#19981;&#20801;&#35768;&#8220;&#31364;&#21270;&#8221;&#65292;&#21363;&#19981;&#20801;&#35768;&#20002;&#22833;&#25968;&#25454;&#31934;&#24230;&#30340;&#38544;&#24335;&#31867;&#22411;&#36716;&#25442;</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#21015;&#34920;&#21021;&#22987;&#21270;&#65292;C++11&#26032;&#22686;&#65292;&#33021;&#20351;&#29992;&#23601;&#23613;&#37327;&#20351;&#29992;&#65292;&#22240;&#20026;&#23427;&#19981;&#20801;&#35768;&#8220;&#31364;&#21270;&#8221;&#65292;&#21363;&#19981;&#20801;&#35768;&#20002;&#22833;&#25968;&#25454;&#31934;&#24230;&#30340;<SPAN class=clozed>&#38544;&#24335;&#31867;&#22411;</SPAN>&#36716;&#25442;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3401.htm">Topic #3,401: C++11: Default Member Initializers &#31867;&#25104;&#21592;&#30340;&#23601;&#22320;&#21021;&#22987;&#21270;   1. What is Default Member Initializers (&#20160;&#20040;&#26159;&#23601;&#22320;&#21021;&#22987;&#21270;)   In C++03, only static const members of integral types could be initialized .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++11: Default Member Initializers 
+<P>&#31867;&#25104;&#21592;&#30340;&#23601;&#22320;&#21021;&#22987;&#21270; 
+<P></P>
+<P>1. What is Default Member Initializers (&#20160;&#20040;&#26159;&#23601;&#22320;&#21021;&#22987;&#21270;) 
+<P>In C++03, only static const members of integral types could be initialized in-class (&#22312;C++03&#26631;&#20934;&#20013;&#65292;&#21482;&#26377;<STRONG>&#38745;&#24577;&#24120;&#37327;&#25972;&#22411;</STRONG>&#25104;&#21592;&#25165;&#33021;&#22312;&#31867;&#20013;&#23601;&#22320;&#21021;&#22987;&#21270;)</P>
+<P>class X {</P>
+<P>&nbsp; static const int a = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ok</P>
+<P>&nbsp; const int b = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;: &#38750; static</P>
+<P>&nbsp; static int c = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;: &#38750; const</P>
+<P>&nbsp; static const string d = "odd"; // &#38169;&#35823;: &#38750;&#25972;&#22411;</P>
+<P>&nbsp; // ...</P>
+<P>};</P>
+<P>C++11 was to allow a non-static data member to be initialized where it is declared in its class (C++11&#26631;&#20934;&#20013;&#65292;&#38750;&#38745;&#24577;&#25104;&#21592;&#21487;&#20197;&#22312;&#23427;&#22768;&#26126;&#30340;&#26102;&#20505;&#21021;&#22987;&#21270;)</P>
+<P>&#8220;&#23601;&#22320;&#21021;&#22987;&#21270;&#8221;&#30340;&#26415;&#35821;&#30340;&#26469;&#28304;&#26377;&#22810;&#22788;:</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; &#23601;&#22320;&#21021;&#22987;&#21270;&#65306;&#12298;&#28145;&#20837;&#29702;&#35299;C++11&#12299;</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; In-class initializer : <A href="https://isocpp.org/">https://isocpp.org/</A></P>
+<P>(3)&nbsp;&nbsp;&nbsp;&nbsp; default member initializer : <A href="https://cppreference.com">https://cppreference.com</A></P>
+<P>&nbsp;</P>
+<P>2. Examples and Rules (&#20363;&#23376;&#21644;&#35268;&#21017;) 
+<P>class S {</P>
+<P>&nbsp; int m = 7; // ok, copy-initializes m </P>
+<P>&nbsp; int n(7);&nbsp; // &#38169;&#35823;&#65306;&#19981;&#20801;&#35768;&#29992;&#23567;&#25324;&#21495;&#21021;&#22987;&#21270; </P>
+<P>&nbsp; std::string s{'a', 'b', 'c'}; // ok, direct list-initializes s</P>
+<P>&nbsp; std::string t{"Constructor run"}; // ok</P>
+<P>&nbsp; int a[] = {1,2,3}; // <SPAN class=clozed>&#38169;&#35823;&#65306;&#25968;&#32452;&#31867;&#22411;&#25104;&#21592;&#19981;&#33021;&#33258;&#21160;&#25512;&#26029;&#22823;&#23567;</SPAN></P>
+<P>&nbsp; int b[3] = {1,2,3}; // ok</P>
+<P>&nbsp; // &#24341;&#29992;&#31867;&#22411;&#30340;&#25104;&#21592;&#20250;&#26377;&#19968;&#20123;&#39069;&#22806;&#38480;&#21046;</P>
+<P>public:</P>
+<P>&nbsp; S() { }</P>
+<P>};
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3566.htm">Topic #3,566: &#20026;&#20309;&#38656;&#35201;&#26500;&#36896;&#20989;&#25968;&#21021;&#22987;&#21270;&#21015;&#34920;</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+2. Why we need a Constructor Initializer Lists? (&#20026;&#20309;&#38656;&#35201;&#26500;&#36896;&#20989;&#25968;&#21021;&#22987;&#21270;&#21015;&#34920;)<BR>&nbsp;
+<P></P>
+<P>A data field is an object type (Object in Object / Embedded Object) (&#31867;&#30340;&#25968;&#25454;&#22495;&#26159;&#19968;&#20010;&#23545;&#35937;&#31867;&#22411;&#65292;&#34987;&#31216;&#20026;&#23545;&#35937;&#20013;&#30340;&#23545;&#35937;&#65292;&#25110;&#32773;&#20869;&#23884;&#23545;&#35937;)</P>
+<P>&nbsp;</P>
+<P>The embedded object must be constructed before the body of ctor is executed (&#20869;&#23884;<SPAN class=clozed>&#23545;&#35937;</SPAN>&#24517;&#39035;&#22312;&#34987;&#23884;&#23545;&#35937;&#30340;&#26500;&#36896;&#20989;&#25968;&#20307;&#25191;&#34892;&#21069;&#23601;&#26500;&#36896;&#23436;&#25104;)</P>
+<P>&nbsp;</P>
+<P>class Time { /* Code omitted */ }</P>
+<P>class Action {</P>
+<P>public:</P>
+<P>&nbsp; Action(int hour, int minute, int second) {</P>
+<P>&nbsp;&nbsp;&nbsp; time = Time(hour, minute, second); //time&#23545;&#35937;&#24212;&#35813;&#22312;&#26500;&#36896;&#20989;&#25968;&#20307;&#20043;&#21069;&#26500;&#36896;&#23436;&#25104;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>private:</P>
+<P>&nbsp; Time time;</P>
+<P>};</P>
+<P>Action a(11, 59, 30);
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3382">Topic #3,382: &#20195;&#29702;&#26500;&#36896;/&#22996;&#25176;&#26500;&#36896;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+What is delegating constructor? (&#20160;&#20040;&#26159;&#20195;&#29702;&#26500;&#36896;/&#22996;&#25176;&#26500;&#36896;)<BR>&nbsp;</P>
+<P>&#20195;&#29702;&#26500;&#36896;&#65306;One ctor can call another ctor (<STRONG>&#19968;&#20010;&#26500;&#36896;&#20989;&#25968;&#21487;&#20197;&#35843;&#29992;&#21478;&#22806;&#30340;&#26500;&#36896;&#20989;&#25968;</STRONG>)</P>
+<P>&nbsp;</P>
+<P>class A{</P>
+<P>public:&nbsp;&nbsp; </P>
+<P>&nbsp;&nbsp; A(): A(0){}</P>
+<P>&nbsp;&nbsp; A(int i): A(i, 0){}</P>
+<P>&nbsp;&nbsp; A(int i, int j) {</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; num1=i;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; num2=j;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; average=(num1+num2)/2;</P>
+<P>&nbsp;&nbsp; }</P>
+<P>private:</P>
+<P>&nbsp;&nbsp; int num1;</P>
+<P>&nbsp;&nbsp; int num2;</P>
+<P>&nbsp;&nbsp; int average;</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>&#19978;&#38754;&#20363;&#23376;&#20013;&#65292;&#26500;&#36896;&#20989;&#25968;&#30340;&#35843;&#29992;&#27425;&#24207;:</P>
+<P>A() &#224; A(int) &#224; A(int, int)
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3313">Topic #3,313: &#23613;&#37327;&#20351;&#29992;auto</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#23613;&#37327;&#20351;&#29992;auto&#65306;</P>
+<P><B><B><img style="HEIGHT: 338px; WIDTH: 835px" alt="Image #514: instantpaste_2024-04-10_11_48_40" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/12/24/3845.jpg" width=1066 height=427></B></B></P>
+<P><STRONG>nanoseconds : &#32435;&#31186;</STRONG>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3385.htm">Topic #3,385: decltype&#65288;&#33258;&#21160;&#31867;&#22411;&#25512;&#23548;&#65306;decltype&#20851;&#38190;&#23383;&#65289;</a></b> <font size="2">(2 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Automatic Type Deduction: decltype&#65288;&#33258;&#21160;&#31867;&#22411;&#25512;&#23548;&#65306;decltype&#20851;&#38190;&#23383;&#65289; 
+<P>1.&nbsp;&nbsp;&nbsp;&nbsp; &#20851;&#38190;&#23383;decltype&#30340;&#29992;&#27861; 
+<P>decltype&#21033;&#29992;&#24050;&#30693;&#31867;&#22411;&#22768;&#26126;&#26032;&#21464;&#37327;&#12290; 
+<P>&#26377;&#20102;auto&#65292;&#20026;&#20160;&#20040;&#36824;&#35201;&#25972;&#20986;&#19968;&#20010;decltype&#65311;&#21407;&#22240;&#26159;&#65292;&#25105;&#20204;&#26377;&#26102;&#20505;&#24819;&#35201;&#20174;&#34920;&#36798;&#24335;&#30340;&#31867;&#22411;&#25512;&#26029;&#20986;&#35201;&#23450;&#20041;&#30340;&#21464;&#37327;&#31867;&#22411;&#65292;&#20294;&#19981;&#24819;&#29992;&#35813;&#34920;&#36798;&#24335;&#30340;&#20540;&#21021;&#22987;&#21270;&#21464;&#37327;&#12290; 
+<P>decltype&#26159;&#22312;&#32534;&#35793;&#26399;&#25512;&#23548;&#19968;&#20010;&#34920;&#36798;&#24335;&#30340;&#31867;&#22411;&#65292;&#23427;&#21482;&#20570;&#38745;&#24577;&#20998;&#26512;&#65292;&#22240;&#27492;&#23427;&#19981;&#20250;&#23548;&#33268;&#24050;&#30693;&#31867;&#22411;&#34920;&#36798;&#24335;&#25191;&#34892;&#12290; 
+<P>decltype &#20027;&#35201;&#29992;&#20110;&#27867;&#22411;&#32534;&#31243;&#65288;&#27169;&#26495;&#65289;&nbsp; 
+<P>2.&nbsp;&nbsp;&nbsp;&nbsp; &#20195;&#30721;&#31034;&#20363; 
+<P>&nbsp;<B><B><img alt="Image #516: instantpaste_2024-04-18_16_44_25" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/15/20/4701.jpg"></B></B></P>
+<P>3.&nbsp;&nbsp;&nbsp;&nbsp; decltype&#19982;auto&#30340;&#23545;&#27604; 
+<P>decltype&#21644;auto&#37117;&#26159;C++11&#33258;&#21160;&#31867;&#22411;&#25512;&#23548;&#30340;&#20851;&#38190;&#23383;&#12290;&#23427;&#20204;&#26377;&#24456;&#22810;&#24046;&#21035;&#65306; 
+<P>auto&#24573;&#30053;&#26368;&#19978;&#23618;&#30340;const&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const 
+<P>auto&#24573;&#30053;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;&#65292;decltype&#21017;&#20445;&#30041;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992; 
+<P>&#23545;&#35299;&#24341;&#29992;&#25805;&#20316;&#65292;auto&#25512;&#26029;&#20986;&#21407;&#26377;&#31867;&#22411;&#65292;decltype&#25512;&#26029;&#20986;&#24341;&#29992; 
+<P>auto&#25512;&#26029;&#26102;&#20250;&#23454;&#38469;&#25191;&#34892;&#65292;decltype<SPAN class=clozed>&#19981;&#20250;&#25191;&#34892;&#65292;&#21482;&#20570;&#20998;&#26512;</SPAN>&#12290;&#24635;&#20043;&#22312;&#20351;&#29992;&#20013;&#36807;&#31243;&#20013;&#21644;<SPAN class=clozed>const&#12289;&#24341;&#29992;&#21644;&#25351;&#38024;</SPAN>&#32467;&#21512;&#26102;&#38656;&#35201;&#29305;&#21035;&#23567;&#24515;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3386.htm">Topic #3,386: auto&#24573;&#30053;&#26368;&#19978;&#23618;&#30340;const&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">// auto&#24573;&#30053;<SPAN class=clozed>&#26368;&#19978;&#23618;&#30340;const</SPAN>&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"></SPAN>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">main</SPAN><SPAN style="COLOR: #abb2bf">()</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">{</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">const</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#24573;&#30053;&#20102;&#39030;&#23618; const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">20</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; // &#21512;&#27861;&#65292;&#21487;&#20197;&#20462;&#25913; a &#30340;&#20540;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"a: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; decltype &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">decltype</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // b &#30340;&#31867;&#22411;&#20026; const int&#65292;&#20445;&#30041;&#20102;&#39030;&#23618; const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // b = 20; &nbsp; &nbsp; &nbsp; &nbsp;// &#38169;&#35823;&#65281;b &#26159;&#24120;&#37327;&#65292;&#26080;&#27861;&#20462;&#25913;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"b: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">return</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">}</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3388.htm">Topic #3,388: auto&#24573;&#30053;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;&#65292;decltype&#21017;&#20445;&#30041;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;  int main() {     int x = 10;     int& ref_x = x;       // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;     auto a = ref_x; // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#24573;&#30053;&#20102;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;     a = 20; .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">// auto&#24573;&#30053;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;&#65292;decltype&#21017;&#20445;&#30041;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992; </SPAN></DIV>
+<DIV><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">main</SPAN><SPAN style="COLOR: #abb2bf">() {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ref_x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ref_x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // a &#30340;&#31867;&#22411;&#20026; <SPAN class=clozed>int</SPAN>&#65292;&#24573;&#30053;&#20102;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">20</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // &#20462;&#25913; a &#30340;&#20540;&#19981;&#24433;&#21709;&#21407;&#26377;&#21464;&#37327; x</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"a: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 20</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"x: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 10</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; decltype &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">decltype</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">ref_x</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ref_x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // b &#30340;&#31867;&#22411;&#20026; int&amp;&#65292;&#20445;&#30041;&#20102;&#21407;&#26377;&#31867;&#22411;&#30340;&#24341;&#29992;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">30</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// &#20462;&#25913; b &#30340;&#20540;&#20250;&#24433;&#21709;&#21407;&#26377;&#21464;&#37327; x</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"b: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 30</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"x: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 30</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">return</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">}</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3390.htm">Topic #3,390: &#23545;&#35299;&#24341;&#29992;&#25805;&#20316;&#65292;auto&#25512;&#26029;&#20986;&#21407;&#26377;&#31867;&#22411;&#65292;decltype&#25512;&#26029;&#20986;&#24341;&#29992;   int main() {     int x = 10;     int* ptr = &x;       // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;     auto a = *ptr; // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#25512;&#26029;&#20986;&#21407;&#26377;&#31867;&#22411;     a = 20;        // &#20462;&#25913; a .</a></b> <font size="2">(2 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">// &#23545;&#35299;&#24341;&#29992;&#25805;&#20316;&#65292;auto&#25512;&#26029;&#20986;&#21407;&#26377;&#31867;&#22411;&#65292;decltype&#25512;&#26029;&#20986;<SPAN class=clozed><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&#24341;&#29992;</SPAN></SPAN></SPAN><BR></DIV>
+<DIV><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">main</SPAN><SPAN style="COLOR: #abb2bf">() {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ptr</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">ptr</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#25512;&#26029;&#20986;&#21407;&#26377;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">20</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// &#20462;&#25913; a &#30340;&#20540;&#19981;&#24433;&#21709;&#21407;&#26377;&#21464;&#37327; x</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"a: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 20</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"x: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 10</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; decltype &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">decltype</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">ptr</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">ptr</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // b &#30340;&#31867;&#22411;&#20026; <SPAN class=clozed>int&amp;&#65292;&#25512;&#26029;&#20986;&#24341;&#29992;</SPAN></SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">30</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// &#20462;&#25913; b &#30340;&#20540;&#20250;&#24433;&#21709;&#21407;&#26377;&#21464;&#37327; x</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"b: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 30</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"x: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // &#36755;&#20986; 30</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">return</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">}</SPAN></DIV><BR></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3395">Topic #3,395: C++11 Raw String literals (C++11&#8220;&#21407;&#22987;/&#29983;&#8221;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)   &#20174;&#21517;&#23383;&#19978;&#23601;&#21487;&#20197;&#30475;&#20986;&#65292;&#36825;&#31181;&#8220;Raw String literals&#8221;&#24212;&#35813;&#38271;&#24471;&#24456;&#21407;&#22987;&#12290;&#37027;&#20040;&#36825;&#20010;&#21407;&#22987;&#35813;&#24590;&#20040;&#20307;&#29616;&#20986;&#26469;&#21602;&#65311;&#25105;&#20204;&#36890;&#36807;&#35821;&#27861;&#21644;&#31616;&#21333;&#31034;&#20363;&#23601;&#33021;&#30475;&#20986;&#26469;&#12290;   &#35821;&#27861;:  R "delimiter( raw_characters )delimiter" .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++11 Raw String literals (C++11&#8220;&#21407;&#22987;/&#29983;&#8221;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)<BR>&nbsp;</P>
+<P>&#20174;&#21517;&#23383;&#19978;&#23601;&#21487;&#20197;&#30475;&#20986;&#65292;&#36825;&#31181;&#8220;Raw String literals&#8221;&#24212;&#35813;&#38271;&#24471;&#24456;&#21407;&#22987;&#12290;&#37027;&#20040;&#36825;&#20010;&#21407;&#22987;&#35813;&#24590;&#20040;&#20307;&#29616;&#20986;&#26469;&#21602;&#65311;&#25105;&#20204;&#36890;&#36807;&#35821;&#27861;&#21644;&#31616;&#21333;&#31034;&#20363;&#23601;&#33021;&#30475;&#20986;&#26469;&#12290;</P>
+<P>&nbsp;</P>
+<P>&#35821;&#27861;:&nbsp; R "delimiter( raw_characters )delimiter"</P>
+<P>&nbsp;</P>
+<P>#include &lt;iostream&gt;</P>
+<P>const char* s1 = R"(Hello</P>
+<P>World)";</P>
+<P>// s1&#25928;&#26524;&#19982;&#19979;&#38754;&#30340;s2&#21644;s3&#30456;&#21516;</P>
+<P>const char* s2 = "Hello\nWorld";</P>
+<P>const char* s3 = R"NoUse(Hello</P>
+<P>World)NoUse";</P>
+<P>int main(){</P>
+<P>&nbsp; std::cout &lt;&lt; s1 &lt;&lt; std::endl;</P>
+<P>&nbsp; std::cout &lt;&lt; s2 &lt;&lt; std::endl;</P>
+<P>&nbsp; std::cout &lt;&lt; s3 &lt;&lt; std::endl;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&#20174;&#20363;&#23376;&#20013;&#30475;&#20986;&#65292;&#8220;Raw String literals&#8221;&#22312;&#31243;&#24207;&#20013;&#20889;&#25104;&#20160;&#20040;&#26679;&#23376;&#65292;&#36755;&#20986;&#20043;&#21518;&#23601;&#26159;&#20160;&#20040;&#26679;&#23376;&#12290;&#25105;&#20204;&#19981;&#38656;&#35201;&#20026;&#8220;Raw String literals&#8221;&#20013;&#30340;&#25442;&#34892;&#12289;&#21452;&#24341;&#21495;&#31561;&#29305;&#27530;&#23383;&#31526;&#36827;&#34892;&#36716;&#20041;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3396.htm">Topic #3,396: C++14: String Literals (C++14&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)   C++14&#23558;&#36816;&#31639;&#31526;  ""s &#36827;&#34892;&#20102;&#37325;&#36733;&#65292;&#36171;&#20104;&#20102;&#23427;&#26032;&#30340;&#21547;&#20041;&#65292;&#20351;&#24471;&#29992;&#36825;&#31181;&#36816;&#31639;&#31526;&#25324;&#36215;&#26469;&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;&#65292;&#33258;&#21160;&#21464;&#25104;&#20102;&#19968;&#20010; std::string &#31867;&#22411;&#30340;&#23545;&#35937;&#12290;   auto hello = "Hello!"s;              // hello is of std .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++14: String Literals (C++14&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)<BR>&nbsp;</P>
+<P>C++14&#23558;&#36816;&#31639;&#31526;&nbsp; ""s &#36827;&#34892;&#20102;&#37325;&#36733;&#65292;&#36171;&#20104;&#20102;&#23427;&#26032;&#30340;&#21547;&#20041;&#65292;&#20351;&#24471;&#29992;&#36825;&#31181;&#36816;&#31639;&#31526;&#25324;&#36215;&#26469;&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;&#65292;&#33258;&#21160;&#21464;&#25104;&#20102;&#19968;&#20010; std::string &#31867;&#22411;&#30340;&#23545;&#35937;&#12290;</P>
+<P>&nbsp;</P>
+<P>auto hello = "Hello!"s;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // hello is of std::string type</P>
+<P>auto hello = std::string{"Hello!"};&nbsp; // equals to the above</P>
+<P>auto hello = "Hello!";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // hello is of <SPAN class=clozed>const char*</SPAN> type</P>
+<P>&nbsp;</P>
+<P>&#19968;&#20010;&#20363;&#23376;&#65288;&#26469;&#33258;&#20110;cppreference.com&#65289;</P>
+<P>&nbsp;</P>
+<P>#include &lt;string&gt;</P>
+<P>#include &lt;iostream&gt;</P>
+<P>int main() {</P>
+<P>&nbsp; using namespace std::string_literals;</P>
+<P>&nbsp; std::string s1 = "abc\0\0def"; </P>
+<P>&nbsp; std::string s2 = "abc\0\0def"s;</P>
+<P>&nbsp; std::cout &lt;&lt; "s1: " &lt;&lt; s1.size() &lt;&lt; " \"" &lt;&lt; s1 &lt;&lt; "\"\n";</P>
+<P>&nbsp; std::cout &lt;&lt; "s2: " &lt;&lt; s2.size() &lt;&lt; " \"" &lt;&lt; s2 &lt;&lt; "\"\n";</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&#19978;&#38754;&#20363;&#23376;&#30340;&#19968;&#20010;&#21487;&#33021;&#36755;&#20986;&#32467;&#26524;&#22914;&#19979;&#65306;</P>
+<P>&nbsp;</P>
+<P>s1: 3 "abc"</P>
+<P>s2: 8 "<A href="mailto:abc^@^@def">abc^@^@def</A>"
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3398.htm">Topic #3,398: Structured Binding Declaration for Array &#29992;&#20110;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;     1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)   1.1. It's a declaration statement, which means some .</a></b> <font size="2">(3 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Structured Binding Declaration for Array 
+<P>&#29992;&#20110;<SPAN class=clozed>&#25968;&#32452;</SPAN>&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126; 
+<P>1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>1.1. It's a declaration statement, which means some identifiers are declared and initialized (&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;&#26159;&#19968;&#20010;&#22768;&#26126;&#35821;&#21477;&#65292;&#24847;&#21619;&#30528;&#22768;&#26126;&#20102;&#19968;&#20123;&#26631;&#35782;&#31526;&#24182;&#23545;&#26631;&#35782;&#31526;&#20570;&#20102;&#21021;&#22987;&#21270;)&#12290;&#22312;C++17&#20013;&#24341;&#20837; 
+<P>1.2. Binds the specified names to subobjects or elements of the initializer. (&#23558;&#25351;&#23450;&#30340;&#19968;&#20123;&#21517;&#23383;&#32465;&#23450;&#21040;&#21021;&#22987;&#21270;&#22120;&#30340;&#23376;&#23545;&#35937;&#25110;&#32773;&#20803;&#32032;&#19978;) 
+<P>1.3. &#24418;&#24577; 
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] = &#34920;&#36798;&#24335;;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] { &#34920;&#36798;&#24335; };</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] ( &#34920;&#36798;&#24335; );</P>
+<P>4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto: &#21487;&#33021;&#30001;const/volatile&#20462;&#39280;&#30340;auto&#20851;&#38190;&#23383;</P>
+<P>5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;/&amp;&amp; &#24038;&#20540;&#24341;&#29992;&#25110;&#32773;&#21491;&#20540;&#24341;&#29992;</P>
+<P>6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#21015;&#34920;&#65306;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#35782;&#31526;</P>
+<P>2. Structured Binding Declaration for Array(&#29992;&#20110;&#21407;&#29983;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)&nbsp; 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;&#25968;&#32452;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; int priArr [] {42, 21, 7};</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; // ai / bi / ci &#30340;&#22522;&#26412;&#31867;&#22411;&#37117;&#26159;int&#65292;&#21482;&#26159;cv&#26631;&#35782;&#25110;&#24341;&#29992;&#26631;&#35782;&#19981;&#21516;</P>
+<P>&nbsp; auto [a1, a2, a3] = priArr; // a1 &#26159; priArr[0] &#30340;&#25335;&#36125;&#65292;a2, a3&#31867;&#25512;</P>
+<P>&nbsp; const auto [b1, b2, b3] (priArr); // b1 &#26159; priArr[0] &#30340;<SPAN class=clozed>&#21482;&#35835;&#25335;&#36125;</SPAN>&#65292;b2, b3&#31867;&#25512;</P>
+<P>&nbsp; auto &amp;[c1, c2, c3] {priArr}; // c1 &#26159; priArr[0] &#30340;<SPAN class=clozed>&#24341;&#29992;</SPAN>&#65292;c2, c3&#31867;&#25512;</P>
+<P>&nbsp; c3 = 14;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // priArr[2]&#30340;&#20540;&#21464;&#20026;14</P>
+<P>&nbsp; return 0;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>3. Structured Binding Declaration for std::array(&#29992;&#20110;std::array&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;std::array&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;std::array&#20013;&#30340;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; std::array stdArr = {'a','b','c'};</P>
+<P>&nbsp; auto [d1, d2, d3] {stdArr};</P>
+<P>&nbsp; return 0;</P>
+<P>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3400">Topic #3,400: Structured Binding Declaration for Object Data Members &#29992;&#20110;&#23545;&#35937;&#25968;&#25454;&#25104;&#21592;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;   1. Structured Binding Declaration for Data Members(&#29992;&#20110;&#25968;&#25454;&#25104;&#21592;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)   &#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#31867;/&#32467;&#26500;&#20307;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#31867; .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Structured Binding Declaration for Object Data Members 
+<P>&#29992;&#20110;&#23545;&#35937;&#25968;&#25454;&#25104;&#21592;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126; 
+<P>1. Structured Binding Declaration for Data Members(&#29992;&#20110;&#25968;&#25454;&#25104;&#21592;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#31867;/&#32467;&#26500;&#20307;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#31867;/&#32467;&#26500;&#20307;&#30340;&#38750;&#38745;&#24577;&#25968;&#25454;&#25104;&#21592;&#19978;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#25968;&#25454;&#25104;&#21592;&#24517;&#39035;&#20026;&#20844;&#26377;&#25104;&#21592;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;&#25968;&#25454;&#25104;&#21592;&#30340;&#25968;&#37327;</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;&#25968;&#25454;&#25104;&#21592;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>class C {&nbsp; // &#21487;&#20197;&#25913;&#29992; struct C&#65292;&#28982;&#21518;&#21435;&#25481;&#19979;&#38754;&#30340;public&#23646;&#24615;&#35828;&#26126;</P>
+<P>public:</P>
+<P>&nbsp; int i { 420 }; // &#23601;&#22320;&#21021;&#22987;&#21270;</P>
+<P>&nbsp; char ca[ 3 ] { 'O', 'K', '!' };</P>
+<P>};</P>
+<P>int main() {</P>
+<P>&nbsp; C c;</P>
+<P>&nbsp; auto [a1, a2] {c}; // a1&#26159;int&#31867;&#22411;&#65292;a2&#26159;char[]&#31867;&#22411;</P>
+<P>&nbsp; std::cout &lt;&lt; "c.i:" &lt;&lt; a1 &lt;&lt; " c.ca:" &lt;&lt; b2 &lt;&lt; std::endl;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>2. More Examples 
+<P>&nbsp;</P>
+<P>auto&#21518;&#36319;&amp;&#65292;&#21017;&#26631;&#35782;&#31526;&#26159;&#25968;&#25454;&#25104;&#21592;&#30340;&#24341;&#29992;</P>
+<P>auto&#21069;&#21487;&#25918;&#32622;const&#65292;&#34920;&#26126;&#26631;&#35782;&#31526;&#26159;&#21482;&#35835;&#30340;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; C c; // c.i: 420;&nbsp; c.ca: 'O','K','!'</P>
+<P>&nbsp; auto [a1, a2] {c}; // a1&#26159;c.i&#30340;&#25335;&#36125;&#65292;a2&#26159;char[]&#31867;&#22411;</P>
+<P>&nbsp; auto&amp; [b1, b2] {c}; // b1&#26159;int&amp;&#31867;&#22411;&#65292;&#26159;c.i&#30340;&#24341;&#29992;&#65292;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // b2&#26159;char(&amp;)[3]&#31867;&#22411;(&#25968;&#32452;&#30340;&#24341;&#29992;)&#65292;&#26159;c.ca&#30340;&#24341;&#29992;</P>
+<P>&nbsp; a1 = 100;</P>
+<P>&nbsp; std::cout &lt;&lt; "c.i:" &lt;&lt; c.i &lt;&lt; std::endl; // &#36755;&#20986;420&#65292;&#25913;a1&#19981;&#24433;&#21709;c.i</P>
+<P>&nbsp; b1 = 200;</P>
+<P>&nbsp; std::cout &lt;&lt; "c.i:" &lt;&lt; c.i &lt;&lt; std::endl; // &#36755;&#20986;200&#65292;&#36890;&#36807;b1&#20462;&#25913;&#20102;c.i</P>
+<P>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3407.htm">Topic #3,407: C++11: Using override and final C++11&#65306;&#20351;&#29992;override&#21644;final     1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889;   C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#34394;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;     class A { public:   virtual void foo() {}   void bar() .</a></b> <font size="2">(2 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++11: Using override and final 
+<P>C++11&#65306;&#20351;&#29992;override&#21644;final 
+<P>&nbsp;</P>
+<P>1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889; 
+<P>C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#65288;&#34394;&#65289;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;</P>
+<P>&nbsp;</P>
+<P>class A {</P>
+<P>public:</P>
+<P>&nbsp; virtual void foo() {}</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>class B : public A {</P>
+<P>public:</P>
+<P>&nbsp; void foo() const override { // &#38169;&#35823;&#65306; B::foo &#19981;&#35206;&#20889; A::foo</P>
+<P>&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#65288;&#31614;&#21517;&#19981;&#21305;&#37197;&#65289;</P>
+<P>&nbsp; void foo() override;&nbsp;&nbsp; // OK &#65306; B::foo &#35206;&#20889; A::foo</P>
+<P>&nbsp; void bar() override {} // <SPAN class=clozed>&#38169;&#35823;&#65306; A::bar &#38750;&#34394;</SPAN></P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>override&#30340;&#20215;&#20540;&#22312;&#20110;&#65306;&#36991;&#20813;&#31243;&#24207;&#21592;&#22312;&#35206;&#20889;&#26102;&#38169;&#21629;&#21517;&#25110;&#26080;&#34394;&#20989;&#25968;&#23548;&#33268;&#38544;&#34255;bug</P>
+<P>&nbsp;</P>
+<P>2. final &#26174;&#24335;&#22768;&#26126;&#31105;&#27490;&#35206;&#20889; 
+<P>&nbsp;</P>
+<P>C++11&#24341;&#20837;final&#29305;&#27530;&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#27966;&#29983;&#31867;&#19981;&#33021;&#35206;&#20889;&#34394;&#20989;&#25968;</P>
+<P>&nbsp;</P>
+<P>struct Base {</P>
+<P>&nbsp;&nbsp;&nbsp; virtual void foo();</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct A : Base</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() final; // A::foo &#34987;&#35206;&#20889;&#19988;<SPAN class=clozed>&#26159;&#26368;&#32456;&#35206;&#20889;</SPAN>&nbsp;&nbsp;&nbsp; </P>
+<P>void bar() final; // &#38169;&#35823;&#65306;&#38750;&#34394;&#20989;&#25968;&#19981;&#33021;&#34987;&#35206;&#20889;&#25110;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct B final : A // struct B &#20026; final&#65292;&#19981;&#33021;&#34987;&#32487;&#25215;</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() override; // &#38169;&#35823;&#65306; foo &#19981;&#33021;&#34987;&#35206;&#20889;&#65292;&#22240;&#20026;&#23427;&#22312; A &#20013;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct&#21487;&#19982;class&#20114;&#25442;&#65307;&#24046;&#21035;&#22312;&#20110;struct&#30340;&#40664;&#35748;&#35775;&#38382;&#23646;&#24615;&#26159;public
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3478.htm">Topic #3,478: &#20351;&#29992;emplace&#25805;&#20316; &#26032;&#26631;&#20934;&#24341;&#20837;&#20102;&#19977;&#20010;&#26032;&#25104;&#21592;&#8212;&#8212;emplace_ front&#12289;emplace&#21644;emplace_ back, &#36825;&#20123;&#25805;&#20316;&#26500;&#36896;&#32780;&#19981;&#26159;&#25335;&#36125;&#20803;&#32032;&#12290;&#36825;&#20123;&#25805;&#20316;&#20998;&#21035;&#23545;&#24212;push_ front&#12289;insert&#21644;push_back, &#20801;&#35768;&#25105;&#20204;&#23558;&#20803;&#32032;&#25918;&#32622;&#22312;&#23481;&#22120;&#22836;&#37096;&#12289;&#19968;&#20010;&#25351;&#23450;&#20301;&#32622;&#20043;&#21069;&#25110;&#23481;&#22120;&#23614;&#37096;&#12290; .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#20351;&#29992;emplace&#25805;&#20316; 
+<P></P>
+<P>&#26032;&#26631;&#20934;&#24341;&#20837;&#20102;&#19977;&#20010;&#26032;&#25104;&#21592;&#8212;&#8212;emplace_ front&#12289;emplace&#21644;emplace_ back, &#36825;&#20123;&#25805;&#20316;&#26500;&#36896;&#32780;&#19981;&#26159;&#25335;&#36125;&#20803;&#32032;&#12290;&#36825;&#20123;&#25805;&#20316;&#20998;&#21035;&#23545;&#24212;push_ front&#12289;<SPAN class=clozed>insert</SPAN>&#21644;push_back, &#20801;&#35768;&#25105;&#20204;&#23558;&#20803;&#32032;&#25918;&#32622;&#22312;&#23481;&#22120;&#22836;&#37096;&#12289;&#19968;&#20010;&#25351;&#23450;&#20301;&#32622;&#20043;&#21069;&#25110;&#23481;&#22120;&#23614;&#37096;&#12290;</P>
+<P>&#24403;&#35843;&#29992;push&#25110;insert&#25104;&#21592;&#20989;&#25968;&#26102;&#65292;<STRONG>&#25105;&#20204;&#23558;&#20803;&#32032;&#31867;&#22411;&#30340;&#23545;&#35937;&#20256;&#36882;&#32473;&#23427;&#20204;&#65292;&#36825;&#20123;&#23545;&#35937;&#34987;&#25335;&#36125;&#21040;&#23481;&#22120;&#20013;</STRONG>&#12290;&#32780;&#24403;&#25105;&#20204;&#35843;&#29992;&#19968;&#20010;emplace&#25104;&#21592;&#20989;&#25968;&#26102;&#65292;&#21017;&#26159;&#23558;&#21442;&#25968;&#20256;&#36882;&#32473;&#20803;&#32032;&#31867;&#22411;&#30340;&#26500;&#36896;&#20989;&#25968;&#12290;emplace&#25104;&#21592;&#20351;&#29992;&#36825;&#20123;&#21442;&#25968;&#22312;&#23481;&#22120;&#31649;&#29702;&#30340;&#20869;&#23384;&#31354;&#38388;&#20013;<STRONG>&#30452;&#25509;&#26500;&#36896;&#20803;&#32032;</STRONG>&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3479.htm">Topic #3,479: &#22312;&#33539;&#22260;for&#24490;&#29615;&#20013;&#20351;&#29992;initializer_list&#23545;&#35937;&#26102;&#65292;&#36890;&#24120;&#24212;&#35813;&#23558;&#24490;&#29615;&#25511;&#21046;&#21464;&#37327;&#22768;&#26126;&#20026;const&#24341;&#29992;&#31867;&#22411;&#12290; Initializer_list&#23545;&#35937;&#26159;&#19968;&#20010;&#36731;&#37327;&#32423;&#30340;&#23545;&#35937;&#65292;&#23427;&#26412;&#36136;&#19978;&#26159;&#19968;&#20010;&#25968;&#32452;&#65292;&#24182;&#19988;&#20854;&#20803;&#32032;&#26159;&#24120;&#37327;&#12290;&#22240;&#27492;&#65292;&#24403;&#20351;&#29992;&#33539;&#22260;for&#24490;&#29615;&#36845;&#20195;initializer .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<P style='BOX-SIZING: border-box; FONT-SIZE: 16px; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: S&#246;hne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; BORDER-RIGHT: rgb(227,227,227) 0px solid; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; BORDER-BOTTOM: rgb(227,227,227) 0px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(13,13,13); FONT-STYLE: normal; BORDER-LEFT: rgb(227,227,227) 0px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.25em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>&#22312;&#33539;&#22260;for&#24490;&#29615;&#20013;&#20351;&#29992;initializer_list&#23545;&#35937;&#26102;&#65292;&#36890;&#24120;&#24212;&#35813;&#23558;&#24490;&#29615;&#25511;&#21046;&#21464;&#37327;&#22768;&#26126;&#20026;<SPAN class=clozed>const&#24341;&#29992;</SPAN>&#31867;&#22411;&#12290;</P>
+<P style='BOX-SIZING: border-box; FONT-SIZE: 16px; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: S&#246;hne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; BORDER-RIGHT: rgb(227,227,227) 0px solid; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; BORDER-BOTTOM: rgb(227,227,227) 0px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(13,13,13); FONT-STYLE: normal; BORDER-LEFT: rgb(227,227,227) 0px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 1.25em 0px; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>Initializer_list&#23545;&#35937;&#26159;&#19968;&#20010;&#36731;&#37327;&#32423;&#30340;&#23545;&#35937;&#65292;&#23427;&#26412;&#36136;&#19978;&#26159;&#19968;&#20010;&#25968;&#32452;&#65292;&#24182;&#19988;&#20854;&#20803;&#32032;&#26159;&#24120;&#37327;&#12290;&#22240;&#27492;&#65292;&#24403;&#20351;&#29992;&#33539;&#22260;for&#24490;&#29615;&#36845;&#20195;initializer_list&#23545;&#35937;&#26102;&#65292;&#22914;&#26524;&#19981;&#23558;&#24490;&#29615;&#25511;&#21046;&#21464;&#37327;&#22768;&#26126;&#20026;&#24341;&#29992;&#31867;&#22411;&#65292;&#21017;&#20250;&#36827;&#34892;&#20803;&#32032;&#30340;&#22797;&#21046;&#25805;&#20316;&#65292;&#36825;&#21487;&#33021;&#20250;&#24102;&#26469;&#19981;&#24517;&#35201;&#30340;&#24615;&#33021;&#24320;&#38144;&#65292;&#23588;&#20854;&#26159;&#24403;initializer_list&#23545;&#35937;&#20013;&#21253;&#21547;&#22823;&#37327;&#20803;&#32032;&#26102;&#12290;&#36890;&#36807;&#23558;&#24490;&#29615;&#25511;&#21046;&#21464;&#37327;&#22768;&#26126;&#20026;const&#24341;&#29992;&#31867;&#22411;&#65292;&#21487;&#20197;&#36991;&#20813;&#36825;&#31181;&#22797;&#21046;&#25805;&#20316;&#65292;&#25552;&#39640;&#31243;&#24207;&#30340;&#25928;&#29575;&#12290;</P>
+<P style='BOX-SIZING: border-box; FONT-SIZE: 16px; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: S&#246;hne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; BORDER-RIGHT: rgb(227,227,227) 0px solid; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; BORDER-BOTTOM: rgb(227,227,227) 0px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(13,13,13); FONT-STYLE: normal; BORDER-LEFT: rgb(227,227,227) 0px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 1.25em 0px 0px; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>&#22240;&#27492;&#65292;&#36890;&#24120;&#24314;&#35758;&#22312;&#20351;&#29992;initializer_list&#23545;&#35937;&#26102;&#65292;&#23558;&#24490;&#29615;&#25511;&#21046;&#21464;&#37327;&#22768;&#26126;&#20026;const&#24341;&#29992;&#31867;&#22411;&#65292;&#20197;&#26368;&#22823;&#31243;&#24230;&#22320;&#20943;&#23569;&#19981;&#24517;&#35201;&#30340;&#22797;&#21046;&#25805;&#20316;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

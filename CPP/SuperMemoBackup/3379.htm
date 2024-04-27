@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time. (constexpr说明符声明可在编译时计算函数或变量的值) constexpr int max(int a .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time. (constexpr说明符声明可在编译时计算函数或变量的值) constexpr int max(int a .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: constexpr specifier declares that it is possible to ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: constexpr specifier declares that it is possible to ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3165.htm"> - Next</a> - <a href="3163.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3165.htm">Next sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time. (constexpr说明符声明可在编译时计算函数或变量的值) constexpr int max(int a .</li>
+<ol>
+<li>constexpr可在编译时计算函数或变量的值  constexpr int max(int a , int b) { if (a > b) return a;   // c++14才允许constexpr函数中有分支循环等    else return b; } int main()  {   int m = 1;   const int rcm . (see <a href="#3380">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,379: constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time. (constexpr&#35828;&#26126;&#31526;&#22768;&#26126;&#21487;&#22312;&#32534;&#35793;&#26102;&#35745;&#31639;&#20989;&#25968;&#25110;&#21464;&#37327;&#30340;&#20540;) constexpr int max(int a .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+constexpr&#21487;&#22312;&#32534;&#35793;&#26102;&#35745;&#31639;&#20989;&#25968;&#25110;&#21464;&#37327;&#30340;&#20540; 
+<P></P>
+<P>constexpr int max(int a , int b) {</P>
+<P>if (a &gt; b) return a;&nbsp;&nbsp; // c++14&#25165;&#20801;&#35768;constexpr&#20989;&#25968;&#20013;&#26377;&#20998;&#25903;&#24490;&#29615;&#31561;&nbsp;&nbsp; </P>
+<P>else return b;</P>
+<P>}</P>
+<P>int main() </P>
+<P>{&nbsp; </P>
+<P>int m = 1;&nbsp; </P>
+<P>const int rcm = m++;&nbsp;&nbsp; // rcm&#26159;<SPAN class=clozed>&#36816;&#34892;&#26399;</SPAN>&#24120;&#37327;&nbsp; </P>
+<P>const int cm = 4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#32534;&#35793;&#26399;&#24120;&#37327;&#65292;&#31561;&#20215;&#20110;: constexpr int cm = 4;&nbsp;&nbsp; </P>
+<P>int a1[ max(m , rcm)]; // &#38169;&#35823;&#65306;m &amp; rcm &#19981;&#26159;&#32534;&#35793;&#26399;&#24120;&#37327;&nbsp; </P>
+<P>std::array&lt;char , max(cm , 5)&gt; a2; // OK: cm &#21644; 5 &#26159;&#32534;&#35793;&#26399;&#24120;&#37327;</P>
+<P>}</P>
+<P></P>
+<P>constexpr&#29992;&#27861;&#26377;&#38750;&#24120;&#22810;&#30340;&#32454;&#33410;&#65288;cppreference.com &#21015;&#20986;&#20102;30 &#22810;&#20010;&#26465;&#30446;&#65289;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3380">Item #3,380: constexpr&#21487;&#22312;&#32534;&#35793;&#26102;&#35745;&#31639;&#20989;&#25968;&#25110;&#21464;&#37327;&#30340;&#20540;  constexpr int max(int a , int b) { if (a > b) return a;   // c++14&#25165;&#20801;&#35768;constexpr&#20989;&#25968;&#20013;&#26377;&#20998;&#25903;&#24490;&#29615;&#31561;    else return b; } int main()  {   int m = 1;   const int rcm .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+constexpr&#21487;&#22312;&#32534;&#35793;&#26102;&#35745;&#31639;&#20989;&#25968;&#25110;&#21464;&#37327;&#30340;&#20540; 
+<P></P>
+<P>constexpr int max(int a , int b) {</P>
+<P>if (a &gt; b) return a;&nbsp;&nbsp; // c++14&#25165;&#20801;&#35768;constexpr&#20989;&#25968;&#20013;&#26377;&#20998;&#25903;&#24490;&#29615;&#31561;&nbsp;&nbsp; </P>
+<P>else return b;</P>
+<P>}</P>
+<P>int main() </P>
+<P>{&nbsp; </P>
+<P>int m = 1;&nbsp; </P>
+<P>const int rcm = m++;&nbsp;&nbsp; // rcm&#26159;<SPAN class=cloze>[...]</SPAN>&#24120;&#37327;&nbsp; </P>
+<P>const int cm = 4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#32534;&#35793;&#26399;&#24120;&#37327;&#65292;&#31561;&#20215;&#20110;: constexpr int cm = 4;&nbsp;&nbsp; </P>
+<P>int a1[ max(m , rcm)]; // &#38169;&#35823;&#65306;m &amp; rcm &#19981;&#26159;&#32534;&#35793;&#26399;&#24120;&#37327;&nbsp; </P>
+<P>std::array&lt;char , max(cm , 5)&gt; a2; // OK: cm &#21644; 5 &#26159;&#32534;&#35793;&#26399;&#24120;&#37327;</P>
+<P>}</P>
+<P></P>
+<P>constexpr&#29992;&#27861;&#26377;&#38750;&#24120;&#22810;&#30340;&#32454;&#33410;&#65288;cppreference.com &#21015;&#20986;&#20102;30 &#22810;&#20010;&#26465;&#30446;&#65289;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#36816;&#34892;&#26399;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

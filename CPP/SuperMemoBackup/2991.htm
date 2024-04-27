@@ -1,0 +1,121 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: Inheritance+Composition 關係下的構造和析構. Derived 的構造函數首先調用 Base 的 default 構造函數，然後調用 Component 的 default 構造函數，然後才執行自己。. Derived 的析構函數首先執行自己，然後調用 Component 的 析構函數，然後調用 Base 的析構函數。 .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, Inheritance+Composition 關係下的構造和析構. Derived 的構造函數首先調用 Base 的 default 構造函數，然後調用 Component 的 default 構造函數，然後才執行自己。. Derived 的析構函數首先執行自己，然後調用 Component 的 析構函數，然後調用 Base 的析構函數。 .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: Inheritance+Composition 關係下的構造和析構. Derived 的構造函數首先調用 ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: Inheritance+Composition 關係下的構造和析構. Derived 的構造函數首先調用 ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3042.htm"> - Next</a> - <a href="2989.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="3042.htm">Next sibling</a> - <a href="2989.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: Inheritance+Composition 關係下的構造和析構. Derived 的構造函數首先調用 Base 的 default 構造函數，然後調用 Component 的 default 構造函數，然後才執行自己。. Derived 的析構函數首先執行自己，然後調用 Component 的 析構函數，然後調用 Base 的析構函數。 .</li>
+<ol>
+<li>Inheritance+Composition 關係下的構造和析構   Derived 的構造函數首先調用 Base 的 default 構造函數，然後調用 Component 的 default 構造函數，然後才執行自己。 Derived 的析構函數首先執行自己，然後調用 Component 的 析構函數，然後調用 Base 的析構函數。 . (see <a href="#2992">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #2,991: Inheritance+Composition &#38364;&#20418;&#19979;&#30340;&#27083;&#36896;&#21644;&#26512;&#27083;. Derived &#30340;&#27083;&#36896;&#20989;&#25976;&#39318;&#20808;&#35519;&#29992; Base &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#25165;&#22519;&#34892;&#33258;&#24049;&#12290;. Derived &#30340;&#26512;&#27083;&#20989;&#25976;&#39318;&#20808;&#22519;&#34892;&#33258;&#24049;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; &#26512;&#27083;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Base &#30340;&#26512;&#27083;&#20989;&#25976;&#12290; .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+Inheritance+Composition &#38364;&#20418;&#19979;&#30340;&#27083;&#36896;&#21644;&#26512;&#27083; 
+<P></P>
+<P><B><B><img alt="Image #474: instantpaste_2024-04-03_12_18_13" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/13/26/4166.jpg"></B></B></P>
+<P>Derived &#30340;&#27083;&#36896;&#20989;&#25976;&#39318;&#20808;&#35519;&#29992; Base &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#25165;&#22519;&#34892;&#33258;&#24049;&#12290;</P>
+<P>Derived &#30340;&#26512;&#27083;&#20989;&#25976;&#39318;&#20808;&#22519;&#34892;&#33258;&#24049;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; &#26512;&#27083;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Base &#30340;&#26512;&#27083;&#20989;&#25976;&#12290;</P>
+<P><BR>Derived::Derived(&#8230;): <SPAN class=clozed><SPAN class=clozed><SPAN class=clozed>Base(),Component()</SPAN> </SPAN></SPAN>{ &#8230; };<BR><BR>Derived::~Derived(&#8230;){ &#8230; ~Component(), ~Base() };</P>
+<P>&#24605;&#32771;&#65306;&#36825;&#31181;&#24773;&#20917;&#21602;&#65311;</P>
+<P><STRONG><img alt="Image #476: instantpaste_2024-04-03_12_20_22" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/13/26/4168.jpg"></STRONG>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2992">Item #2,992: Inheritance+Composition &#38364;&#20418;&#19979;&#30340;&#27083;&#36896;&#21644;&#26512;&#27083;   Derived &#30340;&#27083;&#36896;&#20989;&#25976;&#39318;&#20808;&#35519;&#29992; Base &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#25165;&#22519;&#34892;&#33258;&#24049;&#12290; Derived &#30340;&#26512;&#27083;&#20989;&#25976;&#39318;&#20808;&#22519;&#34892;&#33258;&#24049;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; &#26512;&#27083;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Base &#30340;&#26512;&#27083;&#20989;&#25976;&#12290; .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Inheritance+Composition &#38364;&#20418;&#19979;&#30340;&#27083;&#36896;&#21644;&#26512;&#27083; 
+<P></P>
+<P><B><B><img alt="Image #474: instantpaste_2024-04-03_12_18_13" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/13/26/4166.jpg"></B></B></P>
+<P>Derived &#30340;&#27083;&#36896;&#20989;&#25976;&#39318;&#20808;&#35519;&#29992; Base &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; default &#27083;&#36896;&#20989;&#25976;&#65292;&#28982;&#24460;&#25165;&#22519;&#34892;&#33258;&#24049;&#12290;</P>
+<P>Derived &#30340;&#26512;&#27083;&#20989;&#25976;&#39318;&#20808;&#22519;&#34892;&#33258;&#24049;&#65292;&#28982;&#24460;&#35519;&#29992; Component &#30340; &#26512;&#27083;&#20989;&#25976;&#65292;&#28982;&#24460;&#35519;&#29992; Base &#30340;&#26512;&#27083;&#20989;&#25976;&#12290;</P>
+<P><BR>Derived::Derived(&#8230;): <SPAN><SPAN class=cloze>[...]</SPAN></SPAN>{ &#8230; };<BR><BR>Derived::~Derived(&#8230;){ &#8230; ~Component(), ~Base() };</P>
+<P>&#24605;&#32771;&#65306;&#36825;&#31181;&#24773;&#20917;&#21602;&#65311;</P>
+<P><STRONG><img alt="Image #476: instantpaste_2024-04-03_12_20_22" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/13/26/4168.jpg"></STRONG>
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+<SPAN>Base(),Component()</SPAN>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

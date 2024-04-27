@@ -1,0 +1,167 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: Dynamic Casting">
+<meta http-equiv="keywords" content="SuperMemo, all in one, Dynamic Casting">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: Dynamic Casting (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: Dynamic Casting </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3413.htm"> - Next</a> - <a href="3046.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="3413.htm">Next sibling</a> - <a href="3046.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: Dynamic Casting</li>
+<ol>
+<li>Dynamic Casting Example    2.1. dynamic_cast 运算符   (1)     沿继承层级向上、向下及侧向转换到类的[.] (2)     转指针：失败返回nullptr (3)     转引用：失败抛异常     2.2. 例子   先将Shape对象用dynamic_cast转换为派生类Circle对象 . (see <a href="#3411">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,410: Dynamic Casting</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+Dynamic Casting Example<BR>&nbsp; 
+<P></P>
+<P>2.1. dynamic_cast &#36816;&#31639;&#31526;<BR>&nbsp;</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; &#27839;&#32487;&#25215;&#23618;&#32423;&#21521;&#19978;&#12289;&#21521;&#19979;&#21450;&#20391;&#21521;&#36716;&#25442;&#21040;&#31867;&#30340;<SPAN class=clozed>&#25351;&#38024;&#21644;&#24341;&#29992;</SPAN></P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; &#36716;&#25351;&#38024;&#65306;&#22833;&#36133;&#36820;&#22238;nullptr</P>
+<P>(3)&nbsp;&nbsp;&nbsp;&nbsp; &#36716;&#24341;&#29992;&#65306;&#22833;&#36133;&#25243;&#24322;&#24120;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>2.2. &#20363;&#23376;<BR>&nbsp;</P>
+<P>&#20808;&#23558;Shape&#23545;&#35937;&#29992;dynamic_cast&#36716;&#25442;&#20026;&#27966;&#29983;&#31867;Circle&#23545;&#35937;</P>
+<P>&#28982;&#21518;&#35843;&#29992;&#27966;&#29983;&#31867;&#20013;&#29420;&#26377;&#30340;&#20989;&#25968;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>// A function for displaying a Shape object</P>
+<P>void printObject(Shape &amp;shape)</P>
+<P>{</P>
+<P>&nbsp; cout &lt;&lt; "The area is "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; shape.getArea() &lt;&lt; endl;</P>
+<P>}</P>
+<P>&nbsp; Shape *p = &amp;shape;</P>
+<P>&nbsp; Circle *c = dynamic_cast&lt;Circle*&gt;(p);</P>
+<P>&nbsp; // Circle&amp; c = dynamic_cast&lt;Circle&amp;&gt;(shape); </P>
+<P>&nbsp; // &#24341;&#29992;&#36716;&#25442;&#22833;&#36133;&#21017;&#25243;&#20986;&#19968;&#20010;&#24322;&#24120; std::bad_cast</P>
+<P>&nbsp; if (c != nullptr) // &#36716;&#25442;&#22833;&#36133;&#21017;&#25351;&#38024;&#20026;&#31354;</P>
+<P>&nbsp; {</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "The radius is "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; p1-&gt;getRadius() &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "The diameter is "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; p1-&gt;getDiameter() &lt;&lt; endl;</P>
+<P>&nbsp; }</P>
+<P>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3411">Item #3,411: Dynamic Casting Example    2.1. dynamic_cast &#36816;&#31639;&#31526;   (1)     &#27839;&#32487;&#25215;&#23618;&#32423;&#21521;&#19978;&#12289;&#21521;&#19979;&#21450;&#20391;&#21521;&#36716;&#25442;&#21040;&#31867;&#30340;[.] (2)     &#36716;&#25351;&#38024;&#65306;&#22833;&#36133;&#36820;&#22238;nullptr (3)     &#36716;&#24341;&#29992;&#65306;&#22833;&#36133;&#25243;&#24322;&#24120;     2.2. &#20363;&#23376;   &#20808;&#23558;Shape&#23545;&#35937;&#29992;dynamic_cast&#36716;&#25442;&#20026;&#27966;&#29983;&#31867;Circle&#23545;&#35937; .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Dynamic Casting Example<BR>&nbsp; 
+<P></P>
+<P>2.1. dynamic_cast &#36816;&#31639;&#31526;<BR>&nbsp;</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; &#27839;&#32487;&#25215;&#23618;&#32423;&#21521;&#19978;&#12289;&#21521;&#19979;&#21450;&#20391;&#21521;&#36716;&#25442;&#21040;&#31867;&#30340;<SPAN class=cloze>[...]</SPAN></P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; &#36716;&#25351;&#38024;&#65306;&#22833;&#36133;&#36820;&#22238;nullptr</P>
+<P>(3)&nbsp;&nbsp;&nbsp;&nbsp; &#36716;&#24341;&#29992;&#65306;&#22833;&#36133;&#25243;&#24322;&#24120;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>2.2. &#20363;&#23376;<BR>&nbsp;</P>
+<P>&#20808;&#23558;Shape&#23545;&#35937;&#29992;dynamic_cast&#36716;&#25442;&#20026;&#27966;&#29983;&#31867;Circle&#23545;&#35937;</P>
+<P>&#28982;&#21518;&#35843;&#29992;&#27966;&#29983;&#31867;&#20013;&#29420;&#26377;&#30340;&#20989;&#25968;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>// A function for displaying a Shape object</P>
+<P>void printObject(Shape &amp;shape)</P>
+<P>{</P>
+<P>&nbsp; cout &lt;&lt; "The area is "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; shape.getArea() &lt;&lt; endl;</P>
+<P>}</P>
+<P>&nbsp; Shape *p = &amp;shape;</P>
+<P>&nbsp; Circle *c = dynamic_cast&lt;Circle*&gt;(p);</P>
+<P>&nbsp; // Circle&amp; c = dynamic_cast&lt;Circle&amp;&gt;(shape); </P>
+<P>&nbsp; // &#24341;&#29992;&#36716;&#25442;&#22833;&#36133;&#21017;&#25243;&#20986;&#19968;&#20010;&#24322;&#24120; std::bad_cast</P>
+<P>&nbsp; if (c != nullptr) // &#36716;&#25442;&#22833;&#36133;&#21017;&#25351;&#38024;&#20026;&#31354;</P>
+<P>&nbsp; {</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "The radius is "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; p1-&gt;getRadius() &lt;&lt; endl;</P>
+<P>&nbsp;&nbsp;&nbsp; cout &lt;&lt; "The diameter is "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; p1-&gt;getDiameter() &lt;&lt; endl;</P>
+<P>&nbsp; }</P>
+<P>}
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#25351;&#38024;&#21644;&#24341;&#29992;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

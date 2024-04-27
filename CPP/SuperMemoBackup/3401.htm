@@ -1,0 +1,165 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: C++11: Default Member Initializers 类成员的就地初始化   1. What is Default Member Initializers (什么是就地初始化)   In C++03, only static const members of integral types could be initialized .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, C++11: Default Member Initializers 类成员的就地初始化   1. What is Default Member Initializers (什么是就地初始化)   In C++03, only static const members of integral types could be initialized .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: C++11: Default Member Initializers 类成员的就地初始化   1. What ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: C++11: Default Member Initializers 类成员的就地初始化   1. What ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3566.htm"> - Next</a> - <a href="3309.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3566.htm">Next sibling</a> - <a href="3309.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: C++11: Default Member Initializers 类成员的就地初始化   1. What is Default Member Initializers (什么是就地初始化)   In C++03, only static const members of integral types could be initialized .</li>
+<ol>
+<li>C++11: Default Member Initializers  类成员的就地初始化  1. What is Default Member Initializers (什么是就地初始化)  In C++03, only static const members of integral types could be initialized in . (see <a href="#3402">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,401: C++11: Default Member Initializers &#31867;&#25104;&#21592;&#30340;&#23601;&#22320;&#21021;&#22987;&#21270;   1. What is Default Member Initializers (&#20160;&#20040;&#26159;&#23601;&#22320;&#21021;&#22987;&#21270;)   In C++03, only static const members of integral types could be initialized .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+C++11: Default Member Initializers 
+<P>&#31867;&#25104;&#21592;&#30340;&#23601;&#22320;&#21021;&#22987;&#21270; 
+<P></P>
+<P>1. What is Default Member Initializers (&#20160;&#20040;&#26159;&#23601;&#22320;&#21021;&#22987;&#21270;) 
+<P>In C++03, only static const members of integral types could be initialized in-class (&#22312;C++03&#26631;&#20934;&#20013;&#65292;&#21482;&#26377;<STRONG>&#38745;&#24577;&#24120;&#37327;&#25972;&#22411;</STRONG>&#25104;&#21592;&#25165;&#33021;&#22312;&#31867;&#20013;&#23601;&#22320;&#21021;&#22987;&#21270;)</P>
+<P>class X {</P>
+<P>&nbsp; static const int a = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ok</P>
+<P>&nbsp; const int b = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;: &#38750; static</P>
+<P>&nbsp; static int c = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;: &#38750; const</P>
+<P>&nbsp; static const string d = "odd"; // &#38169;&#35823;: &#38750;&#25972;&#22411;</P>
+<P>&nbsp; // ...</P>
+<P>};</P>
+<P>C++11 was to allow a non-static data member to be initialized where it is declared in its class (C++11&#26631;&#20934;&#20013;&#65292;&#38750;&#38745;&#24577;&#25104;&#21592;&#21487;&#20197;&#22312;&#23427;&#22768;&#26126;&#30340;&#26102;&#20505;&#21021;&#22987;&#21270;)</P>
+<P>&#8220;&#23601;&#22320;&#21021;&#22987;&#21270;&#8221;&#30340;&#26415;&#35821;&#30340;&#26469;&#28304;&#26377;&#22810;&#22788;:</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; &#23601;&#22320;&#21021;&#22987;&#21270;&#65306;&#12298;&#28145;&#20837;&#29702;&#35299;C++11&#12299;</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; In-class initializer : <A href="https://isocpp.org/">https://isocpp.org/</A></P>
+<P>(3)&nbsp;&nbsp;&nbsp;&nbsp; default member initializer : <A href="https://cppreference.com">https://cppreference.com</A></P>
+<P>&nbsp;</P>
+<P>2. Examples and Rules (&#20363;&#23376;&#21644;&#35268;&#21017;) 
+<P>class S {</P>
+<P>&nbsp; int m = 7; // ok, copy-initializes m </P>
+<P>&nbsp; int n(7);&nbsp; // &#38169;&#35823;&#65306;&#19981;&#20801;&#35768;&#29992;&#23567;&#25324;&#21495;&#21021;&#22987;&#21270; </P>
+<P>&nbsp; std::string s{'a', 'b', 'c'}; // ok, direct list-initializes s</P>
+<P>&nbsp; std::string t{"Constructor run"}; // ok</P>
+<P>&nbsp; int a[] = {1,2,3}; // <SPAN class=clozed>&#38169;&#35823;&#65306;&#25968;&#32452;&#31867;&#22411;&#25104;&#21592;&#19981;&#33021;&#33258;&#21160;&#25512;&#26029;&#22823;&#23567;</SPAN></P>
+<P>&nbsp; int b[3] = {1,2,3}; // ok</P>
+<P>&nbsp; // &#24341;&#29992;&#31867;&#22411;&#30340;&#25104;&#21592;&#20250;&#26377;&#19968;&#20123;&#39069;&#22806;&#38480;&#21046;</P>
+<P>public:</P>
+<P>&nbsp; S() { }</P>
+<P>};
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3402">Item #3,402: C++11: Default Member Initializers  &#31867;&#25104;&#21592;&#30340;&#23601;&#22320;&#21021;&#22987;&#21270;  1. What is Default Member Initializers (&#20160;&#20040;&#26159;&#23601;&#22320;&#21021;&#22987;&#21270;)  In C++03, only static const members of integral types could be initialized in .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++11: Default Member Initializers 
+<P>&#31867;&#25104;&#21592;&#30340;&#23601;&#22320;&#21021;&#22987;&#21270; 
+<P></P>
+<P>1. What is Default Member Initializers (&#20160;&#20040;&#26159;&#23601;&#22320;&#21021;&#22987;&#21270;) 
+<P>In C++03, only static const members of integral types could be initialized in-class (&#22312;C++03&#26631;&#20934;&#20013;&#65292;&#21482;&#26377;<STRONG>&#38745;&#24577;&#24120;&#37327;&#25972;&#22411;</STRONG>&#25104;&#21592;&#25165;&#33021;&#22312;&#31867;&#20013;&#23601;&#22320;&#21021;&#22987;&#21270;)</P>
+<P>class X {</P>
+<P>&nbsp; static const int a = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // ok</P>
+<P>&nbsp; const int b = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;: &#38750; static</P>
+<P>&nbsp; static int c = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38169;&#35823;: &#38750; const</P>
+<P>&nbsp; static const string d = "odd"; // &#38169;&#35823;: &#38750;&#25972;&#22411;</P>
+<P>&nbsp; // ...</P>
+<P>};</P>
+<P>C++11 was to allow a non-static data member to be initialized where it is declared in its class (C++11&#26631;&#20934;&#20013;&#65292;&#38750;&#38745;&#24577;&#25104;&#21592;&#21487;&#20197;&#22312;&#23427;&#22768;&#26126;&#30340;&#26102;&#20505;&#21021;&#22987;&#21270;)</P>
+<P>&#8220;&#23601;&#22320;&#21021;&#22987;&#21270;&#8221;&#30340;&#26415;&#35821;&#30340;&#26469;&#28304;&#26377;&#22810;&#22788;:</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; &#23601;&#22320;&#21021;&#22987;&#21270;&#65306;&#12298;&#28145;&#20837;&#29702;&#35299;C++11&#12299;</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; In-class initializer : <A href="https://isocpp.org/">https://isocpp.org/</A></P>
+<P>(3)&nbsp;&nbsp;&nbsp;&nbsp; default member initializer : <A href="https://cppreference.com">https://cppreference.com</A></P>
+<P>&nbsp;</P>
+<P>2. Examples and Rules (&#20363;&#23376;&#21644;&#35268;&#21017;) 
+<P>class S {</P>
+<P>&nbsp; int m = 7; // ok, copy-initializes m </P>
+<P>&nbsp; int n(7);&nbsp; // &#38169;&#35823;&#65306;&#19981;&#20801;&#35768;&#29992;&#23567;&#25324;&#21495;&#21021;&#22987;&#21270; </P>
+<P>&nbsp; std::string s{'a', 'b', 'c'}; // ok, direct list-initializes s</P>
+<P>&nbsp; std::string t{"Constructor run"}; // ok</P>
+<P>&nbsp; int a[] = {1,2,3}; // <SPAN class=cloze>[...]</SPAN></P>
+<P>&nbsp; int b[3] = {1,2,3}; // ok</P>
+<P>&nbsp; // &#24341;&#29992;&#31867;&#22411;&#30340;&#25104;&#21592;&#20250;&#26377;&#19968;&#20123;&#39069;&#22806;&#38480;&#21046;</P>
+<P>public:</P>
+<P>&nbsp; S() { }</P>
+<P>};
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#38169;&#35823;&#65306;&#25968;&#32452;&#31867;&#22411;&#25104;&#21592;&#19981;&#33021;&#33258;&#21160;&#25512;&#26029;&#22823;&#23567;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

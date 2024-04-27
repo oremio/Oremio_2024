@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s 进行了重载，赋予了它新的含义，使得用这种运算符括起来的字符串字面量，自动变成了一个 std::string 类型的对象。   auto hello = "Hello!"s;              // hello is of std .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s 进行了重载，赋予了它新的含义，使得用这种运算符括起来的字符串字面量，自动变成了一个 std::string 类型的对象。   auto hello = "Hello!"s;              // hello is of std .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3398.htm"> - Next</a> - <a href="3390.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3398.htm">Next sibling</a> - <a href="3390.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s 进行了重载，赋予了它新的含义，使得用这种运算符括起来的字符串字面量，自动变成了一个 std::string 类型的对象。   auto hello = "Hello!"s;              // hello is of std .</li>
+<ol>
+<li>C++14: String Literals (C++14的字符串字面量)   C++14将运算符  ""s 进行了重载，赋予了它新的含义，使得用这种运算符括起来的字符串字面量，自动变成了一个 std::string 类型的对象。   auto hello = "Hello!"s;              // hello is of std . (see <a href="#3397">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,396: C++14: String Literals (C++14&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)   C++14&#23558;&#36816;&#31639;&#31526;  ""s &#36827;&#34892;&#20102;&#37325;&#36733;&#65292;&#36171;&#20104;&#20102;&#23427;&#26032;&#30340;&#21547;&#20041;&#65292;&#20351;&#24471;&#29992;&#36825;&#31181;&#36816;&#31639;&#31526;&#25324;&#36215;&#26469;&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;&#65292;&#33258;&#21160;&#21464;&#25104;&#20102;&#19968;&#20010; std::string &#31867;&#22411;&#30340;&#23545;&#35937;&#12290;   auto hello = "Hello!"s;              // hello is of std .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+C++14: String Literals (C++14&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)<BR>&nbsp;</P>
+<P>C++14&#23558;&#36816;&#31639;&#31526;&nbsp; ""s &#36827;&#34892;&#20102;&#37325;&#36733;&#65292;&#36171;&#20104;&#20102;&#23427;&#26032;&#30340;&#21547;&#20041;&#65292;&#20351;&#24471;&#29992;&#36825;&#31181;&#36816;&#31639;&#31526;&#25324;&#36215;&#26469;&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;&#65292;&#33258;&#21160;&#21464;&#25104;&#20102;&#19968;&#20010; std::string &#31867;&#22411;&#30340;&#23545;&#35937;&#12290;</P>
+<P>&nbsp;</P>
+<P>auto hello = "Hello!"s;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // hello is of std::string type</P>
+<P>auto hello = std::string{"Hello!"};&nbsp; // equals to the above</P>
+<P>auto hello = "Hello!";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // hello is of <SPAN class=clozed>const char*</SPAN> type</P>
+<P>&nbsp;</P>
+<P>&#19968;&#20010;&#20363;&#23376;&#65288;&#26469;&#33258;&#20110;cppreference.com&#65289;</P>
+<P>&nbsp;</P>
+<P>#include &lt;string&gt;</P>
+<P>#include &lt;iostream&gt;</P>
+<P>int main() {</P>
+<P>&nbsp; using namespace std::string_literals;</P>
+<P>&nbsp; std::string s1 = "abc\0\0def"; </P>
+<P>&nbsp; std::string s2 = "abc\0\0def"s;</P>
+<P>&nbsp; std::cout &lt;&lt; "s1: " &lt;&lt; s1.size() &lt;&lt; " \"" &lt;&lt; s1 &lt;&lt; "\"\n";</P>
+<P>&nbsp; std::cout &lt;&lt; "s2: " &lt;&lt; s2.size() &lt;&lt; " \"" &lt;&lt; s2 &lt;&lt; "\"\n";</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&#19978;&#38754;&#20363;&#23376;&#30340;&#19968;&#20010;&#21487;&#33021;&#36755;&#20986;&#32467;&#26524;&#22914;&#19979;&#65306;</P>
+<P>&nbsp;</P>
+<P>s1: 3 "abc"</P>
+<P>s2: 8 "<A href="mailto:abc^@^@def">abc^@^@def</A>"
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3397">Item #3,397: C++14: String Literals (C++14&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)   C++14&#23558;&#36816;&#31639;&#31526;  ""s &#36827;&#34892;&#20102;&#37325;&#36733;&#65292;&#36171;&#20104;&#20102;&#23427;&#26032;&#30340;&#21547;&#20041;&#65292;&#20351;&#24471;&#29992;&#36825;&#31181;&#36816;&#31639;&#31526;&#25324;&#36215;&#26469;&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;&#65292;&#33258;&#21160;&#21464;&#25104;&#20102;&#19968;&#20010; std::string &#31867;&#22411;&#30340;&#23545;&#35937;&#12290;   auto hello = "Hello!"s;              // hello is of std .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++14: String Literals (C++14&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;)<BR>&nbsp;</P>
+<P>C++14&#23558;&#36816;&#31639;&#31526;&nbsp; ""s &#36827;&#34892;&#20102;&#37325;&#36733;&#65292;&#36171;&#20104;&#20102;&#23427;&#26032;&#30340;&#21547;&#20041;&#65292;&#20351;&#24471;&#29992;&#36825;&#31181;&#36816;&#31639;&#31526;&#25324;&#36215;&#26469;&#30340;&#23383;&#31526;&#20018;&#23383;&#38754;&#37327;&#65292;&#33258;&#21160;&#21464;&#25104;&#20102;&#19968;&#20010; std::string &#31867;&#22411;&#30340;&#23545;&#35937;&#12290;</P>
+<P>&nbsp;</P>
+<P>auto hello = "Hello!"s;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // hello is of std::string type</P>
+<P>auto hello = std::string{"Hello!"};&nbsp; // equals to the above</P>
+<P>auto hello = "Hello!";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // hello is of <SPAN class=cloze>[...]</SPAN> type</P>
+<P>&nbsp;</P>
+<P>&#19968;&#20010;&#20363;&#23376;&#65288;&#26469;&#33258;&#20110;cppreference.com&#65289;</P>
+<P>&nbsp;</P>
+<P>#include &lt;string&gt;</P>
+<P>#include &lt;iostream&gt;</P>
+<P>int main() {</P>
+<P>&nbsp; using namespace std::string_literals;</P>
+<P>&nbsp; std::string s1 = "abc\0\0def"; </P>
+<P>&nbsp; std::string s2 = "abc\0\0def"s;</P>
+<P>&nbsp; std::cout &lt;&lt; "s1: " &lt;&lt; s1.size() &lt;&lt; " \"" &lt;&lt; s1 &lt;&lt; "\"\n";</P>
+<P>&nbsp; std::cout &lt;&lt; "s2: " &lt;&lt; s2.size() &lt;&lt; " \"" &lt;&lt; s2 &lt;&lt; "\"\n";</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>&#19978;&#38754;&#20363;&#23376;&#30340;&#19968;&#20010;&#21487;&#33021;&#36755;&#20986;&#32467;&#26524;&#22914;&#19979;&#65306;</P>
+<P>&nbsp;</P>
+<P>s1: 3 "abc"</P>
+<P>s2: 8 "<A href="mailto:abc^@^@def">abc^@^@def</A>"
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+const char*
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

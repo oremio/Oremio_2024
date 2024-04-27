@@ -1,0 +1,257 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: STL和泛型编程">
+<meta http-equiv="keywords" content="SuperMemo, all in one, STL和泛型编程">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: STL和泛型编程 (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: STL和泛型编程 </font></b><br>(11 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3061.htm"> - Next</a> - <a href="3317.htm">Previous</a> - <a href="index.htm">Parent</a> - <a href="3163.htm">Next sibling</a> - <a href="2549.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li>This page: STL和泛型编程</li>
+<ol>
+<li>C++标准库 vs STL标准库 (see <a href="#3026">below)</a>
+<li>STL六大部件(Components): >容器(Containers) 分配器(Allocators) >算法(Algorithms) 选代器(lterators) 適配器(Adapters) >仿函式(Functors) (see <a href="#3027">below)</a>
+<li>range-based for statement (see <a href="#3028">below)</a>
+<li>#include <vector> int main() {     std::vector<double> vec = {1.0, 2.0, 3.0, 4.0, 5.0};     // 使用迭代器访问并修改向量中的每个元素     for (std::vector<double>::iterator it = vec.begin(); it . (see <a href="#3029">below)</a>
+<li>总览：各种容器的结构与分类 (see <a href="#3030">below)</a>
+<li>哈希表 经验：如果元素的个数大于等于篮子的个数，则需要增加篮子。. 也就是，装填因子不要太高。 (see <a href="#3060">below)</a>
+<li><a href="3061.htm">multimap 不可使用 [] 做 insertion</a> (1 elements)
+<li><a href="2932.htm">OOP vs GP</a> (1 elements)
+<li>vector的三个指针 (see <a href="#3174">below)</a>
+</ol>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,024: STL&#21644;&#27867;&#22411;&#32534;&#31243;</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3026">Topic #3,026: C++&#26631;&#20934;&#24211; vs STL&#26631;&#20934;&#24211;</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<B><B><img style="HEIGHT: 648px; WIDTH: 855px" alt="Image #481: instantpaste_2024-04-04_14_49_33" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/13/22/4129.jpg" width=1205 height=905></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3027">Topic #3,027: STL&#20845;&#22823;&#37096;&#20214;(Components): >&#23481;&#22120;(Containers) &#20998;&#37197;&#22120;(Allocators) >&#31639;&#27861;(Algorithms) &#36873;&#20195;&#22120;(lterators) &#36969;&#37197;&#22120;(Adapters) >&#20223;&#20989;&#24335;(Functors)</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+STL&#20845;&#22823;&#37096;&#20214;(Components): 
+<P></P>
+<P>&#23481;&#22120;(Containers) 
+<P>&#20998;&#37197;&#22120;(Allocators) 
+<P>&#31639;&#27861;(Algorithms) 
+<P>&#36873;&#20195;&#22120;(lterators) 
+<P>&#36969;&#37197;&#22120;(Adapters) 
+<P>&#20223;&#20989;&#24335;(Functors) 
+<P><B><B><img style="HEIGHT: 565px; WIDTH: 837px" alt="Image #482: instantpaste_2024-04-04_14_56_05" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/1/4219.jpg" width=1040 height=697></B></B></P>
+<P><STRONG>&#20195;&#30721;&#20030;&#20363;&#65306;</STRONG></P>
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">void</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">test_gp</SPAN><SPAN style="COLOR: #abb2bf">()</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">ai</SPAN><SPAN style="COLOR: #abb2bf">[</SPAN><SPAN style="COLOR: #d19a66">6</SPAN><SPAN style="COLOR: #abb2bf">] </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> {</SPAN><SPAN style="COLOR: #d19a66">27</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">210</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">12</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">47</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">109</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #d19a66">83</SPAN><SPAN style="COLOR: #abb2bf">};</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; // array int</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">vector</SPAN><SPAN style="COLOR: #c678dd">&lt;int</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e5c07b">allocator</SPAN><SPAN style="COLOR: #c678dd">&lt;int&gt;&gt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">vi</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">ai</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">ai</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">+</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">6</SPAN><SPAN style="COLOR: #abb2bf">);</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // vector int</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; /*</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; vector: container</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; allocator: allocator</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; */</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">count_if</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">vi</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">begin</SPAN><SPAN style="COLOR: #abb2bf">(), </SPAN><SPAN style="COLOR: #e06c75">vi</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #61afef">end</SPAN><SPAN style="COLOR: #abb2bf">(), </SPAN><SPAN style="COLOR: #61afef">not1</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #61afef">bind2nd</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e5c07b">less</SPAN><SPAN style="COLOR: #abb2bf">&lt;</SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf">&gt;(), </SPAN><SPAN style="COLOR: #d19a66">40</SPAN><SPAN style="COLOR: #abb2bf">)));</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; /*</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; count_if: algorithm</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; begin: iterator</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; less: function object</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; bind2nd: function adapter(binder)</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; not1: function adapter(negator)(&#21453;&#30456;&#22120;)</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; &nbsp; &nbsp; */</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; }</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3028">Topic #3,028: range-based for statement</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<B><B>range-based for statement: </B></B></P>
+<P><B><B><img style="HEIGHT: 567px; WIDTH: 827px" alt="Image #483: instantpaste_2024-04-04_15_13_28" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/2/4222.jpg" width=1024 height=701></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3029">Topic #3,029: #include <vector> int main() {     std::vector<double> vec = {1.0, 2.0, 3.0, 4.0, 5.0};     // &#20351;&#29992;&#36845;&#20195;&#22120;&#35775;&#38382;&#24182;&#20462;&#25913;&#21521;&#37327;&#20013;&#30340;&#27599;&#20010;&#20803;&#32032;     for (std::vector<double>::iterator it = vec.begin(); it .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#19981;&#20351;&#29992;auto&#65306;</P>
+<P>#include &lt;vector&gt;</P>
+<P></P>
+<P>int main() {<BR>&nbsp;&nbsp;&nbsp; std::vector&lt;double&gt; vec = {1.0, 2.0, 3.0, 4.0, 5.0};</P>
+<P>&nbsp;&nbsp;&nbsp; // &#20351;&#29992;&#36845;&#20195;&#22120;&#35775;&#38382;&#24182;&#20462;&#25913;&#21521;&#37327;&#20013;&#30340;&#27599;&#20010;&#20803;&#32032;<BR>&nbsp;&nbsp;&nbsp; for (std::vector&lt;double&gt;::iterator it = vec.begin(); it != vec.end(); ++it) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#36890;&#36807;&#35299;&#24341;&#29992;&#36845;&#20195;&#22120;&#26469;&#20462;&#25913;&#21521;&#37327;&#20013;&#30340;&#20803;&#32032;&#20540;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *it *= 3;<BR>&nbsp;&nbsp;&nbsp; }</P>
+<P>&nbsp;&nbsp;&nbsp; return 0;<BR>}
+<P>&#20351;&#29992;auto&#65306;
+<P><B><B><img alt="Image #484: instantpaste_2024-04-04_15_18_49" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/2/4225.jpg"></B></B></P>
+<P><STRONG>&#24605;&#32771;&#65306;&#20026;&#20160;&#20040;auto&#38656;&#35201;&#21152;&#19978;&amp;&#65311;</STRONG>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3030">Topic #3,030: &#24635;&#35272;&#65306;&#21508;&#31181;&#23481;&#22120;&#30340;&#32467;&#26500;&#19982;&#20998;&#31867;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<FONT style="BACKGROUND-COLOR: #f9f5e9">&#24635;&#35272;&#65306;&#21508;&#31181;&#23481;&#22120;&#30340;&#32467;&#26500;&#19982;&#20998;&#31867;</FONT>
+<P></P>
+<P><B><B><img style="HEIGHT: 497px; WIDTH: 902px" alt="Image #485: instantpaste_2024-04-04_16_41_40" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/2/4227.jpg" width=1543 height=796></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3060">Topic #3,060: &#21704;&#24076;&#34920; &#32463;&#39564;&#65306;&#22914;&#26524;&#20803;&#32032;&#30340;&#20010;&#25968;&#22823;&#20110;&#31561;&#20110;&#31726;&#23376;&#30340;&#20010;&#25968;&#65292;&#21017;&#38656;&#35201;&#22686;&#21152;&#31726;&#23376;&#12290;. &#20063;&#23601;&#26159;&#65292;&#35013;&#22635;&#22240;&#23376;&#19981;&#35201;&#22826;&#39640;&#12290;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#21704;&#24076;&#34920; &#32463;&#39564;&#65306;&#22914;&#26524;&#20803;&#32032;&#30340;&#20010;&#25968;<STRONG>&#22823;&#20110;&#31561;&#20110;</STRONG>&#31726;&#23376;&#30340;&#20010;&#25968;&#65292;&#21017;&#38656;&#35201;&#22686;&#21152;&#31726;&#23376;&#12290;</P>
+<P>&#20063;&#23601;&#26159;&#65292;&#35013;&#22635;&#22240;&#23376;&#19981;&#35201;&#22826;&#39640;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="3061.htm">Topic #3,061: multimap &#19981;&#21487;&#20351;&#29992; [] &#20570; insertion</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV><SPAN>multimap &#19981;&#21487;&#20351;&#29992; <SPAN class=clozed>[]</SPAN> &#20570; insertion</SPAN></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2932.htm">Topic #2,932: OOP vs GP</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#25506;&#29992;GP:
+<P></P>
+<P>&gt;Containers&#21644;Algorithms&#22242;&#38431;&#21487;&#21508;&#33258;&#38381;&#38376;&#36896;&#36710;&#65292;&#20854;&#38388;&#20197;<SPAN class=clozed>Iterator</SPAN>&#35762;&#36890;&#21363;&#21487;&#12290; 
+<P>&gt;Algorithms&#36890;&#36942;Iterators&#30906;&#23450;&#25805;&#20316;&#31684;&#22285;&#65292;&#20006;&#36890;&#36942;Iterators&#21462;&#29992;Container&#20803;&#32032;&#12290; 
+<P>&nbsp; 
+<P>&#25299;&#23637;&#65306; 
+<P>&#25152;&#26377;algorithms,&#20854;&#20869;&#37096;&#26368;&#32456;&#28041;&#21450;&#20803;&#32032;&#26412;&#36523;&#30340;&#25805;&#20316;&#65292;&#26080;&#38750;&#23601;&#26159;&#27604;&#22823;&#23567;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3174">Topic #3,174: vector&#30340;&#19977;&#20010;&#25351;&#38024;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+vector&#30340;&#19977;&#20010;&#25351;&#38024;&#65306;</P>
+<P><B><B><img alt="Image #499: instantpaste_2024-04-07_12_03_26" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/22/4423.jpg"></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

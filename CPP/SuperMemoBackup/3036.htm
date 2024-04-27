@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: reference">
+<meta http-equiv="keywords" content="SuperMemo, all in one, reference">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: reference (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: reference </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3038.htm"> - Next</a> - <a href="2574.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="3038.htm">Next sibling</a> - <a href="2574.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: reference</li>
+<ol>
+<li>typedef struct Stag             {                 int a, b, c, d;             } S;               double x = 0;             double *p = &x; // p is a pointer to x. p's value is . (see <a href="#3037">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,036: reference</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #c678dd">typedef</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">struct</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">Stag</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">c</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">d</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } </SPAN><SPAN style="COLOR: #e5c07b">S</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">double</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">double</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // p is a pointer to x. p's value is same as x's address.</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">double</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp;// r is a reference to x, now r==x==0</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // 8</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // 4</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // <SPAN class=clozed>8</SPAN></SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0065FDFC</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0065FDFC</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0065FDFC</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">S</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">S</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">rs</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp;// 16</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">rs</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // 16</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0065FDE8</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">rs</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0065FDE8</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3037">Item #3,037: typedef struct Stag             {                 int a, b, c, d;             } S;               double x = 0;             double *p = &x; // p is a pointer to x. p's value is .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #c678dd">typedef</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">struct</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">Stag</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">c</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">d</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } </SPAN><SPAN style="COLOR: #e5c07b">S</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">double</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">double</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // p is a pointer to x. p's value is same as x's address.</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">double</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp;// r is a reference to x, now r==x==0</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // 8</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // 4</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // <SPAN class=cloze>[...]</SPAN></SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0065FDFC</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">*</SPAN><SPAN style="COLOR: #e06c75">p</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0065FDFC</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">r</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0065FDFC</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">S</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">S</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">rs</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp;// 16</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">sizeof</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">rs</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // 16</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">s</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp; // 0065FDE8</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #56b6c2">&amp;</SPAN><SPAN style="COLOR: #e06c75">rs</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; &nbsp; &nbsp;// 0065FDE8</SPAN></DIV></DIV>
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+8
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

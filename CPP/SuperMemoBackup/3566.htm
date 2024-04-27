@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 为何需要构造函数初始化列表">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 为何需要构造函数初始化列表">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: 为何需要构造函数初始化列表 (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: 为何需要构造函数初始化列表 </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3385.htm"> - Next</a> - <a href="3401.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3385.htm">Next sibling</a> - <a href="3401.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: 为何需要构造函数初始化列表</li>
+<ol>
+<li>2. Why we need a Constructor Initializer Lists? (为何需要构造函数初始化列表)   A data field is an object type (Object in Object / Embedded Object) (类的数据域是一个对象类型，被称为对象中的对象，或者内嵌对象)   The . (see <a href="#3567">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,566: &#20026;&#20309;&#38656;&#35201;&#26500;&#36896;&#20989;&#25968;&#21021;&#22987;&#21270;&#21015;&#34920;</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+2. Why we need a Constructor Initializer Lists? (&#20026;&#20309;&#38656;&#35201;&#26500;&#36896;&#20989;&#25968;&#21021;&#22987;&#21270;&#21015;&#34920;)<BR>&nbsp;
+<P></P>
+<P>A data field is an object type (Object in Object / Embedded Object) (&#31867;&#30340;&#25968;&#25454;&#22495;&#26159;&#19968;&#20010;&#23545;&#35937;&#31867;&#22411;&#65292;&#34987;&#31216;&#20026;&#23545;&#35937;&#20013;&#30340;&#23545;&#35937;&#65292;&#25110;&#32773;&#20869;&#23884;&#23545;&#35937;)</P>
+<P>&nbsp;</P>
+<P>The embedded object must be constructed before the body of ctor is executed (&#20869;&#23884;<SPAN class=clozed>&#23545;&#35937;</SPAN>&#24517;&#39035;&#22312;&#34987;&#23884;&#23545;&#35937;&#30340;&#26500;&#36896;&#20989;&#25968;&#20307;&#25191;&#34892;&#21069;&#23601;&#26500;&#36896;&#23436;&#25104;)</P>
+<P>&nbsp;</P>
+<P>class Time { /* Code omitted */ }</P>
+<P>class Action {</P>
+<P>public:</P>
+<P>&nbsp; Action(int hour, int minute, int second) {</P>
+<P>&nbsp;&nbsp;&nbsp; time = Time(hour, minute, second); //time&#23545;&#35937;&#24212;&#35813;&#22312;&#26500;&#36896;&#20989;&#25968;&#20307;&#20043;&#21069;&#26500;&#36896;&#23436;&#25104;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>private:</P>
+<P>&nbsp; Time time;</P>
+<P>};</P>
+<P>Action a(11, 59, 30);
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3567">Item #3,567: 2. Why we need a Constructor Initializer Lists? (&#20026;&#20309;&#38656;&#35201;&#26500;&#36896;&#20989;&#25968;&#21021;&#22987;&#21270;&#21015;&#34920;)   A data field is an object type (Object in Object / Embedded Object) (&#31867;&#30340;&#25968;&#25454;&#22495;&#26159;&#19968;&#20010;&#23545;&#35937;&#31867;&#22411;&#65292;&#34987;&#31216;&#20026;&#23545;&#35937;&#20013;&#30340;&#23545;&#35937;&#65292;&#25110;&#32773;&#20869;&#23884;&#23545;&#35937;)   The .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+2. Why we need a Constructor Initializer Lists? (&#20026;&#20309;&#38656;&#35201;&#26500;&#36896;&#20989;&#25968;&#21021;&#22987;&#21270;&#21015;&#34920;)<BR>&nbsp;</P>
+<P>A data field is an object type (Object in Object / Embedded Object) (&#31867;&#30340;&#25968;&#25454;&#22495;&#26159;&#19968;&#20010;&#23545;&#35937;&#31867;&#22411;&#65292;&#34987;&#31216;&#20026;&#23545;&#35937;&#20013;&#30340;&#23545;&#35937;&#65292;&#25110;&#32773;&#20869;&#23884;&#23545;&#35937;)</P>
+<P>&nbsp;</P>
+<P>The embedded object must be constructed before the body of ctor is executed (&#20869;&#23884;<SPAN class=cloze>[...]</SPAN>&#24517;&#39035;&#22312;&#34987;&#23884;&#23545;&#35937;&#30340;&#26500;&#36896;&#20989;&#25968;&#20307;&#25191;&#34892;&#21069;&#23601;&#26500;&#36896;&#23436;&#25104;)</P>
+<P>&nbsp;</P>
+<P>class Time { /* Code omitted */ }</P>
+<P>class Action {</P>
+<P>public:</P>
+<P>&nbsp; Action(int hour, int minute, int second) {</P>
+<P>&nbsp;&nbsp;&nbsp; time = Time(hour, minute, second); //time&#23545;&#35937;&#24212;&#35813;&#22312;&#26500;&#36896;&#20989;&#25968;&#20307;&#20043;&#21069;&#26500;&#36896;&#23436;&#25104;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>private:</P>
+<P>&nbsp; Time time;</P>
+<P>};</P>
+<P>Action a(11, 59, 30);
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#23545;&#35937;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

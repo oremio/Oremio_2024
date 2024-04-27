@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 如果想让自定义的class作为key（unordered_map<key,value>）来使用unordered_map，需要实现： (1) 哈希函数，需要实现一个class重载operator()，将自定义class变量映射到一个size_t类型的数。一般常用std::hash模板来实现。 (2) .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 如果想让自定义的class作为key（unordered_map<key,value>）来使用unordered_map，需要实现： (1) 哈希函数，需要实现一个class重载operator()，将自定义class变量映射到一个size_t类型的数。一般常用std::hash模板来实现。 (2) .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: 如果想让自定义的class作为key（unordered_map<key ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: 如果想让自定义的class作为key（unordered_map<key ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="2628.htm"> - Next</a> - <a href="2607.htm">Previous</a> - <a href="2589.htm">Parent</a> - <a href="2607.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2547.htm">基础</a></li>
+<ul>
+<li><a href="2589.htm">set&map&unordered_set</a></li>
+<ul>
+<li>This page: 如果想让自定义的class作为key（unordered_map<key,value>）来使用unordered_map，需要实现： (1) 哈希函数，需要实现一个class重载operator()，将自定义class变量映射到一个size_t类型的数。一般常用std::hash模板来实现。 (2) .</li>
+<ol>
+<li>如果想让自定义的class作为key（unordered_map<key,value>）来使用unordered_map，需要实现： (1) 哈希函数，需要实现一个class重载operator()，将自定义class变量映射到一个size_t类型的数。一般常用std::hash模板来实现。 (2) . (see <a href="#3516">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,515: &#22914;&#26524;&#24819;&#35753;&#33258;&#23450;&#20041;&#30340;class&#20316;&#20026;key&#65288;unordered_map<key,value>&#65289;&#26469;&#20351;&#29992;unordered_map&#65292;&#38656;&#35201;&#23454;&#29616;&#65306; (1) &#21704;&#24076;&#20989;&#25968;&#65292;&#38656;&#35201;&#23454;&#29616;&#19968;&#20010;class&#37325;&#36733;operator()&#65292;&#23558;&#33258;&#23450;&#20041;class&#21464;&#37327;&#26144;&#23556;&#21040;&#19968;&#20010;size_t&#31867;&#22411;&#30340;&#25968;&#12290;&#19968;&#33324;&#24120;&#29992;std::hash&#27169;&#26495;&#26469;&#23454;&#29616;&#12290; (2) .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+&#22914;&#26524;&#24819;&#35753;&#33258;&#23450;&#20041;&#30340;class&#20316;&#20026;key&#65288;unordered_map&lt;key,value&gt;&#65289;&#26469;&#20351;&#29992;unordered_map&#65292;&#38656;&#35201;&#23454;&#29616;&#65306;<BR>(1) &#21704;&#24076;&#20989;&#25968;&#65292;&#38656;&#35201;&#23454;&#29616;&#19968;&#20010;class&#37325;&#36733;operator()&#65292;&#23558;&#33258;&#23450;&#20041;class&#21464;&#37327;&#26144;&#23556;&#21040;&#19968;&#20010;size_t&#31867;&#22411;&#30340;&#25968;&#12290;&#19968;&#33324;&#24120;&#29992;std::hash&#27169;&#26495;&#26469;&#23454;&#29616;&#12290;<BR>(2) &#21028;&#26029;&#20004;&#20010;&#33258;&#23450;&#20041;class&#31867;&#22411;&#30340;&#21464;&#37327;&#26159;&#21542;&#30456;&#31561;&#30340;&#20989;&#25968;&#65292;&#19968;&#33324;&#22312;&#33258;&#23450;&#20041;class&#37324;&#37325;&#36733;<SPAN class=clozed>operator==&#12290;</SPAN><BR>&#31034;&#20363;&#20195;&#30721;&#65306; 
+<P></P>
+<P>#include &lt;iostream&gt;<BR>#include &lt;vector&gt;<BR>#include &lt;unordered_map&gt;</P>
+<P>using namespace std;</P>
+<P>class Myclass<BR>{<BR>public:<BR>&nbsp;&nbsp;&nbsp; int first;<BR>&nbsp;&nbsp;&nbsp; vector&lt;int&gt; second;</P>
+<P>&nbsp;&nbsp;&nbsp; // &#37325;&#36733;&#31561;&#21495;&#65292;&#21028;&#26029;&#20004;&#20010;Myclass&#31867;&#22411;&#30340;&#21464;&#37327;&#26159;&#21542;&#30456;&#31561;<BR>&nbsp;&nbsp;&nbsp; bool operator== (const Myclass &amp;other) const<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return first == other.first &amp;&amp; second == other.second;<BR>&nbsp;&nbsp;&nbsp; }<BR>};</P>
+<P>// &#23454;&#29616;Myclass&#31867;&#30340;hash&#20989;&#25968;<BR>namespace std<BR>{<BR>&nbsp;&nbsp;&nbsp; template &lt;&gt;<BR>&nbsp;&nbsp;&nbsp; struct hash&lt;Myclass&gt;<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t operator()(const Myclass &amp;k) const<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int h = k.first;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (auto x : k.second)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h ^= x;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return h;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; };<BR>}</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; unordered_map&lt;Myclass, double&gt; S;<BR>&nbsp;&nbsp;&nbsp; Myclass a = { 2, {3, 4} };<BR>&nbsp;&nbsp;&nbsp; Myclass b = { 3, {1, 2, 3, 4} };<BR>&nbsp;&nbsp;&nbsp; S[a] = 2.5;<BR>&nbsp;&nbsp;&nbsp; S[b] = 3.123;<BR>&nbsp;&nbsp;&nbsp; cout &lt;&lt; S[a] &lt;&lt; ' ' &lt;&lt; S[b] &lt;&lt; endl;<BR>&nbsp;&nbsp;&nbsp; return 0;<BR>}<BR>&#36755;&#20986;:</P>
+<P>2.5 3.123
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3516">Item #3,516: &#22914;&#26524;&#24819;&#35753;&#33258;&#23450;&#20041;&#30340;class&#20316;&#20026;key&#65288;unordered_map<key,value>&#65289;&#26469;&#20351;&#29992;unordered_map&#65292;&#38656;&#35201;&#23454;&#29616;&#65306; (1) &#21704;&#24076;&#20989;&#25968;&#65292;&#38656;&#35201;&#23454;&#29616;&#19968;&#20010;class&#37325;&#36733;operator()&#65292;&#23558;&#33258;&#23450;&#20041;class&#21464;&#37327;&#26144;&#23556;&#21040;&#19968;&#20010;size_t&#31867;&#22411;&#30340;&#25968;&#12290;&#19968;&#33324;&#24120;&#29992;std::hash&#27169;&#26495;&#26469;&#23454;&#29616;&#12290; (2) .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#22914;&#26524;&#24819;&#35753;&#33258;&#23450;&#20041;&#30340;class&#20316;&#20026;key&#65288;unordered_map&lt;key,value&gt;&#65289;&#26469;&#20351;&#29992;unordered_map&#65292;&#38656;&#35201;&#23454;&#29616;&#65306;<BR>(1) &#21704;&#24076;&#20989;&#25968;&#65292;&#38656;&#35201;&#23454;&#29616;&#19968;&#20010;class&#37325;&#36733;operator()&#65292;&#23558;&#33258;&#23450;&#20041;class&#21464;&#37327;&#26144;&#23556;&#21040;&#19968;&#20010;size_t&#31867;&#22411;&#30340;&#25968;&#12290;&#19968;&#33324;&#24120;&#29992;std::hash&#27169;&#26495;&#26469;&#23454;&#29616;&#12290;<BR>(2) &#21028;&#26029;&#20004;&#20010;&#33258;&#23450;&#20041;class&#31867;&#22411;&#30340;&#21464;&#37327;&#26159;&#21542;&#30456;&#31561;&#30340;&#20989;&#25968;&#65292;&#19968;&#33324;&#22312;&#33258;&#23450;&#20041;class&#37324;&#37325;&#36733;<SPAN class=cloze>[...]&#12290;</SPAN><BR>&#31034;&#20363;&#20195;&#30721;&#65306; 
+<P></P>
+<P>#include &lt;iostream&gt;<BR>#include &lt;vector&gt;<BR>#include &lt;unordered_map&gt;</P>
+<P>using namespace std;</P>
+<P>class Myclass<BR>{<BR>public:<BR>&nbsp;&nbsp;&nbsp; int first;<BR>&nbsp;&nbsp;&nbsp; vector&lt;int&gt; second;</P>
+<P>&nbsp;&nbsp;&nbsp; // &#37325;&#36733;&#31561;&#21495;&#65292;&#21028;&#26029;&#20004;&#20010;Myclass&#31867;&#22411;&#30340;&#21464;&#37327;&#26159;&#21542;&#30456;&#31561;<BR>&nbsp;&nbsp;&nbsp; bool operator== (const Myclass &amp;other) const<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return first == other.first &amp;&amp; second == other.second;<BR>&nbsp;&nbsp;&nbsp; }<BR>};</P>
+<P>// &#23454;&#29616;Myclass&#31867;&#30340;hash&#20989;&#25968;<BR>namespace std<BR>{<BR>&nbsp;&nbsp;&nbsp; template &lt;&gt;<BR>&nbsp;&nbsp;&nbsp; struct hash&lt;Myclass&gt;<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t operator()(const Myclass &amp;k) const<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int h = k.first;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (auto x : k.second)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h ^= x;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return h;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; };<BR>}</P>
+<P>int main()<BR>{<BR>&nbsp;&nbsp;&nbsp; unordered_map&lt;Myclass, double&gt; S;<BR>&nbsp;&nbsp;&nbsp; Myclass a = { 2, {3, 4} };<BR>&nbsp;&nbsp;&nbsp; Myclass b = { 3, {1, 2, 3, 4} };<BR>&nbsp;&nbsp;&nbsp; S[a] = 2.5;<BR>&nbsp;&nbsp;&nbsp; S[b] = 3.123;<BR>&nbsp;&nbsp;&nbsp; cout &lt;&lt; S[a] &lt;&lt; ' ' &lt;&lt; S[b] &lt;&lt; endl;<BR>&nbsp;&nbsp;&nbsp; return 0;<BR>}<BR>&#36755;&#20986;:</P>
+<P>2.5 3.123
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+operator==
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: auto忽略最上层的const，decltype则保留最上层的const">
+<meta http-equiv="keywords" content="SuperMemo, all in one, auto忽略最上层的const，decltype则保留最上层的const">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: auto忽略最上层的const，decltype则保留最上层的const (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: auto忽略最上层的const，decltype则保留最上层的const </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3388.htm"> - Next</a> - <a href="3385.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3388.htm">Next sibling</a> - <a href="3385.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: auto忽略最上层的const，decltype则保留最上层的const</li>
+<ol>
+<li>auto忽略[.]，decltype则保留最上层的const   int main() {     const int x = 10;       // 使用 auto 推断变量类型     auto a = x; // a 的类型为 int，忽略了顶层 const     a = 20;     // 合法，可以修改 a 的值     std . (see <a href="#3387">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,386: auto&#24573;&#30053;&#26368;&#19978;&#23618;&#30340;const&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">// auto&#24573;&#30053;<SPAN class=clozed>&#26368;&#19978;&#23618;&#30340;const</SPAN>&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"></SPAN>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">main</SPAN><SPAN style="COLOR: #abb2bf">()</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">{</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">const</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#24573;&#30053;&#20102;&#39030;&#23618; const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">20</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; // &#21512;&#27861;&#65292;&#21487;&#20197;&#20462;&#25913; a &#30340;&#20540;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"a: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; decltype &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">decltype</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // b &#30340;&#31867;&#22411;&#20026; const int&#65292;&#20445;&#30041;&#20102;&#39030;&#23618; const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // b = 20; &nbsp; &nbsp; &nbsp; &nbsp;// &#38169;&#35823;&#65281;b &#26159;&#24120;&#37327;&#65292;&#26080;&#27861;&#20462;&#25913;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"b: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">return</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">}</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3387">Item #3,387: auto&#24573;&#30053;[.]&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const   int main() {     const int x = 10;       // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;     auto a = x; // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#24573;&#30053;&#20102;&#39030;&#23618; const     a = 20;     // &#21512;&#27861;&#65292;&#21487;&#20197;&#20462;&#25913; a &#30340;&#20540;     std .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">// auto&#24573;&#30053;<SPAN class=cloze>[...]</SPAN>&#65292;decltype&#21017;&#20445;&#30041;&#26368;&#19978;&#23618;&#30340;const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"></SPAN>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">main</SPAN><SPAN style="COLOR: #abb2bf">()</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">{</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">const</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">10</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; auto &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">auto</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // a &#30340;&#31867;&#22411;&#20026; int&#65292;&#24573;&#30053;&#20102;&#39030;&#23618; const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">20</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> &nbsp; &nbsp; // &#21512;&#27861;&#65292;&#21487;&#20197;&#20462;&#25913; a &#30340;&#20540;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"a: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">a</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // &#20351;&#29992; decltype &#25512;&#26029;&#21464;&#37327;&#31867;&#22411;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">decltype</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">=</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN><SPAN style="COLOR: #7f848e; FONT-STYLE: italic"> // b &#30340;&#31867;&#22411;&#20026; const int&#65292;&#20445;&#30041;&#20102;&#39030;&#23618; const</SPAN></DIV>
+<DIV><SPAN style="COLOR: #7f848e; FONT-STYLE: italic">&nbsp; &nbsp; // b = 20; &nbsp; &nbsp; &nbsp; &nbsp;// &#38169;&#35823;&#65281;b &#26159;&#24120;&#37327;&#65292;&#26080;&#27861;&#20462;&#25913;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #e06c75">cout</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #61afef">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #98c379">"b: "</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">b</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&lt;&lt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">std</SPAN><SPAN style="COLOR: #abb2bf">::</SPAN><SPAN style="COLOR: #61afef">endl</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV><BR>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">return</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #d19a66">0</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">}</SPAN></DIV></DIV>
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#26368;&#19978;&#23618;&#30340;const
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

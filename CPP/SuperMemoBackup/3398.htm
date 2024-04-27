@@ -1,0 +1,293 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: Structured Binding Declaration for Array 用于数组的结构化绑定声明     1. What is "structured binding declaration"? (什么是结构化绑定声明)   1.1. It's a declaration statement, which means some .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, Structured Binding Declaration for Array 用于数组的结构化绑定声明     1. What is "structured binding declaration"? (什么是结构化绑定声明)   1.1. It's a declaration statement, which means some .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: Structured Binding Declaration for Array 用于数组的结构化绑定声明 ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: Structured Binding Declaration for Array 用于数组的结构化绑定声明 ... </font></b><br>(3 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3407.htm"> - Next</a> - <a href="3396.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3407.htm">Next sibling</a> - <a href="3396.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: Structured Binding Declaration for Array 用于数组的结构化绑定声明     1. What is "structured binding declaration"? (什么是结构化绑定声明)   1.1. It's a declaration statement, which means some .</li>
+<ol>
+<li>Structured Binding Declaration for Array  用于[.]的结构化绑定声明  1. What is "structured binding declaration"? (什么是结构化绑定声明)  1.1. It's a declaration statement, which means some . (see <a href="#3399">below)</a>
+<li>Structured Binding Declaration for Array  用于数组的结构化绑定声明  1. What is "structured binding declaration"? (什么是结构化绑定声明)  1.1. It's a declaration statement, which means some . (see <a href="#3403">below)</a>
+<li>Structured Binding Declaration for Array  用于数组的结构化绑定声明  1. What is "structured binding declaration"? (什么是结构化绑定声明)  1.1. It's a declaration statement, which means some . (see <a href="#3404">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,398: Structured Binding Declaration for Array &#29992;&#20110;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;     1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)   1.1. It's a declaration statement, which means some .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+Structured Binding Declaration for Array 
+<P>&#29992;&#20110;<SPAN class=clozed>&#25968;&#32452;</SPAN>&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126; 
+<P>1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>1.1. It's a declaration statement, which means some identifiers are declared and initialized (&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;&#26159;&#19968;&#20010;&#22768;&#26126;&#35821;&#21477;&#65292;&#24847;&#21619;&#30528;&#22768;&#26126;&#20102;&#19968;&#20123;&#26631;&#35782;&#31526;&#24182;&#23545;&#26631;&#35782;&#31526;&#20570;&#20102;&#21021;&#22987;&#21270;)&#12290;&#22312;C++17&#20013;&#24341;&#20837; 
+<P>1.2. Binds the specified names to subobjects or elements of the initializer. (&#23558;&#25351;&#23450;&#30340;&#19968;&#20123;&#21517;&#23383;&#32465;&#23450;&#21040;&#21021;&#22987;&#21270;&#22120;&#30340;&#23376;&#23545;&#35937;&#25110;&#32773;&#20803;&#32032;&#19978;) 
+<P>1.3. &#24418;&#24577; 
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] = &#34920;&#36798;&#24335;;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] { &#34920;&#36798;&#24335; };</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] ( &#34920;&#36798;&#24335; );</P>
+<P>4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto: &#21487;&#33021;&#30001;const/volatile&#20462;&#39280;&#30340;auto&#20851;&#38190;&#23383;</P>
+<P>5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;/&amp;&amp; &#24038;&#20540;&#24341;&#29992;&#25110;&#32773;&#21491;&#20540;&#24341;&#29992;</P>
+<P>6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#21015;&#34920;&#65306;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#35782;&#31526;</P>
+<P>2. Structured Binding Declaration for Array(&#29992;&#20110;&#21407;&#29983;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)&nbsp; 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;&#25968;&#32452;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; int priArr [] {42, 21, 7};</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; // ai / bi / ci &#30340;&#22522;&#26412;&#31867;&#22411;&#37117;&#26159;int&#65292;&#21482;&#26159;cv&#26631;&#35782;&#25110;&#24341;&#29992;&#26631;&#35782;&#19981;&#21516;</P>
+<P>&nbsp; auto [a1, a2, a3] = priArr; // a1 &#26159; priArr[0] &#30340;&#25335;&#36125;&#65292;a2, a3&#31867;&#25512;</P>
+<P>&nbsp; const auto [b1, b2, b3] (priArr); // b1 &#26159; priArr[0] &#30340;<SPAN class=clozed>&#21482;&#35835;&#25335;&#36125;</SPAN>&#65292;b2, b3&#31867;&#25512;</P>
+<P>&nbsp; auto &amp;[c1, c2, c3] {priArr}; // c1 &#26159; priArr[0] &#30340;<SPAN class=clozed>&#24341;&#29992;</SPAN>&#65292;c2, c3&#31867;&#25512;</P>
+<P>&nbsp; c3 = 14;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // priArr[2]&#30340;&#20540;&#21464;&#20026;14</P>
+<P>&nbsp; return 0;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>3. Structured Binding Declaration for std::array(&#29992;&#20110;std::array&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;std::array&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;std::array&#20013;&#30340;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; std::array stdArr = {'a','b','c'};</P>
+<P>&nbsp; auto [d1, d2, d3] {stdArr};</P>
+<P>&nbsp; return 0;</P>
+<P>}
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3399">Item #3,399: Structured Binding Declaration for Array  &#29992;&#20110;[.]&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;  1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)  1.1. It's a declaration statement, which means some .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Structured Binding Declaration for Array 
+<P>&#29992;&#20110;<SPAN class=cloze>[...]</SPAN>&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126; 
+<P>1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>1.1. It's a declaration statement, which means some identifiers are declared and initialized (&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;&#26159;&#19968;&#20010;&#22768;&#26126;&#35821;&#21477;&#65292;&#24847;&#21619;&#30528;&#22768;&#26126;&#20102;&#19968;&#20123;&#26631;&#35782;&#31526;&#24182;&#23545;&#26631;&#35782;&#31526;&#20570;&#20102;&#21021;&#22987;&#21270;)&#12290;&#22312;C++17&#20013;&#24341;&#20837; 
+<P>1.2. Binds the specified names to subobjects or elements of the initializer. (&#23558;&#25351;&#23450;&#30340;&#19968;&#20123;&#21517;&#23383;&#32465;&#23450;&#21040;&#21021;&#22987;&#21270;&#22120;&#30340;&#23376;&#23545;&#35937;&#25110;&#32773;&#20803;&#32032;&#19978;) 
+<P>1.3. &#24418;&#24577; 
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] = &#34920;&#36798;&#24335;;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] { &#34920;&#36798;&#24335; };</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] ( &#34920;&#36798;&#24335; );</P>
+<P>4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto: &#21487;&#33021;&#30001;const/volatile&#20462;&#39280;&#30340;auto&#20851;&#38190;&#23383;</P>
+<P>5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;/&amp;&amp; &#24038;&#20540;&#24341;&#29992;&#25110;&#32773;&#21491;&#20540;&#24341;&#29992;</P>
+<P>6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#21015;&#34920;&#65306;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#35782;&#31526;</P>
+<P>2. Structured Binding Declaration for Array(&#29992;&#20110;&#21407;&#29983;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)&nbsp; 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;&#25968;&#32452;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; int priArr [] {42, 21, 7};</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; // ai / bi / ci &#30340;&#22522;&#26412;&#31867;&#22411;&#37117;&#26159;int&#65292;&#21482;&#26159;cv&#26631;&#35782;&#25110;&#24341;&#29992;&#26631;&#35782;&#19981;&#21516;</P>
+<P>&nbsp; auto [a1, a2, a3] = priArr; // a1 &#26159; priArr[0] &#30340;&#25335;&#36125;&#65292;a2, a3&#31867;&#25512;</P>
+<P>&nbsp; const auto [b1, b2, b3] (priArr); // b1 &#26159; priArr[0] &#30340;&#21482;&#35835;&#25335;&#36125;&#65292;b2, b3&#31867;&#25512;</P>
+<P>&nbsp; auto &amp;[c1, c2, c3] {priArr}; // c1 &#26159; priArr[0] &#30340;&#24341;&#29992;&#65292;c2, c3&#31867;&#25512;</P>
+<P>&nbsp; c3 = 14;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // priArr[2]&#30340;&#20540;&#21464;&#20026;14</P>
+<P>&nbsp; return 0;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>3. Structured Binding Declaration for std::array(&#29992;&#20110;std::array&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;std::array&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;std::array&#20013;&#30340;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; std::array stdArr = {'a','b','c'};</P>
+<P>&nbsp; auto [d1, d2, d3] {stdArr};</P>
+<P>&nbsp; return 0;</P>
+<P>}
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#25968;&#32452;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3403">Item #3,403: Structured Binding Declaration for Array  &#29992;&#20110;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;  1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)  1.1. It's a declaration statement, which means some .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Structured Binding Declaration for Array 
+<P>&#29992;&#20110;<SPAN>&#25968;&#32452;</SPAN>&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126; 
+<P>1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>1.1. It's a declaration statement, which means some identifiers are declared and initialized (&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;&#26159;&#19968;&#20010;&#22768;&#26126;&#35821;&#21477;&#65292;&#24847;&#21619;&#30528;&#22768;&#26126;&#20102;&#19968;&#20123;&#26631;&#35782;&#31526;&#24182;&#23545;&#26631;&#35782;&#31526;&#20570;&#20102;&#21021;&#22987;&#21270;)&#12290;&#22312;C++17&#20013;&#24341;&#20837; 
+<P>1.2. Binds the specified names to subobjects or elements of the initializer. (&#23558;&#25351;&#23450;&#30340;&#19968;&#20123;&#21517;&#23383;&#32465;&#23450;&#21040;&#21021;&#22987;&#21270;&#22120;&#30340;&#23376;&#23545;&#35937;&#25110;&#32773;&#20803;&#32032;&#19978;) 
+<P>1.3. &#24418;&#24577; 
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] = &#34920;&#36798;&#24335;;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] { &#34920;&#36798;&#24335; };</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] ( &#34920;&#36798;&#24335; );</P>
+<P>4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto: &#21487;&#33021;&#30001;const/volatile&#20462;&#39280;&#30340;auto&#20851;&#38190;&#23383;</P>
+<P>5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;/&amp;&amp; &#24038;&#20540;&#24341;&#29992;&#25110;&#32773;&#21491;&#20540;&#24341;&#29992;</P>
+<P>6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#21015;&#34920;&#65306;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#35782;&#31526;</P>
+<P>2. Structured Binding Declaration for Array(&#29992;&#20110;&#21407;&#29983;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)&nbsp; 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;&#25968;&#32452;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; int priArr [] {42, 21, 7};</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; // ai / bi / ci &#30340;&#22522;&#26412;&#31867;&#22411;&#37117;&#26159;int&#65292;&#21482;&#26159;cv&#26631;&#35782;&#25110;&#24341;&#29992;&#26631;&#35782;&#19981;&#21516;</P>
+<P>&nbsp; auto [a1, a2, a3] = priArr; // a1 &#26159; priArr[0] &#30340;&#25335;&#36125;&#65292;a2, a3&#31867;&#25512;</P>
+<P>&nbsp; const auto [b1, b2, b3] (priArr); // b1 &#26159; priArr[0] &#30340;<SPAN class=cloze>[...]</SPAN>&#65292;b2, b3&#31867;&#25512;</P>
+<P>&nbsp; auto &amp;[c1, c2, c3] {priArr}; // c1 &#26159; priArr[0] &#30340;&#24341;&#29992;&#65292;c2, c3&#31867;&#25512;</P>
+<P>&nbsp; c3 = 14;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // priArr[2]&#30340;&#20540;&#21464;&#20026;14</P>
+<P>&nbsp; return 0;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>3. Structured Binding Declaration for std::array(&#29992;&#20110;std::array&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;std::array&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;std::array&#20013;&#30340;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; std::array stdArr = {'a','b','c'};</P>
+<P>&nbsp; auto [d1, d2, d3] {stdArr};</P>
+<P>&nbsp; return 0;</P>
+<P>}
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#21482;&#35835;&#25335;&#36125;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3404">Item #3,404: Structured Binding Declaration for Array  &#29992;&#20110;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;  1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)  1.1. It's a declaration statement, which means some .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Structured Binding Declaration for Array 
+<P>&#29992;&#20110;<SPAN>&#25968;&#32452;</SPAN>&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126; 
+<P>1. What is "structured binding declaration"? (&#20160;&#20040;&#26159;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>1.1. It's a declaration statement, which means some identifiers are declared and initialized (&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;&#26159;&#19968;&#20010;&#22768;&#26126;&#35821;&#21477;&#65292;&#24847;&#21619;&#30528;&#22768;&#26126;&#20102;&#19968;&#20123;&#26631;&#35782;&#31526;&#24182;&#23545;&#26631;&#35782;&#31526;&#20570;&#20102;&#21021;&#22987;&#21270;)&#12290;&#22312;C++17&#20013;&#24341;&#20837; 
+<P>1.2. Binds the specified names to subobjects or elements of the initializer. (&#23558;&#25351;&#23450;&#30340;&#19968;&#20123;&#21517;&#23383;&#32465;&#23450;&#21040;&#21021;&#22987;&#21270;&#22120;&#30340;&#23376;&#23545;&#35937;&#25110;&#32773;&#20803;&#32032;&#19978;) 
+<P>1.3. &#24418;&#24577; 
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] = &#34920;&#36798;&#24335;;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] { &#34920;&#36798;&#24335; };</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto &amp;/&amp;&amp;(&#21487;&#36873;) [&#26631;&#35782;&#31526;&#21015;&#34920;] ( &#34920;&#36798;&#24335; );</P>
+<P>4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cv-auto: &#21487;&#33021;&#30001;const/volatile&#20462;&#39280;&#30340;auto&#20851;&#38190;&#23383;</P>
+<P>5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;/&amp;&amp; &#24038;&#20540;&#24341;&#29992;&#25110;&#32773;&#21491;&#20540;&#24341;&#29992;</P>
+<P>6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#21015;&#34920;&#65306;&#36887;&#21495;&#20998;&#38548;&#30340;&#26631;&#35782;&#31526;</P>
+<P>2. Structured Binding Declaration for Array(&#29992;&#20110;&#21407;&#29983;&#25968;&#32452;&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;)&nbsp; 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;&#25968;&#32452;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; int priArr [] {42, 21, 7};</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; // ai / bi / ci &#30340;&#22522;&#26412;&#31867;&#22411;&#37117;&#26159;int&#65292;&#21482;&#26159;cv&#26631;&#35782;&#25110;&#24341;&#29992;&#26631;&#35782;&#19981;&#21516;</P>
+<P>&nbsp; auto [a1, a2, a3] = priArr; // a1 &#26159; priArr[0] &#30340;&#25335;&#36125;&#65292;a2, a3&#31867;&#25512;</P>
+<P>&nbsp; const auto [b1, b2, b3] (priArr); // b1 &#26159; priArr[0] &#30340;<SPAN>&#21482;&#35835;&#25335;&#36125;</SPAN>&#65292;b2, b3&#31867;&#25512;</P>
+<P>&nbsp; auto &amp;[c1, c2, c3] {priArr}; // c1 &#26159; priArr[0] &#30340;<SPAN class=cloze>[...]</SPAN>&#65292;c2, c3&#31867;&#25512;</P>
+<P>&nbsp; c3 = 14;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // priArr[2]&#30340;&#20540;&#21464;&#20026;14</P>
+<P>&nbsp; return 0;</P>
+<P>}</P>
+<P>&nbsp;</P>
+<P>3. Structured Binding Declaration for std::array(&#29992;&#20110;std::array&#30340;&#32467;&#26500;&#21270;&#32465;&#23450;&#22768;&#26126;) 
+<P>&#33509;&#21021;&#22987;&#21270;&#34920;&#36798;&#24335;&#20026;&#25968;&#32452;&#31867;&#22411;&#65292;&#21017;&#26631;&#35782;&#31526;&#21015;&#34920;&#20013;&#30340;&#21517;&#23383;&#32465;&#23450;&#21040;&#25968;&#32452;&#20803;&#32032;</P>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#25968;&#37327;&#24517;&#39035;&#31561;&#20110;std::array&#25968;&#32452;&#20013;&#30340;&#20803;&#32032;&#25968;&#37327;</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#26631;&#35782;&#31526;&#31867;&#22411;&#19982;std::array&#20013;&#30340;&#25968;&#32452;&#20803;&#32032;&#31867;&#22411;&#19968;&#33268;</P>
+<P>&nbsp;</P>
+<P>int main() {</P>
+<P>&nbsp; std::array stdArr = {'a','b','c'};</P>
+<P>&nbsp; auto [d1, d2, d3] {stdArr};</P>
+<P>&nbsp; return 0;</P>
+<P>}
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#24341;&#29992;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

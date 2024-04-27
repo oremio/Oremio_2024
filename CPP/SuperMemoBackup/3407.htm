@@ -1,0 +1,252 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: C++11: Using override and final C++11：使用override和final     1. override显式声明覆写   C++11引入override标识符，指定一个虚函数覆写另一个虚函数。     class A { public:   virtual void foo() {}   void bar() .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, C++11: Using override and final C++11：使用override和final     1. override显式声明覆写   C++11引入override标识符，指定一个虚函数覆写另一个虚函数。     class A { public:   virtual void foo() {}   void bar() .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: C++11: Using override and final C++11：使用override和final ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: C++11: Using override and final C++11：使用override和final ... </font></b><br>(2 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3478.htm"> - Next</a> - <a href="3398.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3478.htm">Next sibling</a> - <a href="3398.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: C++11: Using override and final C++11：使用override和final     1. override显式声明覆写   C++11引入override标识符，指定一个虚函数覆写另一个虚函数。     class A { public:   virtual void foo() {}   void bar() .</li>
+<ol>
+<li>C++11: Using override and final  C++11：使用override和final    1. override显式声明覆写  C++11引入override标识符，指定一个虚函数覆写另一个虚函数。   class A { public:   virtual void foo() {}   void bar() {} . (see <a href="#3408">below)</a>
+<li>C++11: Using override and final  C++11：使用override和final    1. override显式声明覆写  C++11引入override标识符，指定一个（虚）函数覆写另一个虚函数。   class A { public:   virtual void foo() {}   void bar() {} . (see <a href="#3409">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,407: C++11: Using override and final C++11&#65306;&#20351;&#29992;override&#21644;final     1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889;   C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#34394;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;     class A { public:   virtual void foo() {}   void bar() .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+C++11: Using override and final 
+<P>C++11&#65306;&#20351;&#29992;override&#21644;final 
+<P>&nbsp;</P>
+<P>1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889; 
+<P>C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#65288;&#34394;&#65289;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;</P>
+<P>&nbsp;</P>
+<P>class A {</P>
+<P>public:</P>
+<P>&nbsp; virtual void foo() {}</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>class B : public A {</P>
+<P>public:</P>
+<P>&nbsp; void foo() const override { // &#38169;&#35823;&#65306; B::foo &#19981;&#35206;&#20889; A::foo</P>
+<P>&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#65288;&#31614;&#21517;&#19981;&#21305;&#37197;&#65289;</P>
+<P>&nbsp; void foo() override;&nbsp;&nbsp; // OK &#65306; B::foo &#35206;&#20889; A::foo</P>
+<P>&nbsp; void bar() override {} // <SPAN class=clozed>&#38169;&#35823;&#65306; A::bar &#38750;&#34394;</SPAN></P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>override&#30340;&#20215;&#20540;&#22312;&#20110;&#65306;&#36991;&#20813;&#31243;&#24207;&#21592;&#22312;&#35206;&#20889;&#26102;&#38169;&#21629;&#21517;&#25110;&#26080;&#34394;&#20989;&#25968;&#23548;&#33268;&#38544;&#34255;bug</P>
+<P>&nbsp;</P>
+<P>2. final &#26174;&#24335;&#22768;&#26126;&#31105;&#27490;&#35206;&#20889; 
+<P>&nbsp;</P>
+<P>C++11&#24341;&#20837;final&#29305;&#27530;&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#27966;&#29983;&#31867;&#19981;&#33021;&#35206;&#20889;&#34394;&#20989;&#25968;</P>
+<P>&nbsp;</P>
+<P>struct Base {</P>
+<P>&nbsp;&nbsp;&nbsp; virtual void foo();</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct A : Base</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() final; // A::foo &#34987;&#35206;&#20889;&#19988;<SPAN class=clozed>&#26159;&#26368;&#32456;&#35206;&#20889;</SPAN>&nbsp;&nbsp;&nbsp; </P>
+<P>void bar() final; // &#38169;&#35823;&#65306;&#38750;&#34394;&#20989;&#25968;&#19981;&#33021;&#34987;&#35206;&#20889;&#25110;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct B final : A // struct B &#20026; final&#65292;&#19981;&#33021;&#34987;&#32487;&#25215;</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() override; // &#38169;&#35823;&#65306; foo &#19981;&#33021;&#34987;&#35206;&#20889;&#65292;&#22240;&#20026;&#23427;&#22312; A &#20013;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct&#21487;&#19982;class&#20114;&#25442;&#65307;&#24046;&#21035;&#22312;&#20110;struct&#30340;&#40664;&#35748;&#35775;&#38382;&#23646;&#24615;&#26159;public
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3408">Item #3,408: C++11: Using override and final  C++11&#65306;&#20351;&#29992;override&#21644;final    1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889;  C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#34394;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;   class A { public:   virtual void foo() {}   void bar() {} .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++11: Using override and final 
+<P>C++11&#65306;&#20351;&#29992;override&#21644;final 
+<P>&nbsp;</P>
+<P>1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889; 
+<P>C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#34394;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;</P>
+<P>&nbsp;</P>
+<P>class A {</P>
+<P>public:</P>
+<P>&nbsp; virtual void foo() {}</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>class B : public A {</P>
+<P>public:</P>
+<P>&nbsp; void foo() const override { // &#38169;&#35823;&#65306; B::foo &#19981;&#35206;&#20889; A::foo</P>
+<P>&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#65288;&#31614;&#21517;&#19981;&#21305;&#37197;&#65289;</P>
+<P>&nbsp; void foo() override;&nbsp;&nbsp; // OK &#65306; B::foo &#35206;&#20889; A::foo</P>
+<P>&nbsp; void bar() override {} // &#38169;&#35823;&#65306; A::bar &#38750;&#34394;</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>override&#30340;&#20215;&#20540;&#22312;&#20110;&#65306;&#36991;&#20813;&#31243;&#24207;&#21592;&#22312;&#35206;&#20889;&#26102;&#38169;&#21629;&#21517;&#25110;&#26080;&#34394;&#20989;&#25968;&#23548;&#33268;&#38544;&#34255;bug</P>
+<P>&nbsp;</P>
+<P>2. final &#26174;&#24335;&#22768;&#26126;&#31105;&#27490;&#35206;&#20889; 
+<P>&nbsp;</P>
+<P>C++11&#24341;&#20837;final&#29305;&#27530;&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#27966;&#29983;&#31867;&#19981;&#33021;&#35206;&#20889;&#34394;&#20989;&#25968;</P>
+<P>&nbsp;</P>
+<P>struct Base {</P>
+<P>&nbsp;&nbsp;&nbsp; virtual void foo();</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct A : Base</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() final; // A::foo &#34987;&#35206;&#20889;&#19988;<SPAN class=cloze>[...]</SPAN>&nbsp;&nbsp;&nbsp; </P>
+<P>void bar() final; // &#38169;&#35823;&#65306;&#38750;&#34394;&#20989;&#25968;&#19981;&#33021;&#34987;&#35206;&#20889;&#25110;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct B final : A // struct B &#20026; final&#65292;&#19981;&#33021;&#34987;&#32487;&#25215;</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() override; // &#38169;&#35823;&#65306; foo &#19981;&#33021;&#34987;&#35206;&#20889;&#65292;&#22240;&#20026;&#23427;&#22312; A &#20013;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct&#21487;&#19982;class&#20114;&#25442;&#65307;&#24046;&#21035;&#22312;&#20110;struct&#30340;&#40664;&#35748;&#35775;&#38382;&#23646;&#24615;&#26159;public
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#26159;&#26368;&#32456;&#35206;&#20889;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3409">Item #3,409: C++11: Using override and final  C++11&#65306;&#20351;&#29992;override&#21644;final    1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889;  C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#65288;&#34394;&#65289;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;   class A { public:   virtual void foo() {}   void bar() {} .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++11: Using override and final 
+<P>C++11&#65306;&#20351;&#29992;override&#21644;final 
+<P>&nbsp;</P>
+<P>1. override&#26174;&#24335;&#22768;&#26126;&#35206;&#20889; 
+<P>C++11&#24341;&#20837;override&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#19968;&#20010;&#65288;&#34394;&#65289;&#20989;&#25968;&#35206;&#20889;&#21478;&#19968;&#20010;&#34394;&#20989;&#25968;&#12290;</P>
+<P>&nbsp;</P>
+<P>class A {</P>
+<P>public:</P>
+<P>&nbsp; virtual void foo() {}</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>class B : public A {</P>
+<P>public:</P>
+<P>&nbsp; void foo() const override { // &#38169;&#35823;&#65306; B::foo &#19981;&#35206;&#20889; A::foo</P>
+<P>&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#65288;&#31614;&#21517;&#19981;&#21305;&#37197;&#65289;</P>
+<P>&nbsp; void foo() override;&nbsp;&nbsp; // OK &#65306; B::foo &#35206;&#20889; A::foo</P>
+<P>&nbsp; void bar() override {} // <SPAN class=cloze>[...]</SPAN></P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>override&#30340;&#20215;&#20540;&#22312;&#20110;&#65306;&#36991;&#20813;&#31243;&#24207;&#21592;&#22312;&#35206;&#20889;&#26102;&#38169;&#21629;&#21517;&#25110;&#26080;&#34394;&#20989;&#25968;&#23548;&#33268;&#38544;&#34255;bug</P>
+<P>&nbsp;</P>
+<P>2. final &#26174;&#24335;&#22768;&#26126;&#31105;&#27490;&#35206;&#20889; 
+<P>&nbsp;</P>
+<P>C++11&#24341;&#20837;final&#29305;&#27530;&#26631;&#35782;&#31526;&#65292;&#25351;&#23450;&#27966;&#29983;&#31867;&#19981;&#33021;&#35206;&#20889;&#34394;&#20989;&#25968;</P>
+<P>&nbsp;</P>
+<P>struct Base {</P>
+<P>&nbsp;&nbsp;&nbsp; virtual void foo();</P>
+<P>&nbsp; void bar() {}</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct A : Base</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() final; // A::foo &#34987;&#35206;&#20889;&#19988;<SPAN>&#26159;&#26368;&#32456;&#35206;&#20889;</SPAN>&nbsp;&nbsp;&nbsp; </P>
+<P>void bar() final; // &#38169;&#35823;&#65306;&#38750;&#34394;&#20989;&#25968;&#19981;&#33021;&#34987;&#35206;&#20889;&#25110;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct B final : A // struct B &#20026; final&#65292;&#19981;&#33021;&#34987;&#32487;&#25215;</P>
+<P>{</P>
+<P>&nbsp;&nbsp;&nbsp; void foo() override; // &#38169;&#35823;&#65306; foo &#19981;&#33021;&#34987;&#35206;&#20889;&#65292;&#22240;&#20026;&#23427;&#22312; A &#20013;&#26159; final</P>
+<P>};</P>
+<P>&nbsp;</P>
+<P>struct&#21487;&#19982;class&#20114;&#25442;&#65307;&#24046;&#21035;&#22312;&#20110;struct&#30340;&#40664;&#35748;&#35775;&#38382;&#23646;&#24615;&#26159;public
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#38169;&#35823;&#65306; A::bar &#38750;&#34394;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

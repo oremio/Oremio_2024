@@ -1,0 +1,163 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: queue&stack&deque">
+<meta http-equiv="keywords" content="SuperMemo, all in one, queue&stack&deque">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: queue&stack&deque (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: queue&stack&deque </font></b><br>(10 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="2337.htm"> - Next</a> - <a href="3365.htm">Previous</a> - <a href="2547.htm">Parent</a> - <a href="2589.htm">Next sibling</a> - <a href="2576.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2547.htm">基础</a></li>
+<ul>
+<li>This page: queue&stack&deque</li>
+<ol>
+<li><a href="2337.htm">重载</a> (2 elements)
+<li><a href="2584.htm">2.3 优先队列priority_queue push    // 把元素插入堆 pop     // 删除堆顶元素 top     // 查询堆顶元素（最大值）</a> (1 elements)
+<li><a href="2585.htm">priority_queue<int> q;                              // 大根堆 priority_queue<int, vector<int>, greater<int>> q;   // 小根堆 priority_queue<pair<int, int>>q;</a> (2 elements)
+<li><a href="2586.htm">#include <deque> 双端队列deque是一个支持在两端高效插入或删除元素的连续线性存储空间。它就像是vector和queue的结合。与vector相比，deque在头部增删元素仅需要 O(1) 的时间；与queue相比，deque像数组一样支持随机访问。</a> (1 elements)
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #2,581: queue&stack&deque</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+2. #include &lt;queue&gt;<BR>&#22836;&#25991;&#20214;queue&#20027;&#35201;&#21253;&#25324;&#24490;&#29615;&#38431;&#21015;queue&#21644;&#20248;&#20808;&#38431;&#21015;priority_queue&#20004;&#20010;&#23481;&#22120;&#12290; 
+<P></P>
+<P>2.1 &#22768;&#26126;<BR>queue&lt;int&gt; q;<BR>struct rec{&#8230;}; queue&lt;rec&gt; q;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&#32467;&#26500;&#20307;rec&#20013;&#24517;&#39035;&#23450;&#20041;&#23567;&#20110;&#21495;<BR><SPAN class=extract>priority_queue&lt;int&gt; q;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#22823;&#26681;&#22534;<BR>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; q;&nbsp;&nbsp; // &#23567;&#26681;&#22534;<BR>priority_queue&lt;pair&lt;int, int&gt;&gt;q;</SPAN></P>
+<P>2.2 &#24490;&#29615;&#38431;&#21015;queue<BR>push&nbsp;&nbsp;&nbsp; // &#20174;&#38431;&#23614;&#25554;&#20837;<BR>pop&nbsp;&nbsp;&nbsp;&nbsp; // &#20174;&#38431;&#22836;&#24377;&#20986;<BR>front&nbsp;&nbsp; // &#36820;&#22238;&#38431;&#22836;&#20803;&#32032;<BR>back&nbsp;&nbsp;&nbsp; // &#36820;&#22238;&#38431;&#23614;&#20803;&#32032;</P>
+<P><SPAN class=extract>2.3 &#20248;&#20808;&#38431;&#21015;priority_queue<BR>push&nbsp;&nbsp;&nbsp; // &#25226;&#20803;&#32032;&#25554;&#20837;&#22534;<BR>pop&nbsp;&nbsp;&nbsp;&nbsp; // &#21024;&#38500;&#22534;&#39030;&#20803;&#32032;<BR>top&nbsp;&nbsp;&nbsp;&nbsp; // &#26597;&#35810;&#22534;&#39030;&#20803;&#32032;&#65288;&#26368;&#22823;&#20540;&#65289;</SPAN></P>
+<P><SPAN class=extract></SPAN>3. #include &lt;stack&gt;<BR>&#22836;&#25991;&#20214;stack&#21253;&#21547;&#26632;&#12290;&#22768;&#26126;&#21644;&#21069;&#38754;&#30340;&#23481;&#22120;&#31867;&#20284;&#12290;</P>
+<P>push&nbsp;&nbsp;&nbsp; // &#21521;&#26632;&#39030;&#25554;&#20837;</P>
+<P>pop&nbsp;&nbsp;&nbsp;&nbsp; // &#24377;&#20986;&#26632;&#39030;&#20803;&#32032;</P>
+<P>4. <SPAN class=extract>#include &lt;deque&gt;<BR>&#21452;&#31471;&#38431;&#21015;deque&#26159;&#19968;&#20010;&#25903;&#25345;&#22312;<STRONG>&#20004;&#31471;</STRONG>&#39640;&#25928;&#25554;&#20837;&#25110;&#21024;&#38500;&#20803;&#32032;&#30340;&#36830;&#32493;&#32447;&#24615;&#23384;&#20648;&#31354;&#38388;&#12290;&#23427;&#23601;&#20687;&#26159;vector&#21644;queue&#30340;&#32467;&#21512;&#12290;&#19982;vector&#30456;&#27604;&#65292;deque&#22312;&#22836;&#37096;&#22686;&#21024;&#20803;&#32032;&#20165;&#38656;&#35201; O(1) &#30340;&#26102;&#38388;&#65307;&#19982;queue&#30456;&#27604;&#65292;deque&#20687;&#25968;&#32452;&#19968;&#26679;&#25903;&#25345;&#38543;&#26426;&#35775;&#38382;&#12290;</SPAN></P>
+<P>[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38543;&#26426;&#35775;&#38382;<BR>begin/end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#36820;&#22238;deque&#30340;&#22836;/&#23614;&#36845;&#20195;&#22120;<BR>front/back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#38431;&#22836;/&#38431;&#23614;&#20803;&#32032;<BR>push_back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#20174;&#38431;&#23614;&#20837;&#38431;<BR>push_front&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#20174;&#38431;&#22836;&#20837;&#38431;<BR>pop_back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#20174;&#38431;&#23614;&#20986;&#38431;<BR>pop_front&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#20174;&#38431;&#22836;&#20986;&#38431;<BR>clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#28165;&#31354;&#38431;&#21015;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2337.htm">Topic #2,337: &#37325;&#36733;</a></b> <font size="2">(2 elements)</font></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+<P style='BOX-SIZING: border-box; FONT-SIZE: 16px; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: S&#246;hne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; BORDER-RIGHT: rgb(227,227,227) 0px solid; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; BORDER-BOTTOM: rgb(227,227,227) 0px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(13,13,13); FONT-STYLE: normal; BORDER-LEFT: rgb(227,227,227) 0px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.25em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>&#22312;&#23454;&#29616;&#22823;&#26681;&#22534;&#65288;Max Heap&#65289;&#26102;&#65292;&#36890;&#36807;&#37325;&#36733;&#23567;&#20110;&#21495;&#36816;&#31639;&#31526; <CODE style='BOX-SIZING: border-box; FONT-SIZE: 0.87em; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: "S&#246;hne Mono", Monaco, "Andale Mono", "Ubuntu Mono", monospace !important; BORDER-RIGHT: rgb(227,227,227) 0px solid; BORDER-BOTTOM: rgb(227,227,227) 0px solid; FONT-WEIGHT: 600; COLOR: ; BORDER-LEFT: rgb(227,227,227) 0px solid; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: '>&lt;</CODE> &#26469;&#23450;&#20041;&#20803;&#32032;&#20043;&#38388;&#30340;&#27604;&#36739;&#35268;&#21017;&#12290;&#22312;&#22534;&#25968;&#25454;&#32467;&#26500;&#20013;&#65292;&#36890;&#24120;&#24076;&#26395;&#29238;&#33410;&#28857;&#30340;&#20540;&#27604;&#23376;&#33410;&#28857;&#30340;&#20540;&#22823;&#65288;&#25110;&#31561;&#20110;&#65289;&#65292;&#36825;&#26679;&#23601;&#33021;&#30830;&#20445;&#26681;&#33410;&#28857;&#26159;&#22534;&#20013;&#26368;&#22823;&#30340;&#20803;&#32032;&#12290;</P>
+<P style='BOX-SIZING: border-box; FONT-SIZE: 16px; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: S&#246;hne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; BORDER-RIGHT: rgb(227,227,227) 0px solid; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; BORDER-BOTTOM: rgb(227,227,227) 0px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(13,13,13); FONT-STYLE: normal; BORDER-LEFT: rgb(227,227,227) 0px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 1.25em 0px; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>&#20855;&#20307;&#26469;&#35828;&#65292;&#37325;&#36733;&#23567;&#20110;&#21495;&#36816;&#31639;&#31526; <CODE style='BOX-SIZING: border-box; FONT-SIZE: 0.87em; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: "S&#246;hne Mono", Monaco, "Andale Mono", "Ubuntu Mono", monospace !important; BORDER-RIGHT: rgb(227,227,227) 0px solid; BORDER-BOTTOM: rgb(227,227,227) 0px solid; FONT-WEIGHT: 600; COLOR: ; BORDER-LEFT: rgb(227,227,227) 0px solid; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: '>&lt;</CODE> &#30340;&#30446;&#30340;&#26159;&#23450;&#20041;&#20004;&#20010;&#20803;&#32032;&#20043;&#38388;&#30340;&#27604;&#36739;&#35268;&#21017;&#65292;&#20197;&#20415;&#22312;&#25554;&#20837;&#20803;&#32032;&#25110;&#35843;&#25972;&#22534;&#26102;&#30830;&#23450;&#20803;&#32032;&#30340;&#39034;&#24207;&#12290;&#20363;&#22914;&#65292;&#22914;&#26524;&#20803;&#32032;&#31867;&#22411;&#26159;&#33258;&#23450;&#20041;&#30340;&#31867;&#25110;&#32467;&#26500;&#20307;&#65292;&#23601;&#38656;&#35201;&#22312;&#31867;&#25110;&#32467;&#26500;&#20307;&#20013;&#37325;&#36733;&#23567;&#20110;&#21495;&#36816;&#31639;&#31526;&#65292;&#20197;&#30830;&#20445;&#22534;&#25805;&#20316;&#33021;&#22815;&#25353;&#29031;&#39044;&#26399;&#30340;&#26041;&#24335;&#36827;&#34892;&#12290; 
+<P style='BOX-SIZING: border-box; FONT-SIZE: 16px; BORDER-TOP: rgb(227,227,227) 0px solid; FONT-FAMILY: S&#246;hne, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; BORDER-RIGHT: rgb(227,227,227) 0px solid; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; BORDER-BOTTOM: rgb(227,227,227) 0px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(13,13,13); FONT-STYLE: normal; BORDER-LEFT: rgb(227,227,227) 0px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 1.25em 0px; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial'>&#20195;&#30721;&#20363;&#65306; 
+<DIV style="FONT-SIZE: 16px; FONT-FAMILY: '&#31561;&#36317;&#26356;&#32433;&#40657;&#20307; SC', Consolas, 'Courier New', monospace; WHITE-SPACE: pre; FONT-WEIGHT: normal; COLOR: #abb2bf; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #282c34">
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">struct</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">Rec</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; </SPAN><SPAN style="COLOR: #c678dd">int</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">, </SPAN><SPAN style="COLOR: #e06c75">y</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: #c678dd"><SPAN class=clozed><SPAN style="COLOR: #c678dd">bool</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">operator</SPAN><SPAN style="COLOR: #c678dd">&lt;</SPAN><SPAN style="COLOR: #abb2bf">(</SPAN><SPAN style="COLOR: #c678dd">const</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e5c07b">Rec</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&amp;</SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">t</SPAN><SPAN style="COLOR: #abb2bf">) </SPAN><SPAN style="COLOR: #c678dd">const</SPAN></SPAN></SPAN><SPAN style="COLOR: #abb2bf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="COLOR: #c678dd"><SPAN class=clozed><SPAN style="COLOR: #c678dd">return</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #c678dd">&gt;</SPAN><SPAN style="COLOR: #abb2bf"> </SPAN><SPAN style="COLOR: #e06c75; FONT-STYLE: italic">t</SPAN><SPAN style="COLOR: #abb2bf">.</SPAN><SPAN style="COLOR: #e06c75">x</SPAN><SPAN style="COLOR: #abb2bf">;</SPAN></SPAN></SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; &nbsp; &nbsp; }</SPAN></DIV>
+<DIV><SPAN style="COLOR: #abb2bf">&nbsp; &nbsp; };</SPAN></DIV></DIV>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2584.htm">Topic #2,584: 2.3 &#20248;&#20808;&#38431;&#21015;priority_queue push    // &#25226;&#20803;&#32032;&#25554;&#20837;&#22534; pop     // &#21024;&#38500;&#22534;&#39030;&#20803;&#32032; top     // &#26597;&#35810;&#22534;&#39030;&#20803;&#32032;&#65288;&#26368;&#22823;&#20540;&#65289;</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+2.3 &#20248;&#20808;&#38431;&#21015;priority_queue<BR>push&nbsp;&nbsp;&nbsp; // &#25226;&#20803;&#32032;&#25554;&#20837;&#22534;<BR>pop&nbsp;&nbsp;&nbsp;&nbsp; // &#21024;&#38500;&#22534;&#39030;&#20803;&#32032;<BR><SPAN class=clozed>top</SPAN>&nbsp;&nbsp;&nbsp;&nbsp; // &#26597;&#35810;&#22534;&#39030;&#20803;&#32032;&#65288;&#26368;&#22823;&#20540;&#65289;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2585.htm">Topic #2,585: priority_queue<int> q;                              // &#22823;&#26681;&#22534; priority_queue<int, vector<int>, greater<int>> q;   // &#23567;&#26681;&#22534; priority_queue<pair<int, int>>q;</a></b> <font size="2">(2 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+priority_queue&lt;int&gt; q;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // <SPAN class=clozed>&#22823;&#26681;&#22534;</SPAN><BR>priority_queue&lt;int, <SPAN class=clozed>vector&lt;int&gt;, greater&lt;int</SPAN>&gt;&gt; q;&nbsp;&nbsp; // &#23567;&#26681;&#22534;<BR>priority_queue&lt;pair&lt;int, int&gt;&gt;q;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a href="2586.htm">Topic #2,586: #include <deque> &#21452;&#31471;&#38431;&#21015;deque&#26159;&#19968;&#20010;&#25903;&#25345;&#22312;&#20004;&#31471;&#39640;&#25928;&#25554;&#20837;&#25110;&#21024;&#38500;&#20803;&#32032;&#30340;&#36830;&#32493;&#32447;&#24615;&#23384;&#20648;&#31354;&#38388;&#12290;&#23427;&#23601;&#20687;&#26159;vector&#21644;queue&#30340;&#32467;&#21512;&#12290;&#19982;vector&#30456;&#27604;&#65292;deque&#22312;&#22836;&#37096;&#22686;&#21024;&#20803;&#32032;&#20165;&#38656;&#35201; O(1) &#30340;&#26102;&#38388;&#65307;&#19982;queue&#30456;&#27604;&#65292;deque&#20687;&#25968;&#32452;&#19968;&#26679;&#25903;&#25345;&#38543;&#26426;&#35775;&#38382;&#12290;</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+#include &lt;deque&gt;<BR>&#21452;&#31471;&#38431;&#21015;deque&#26159;&#19968;&#20010;&#25903;&#25345;&#22312;<STRONG>&#20004;&#31471;</STRONG>&#39640;&#25928;&#25554;&#20837;&#25110;&#21024;&#38500;&#20803;&#32032;&#30340;&#36830;&#32493;&#32447;&#24615;&#23384;&#20648;&#31354;&#38388;&#12290;&#23427;&#23601;&#20687;&#26159;vector&#21644;queue&#30340;&#32467;&#21512;&#12290;&#19982;vector&#30456;&#27604;&#65292;deque&#22312;<SPAN class=clozed>&#22836;&#37096;</SPAN>&#22686;&#21024;&#20803;&#32032;&#20165;&#38656;&#35201; O(1) &#30340;&#26102;&#38388;&#65307;&#19982;queue&#30456;&#27604;&#65292;deque&#20687;&#25968;&#32452;&#19968;&#26679;&#25903;&#25345;&#38543;&#26426;&#35775;&#38382;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:45 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: Upcasting and Downcasting (向上/向下 转型 续)   2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (上转可不使用dynamic_cast而隐式转换)   Shape* s = nullptr; .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, Upcasting and Downcasting (向上/向下 转型 续)   2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (上转可不使用dynamic_cast而隐式转换)   Shape* s = nullptr; .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: Upcasting and Downcasting (向上/向下 转型 续)   2.1. Upcasting ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: Upcasting and Downcasting (向上/向下 转型 续)   2.1. Upcasting ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3317.htm"> - Next</a> - <a href="3410.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="3317.htm">Next sibling</a> - <a href="3410.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: Upcasting and Downcasting (向上/向下 转型 续)   2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (上转可不使用dynamic_cast而隐式转换)   Shape* s = nullptr; .</li>
+<ol>
+<li>Upcasting and Downcasting (向上/向下 转型 续)   2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (上转可不使用dynamic_cast而隐式转换)   Shape* s = nullptr; . (see <a href="#3414">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,413: Upcasting and Downcasting (&#21521;&#19978;/&#21521;&#19979; &#36716;&#22411; &#32493;)   2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (&#19978;&#36716;&#21487;&#19981;&#20351;&#29992;dynamic_cast&#32780;&#38544;&#24335;&#36716;&#25442;)   Shape* s = nullptr; .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+Upcasting and Downcasting (&#21521;&#19978;/&#21521;&#19979; &#36716;&#22411; &#32493;)<BR>&nbsp;</P>
+<P>2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (&#19978;&#36716;&#21487;&#19981;&#20351;&#29992;dynamic_cast&#32780;&#38544;&#24335;&#36716;&#25442;)<BR>&nbsp;</P>
+<P>Shape* s = nullptr;</P>
+<P>Circle *c = new Circle(2);</P>
+<P>s = c; //OK,&#38544;&#24335;&#19978;&#36716;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>2.2. Downcasting must be performed explicitly. (&#19979;&#36716;&#24517;&#39035;&#26174;&#24335;&#25191;&#34892;)<BR>&nbsp;</P>
+<P>Shape* s = new Circle(1);</P>
+<P>Circle *c = nullptr;</P>
+<P>c = <SPAN class=clozed>dynamic_cast &lt;Circle*&gt; (s); </SPAN>//&#26174;&#24335;&#19979;&#36716;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>U Note U</P>
+<P>&#29238;&#19978;&#65292;&#23376;&#19979;</P>
+<P>&#19978;&#36716;&#38544;&#65292;&#19979;&#36716;&#26174;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3414">Item #3,414: Upcasting and Downcasting (&#21521;&#19978;/&#21521;&#19979; &#36716;&#22411; &#32493;)   2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (&#19978;&#36716;&#21487;&#19981;&#20351;&#29992;dynamic_cast&#32780;&#38544;&#24335;&#36716;&#25442;)   Shape* s = nullptr; .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+Upcasting and Downcasting (&#21521;&#19978;/&#21521;&#19979; &#36716;&#22411; &#32493;)<BR>&nbsp;</P>
+<P>2.1. Upcasting can be performed implicitly without using the dynamic_cast operator. (&#19978;&#36716;&#21487;&#19981;&#20351;&#29992;dynamic_cast&#32780;&#38544;&#24335;&#36716;&#25442;)<BR>&nbsp;</P>
+<P>Shape* s = nullptr;</P>
+<P>Circle *c = new Circle(2);</P>
+<P>s = c; //OK,&#38544;&#24335;&#19978;&#36716;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>2.2. Downcasting must be performed explicitly. (&#19979;&#36716;&#24517;&#39035;&#26174;&#24335;&#25191;&#34892;)<BR>&nbsp;</P>
+<P>Shape* s = new Circle(1);</P>
+<P>Circle *c = nullptr;</P>
+<P>c = <SPAN class=cloze>[...]</SPAN>//&#26174;&#24335;&#19979;&#36716;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>U Note U</P>
+<P>&#29238;&#19978;&#65292;&#23376;&#19979;</P>
+<P>&#19978;&#36716;&#38544;&#65292;&#19979;&#36716;&#26174;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+dynamic_cast &lt;Circle*&gt; (s);
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

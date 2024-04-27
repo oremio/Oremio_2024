@@ -1,0 +1,241 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: typeid 运行时查询类型的信息   1. typeid operator (typeid运算符)   2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)   (1)     typeid returns a .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, typeid 运行时查询类型的信息   1. typeid operator (typeid运算符)   2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)   (1)     typeid returns a .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: typeid 运行时查询类型的信息   1. typeid operator (typeid运算符)   2 ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: typeid 运行时查询类型的信息   1. typeid operator (typeid运算符)   2 ... </font></b><br>(3 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3024.htm"> - Next</a> - <a href="3413.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="3413.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: typeid 运行时查询类型的信息   1. typeid operator (typeid运算符)   2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)   (1)     typeid returns a .</li>
+<ol>
+<li>typeid：运行时查询类型的信息    1. typeid operator (typeid运算符)    2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)    (1)     typeid . (see <a href="#3415">below)</a>
+<li>typeid：运行时查询类型的信息    1. typeid operator (typeid运算符)    2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)    (1)     typeid . (see <a href="#3416">below)</a>
+<li>typeid：运行时查询类型的信息    1. typeid operator (typeid运算符)    2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)    (1)     typeid . (see <a href="#3417">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,317: typeid &#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687;   1. typeid operator (typeid&#36816;&#31639;&#31526;)   2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;)   (1)     typeid returns a .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687; 
+<P>&nbsp;</P>
+<P>1. typeid operator (typeid&#36816;&#31639;&#31526;) 
+<P>&nbsp;</P>
+<P>2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;) 
+<P>&nbsp;</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; typeid returns a reference to an object of class type_info. (typeid&#36816;&#31639;&#31526;&#36820;&#22238;&#19968;&#20010;type_info&#23545;&#35937;<SPAN class=clozed>&#30340;&#24341;&#29992;</SPAN>)</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; typeid(AType).name() &#36820;&#22238;&#23454;&#29616;&#23450;&#20041;&#30340;&#65292;&#21547;&#26377;&#31867;&#22411;&#21517;&#31216;&#30340;C&#39118;&#26684;&#23383;&#31526;&#20018;(char *)</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>#include &lt;<SPAN class=clozed>typeinfo</SPAN>&gt;&nbsp; //&#20351;&#29992;typeid&#65292;&#38656;&#35201;&#21253;&#21547;&#27492;&#22836;&#25991;&#20214;</P>
+<P>class A {};</P>
+<P>A a{};</P>
+<P>// &#8230;&#8230;</P>
+<P>&nbsp; <SPAN class=clozed>auto&amp;</SPAN> t1 = typeid(a);</P>
+<P>&nbsp; if (typeid(A) == t1) {</P>
+<P>&nbsp;&nbsp;&nbsp; std::cout &lt;&lt; "a has type "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; t1.name() &lt;&lt; std::endl;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(visual studio)</P>
+<P>class A</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(g++)</P>
+<P>1A
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3415">Item #3,415: typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687;    1. typeid operator (typeid&#36816;&#31639;&#31526;)    2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;)    (1)     typeid .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687; 
+<P>&nbsp;</P>
+<P>1. typeid operator (typeid&#36816;&#31639;&#31526;) 
+<P>&nbsp;</P>
+<P>2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;) 
+<P>&nbsp;</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; typeid returns a reference to an object of class type_info. (typeid&#36816;&#31639;&#31526;&#36820;&#22238;&#19968;&#20010;type_info&#23545;&#35937;&#30340;&#24341;&#29992;)</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; typeid(AType).name() &#36820;&#22238;&#23454;&#29616;&#23450;&#20041;&#30340;&#65292;&#21547;&#26377;&#31867;&#22411;&#21517;&#31216;&#30340;C&#39118;&#26684;&#23383;&#31526;&#20018;(char *)</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>#include &lt;<SPAN class=cloze>[...]</SPAN>&gt;&nbsp; //&#20351;&#29992;typeid&#65292;&#38656;&#35201;&#21253;&#21547;&#27492;&#22836;&#25991;&#20214;</P>
+<P>class A {};</P>
+<P>A a{};</P>
+<P>// &#8230;&#8230;</P>
+<P>&nbsp; auto&amp; t1 = typeid(a);</P>
+<P>&nbsp; if (typeid(A) == t1) {</P>
+<P>&nbsp;&nbsp;&nbsp; std::cout &lt;&lt; "a has type "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; t1.name() &lt;&lt; std::endl;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(visual studio)</P>
+<P>class A</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(g++)</P>
+<P>1A
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+typeinfo
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3416">Item #3,416: typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687;    1. typeid operator (typeid&#36816;&#31639;&#31526;)    2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;)    (1)     typeid .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687; 
+<P>&nbsp;</P>
+<P>1. typeid operator (typeid&#36816;&#31639;&#31526;) 
+<P>&nbsp;</P>
+<P>2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;) 
+<P>&nbsp;</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; typeid returns a reference to an object of class type_info. (typeid&#36816;&#31639;&#31526;&#36820;&#22238;&#19968;&#20010;type_info&#23545;&#35937;&#30340;&#24341;&#29992;)</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; typeid(AType).name() &#36820;&#22238;&#23454;&#29616;&#23450;&#20041;&#30340;&#65292;&#21547;&#26377;&#31867;&#22411;&#21517;&#31216;&#30340;C&#39118;&#26684;&#23383;&#31526;&#20018;(char *)</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>#include &lt;<SPAN>typeinfo</SPAN>&gt;&nbsp; //&#20351;&#29992;typeid&#65292;&#38656;&#35201;&#21253;&#21547;&#27492;&#22836;&#25991;&#20214;</P>
+<P>class A {};</P>
+<P>A a{};</P>
+<P>// &#8230;&#8230;</P>
+<P>&nbsp; <SPAN class=cloze>[...]</SPAN> t1 = typeid(a);</P>
+<P>&nbsp; if (typeid(A) == t1) {</P>
+<P>&nbsp;&nbsp;&nbsp; std::cout &lt;&lt; "a has type "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; t1.name() &lt;&lt; std::endl;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(visual studio)</P>
+<P>class A</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(g++)</P>
+<P>1A
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+auto&amp;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3417">Item #3,417: typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687;    1. typeid operator (typeid&#36816;&#31639;&#31526;)    2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;)    (1)     typeid .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+typeid&#65306;&#36816;&#34892;&#26102;&#26597;&#35810;&#31867;&#22411;&#30340;&#20449;&#24687; 
+<P>&nbsp;</P>
+<P>1. typeid operator (typeid&#36816;&#31639;&#31526;) 
+<P>&nbsp;</P>
+<P>2. typeid is used to obtain the information about the class of the object (typeid&#29992;&#20110;&#33719;&#21462;&#23545;&#35937;&#25152;&#23646;&#30340;&#31867;&#30340;&#20449;&#24687;) 
+<P>&nbsp;</P>
+<P>(1)&nbsp;&nbsp;&nbsp;&nbsp; typeid returns a reference to an object of class type_info. (typeid&#36816;&#31639;&#31526;&#36820;&#22238;&#19968;&#20010;type_info&#23545;&#35937;<SPAN class=cloze>[...]</SPAN>)</P>
+<P>(2)&nbsp;&nbsp;&nbsp;&nbsp; typeid(AType).name() &#36820;&#22238;&#23454;&#29616;&#23450;&#20041;&#30340;&#65292;&#21547;&#26377;&#31867;&#22411;&#21517;&#31216;&#30340;C&#39118;&#26684;&#23383;&#31526;&#20018;(char *)</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>#include &lt;<SPAN>typeinfo</SPAN>&gt;&nbsp; //&#20351;&#29992;typeid&#65292;&#38656;&#35201;&#21253;&#21547;&#27492;&#22836;&#25991;&#20214;</P>
+<P>class A {};</P>
+<P>A a{};</P>
+<P>// &#8230;&#8230;</P>
+<P>&nbsp; <SPAN>auto&amp;</SPAN> t1 = typeid(a);</P>
+<P>&nbsp; if (typeid(A) == t1) {</P>
+<P>&nbsp;&nbsp;&nbsp; std::cout &lt;&lt; "a has type "</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; t1.name() &lt;&lt; std::endl;</P>
+<P>&nbsp; }</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(visual studio)</P>
+<P>class A</P>
+<P>&nbsp;</P>
+<P>&#21487;&#33021;&#30340;&#36755;&#20986;(g++)</P>
+<P>1A
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#30340;&#24341;&#29992;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

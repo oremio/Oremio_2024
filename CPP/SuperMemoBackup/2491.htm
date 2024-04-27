@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: C++ 内存布局 内存分为五个区：堆、栈、自由存储区、全局/静态存储区、常量存储区 注意区分操作系统的内存结构！">
+<meta http-equiv="keywords" content="SuperMemo, all in one, C++ 内存布局 内存分为五个区：堆、栈、自由存储区、全局/静态存储区、常量存储区 注意区分操作系统的内存结构！">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: C++ 内存布局 内存分为五个区：堆、栈、自由存储区、全局/静态存储区、常量存储区 注意区分操作系统的内存结构！ (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: C++ 内存布局 内存分为五个区：堆、栈、自由存储区、全局/静态存储区、常量存储区 注意区分操作系统的内存结构！ </font></b><br>(2 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3239.htm"> - Next</a> - <a href="3236.htm">Previous</a> - <a href="2967.htm">Parent</a> - <a href="3239.htm">Next sibling</a> - <a href="3233.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2967.htm">NNM笔记</a></li>
+<ul>
+<li>This page: C++ 内存布局 内存分为五个区：堆、栈、自由存储区、全局/静态存储区、常量存储区 注意区分操作系统的内存结构！</li>
+<ol>
+<li>C++ 内存布局 内存分为五个区：栈、[.]、堆、全局/静态存储区、常量存储区 注意和操作系统的内存结构进行区分！ (see <a href="#3238">below)</a>
+<li>C++ 内存布局  内存分为五个区：栈、自由存储区、堆、全局/静态存储区、[.]存储区 注意和操作系统的内存结构进行区分！ (see <a href="#3560">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #2,491: C++ &#20869;&#23384;&#24067;&#23616; &#20869;&#23384;&#20998;&#20026;&#20116;&#20010;&#21306;&#65306;&#22534;&#12289;&#26632;&#12289;&#33258;&#30001;&#23384;&#20648;&#21306;&#12289;&#20840;&#23616;/&#38745;&#24577;&#23384;&#20648;&#21306;&#12289;&#24120;&#37327;&#23384;&#20648;&#21306; &#27880;&#24847;&#21306;&#20998;&#25805;&#20316;&#31995;&#32479;&#30340;&#20869;&#23384;&#32467;&#26500;&#65281;</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+C++ &#20869;&#23384;&#24067;&#23616; 
+<P></P>
+<P>&#20869;&#23384;&#20998;&#20026;&#20116;&#20010;&#21306;&#65306;&#26632;&#12289;<SPAN class=clozed>&#33258;&#30001;&#23384;&#20648;&#21306;</SPAN>&#12289;&#22534;&#12289;&#20840;&#23616;/&#38745;&#24577;&#23384;&#20648;&#21306;&#12289;<SPAN class=clozed>&#24120;&#37327;</SPAN>&#23384;&#20648;&#21306;</P>
+<P>&#27880;&#24847;&#21644;&#25805;&#20316;&#31995;&#32479;&#30340;&#20869;&#23384;&#32467;&#26500;&#36827;&#34892;&#21306;&#20998;&#65281;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3238">Item #3,238: C++ &#20869;&#23384;&#24067;&#23616; &#20869;&#23384;&#20998;&#20026;&#20116;&#20010;&#21306;&#65306;&#26632;&#12289;[.]&#12289;&#22534;&#12289;&#20840;&#23616;/&#38745;&#24577;&#23384;&#20648;&#21306;&#12289;&#24120;&#37327;&#23384;&#20648;&#21306; &#27880;&#24847;&#21644;&#25805;&#20316;&#31995;&#32479;&#30340;&#20869;&#23384;&#32467;&#26500;&#36827;&#34892;&#21306;&#20998;&#65281;</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++ &#20869;&#23384;&#24067;&#23616;</P>
+<P>&#20869;&#23384;&#20998;&#20026;&#20116;&#20010;&#21306;&#65306;&#26632;&#12289;<SPAN class=cloze>[...]</SPAN>&#12289;&#22534;&#12289;&#20840;&#23616;/&#38745;&#24577;&#23384;&#20648;&#21306;&#12289;&#24120;&#37327;&#23384;&#20648;&#21306;</P>
+<P>&#27880;&#24847;&#21644;&#25805;&#20316;&#31995;&#32479;&#30340;&#20869;&#23384;&#32467;&#26500;&#36827;&#34892;&#21306;&#20998;&#65281;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#33258;&#30001;&#23384;&#20648;&#21306;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3560">Item #3,560: C++ &#20869;&#23384;&#24067;&#23616;  &#20869;&#23384;&#20998;&#20026;&#20116;&#20010;&#21306;&#65306;&#26632;&#12289;&#33258;&#30001;&#23384;&#20648;&#21306;&#12289;&#22534;&#12289;&#20840;&#23616;/&#38745;&#24577;&#23384;&#20648;&#21306;&#12289;[.]&#23384;&#20648;&#21306; &#27880;&#24847;&#21644;&#25805;&#20316;&#31995;&#32479;&#30340;&#20869;&#23384;&#32467;&#26500;&#36827;&#34892;&#21306;&#20998;&#65281;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+C++ &#20869;&#23384;&#24067;&#23616; 
+<P></P>
+<P>&#20869;&#23384;&#20998;&#20026;&#20116;&#20010;&#21306;&#65306;&#26632;&#12289;<SPAN>&#33258;&#30001;&#23384;&#20648;&#21306;</SPAN>&#12289;&#22534;&#12289;&#20840;&#23616;/&#38745;&#24577;&#23384;&#20648;&#21306;&#12289;<SPAN class=cloze>[...]</SPAN>&#23384;&#20648;&#21306;</P>
+<P>&#27880;&#24847;&#21644;&#25805;&#20316;&#31995;&#32479;&#30340;&#20869;&#23384;&#32467;&#26500;&#36827;&#34892;&#21306;&#20998;&#65281;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#24120;&#37327;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:47 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

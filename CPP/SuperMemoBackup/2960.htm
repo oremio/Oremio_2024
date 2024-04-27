@@ -1,0 +1,176 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: copy assignment operator">
+<meta http-equiv="keywords" content="SuperMemo, all in one, copy assignment operator">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: copy assignment operator (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: copy assignment operator </font></b><br>(4 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3248.htm"> - Next</a> - <a href="2958.htm">Previous</a> - <a href="2549.htm">Parent</a> - <a href="3248.htm">Next sibling</a> - <a href="2958.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="2549.htm">面向对象高级开发</a></li>
+<ul>
+<li>This page: copy assignment operator</li>
+<ol>
+<li>写一个String类的拷贝赋值函数： inline String& String::operator=(const String& str) { [.] return *this; delete[] m_data; m_data = new char[ strlen(str.m_data) + 1 ]; strcpy(m_data, str.m . (see <a href="#2961">below)</a>
+<li>写一个String类的拷贝赋值函数：  inline String& String::operator=(const String& str) { if (this == &str) return *this; [.] m_data = new char[ strlen(str.m_data) + 1 ]; strcpy(m_data, str.m . (see <a href="#2962">below)</a>
+<li>写一个String类的拷贝赋值函数：  inline String& String::operator=(const String& str) { if (this == &str) return *this; delete[] m_data; m_data = new char[ strlen(str.m_data) + 1 ]; . (see <a href="#2963">below)</a>
+<li>写一个String类的拷贝赋值函数：  inline [.] String::operator=(const String& str) { if (this == &str) return *this; delete[] m_data; m_data = new char[ strlen(str.m_data) + 1 ]; strcpy(m . (see <a href="#3247">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #2,960: copy assignment operator</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+&#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306; 
+<P></P>
+<P>inline<BR><SPAN class=clozed>String&amp;</SPAN> String::operator=(const String&amp; str)<BR>{<BR><SPAN class=clozed>if (this == &amp;str)</SPAN><BR>return *this;<BR><SPAN class=clozed>delete[] m_data;</SPAN><BR>m_data = new char[ strlen(str.m_data) + 1 ];<BR>strcpy(m_data, str.m_data);<BR>return *this;<BR>}</P>
+<P>&#22914;&#26524;<SPAN class=clozed>&#19981;&#21028;&#26029;self assignment</SPAN>&#65292;&#21518;&#26524;&#26159;delete[] m_data&#20043;&#21518;&#23601;&#20250;&#26080;&#27861;&#35775;&#38382;&#21491;&#20540;&#65292;&#36896;&#25104;UB&#65288;&#26410;&#23450;&#20041;&#34892;&#20026;&#65289;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2961">Item #2,961: &#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306; inline String& String::operator=(const String& str) { [.] return *this; delete[] m_data; m_data = new char[ strlen(str.m_data) + 1 ]; strcpy(m_data, str.m .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306;</P>
+<P>inline<BR>String&amp; String::operator=(const String&amp; str)<BR>{<BR><SPAN class=cloze>[...]</SPAN><BR>return *this;<BR>delete[] m_data;<BR>m_data = new char[ strlen(str.m_data) + 1 ];<BR>strcpy(m_data, str.m_data);<BR>return *this;<BR>}
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+if (this == &amp;str)
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2962">Item #2,962: &#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306;  inline String& String::operator=(const String& str) { if (this == &str) return *this; [.] m_data = new char[ strlen(str.m_data) + 1 ]; strcpy(m_data, str.m .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306; 
+<P></P>
+<P>inline<BR>String&amp; String::operator=(const String&amp; str)<BR>{<BR><SPAN>if (this == &amp;str)</SPAN><BR>return *this;<BR><SPAN class=cloze>[...]</SPAN><BR>m_data = new char[ strlen(str.m_data) + 1 ];<BR>strcpy(m_data, str.m_data);<BR>return *this;<BR>}
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+delete[] m_data;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2963">Item #2,963: &#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306;  inline String& String::operator=(const String& str) { if (this == &str) return *this; delete[] m_data; m_data = new char[ strlen(str.m_data) + 1 ]; .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306; 
+<P></P>
+<P>inline<BR>String&amp; String::operator=(const String&amp; str)<BR>{<BR><SPAN>if (this == &amp;str)</SPAN><BR>return *this;<BR><SPAN>delete[] m_data;</SPAN><BR>m_data = new char[ strlen(str.m_data) + 1 ];<BR>strcpy(m_data, str.m_data);<BR>return *this;<BR>}</P>
+<P>&#22914;&#26524;<SPAN class=cloze>[...]</SPAN>&#65292;&#21518;&#26524;&#26159;delete[] m_data&#20043;&#21518;&#23601;&#20250;&#26080;&#27861;&#35775;&#38382;&#21491;&#20540;&#65292;&#36896;&#25104;UB&#65288;&#26410;&#23450;&#20041;&#34892;&#20026;&#65289;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#19981;&#21028;&#26029;self assignment
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3247">Item #3,247: &#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306;  inline [.] String::operator=(const String& str) { if (this == &str) return *this; delete[] m_data; m_data = new char[ strlen(str.m_data) + 1 ]; strcpy(m .</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#20889;&#19968;&#20010;String&#31867;&#30340;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#65306; 
+<P></P>
+<P>inline<BR><SPAN class=cloze>[...]</SPAN> String::operator=(const String&amp; str)<BR>{<BR><SPAN>if (this == &amp;str)</SPAN><BR>return *this;<BR><SPAN>delete[] m_data;</SPAN><BR>m_data = new char[ strlen(str.m_data) + 1 ];<BR>strcpy(m_data, str.m_data);<BR>return *this;<BR>}</P>
+<P>&#22914;&#26524;<SPAN>&#19981;&#21028;&#26029;self assignment</SPAN>&#65292;&#21518;&#26524;&#26159;delete[] m_data&#20043;&#21518;&#23601;&#20250;&#26080;&#27861;&#35775;&#38382;&#21491;&#20540;&#65292;&#36896;&#25104;UB&#65288;&#26410;&#23450;&#20041;&#34892;&#20026;&#65289;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+String&amp; &#65288;&#24605;&#32771;&#65306;&#20026;&#20160;&#20040;&#25335;&#36125;&#36171;&#20540;&#20989;&#25968;&#38656;&#35201;&#36820;&#22238;&#20540;&#65311;&#65289;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

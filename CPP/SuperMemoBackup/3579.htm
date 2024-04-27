@@ -1,0 +1,117 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 释放一块并非new分配的内存，或者将相同的指针值释放多次，这是UB。. 使用new和delete管理动态内存存在三个常见问题：. 1. 忘记delete. 2. 使用已经delete的对象. 解放方法：delete后重置指针值. 3. 同一块内存释放两次">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 释放一块并非new分配的内存，或者将相同的指针值释放多次，这是UB。. 使用new和delete管理动态内存存在三个常见问题：. 1. 忘记delete. 2. 使用已经delete的对象. 解放方法：delete后重置指针值. 3. 同一块内存释放两次">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: 释放一块并非new分配的内存，或者将相同的指针值释放多次，这是UB。 ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: 释放一块并非new分配的内存，或者将相同的指针值释放多次，这是UB。 ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3581.htm"> - Next</a> - <a href="3315.htm">Previous</a> - <a href="3315.htm">Parent</a> - <a href="3581.htm">Next sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3315.htm">重返基础——C++Primer</a></li>
+<ul>
+<li>This page: 释放一块并非new分配的内存，或者将相同的指针值释放多次，这是UB。. 使用new和delete管理动态内存存在三个常见问题：. 1. 忘记delete. 2. 使用已经delete的对象. 解放方法：delete后重置指针值. 3. 同一块内存释放两次</li>
+<ol>
+<li>释放一块并非new分配的内存，或者将相同的指针值释放多次，这是UB。 使用new和delete管理动态内存存在三个常见问题： 1. 忘记delete 2. 使用已经delete的对象 解放方法：delete后[.] 3. 同一块内存释放两次 (see <a href="#3580">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,579: &#37322;&#25918;&#19968;&#22359;&#24182;&#38750;new&#20998;&#37197;&#30340;&#20869;&#23384;&#65292;&#25110;&#32773;&#23558;&#30456;&#21516;&#30340;&#25351;&#38024;&#20540;&#37322;&#25918;&#22810;&#27425;&#65292;&#36825;&#26159;UB&#12290;. &#20351;&#29992;new&#21644;delete&#31649;&#29702;&#21160;&#24577;&#20869;&#23384;&#23384;&#22312;&#19977;&#20010;&#24120;&#35265;&#38382;&#39064;&#65306;. 1. &#24536;&#35760;delete. 2. &#20351;&#29992;&#24050;&#32463;delete&#30340;&#23545;&#35937;. &#35299;&#25918;&#26041;&#27861;&#65306;delete&#21518;&#37325;&#32622;&#25351;&#38024;&#20540;. 3. &#21516;&#19968;&#22359;&#20869;&#23384;&#37322;&#25918;&#20004;&#27425;</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+&#37322;&#25918;&#19968;&#22359;&#24182;&#38750;new&#20998;&#37197;&#30340;&#20869;&#23384;&#65292;&#25110;&#32773;&#23558;&#30456;&#21516;&#30340;&#25351;&#38024;&#20540;&#37322;&#25918;&#22810;&#27425;&#65292;&#36825;&#26159;UB&#12290;</P>
+<P>&#20351;&#29992;new&#21644;delete&#31649;&#29702;&#21160;&#24577;&#20869;&#23384;&#23384;&#22312;&#19977;&#20010;&#24120;&#35265;&#38382;&#39064;&#65306;</P>
+<P>1. &#24536;&#35760;delete</P>
+<P>2. &#20351;&#29992;&#24050;&#32463;delete&#30340;&#23545;&#35937;</P>
+<P>&#35299;&#25918;&#26041;&#27861;&#65306;delete&#21518;<SPAN class=clozed>&#37325;&#32622;&#25351;&#38024;&#20540;</SPAN></P>
+<P>3. &#21516;&#19968;&#22359;&#20869;&#23384;&#37322;&#25918;&#20004;&#27425;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3580">Item #3,580: &#37322;&#25918;&#19968;&#22359;&#24182;&#38750;new&#20998;&#37197;&#30340;&#20869;&#23384;&#65292;&#25110;&#32773;&#23558;&#30456;&#21516;&#30340;&#25351;&#38024;&#20540;&#37322;&#25918;&#22810;&#27425;&#65292;&#36825;&#26159;UB&#12290; &#20351;&#29992;new&#21644;delete&#31649;&#29702;&#21160;&#24577;&#20869;&#23384;&#23384;&#22312;&#19977;&#20010;&#24120;&#35265;&#38382;&#39064;&#65306; 1. &#24536;&#35760;delete 2. &#20351;&#29992;&#24050;&#32463;delete&#30340;&#23545;&#35937; &#35299;&#25918;&#26041;&#27861;&#65306;delete&#21518;[.] 3. &#21516;&#19968;&#22359;&#20869;&#23384;&#37322;&#25918;&#20004;&#27425;</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#37322;&#25918;&#19968;&#22359;&#24182;&#38750;new&#20998;&#37197;&#30340;&#20869;&#23384;&#65292;&#25110;&#32773;&#23558;&#30456;&#21516;&#30340;&#25351;&#38024;&#20540;&#37322;&#25918;&#22810;&#27425;&#65292;&#36825;&#26159;UB&#12290;</P>
+<P>&#20351;&#29992;new&#21644;delete&#31649;&#29702;&#21160;&#24577;&#20869;&#23384;&#23384;&#22312;&#19977;&#20010;&#24120;&#35265;&#38382;&#39064;&#65306;</P>
+<P>1. &#24536;&#35760;delete</P>
+<P>2. &#20351;&#29992;&#24050;&#32463;delete&#30340;&#23545;&#35937;</P>
+<P>&#35299;&#25918;&#26041;&#27861;&#65306;delete&#21518;<SPAN class=cloze>[...]</SPAN></P>
+<P>3. &#21516;&#19968;&#22359;&#20869;&#23384;&#37322;&#25918;&#20004;&#27425;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#37325;&#32622;&#25351;&#38024;&#20540;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:48 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>

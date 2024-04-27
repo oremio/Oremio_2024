@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 完美转发的概念和原理： 动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 testForward 的函数，该函数不做任何操作，只是简单地转调用到 print 函数。 print 函数有两个版本：一个接受左值引用，另一个接受右值引用。 用户希望在 testForward 中，无论参数是左值还是右值，都能正确地调用相应版本的 .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 完美转发的概念和原理： 动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 testForward 的函数，该函数不做任何操作，只是简单地转调用到 print 函数。 print 函数有两个版本：一个接受左值引用，另一个接受右值引用。 用户希望在 testForward 中，无论参数是左值还是右值，都能正确地调用相应版本的 .">
+<meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
+<title>all in one: 完美转发的概念和原理： 动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 ... (SuperMemo collection)</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">all in one: 完美转发的概念和原理： 动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 ... </font></b><br>(1 elements)</p>
+<a name="TopOfPages"> </a>
+<b>Contents:</b>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCCFF">
+<tr>
+<td width="100%">
+  <a href="index.htm">Root</a> <a href="3309.htm"> - Next</a> - <a href="3172.htm">Previous</a> - <a href="3163.htm">Parent</a> - <a href="3309.htm">Next sibling</a> - <a href="3172.htm">Previous sibling</a>
+<font size="2">
+<ul>
+<li><a href="index.htm">C++</a></li>
+<ul>
+<li><a href="3163.htm">C++标准11-14</a></li>
+<ul>
+<li>This page: 完美转发的概念和原理： 动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 testForward 的函数，该函数不做任何操作，只是简单地转调用到 print 函数。 print 函数有两个版本：一个接受左值引用，另一个接受右值引用。 用户希望在 testForward 中，无论参数是左值还是右值，都能正确地调用相应版本的 .</li>
+<ol>
+<li>完美转发的概念和原理：  动机：C++为什么需要完美转发？ 假设有这样的情况：用户希望调用一个名为 testForward 的函数，该函数不做任何操作，只是简单地转调用到 print 函数。  print 函数有两个版本：一个接受左值引用，另一个接受右值引用。  用户希望在 testForward . (see <a href="#3176">below)</a>
+</ol>
+</ul>
+</ul>
+</ul>
+</font>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+<div align="center">
+<center>
+<table border="4" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFFF00" bordercolor="#FF0000">
+<tr>
+<td>
+<b>Subject: Topic #3,175: &#23436;&#32654;&#36716;&#21457;&#30340;&#27010;&#24565;&#21644;&#21407;&#29702;&#65306; &#21160;&#26426;&#65306;C++&#20026;&#20160;&#20040;&#38656;&#35201;&#23436;&#32654;&#36716;&#21457;&#65311; &#20551;&#35774;&#26377;&#36825;&#26679;&#30340;&#24773;&#20917;&#65306;&#29992;&#25143;&#24076;&#26395;&#35843;&#29992;&#19968;&#20010;&#21517;&#20026; testForward &#30340;&#20989;&#25968;&#65292;&#35813;&#20989;&#25968;&#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#65292;&#21482;&#26159;&#31616;&#21333;&#22320;&#36716;&#35843;&#29992;&#21040; print &#20989;&#25968;&#12290; print &#20989;&#25968;&#26377;&#20004;&#20010;&#29256;&#26412;&#65306;&#19968;&#20010;&#25509;&#21463;&#24038;&#20540;&#24341;&#29992;&#65292;&#21478;&#19968;&#20010;&#25509;&#21463;&#21491;&#20540;&#24341;&#29992;&#12290; &#29992;&#25143;&#24076;&#26395;&#22312; testForward &#20013;&#65292;&#26080;&#35770;&#21442;&#25968;&#26159;&#24038;&#20540;&#36824;&#26159;&#21491;&#20540;&#65292;&#37117;&#33021;&#27491;&#30830;&#22320;&#35843;&#29992;&#30456;&#24212;&#29256;&#26412;&#30340; .</b><p>
+</td>
+</tr>
+<tr>
+<td bordercolor="#FFCC00">
+&#23436;&#32654;&#36716;&#21457;&#30340;&#27010;&#24565;&#21644;&#21407;&#29702;&#65306; 
+<P></P>
+<OL>
+<LI>
+<P><STRONG>&#21160;&#26426;&#65306;C++&#20026;&#20160;&#20040;&#38656;&#35201;&#23436;&#32654;&#36716;&#21457;&#65311;</STRONG></P>
+<UL>
+<LI>&#20551;&#35774;&#26377;&#36825;&#26679;&#30340;&#24773;&#20917;&#65306;&#29992;&#25143;&#24076;&#26395;&#35843;&#29992;&#19968;&#20010;&#21517;&#20026;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#30340;&#20989;&#25968;&#65292;&#35813;&#20989;&#25968;&#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#65292;&#21482;&#26159;&#31616;&#21333;&#22320;&#36716;&#35843;&#29992;&#21040;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#12290; 
+<LI><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#26377;&#20004;&#20010;&#29256;&#26412;&#65306;&#19968;&#20010;&#25509;&#21463;&#24038;&#20540;&#24341;&#29992;&#65292;&#21478;&#19968;&#20010;&#25509;&#21463;&#21491;&#20540;&#24341;&#29992;&#12290; 
+<LI>&#29992;&#25143;&#24076;&#26395;&#22312;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#20013;&#65292;&#26080;&#35770;&#21442;&#25968;&#26159;&#24038;&#20540;&#36824;&#26159;&#21491;&#20540;&#65292;&#37117;&#33021;&#27491;&#30830;&#22320;&#35843;&#29992;&#30456;&#24212;&#29256;&#26412;&#30340;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#12290; 
+<LI>&#28982;&#32780;&#65292;&#30001;&#20110;&#21442;&#25968;&#22312;&#20989;&#25968;&#35843;&#29992;&#26102;&#37117;&#36716;&#21270;&#25104;&#20102;&#24038;&#20540;&#65292;&#23548;&#33268;&#20989;&#25968;&#26080;&#27861;&#21028;&#26029;&#24038;&#20540;&#21644;&#21491;&#20540;&#65292;&#20174;&#32780;&#26080;&#27861;&#23454;&#29616;&#29992;&#25143;&#30340;&#26412;&#24847;&#12290; 
+<LI>&#36825;&#23601;&#26159;&#23436;&#32654;&#36716;&#21457;&#30340;&#21160;&#26426;&#12290;</LI></UL>
+<LI>
+<P><STRONG>&#21407;&#29702;&#65306;&#23436;&#32654;&#36716;&#21457;</STRONG></P>
+<UL>
+<LI>&#23436;&#32654;&#36716;&#21457;&#22522;&#20110;&#19977;&#20010;&#20851;&#38190;&#27010;&#24565;&#65306; 
+<UL>
+<LI><STRONG>&#24341;&#29992;&#25240;&#21472;</STRONG>&#65306;&#23558;&#21491;&#20540;&#24341;&#29992;&#21644;&#24038;&#20540;&#24341;&#29992;&#25240;&#21472;&#25104;&#32479;&#19968;&#30340;&#31867;&#22411;&#12290; 
+<LI><STRONG>&#19975;&#33021;&#24341;&#29992;</STRONG>&#65306;&#20351;&#29992;&#27169;&#26495;&#31867;&#22411;&#25512;&#23548;&#26469;&#20445;&#25345;&#21442;&#25968;&#30340;&#21407;&#22987;&#31867;&#22411;&#12290; 
+<LI><STRONG><CODE><FONT face=NSimsun>std::forward</FONT></CODE></STRONG>&#65306;&#23558;&#21442;&#25968;&#24378;&#21046;&#36716;&#22411;&#25104;&#27491;&#30830;&#30340;&#31867;&#22411;&#65292;&#20197;&#23454;&#29616;&#23436;&#32654;&#36716;&#21457;&#12290;</LI></UL>
+<LI><CODE><FONT face=NSimsun>std::forward</FONT></CODE><SPAN>&nbsp;</SPAN>&#19981;&#26159;&#29420;&#33258;&#36816;&#20316;&#30340;&#65292;&#23427;&#38656;&#35201;&#24341;&#29992;&#25240;&#21472;&#26426;&#21046;&#21644;&#19975;&#33021;&#24341;&#29992;&#30340;&#37197;&#21512;&#12290; 
+<LI>&#36890;&#36807;&#27491;&#30830;&#30340;&#27169;&#26495;&#21442;&#25968;&#65292;<CODE><FONT face=NSimsun>std::forward</FONT></CODE><SPAN>&nbsp;</SPAN>&#36820;&#22238;<SPAN class=clozed>&#27491;&#30830;&#30340;&#31867;&#22411;&#65292;&#20351;&#24471;&#20989;&#25968;&#35843;&#29992;&#26102;&#33021;&#22815;&#21306;&#20998;&#24038;&#20540;&#21644;&#21491;&#20540;</SPAN>&#12290;</LI></UL>
+<LI>
+<P><STRONG>&#31034;&#20363;&#20195;&#30721;</STRONG>&#65306;</P><PRE><DIV><CODE class=language-cpp><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;</SPAN><SPAN> t</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>cout </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> </SPAN><SPAN class=token>"Lvalue ref"</SPAN><SPAN> </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>endl</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;&amp;</SPAN><SPAN> t</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>cout </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> </SPAN><SPAN class=token>"Rvalue ref"</SPAN><SPAN> </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>endl</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;&amp;</SPAN><SPAN> v</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#27704;&#36828;&#35843;&#29992;&#24038;&#20540;&#29256;&#26412;&#30340; print</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class="token generic-function">forward</SPAN><SPAN class="token generic-function generic">&lt;</SPAN><SPAN class="token generic-function generic">T</SPAN><SPAN class="token generic-function generic">&gt;</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#26412;&#25991;&#30340;&#37325;&#28857;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class=token>move</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#27704;&#36828;&#35843;&#29992;&#21491;&#20540;&#29256;&#26412;&#30340; print</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>int</SPAN><SPAN> </SPAN><SPAN class=token>main</SPAN><SPAN class=token>(</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>int</SPAN><SPAN> x </SPAN><SPAN class=token>=</SPAN><SPAN> </SPAN><SPAN class=token>1</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>x</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#23454;&#21442;&#20026;&#24038;&#20540;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class=token>move</SPAN><SPAN class=token>(</SPAN><SPAN>x</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#23454;&#21442;&#20026;&#21491;&#20540;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN></CODE></DIV></PRE>
+<UL>
+<LI>&#22312;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#20013;&#65292;&#21482;&#26377;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun><STRONG>print(std::forward&lt;T&gt;(v))</STRONG></FONT></CODE><SPAN>&nbsp;</SPAN>&#25165;&#31526;&#21512;&#29992;&#25143;&#30340;&#26412;&#24847;&#65292;&#23454;&#29616;&#20102;&#23436;&#32654;&#36716;&#21457;&#12290;</LI></UL></LI></OL>
+<P>&#24635;&#20043;&#65292;&#23436;&#32654;&#36716;&#21457;&#26159;&#19968;&#39033;&#24378;&#22823;&#30340;&#25216;&#26415;&#65292;&#33021;&#22815;&#22312;&#27867;&#22411;&#32534;&#31243;&#20013;&#20445;&#30041;&#21442;&#25968;&#30340;&#31867;&#22411;&#21644;&#20540;&#31867;&#21035;&#65292;&#25552;&#39640;&#20195;&#30721;&#24615;&#33021;&#21644;&#20934;&#30830;&#24615;&#12290;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3176">Item #3,176: &#23436;&#32654;&#36716;&#21457;&#30340;&#27010;&#24565;&#21644;&#21407;&#29702;&#65306;  &#21160;&#26426;&#65306;C++&#20026;&#20160;&#20040;&#38656;&#35201;&#23436;&#32654;&#36716;&#21457;&#65311; &#20551;&#35774;&#26377;&#36825;&#26679;&#30340;&#24773;&#20917;&#65306;&#29992;&#25143;&#24076;&#26395;&#35843;&#29992;&#19968;&#20010;&#21517;&#20026; testForward &#30340;&#20989;&#25968;&#65292;&#35813;&#20989;&#25968;&#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#65292;&#21482;&#26159;&#31616;&#21333;&#22320;&#36716;&#35843;&#29992;&#21040; print &#20989;&#25968;&#12290;  print &#20989;&#25968;&#26377;&#20004;&#20010;&#29256;&#26412;&#65306;&#19968;&#20010;&#25509;&#21463;&#24038;&#20540;&#24341;&#29992;&#65292;&#21478;&#19968;&#20010;&#25509;&#21463;&#21491;&#20540;&#24341;&#29992;&#12290;  &#29992;&#25143;&#24076;&#26395;&#22312; testForward .</a></P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#23436;&#32654;&#36716;&#21457;&#30340;&#27010;&#24565;&#21644;&#21407;&#29702;&#65306; 
+<P></P>
+<OL>
+<LI>
+<P><STRONG>&#21160;&#26426;&#65306;C++&#20026;&#20160;&#20040;&#38656;&#35201;&#23436;&#32654;&#36716;&#21457;&#65311;</STRONG></P>
+<UL>
+<LI>&#20551;&#35774;&#26377;&#36825;&#26679;&#30340;&#24773;&#20917;&#65306;&#29992;&#25143;&#24076;&#26395;&#35843;&#29992;&#19968;&#20010;&#21517;&#20026;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#30340;&#20989;&#25968;&#65292;&#35813;&#20989;&#25968;&#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#65292;&#21482;&#26159;&#31616;&#21333;&#22320;&#36716;&#35843;&#29992;&#21040;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#12290; 
+<LI><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#26377;&#20004;&#20010;&#29256;&#26412;&#65306;&#19968;&#20010;&#25509;&#21463;&#24038;&#20540;&#24341;&#29992;&#65292;&#21478;&#19968;&#20010;&#25509;&#21463;&#21491;&#20540;&#24341;&#29992;&#12290; 
+<LI>&#29992;&#25143;&#24076;&#26395;&#22312;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#20013;&#65292;&#26080;&#35770;&#21442;&#25968;&#26159;&#24038;&#20540;&#36824;&#26159;&#21491;&#20540;&#65292;&#37117;&#33021;&#27491;&#30830;&#22320;&#35843;&#29992;&#30456;&#24212;&#29256;&#26412;&#30340;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>print</FONT></CODE><SPAN>&nbsp;</SPAN>&#20989;&#25968;&#12290; 
+<LI>&#28982;&#32780;&#65292;&#30001;&#20110;&#21442;&#25968;&#22312;&#20989;&#25968;&#35843;&#29992;&#26102;&#37117;&#36716;&#21270;&#25104;&#20102;&#24038;&#20540;&#65292;&#23548;&#33268;&#20989;&#25968;&#26080;&#27861;&#21028;&#26029;&#24038;&#20540;&#21644;&#21491;&#20540;&#65292;&#20174;&#32780;&#26080;&#27861;&#23454;&#29616;&#29992;&#25143;&#30340;&#26412;&#24847;&#12290; 
+<LI>&#36825;&#23601;&#26159;&#23436;&#32654;&#36716;&#21457;&#30340;&#21160;&#26426;&#12290;</LI></UL>
+<LI>
+<P><STRONG>&#21407;&#29702;&#65306;&#23436;&#32654;&#36716;&#21457;</STRONG></P>
+<UL>
+<LI>&#23436;&#32654;&#36716;&#21457;&#22522;&#20110;&#19977;&#20010;&#20851;&#38190;&#27010;&#24565;&#65306; 
+<UL>
+<LI><STRONG>&#24341;&#29992;&#25240;&#21472;</STRONG>&#65306;&#23558;&#21491;&#20540;&#24341;&#29992;&#21644;&#24038;&#20540;&#24341;&#29992;&#25240;&#21472;&#25104;&#32479;&#19968;&#30340;&#31867;&#22411;&#12290; 
+<LI><STRONG>&#19975;&#33021;&#24341;&#29992;</STRONG>&#65306;&#20351;&#29992;&#27169;&#26495;&#31867;&#22411;&#25512;&#23548;&#26469;&#20445;&#25345;&#21442;&#25968;&#30340;&#21407;&#22987;&#31867;&#22411;&#12290; 
+<LI><STRONG><CODE><FONT face=NSimsun>std::forward</FONT></CODE></STRONG>&#65306;&#23558;&#21442;&#25968;&#24378;&#21046;&#36716;&#22411;&#25104;&#27491;&#30830;&#30340;&#31867;&#22411;&#65292;&#20197;&#23454;&#29616;&#23436;&#32654;&#36716;&#21457;&#12290;</LI></UL>
+<LI><CODE><FONT face=NSimsun>std::forward</FONT></CODE><SPAN>&nbsp;</SPAN>&#19981;&#26159;&#29420;&#33258;&#36816;&#20316;&#30340;&#65292;&#23427;&#38656;&#35201;&#24341;&#29992;&#25240;&#21472;&#26426;&#21046;&#21644;&#19975;&#33021;&#24341;&#29992;&#30340;&#37197;&#21512;&#12290; 
+<LI>&#36890;&#36807;&#27491;&#30830;&#30340;&#27169;&#26495;&#21442;&#25968;&#65292;<CODE><FONT face=NSimsun>std::forward</FONT></CODE><SPAN>&nbsp;</SPAN>&#36820;&#22238;<SPAN class=cloze>[...]</SPAN>&#12290;</LI></UL>
+<LI>
+<P><STRONG>&#31034;&#20363;&#20195;&#30721;</STRONG>&#65306;</P><PRE><DIV><CODE class=language-cpp><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;</SPAN><SPAN> t</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>cout </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> </SPAN><SPAN class=token>"Lvalue ref"</SPAN><SPAN> </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>endl</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;&amp;</SPAN><SPAN> t</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>cout </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> </SPAN><SPAN class=token>"Rvalue ref"</SPAN><SPAN> </SPAN><SPAN class=token>&lt;&lt;</SPAN><SPAN> std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN>endl</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>template</SPAN><SPAN class=token>&lt;</SPAN><SPAN class=token>typename</SPAN><SPAN> </SPAN><SPAN class=token>T</SPAN><SPAN class=token>&gt;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><FONT face=NSimsun><SPAN class=token>void</SPAN><SPAN> </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>T </SPAN><SPAN class=token>&amp;&amp;</SPAN><SPAN> v</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#27704;&#36828;&#35843;&#29992;&#24038;&#20540;&#29256;&#26412;&#30340; print</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class="token generic-function">forward</SPAN><SPAN class="token generic-function generic">&lt;</SPAN><SPAN class="token generic-function generic">T</SPAN><SPAN class="token generic-function generic">&gt;</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#26412;&#25991;&#30340;&#37325;&#28857;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>print</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class=token>move</SPAN><SPAN class=token>(</SPAN><SPAN>v</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#27704;&#36828;&#35843;&#29992;&#21491;&#20540;&#29256;&#26412;&#30340; print</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN><SPAN>
+</SPAN>
+<SPAN></SPAN><FONT face=NSimsun><SPAN class=token>int</SPAN><SPAN> </SPAN><SPAN class=token>main</SPAN><SPAN class=token>(</SPAN><SPAN class=token>)</SPAN><SPAN> </SPAN><SPAN class=token>{</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>int</SPAN><SPAN> x </SPAN><SPAN class=token>=</SPAN><SPAN> </SPAN><SPAN class=token>1</SPAN><SPAN class=token>;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>x</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#23454;&#21442;&#20026;&#24038;&#20540;</SPAN></FONT><SPAN>
+</SPAN><FONT face=NSimsun><SPAN>    </SPAN><SPAN class=token>testForward</SPAN><SPAN class=token>(</SPAN><SPAN>std</SPAN><SPAN class="token double-colon">::</SPAN><SPAN class=token>move</SPAN><SPAN class=token>(</SPAN><SPAN>x</SPAN><SPAN class=token>)</SPAN><SPAN class=token>)</SPAN><SPAN class=token>;</SPAN><SPAN> </SPAN><SPAN class=token>// &#23454;&#21442;&#20026;&#21491;&#20540;</SPAN></FONT><SPAN>
+</SPAN><SPAN></SPAN><SPAN class=token><FONT face=NSimsun>}</FONT></SPAN></CODE></DIV></PRE>
+<UL>
+<LI>&#22312;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun>testForward</FONT></CODE><SPAN>&nbsp;</SPAN>&#20013;&#65292;&#21482;&#26377;<SPAN>&nbsp;</SPAN><CODE><FONT face=NSimsun><STRONG>print(std::forward&lt;T&gt;(v))</STRONG></FONT></CODE><SPAN>&nbsp;</SPAN>&#25165;&#31526;&#21512;&#29992;&#25143;&#30340;&#26412;&#24847;&#65292;&#23454;&#29616;&#20102;&#23436;&#32654;&#36716;&#21457;&#12290;</LI></UL></LI></OL>
+<P>&#24635;&#20043;&#65292;&#23436;&#32654;&#36716;&#21457;&#26159;&#19968;&#39033;&#24378;&#22823;&#30340;&#25216;&#26415;&#65292;&#33021;&#22815;&#22312;&#27867;&#22411;&#32534;&#31243;&#20013;&#20445;&#30041;&#21442;&#25968;&#30340;&#31867;&#22411;&#21644;&#20540;&#31867;&#21035;&#65292;&#25552;&#39640;&#20195;&#30721;&#24615;&#33021;&#21644;&#20934;&#30830;&#24615;&#12290;
+</td>
+</tr>
+<tr>
+<td bordercolor="#0066FF" bgcolor="#D0E8FF"> 
+&#27491;&#30830;&#30340;&#31867;&#22411;&#65292;&#20351;&#24471;&#20989;&#25968;&#35843;&#29992;&#26102;&#33021;&#22815;&#21306;&#20998;&#24038;&#20540;&#21644;&#21491;&#20540;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<div align="center">
+<center>
+<table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
+<tr>
+<td width="100%">
+<p><b>About using this material:</b></p>
+<p>The best way to <b>learn</b> this material is to use <a href="http://super-memory.com/english/smintro.htm">SuperMemo</a> software.<br>
+SuperMemo is the world's leader in accelerated learning technologies
+ (see: <a href="http://www.super-memory.com">SuperMemo Website</a>)
+<p>
+No download URL currently available
+</td>
+</tr>
+<tr>
+<td width="100%">
+<b>Contact data:</b></p>
+<p><b>Author: sm18-lazy-package</b><br>
+<a href="http://super-memory.com">super-memory.com</a><br>
+date: 4/27/2024 6:25:46 PM<br>
+Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
+</td>
+</tr>
+<tr>
+<td width="100%">
+</td>
+</tr>
+</table>
+</center>
+</div>
+</body>
+
+</html>
