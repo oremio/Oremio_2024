@@ -17,6 +17,8 @@ for /R "%SOURCE_DIR%" %%f in (*.htm) do (
     iconv -f GB2312 -t UTF-8 "%%f" > "%%f.new"
     if errorlevel 1 (
         echo Failed to convert %%f
+        del "%%f.new"
+        echo Temporary file deleted: %%f.new
     ) else (
         move /Y "%%f.new" "%%f"
         echo Successfully converted %%f
