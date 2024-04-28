@@ -17,7 +17,6 @@ ConstStrBlobPtr StrBlob::end() const
 
 int main()
 {
-
     const StrBlob sb{"Hello,", "world!"};
     ConstStrBlobPtr sbp(sb);
     while (sbp != sb.end()) {
