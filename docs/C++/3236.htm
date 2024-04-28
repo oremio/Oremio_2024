@@ -1,15 +1,15 @@
 <html>
 
 <head>
-<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ����Ҫ��ֻ��Ҫ���ͣ��� malloc ��Ҫ�ֶ�������Ҫ������ڴ��С  - ���Ͱ�ȫ��new �����������͵�ָ�룬���Ͱ�ȫ��malloc ֻ���� void* ָ�룬��Ҫʹ��ǿ������ת��  - �ڴ�ռ���Դ��ͬ��new �����ɴ洢������ڴ棻malloc .">
-<meta http-equiv="keywords" content="SuperMemo, all in one, new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ����Ҫ��ֻ��Ҫ���ͣ��� malloc ��Ҫ�ֶ�������Ҫ������ڴ��С  - ���Ͱ�ȫ��new �����������͵�ָ�룬���Ͱ�ȫ��malloc ֻ���� void* ָ�룬��Ҫʹ��ǿ������ת��  - �ڴ�ռ���Դ��ͬ��new �����ɴ洢������ڴ棻malloc .">
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new 不需要，只需要类型；但 malloc 需要手动声明需要分配的内存大小  - 类型安全：new 返回声明类型的指针，类型安全；malloc 只返回 void* 指针，需要使用强制类型转换  - 内存空间来源不同：new 从自由存储区获得内存；malloc .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new 不需要，只需要类型；但 malloc 需要手动声明需要分配的内存大小  - 类型安全：new 返回声明类型的指针，类型安全；malloc 只返回 void* 指针，需要使用强制类型转换  - 内存空间来源不同：new 从自由存储区获得内存；malloc .">
 <meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
-<title>all in one: new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ... (SuperMemo collection)</title>
+<title>all in one: new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new ... (SuperMemo collection)</title>
 </head>
 
 <body>
 
-<p align="center"><b><font size="5">all in one: new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ... </font></b><br>(2 elements)</p>
+<p align="center"><b><font size="5">all in one: new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new ... </font></b><br>(2 elements)</p>
 <a name="TopOfPages"> </a>
 <b>Contents:</b>
 <div align="center">
@@ -22,14 +22,14 @@
 <ul>
 <li><a href="index.htm">C++</a></li>
 <ul>
-<li><a href="2967.htm">NNM�ʼ�</a></li>
+<li><a href="2967.htm">NNM笔记</a></li>
 <ul>
-<li><a href="3233.htm">DEFINE �� const��constexpr�������� DEFINE �� C/C++ �����еĺ꣬�����������������������ͺ������� const �� C/C++ �����������Ĺؼ��֣��� constexpr �� C++11 ���������������ڿ�����ֵ�ĳ����� ������������ʱ��  - Define .</a></li>
+<li><a href="3233.htm">DEFINE 和 const（constexpr）的区别？ DEFINE 是 C/C++ 语言中的宏，可以用于声明字面量常量和函数；而 const 是 C/C++ 中声明常量的关键字；而 constexpr 是 C++11 后用于声明编译期可以求值的常量。 在声明常量的时候：  - Define .</a></li>
 <ul>
-<li>This page: new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ����Ҫ��ֻ��Ҫ���ͣ��� malloc ��Ҫ�ֶ�������Ҫ������ڴ��С  - ���Ͱ�ȫ��new �����������͵�ָ�룬���Ͱ�ȫ��malloc ֻ���� void* ָ�룬��Ҫʹ��ǿ������ת��  - �ڴ�ռ���Դ��ͬ��new �����ɴ洢������ڴ棻malloc .</li>
+<li>This page: new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new 不需要，只需要类型；但 malloc 需要手动声明需要分配的内存大小  - 类型安全：new 返回声明类型的指针，类型安全；malloc 只返回 void* 指针，需要使用强制类型转换  - 内存空间来源不同：new 从自由存储区获得内存；malloc .</li>
 <ol>
-<li>new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ����Ҫ��ֻ��Ҫ���ͣ��� malloc ��Ҫ�ֶ�������Ҫ������ڴ��С   - ���Ͱ�ȫ��new �����������͵�ָ�룬���Ͱ�ȫ��malloc ֻ���� void* ָ�룬��Ҫʹ��ǿ������ת��   - ���ڶ������Ϊ��ͬ��new . (see <a href="#2943">below)</a>
-<li>new/delete �� malloc/free ������  - ָ�������ڴ�Ĵ�С��new ����Ҫ��ֻ��Ҫ���ͣ��� malloc ��Ҫ�ֶ�������Ҫ������ڴ��С   - ���Ͱ�ȫ��new �����������͵�ָ�룬���Ͱ�ȫ��malloc ֻ���� [.] ָ�룬��Ҫʹ��ǿ������ת��   - ���ڶ������Ϊ��ͬ��new . (see <a href="#3237">below)</a>
+<li>new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new 不需要，只需要类型；但 malloc 需要手动声明需要分配的内存大小   - 类型安全：new 返回声明类型的指针，类型安全；malloc 只返回 void* 指针，需要使用强制类型转换   - 对于对象的行为不同：new . (see <a href="#2943">below)</a>
+<li>new/delete 和 malloc/free 的区别？  - 指定分配内存的大小：new 不需要，只需要类型；但 malloc 需要手动声明需要分配的内存大小   - 类型安全：new 返回声明类型的指针，类型安全；malloc 只返回 [.] 指针，需要使用强制类型转换   - 对于对象的行为不同：new . (see <a href="#3237">below)</a>
 </ol>
 </ul>
 </ul>
@@ -125,7 +125,7 @@ No download URL currently available
 <b>Contact data:</b></p>
 <p><b>Author: sm18-lazy-package</b><br>
 <a href="http://super-memory.com">super-memory.com</a><br>
-date: 4/27/2024 6:25:47 PM<br>
+date: 2024/4/28 16:47:55<br>
 Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
 </td>
 </tr>

@@ -9,7 +9,7 @@
 
 <body>
 
-<p align="center"><b><font size="5">all in one: 面向对象高级开发 </font></b><br>(77 elements)</p>
+<p align="center"><b><font size="5">all in one: 面向对象高级开发 </font></b><br>(81 elements)</p>
 <a name="TopOfPages"> </a>
 <b>Contents:</b>
 <div align="center">
@@ -51,6 +51,7 @@
 <li>OOP：复合 & 适配器模式 (see <a href="#2986">below)</a>
 <li>OOP：委托 (see <a href="#2541">below)</a>
 <li><a href="2987.htm">OOP：继承</a> (1 elements)
+<li>类之间有哪些关系（待补充） (see <a href="#3250">below)</a>
 <li><a href="3571.htm">1. 基类成员的访问级别 public 成员：在基类中公开，可以被任何代码访问。 protected 成员：只能被基类和其派生类中的代码访问。 private 成员：只能被基类自身的成员函数、友元函数或类访问，派生类无法直接访问。 2. 继承类型 public 继承：最常用的继承方式，基类的 public 成员在派生类中保持 .</a> (1 elements)
 <li><a href="2989.htm">Inheritance (繼承) with virtual functions (虛函數)</a> (1 elements)
 <li><a href="2991.htm">Inheritance+Composition 關係下的構造和析構. Derived 的構造函數首先調用 Base 的 default 構造函數，然後調用 Component 的 default 構造函數，然後才執行自己。. Derived 的析構函數首先執行自己，然後調用 Component 的 析構函數，然後調用 Base 的析構函數。 .</a> (1 elements)
@@ -58,6 +59,10 @@
 <li>复合模式 (see <a href="#2773">below)</a>
 <li>原型模式 (see <a href="#3006">below)</a>
 <li>转换函数 (see <a href="#3025">below)</a>
+<li>non-explicit-one-argument ctor：将4转换为Fraction类型 (see <a href="#2711">below)</a>
+<li>explicit-one-argument ctor：不准 隐式转换 (see <a href="#3591">below)</a>
+<li>重载-> (see <a href="#3592">below)</a>
+<li>关于迭代器 (see <a href="#3593">below)</a>
 <li>关于vptr和vtbl (see <a href="#3041">below)</a>
 <li><a href="3042.htm">关于this & 模板方法 / 模板模式</a> (3 elements)
 <li><a href="3046.htm">静态绑定</a> (1 elements)
@@ -67,9 +72,8 @@
 <li><a href="3317.htm">typeid 运行时查询类型的信息   1. typeid operator (typeid运算符)   2. typeid is used to obtain the information about the class of the object (typeid用于获取对象所属的类的信息)   (1)     typeid returns a .</a> (3 elements)
 <li>當成員函數的const和non-const版本同時存在 const object只會（只能）調用const版本， non-const object只會（只能）調用non-const版本 (see <a href="#3126">below)</a>
 <li>new[]在分配内存时，会在首地址用一个size_t存放counter（数组计数） (see <a href="#3128">below)</a>
-<li>placement new：重载new时，参数不只有size_t size，后面还跟着一些参数，最典型的案例：下图例2. 示例：. 标准库的字符串就使用了这种方法：. 其中，Rep负责引用计数相关的内容。 (see <a href="#3129">below)</a>
+<li>placement new：重载new时，参数不只有size_t size，后面还跟着一些参数，最典型的案例：下图例2 . 示例：. 标准库的字符串就使用了这种方法：. 其中，Rep负责引用计数相关的内容。 (see <a href="#3129">below)</a>
 <li>在 C++ 标准库中，采用引用计数技术的主要类包括： std::shared_ptr：std::shared_ptr 是智能指针，用于在多个所有者之间共享资源。它使用引用计数来跟踪指向的对象的所有权，当没有任何所有者时，会自动释放资源。 std::string：在某些实现中，std::string . (see <a href="#3152">below)</a>
-<li>类之间有哪些关系（待补充） (see <a href="#3250">below)</a>
 </ol>
 </ul>
 </ul>
@@ -614,6 +618,26 @@ Delegation (&#22996;&#35351;)&#65292;&#20063;&#21487;&#20197;&#21483;&#20570;Com
 </center>
 </div>
 <hr>
+<P align="center"><b><a name="3250">Topic #3,250: &#31867;&#20043;&#38388;&#26377;&#21738;&#20123;&#20851;&#31995;&#65288;&#24453;&#34917;&#20805;&#65289;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#31867;&#20043;&#38388;&#26377;&#21738;&#20123;&#20851;&#31995;&#65311; 
+<P></P>
+<P>&#32487;&#25215;&#12289;&#23454;&#29616;&#12289;&#20381;&#36182;&#12289;&#20851;&#32852;&#12289;&#32858;&#21512;&#12289;&#32452;&#21512;</P>
+<P>&#32487;&#25215;&#65306;&#26080;&#38656;&#22810;&#35328;</P>
+<P>&#23454;&#29616;&#65306;</P>
+<P>&#19968;&#31181;&#26041;&#27861;&#65306;&#29238;&#31867;&#26377;&#34394;&#20989;&#25968;&#29978;&#33267;&#32431;&#34394;&#20989;&#25968;&#65292;&#25552;&#20379;&#25509;&#21475;&#31561;&#24453;&#23454;&#29616;</P>
+<P>&#21478;&#19968;&#31181;&#26041;&#27861;&#65306;<STRONG>pointer to implementation</STRONG></P>
+<P>&#20381;&#36182;&#65306;&#24453;&#34917;&#20805;
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
 <P align="center"><b><a href="3571.htm">Topic #3,571: 1. &#22522;&#31867;&#25104;&#21592;&#30340;&#35775;&#38382;&#32423;&#21035; public &#25104;&#21592;&#65306;&#22312;&#22522;&#31867;&#20013;&#20844;&#24320;&#65292;&#21487;&#20197;&#34987;&#20219;&#20309;&#20195;&#30721;&#35775;&#38382;&#12290; protected &#25104;&#21592;&#65306;&#21482;&#33021;&#34987;&#22522;&#31867;&#21644;&#20854;&#27966;&#29983;&#31867;&#20013;&#30340;&#20195;&#30721;&#35775;&#38382;&#12290; private &#25104;&#21592;&#65306;&#21482;&#33021;&#34987;&#22522;&#31867;&#33258;&#36523;&#30340;&#25104;&#21592;&#20989;&#25968;&#12289;&#21451;&#20803;&#20989;&#25968;&#25110;&#31867;&#35775;&#38382;&#65292;&#27966;&#29983;&#31867;&#26080;&#27861;&#30452;&#25509;&#35775;&#38382;&#12290; 2. &#32487;&#25215;&#31867;&#22411; public &#32487;&#25215;&#65306;&#26368;&#24120;&#29992;&#30340;&#32487;&#25215;&#26041;&#24335;&#65292;&#22522;&#31867;&#30340; public &#25104;&#21592;&#22312;&#27966;&#29983;&#31867;&#20013;&#20445;&#25345; .</a></b> <font size="2">(1 elements)</font> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
 <div align="center">
 <center>
@@ -734,8 +758,66 @@ Inheritance+Composition &#38364;&#20418;&#19979;&#30340;&#27083;&#36896;&#21644;
 <table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
 <tr>
 <td bordercolor="#0066FF">
-&#30475;&#20102;&#36319;&#27809;&#30475;&#20284;&#30340;&#65292;&#38656;&#35201;&#23454;&#36341;&#12290;</P>
-<P><FONT style="BACKGROUND-COLOR: #f9f5e9">&#20399;&#25463;OOP&#19979;&#31687;&#30340;&#31532;1p&#12290;</FONT>
+<FONT style="BACKGROUND-COLOR: #f9f5e9">&#36716;&#25442;&#20989;&#25968;&#65306;&#22312;&#26412;&#20363;&#20013;&#65292;Fraction&#34987;&#36716;&#25442;&#20026;&#20102;double</FONT></P>
+<P><FONT style="BACKGROUND-COLOR: #f9f5e9">&#22312;STL&#20013;&#65292;vector&lt;bool&gt;&#36825;&#19968;&#20559;&#29305;&#21270;&#27169;&#26495;&#23601;&#29992;&#21040;&#20102;&#36716;&#25442;&#20989;&#25968;</FONT></P>
+<P><B><B><img style="HEIGHT: 545px; WIDTH: 877px" alt="Image #522: instantpaste_2024-04-27_21_37_36" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/15/4359.jpg" width=1345 height=830></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="2711">Topic #2,711: non-explicit-one-argument ctor&#65306;&#23558;4&#36716;&#25442;&#20026;Fraction&#31867;&#22411;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+non-explicit-one-argument ctor&#65306;&#23558;4&#36716;&#25442;&#20026;Fraction&#31867;&#22411;</P>
+<P><B><B><img style="HEIGHT: 567px; WIDTH: 840px" alt="Image #523: instantpaste_2024-04-27_21_48_56" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/1/4218.jpg" width=1449 height=893></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3591">Topic #3,591: explicit-one-argument ctor&#65306;&#19981;&#20934; &#38544;&#24335;&#36716;&#25442;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+explicit-one-argument ctor&#65306;&#19981;&#20934; &#38544;&#24335;&#36716;&#25442;
+<P></P>
+<P><B><B><img style="HEIGHT: 586px; WIDTH: 917px" alt="Image #524: instantpaste_2024-04-27_21_52_31" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/16/18/4985.jpg" width=1335 height=873></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3592">Topic #3,592: &#37325;&#36733;-></a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#37325;&#36733;-&gt;</P>
+<P><B><B><img alt="Image #525: instantpaste_2024-04-27_22_06_48" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/16/18/4989.jpg"></B></B>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<hr>
+<P align="center"><b><a name="3593">Topic #3,593: &#20851;&#20110;&#36845;&#20195;&#22120;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<div align="center">
+<center>
+<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
+<tr>
+<td bordercolor="#0066FF">
+&#36845;&#20195;&#22120;&#30340;&#26412;&#36136;&#65306;&#19968;&#20010;&#25351;&#38024;&#65292;&#25351;&#21521;&#19968;&#20010;&#21452;&#21521;&#38142;&#34920;&#30340;&#32467;&#28857;</P>
+<P><B><B><img style="HEIGHT: 773px; WIDTH: 833px" alt="Image #526: instantpaste_2024-04-27_22_15_01" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/16/18/4990.jpg" width=954 height=849></B></B>
 </td>
 </tr>
 </table>
@@ -942,13 +1024,13 @@ new[]&#22312;&#20998;&#37197;&#20869;&#23384;&#26102;&#65292;&#20250;&#22312;&#3
 </center>
 </div>
 <hr>
-<P align="center"><b><a name="3129">Topic #3,129: placement new&#65306;&#37325;&#36733;new&#26102;&#65292;&#21442;&#25968;&#19981;&#21482;&#26377;size_t size&#65292;&#21518;&#38754;&#36824;&#36319;&#30528;&#19968;&#20123;&#21442;&#25968;&#65292;&#26368;&#20856;&#22411;&#30340;&#26696;&#20363;&#65306;&#19979;&#22270;&#20363;2. &#31034;&#20363;&#65306;. &#26631;&#20934;&#24211;&#30340;&#23383;&#31526;&#20018;&#23601;&#20351;&#29992;&#20102;&#36825;&#31181;&#26041;&#27861;&#65306;. &#20854;&#20013;&#65292;Rep&#36127;&#36131;&#24341;&#29992;&#35745;&#25968;&#30456;&#20851;&#30340;&#20869;&#23481;&#12290;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
+<P align="center"><b><a name="3129">Topic #3,129: placement new&#65306;&#37325;&#36733;new&#26102;&#65292;&#21442;&#25968;&#19981;&#21482;&#26377;size_t size&#65292;&#21518;&#38754;&#36824;&#36319;&#30528;&#19968;&#20123;&#21442;&#25968;&#65292;&#26368;&#20856;&#22411;&#30340;&#26696;&#20363;&#65306;&#19979;&#22270;&#20363;2 . &#31034;&#20363;&#65306;. &#26631;&#20934;&#24211;&#30340;&#23383;&#31526;&#20018;&#23601;&#20351;&#29992;&#20102;&#36825;&#31181;&#26041;&#27861;&#65306;. &#20854;&#20013;&#65292;Rep&#36127;&#36131;&#24341;&#29992;&#35745;&#25968;&#30456;&#20851;&#30340;&#20869;&#23481;&#12290;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
 <div align="center">
 <center>
 <table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
 <tr>
 <td bordercolor="#0066FF">
-placement new&#65306;&#37325;&#36733;new&#26102;&#65292;&#21442;&#25968;<STRONG>&#19981;&#21482;&#26377;size_t size</STRONG>&#65292;&#21518;&#38754;&#36824;&#36319;&#30528;&#19968;&#20123;&#21442;&#25968;&#65292;&#26368;&#20856;&#22411;&#30340;&#26696;&#20363;&#65306;&#19979;&#22270;&#20363;2
+placement new&#65306;&#37325;&#36733;new&#26102;&#65292;&#21442;&#25968;<STRONG>&#19981;&#21482;&#26377;size_t size</STRONG>&#65292;&#21518;&#38754;&#36824;&#36319;&#30528;&#19968;&#20123;&#21442;&#25968;&#65292;&#26368;&#20856;&#22411;&#30340;&#26696;&#20363;&#65306;&#19979;&#22270;&#20363;2 
 <P></P>
 <P><FONT style="BACKGROUND-COLOR: #f9f5e9">&#31034;&#20363;&#65306;</FONT></P>
 <P><B><B><img alt="Image #494: instantpaste_2024-04-06_15_37_25" src="file:///e:/supermemo18/sm18-lazy-package-1.3.1/sm18/systems/all%20in%20one/elements/14/15/4356.jpg"></B></B></P>
@@ -982,26 +1064,6 @@ placement new&#65306;&#37325;&#36733;new&#26102;&#65292;&#21442;&#25968;<STRONG>
 </center>
 </div>
 <hr>
-<P align="center"><b><a name="3250">Topic #3,250: &#31867;&#20043;&#38388;&#26377;&#21738;&#20123;&#20851;&#31995;&#65288;&#24453;&#34917;&#20805;&#65289;</a> (<a href="#TopOfPages"><font size="1">top</font></a></b>)</P>
-<div align="center">
-<center>
-<table border="1" cellpadding="5" cellspacing="5" width="100%" bgcolor="#99CCFF">
-<tr>
-<td bordercolor="#0066FF">
-&#31867;&#20043;&#38388;&#26377;&#21738;&#20123;&#20851;&#31995;&#65311; 
-<P></P>
-<P>&#32487;&#25215;&#12289;&#23454;&#29616;&#12289;&#20381;&#36182;&#12289;&#20851;&#32852;&#12289;&#32858;&#21512;&#12289;&#32452;&#21512;</P>
-<P>&#32487;&#25215;&#65306;&#26080;&#38656;&#22810;&#35328;</P>
-<P>&#23454;&#29616;&#65306;</P>
-<P>&#19968;&#31181;&#26041;&#27861;&#65306;&#29238;&#31867;&#26377;&#34394;&#20989;&#25968;&#29978;&#33267;&#32431;&#34394;&#20989;&#25968;&#65292;&#25552;&#20379;&#25509;&#21475;&#31561;&#24453;&#23454;&#29616;</P>
-<P>&#21478;&#19968;&#31181;&#26041;&#27861;&#65306;<STRONG>pointer to implementation</STRONG></P>
-<P>&#20381;&#36182;&#65306;&#24453;&#34917;&#20805;
-</td>
-</tr>
-</table>
-</center>
-</div>
-<hr>
 <div align="center">
 <center>
 <table border="2" cellpadding="5" cellspacing="5" width="100%" bgcolor="#FFCC66">
@@ -1020,7 +1082,7 @@ No download URL currently available
 <b>Contact data:</b></p>
 <p><b>Author: sm18-lazy-package</b><br>
 <a href="http://super-memory.com">super-memory.com</a><br>
-date: 4/27/2024 6:25:46 PM<br>
+date: 2024/4/28 16:47:55<br>
 Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
 </td>
 </tr>

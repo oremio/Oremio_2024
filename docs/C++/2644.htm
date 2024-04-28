@@ -1,15 +1,15 @@
 <html>
 
 <head>
-<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: lower_bound/upper_bound ¶ş·Ö lower_boundµÄµÚÈı¸ö²ÎÊı´«ÈëÒ»¸öÔªËØx£¬ÔÚÁ½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÉÏÖ´ĞĞ¶ş·Ö²éÕÒ£¬·µ»ØÖ¸ÏòµÚÒ»¸ö´óÓÚµÈÓÚxµÄÔªËØµÄÎ»ÖÃµÄµü´úÆ÷£¨Ö¸Õë£©¡£ upper_boundµÄÓÃ·¨ºÍlower_bound´óÖÂÏàÍ¬£¬Î¨Ò»µÄÇø±ğÊÇ²éÕÒµÚÒ»¸ö´óÓÚxµÄÔªËØ¡£µ±È»£¬Á½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÓ¦¸ÃÊÇÌáÇ°ÅÅºÃĞòµÄ¡£">
-<meta http-equiv="keywords" content="SuperMemo, all in one, lower_bound/upper_bound ¶ş·Ö lower_boundµÄµÚÈı¸ö²ÎÊı´«ÈëÒ»¸öÔªËØx£¬ÔÚÁ½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÉÏÖ´ĞĞ¶ş·Ö²éÕÒ£¬·µ»ØÖ¸ÏòµÚÒ»¸ö´óÓÚµÈÓÚxµÄÔªËØµÄÎ»ÖÃµÄµü´úÆ÷£¨Ö¸Õë£©¡£ upper_boundµÄÓÃ·¨ºÍlower_bound´óÖÂÏàÍ¬£¬Î¨Ò»µÄÇø±ğÊÇ²éÕÒµÚÒ»¸ö´óÓÚxµÄÔªËØ¡£µ±È»£¬Á½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÓ¦¸ÃÊÇÌáÇ°ÅÅºÃĞòµÄ¡£">
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: lower_bound/upper_bound äºŒåˆ† lower_boundçš„ç¬¬ä¸‰ä¸ªå‚æ•°ä¼ å…¥ä¸€ä¸ªå…ƒç´ xï¼Œåœ¨ä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†ä¸Šæ‰§è¡ŒäºŒåˆ†æŸ¥æ‰¾ï¼Œè¿”å›æŒ‡å‘ç¬¬ä¸€ä¸ªå¤§äºç­‰äºxçš„å…ƒç´ çš„ä½ç½®çš„è¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰ã€‚ upper_boundçš„ç”¨æ³•å’Œlower_boundå¤§è‡´ç›¸åŒï¼Œå”¯ä¸€çš„åŒºåˆ«æ˜¯æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå¤§äºxçš„å…ƒç´ ã€‚å½“ç„¶ï¼Œä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†åº”è¯¥æ˜¯æå‰æ’å¥½åºçš„ã€‚">
+<meta http-equiv="keywords" content="SuperMemo, all in one, lower_bound/upper_bound äºŒåˆ† lower_boundçš„ç¬¬ä¸‰ä¸ªå‚æ•°ä¼ å…¥ä¸€ä¸ªå…ƒç´ xï¼Œåœ¨ä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†ä¸Šæ‰§è¡ŒäºŒåˆ†æŸ¥æ‰¾ï¼Œè¿”å›æŒ‡å‘ç¬¬ä¸€ä¸ªå¤§äºç­‰äºxçš„å…ƒç´ çš„ä½ç½®çš„è¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰ã€‚ upper_boundçš„ç”¨æ³•å’Œlower_boundå¤§è‡´ç›¸åŒï¼Œå”¯ä¸€çš„åŒºåˆ«æ˜¯æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå¤§äºxçš„å…ƒç´ ã€‚å½“ç„¶ï¼Œä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†åº”è¯¥æ˜¯æå‰æ’å¥½åºçš„ã€‚">
 <meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
-<title>all in one: lower_bound/upper_bound ¶ş·Ö lower ... (SuperMemo collection)</title>
+<title>all in one: lower_bound/upper_bound äºŒåˆ† lower ... (SuperMemo collection)</title>
 </head>
 
 <body>
 
-<p align="center"><b><font size="5">all in one: lower_bound/upper_bound ¶ş·Ö lower ... </font></b><br>(1 elements)</p>
+<p align="center"><b><font size="5">all in one: lower_bound/upper_bound äºŒåˆ† lower ... </font></b><br>(1 elements)</p>
 <a name="TopOfPages"> </a>
 <b>Contents:</b>
 <div align="center">
@@ -22,13 +22,13 @@
 <ul>
 <li><a href="index.htm">C++</a></li>
 <ul>
-<li><a href="2547.htm">»ù´¡</a></li>
+<li><a href="2547.htm">åŸºç¡€</a></li>
 <ul>
-<li><a href="2628.htm">³£ÓÃ¿âº¯Êı</a></li>
+<li><a href="2628.htm">å¸¸ç”¨åº“å‡½æ•°</a></li>
 <ul>
-<li>This page: lower_bound/upper_bound ¶ş·Ö lower_boundµÄµÚÈı¸ö²ÎÊı´«ÈëÒ»¸öÔªËØx£¬ÔÚÁ½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÉÏÖ´ĞĞ¶ş·Ö²éÕÒ£¬·µ»ØÖ¸ÏòµÚÒ»¸ö´óÓÚµÈÓÚxµÄÔªËØµÄÎ»ÖÃµÄµü´úÆ÷£¨Ö¸Õë£©¡£ upper_boundµÄÓÃ·¨ºÍlower_bound´óÖÂÏàÍ¬£¬Î¨Ò»µÄÇø±ğÊÇ²éÕÒµÚÒ»¸ö´óÓÚxµÄÔªËØ¡£µ±È»£¬Á½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÓ¦¸ÃÊÇÌáÇ°ÅÅºÃĞòµÄ¡£</li>
+<li>This page: lower_bound/upper_bound äºŒåˆ† lower_boundçš„ç¬¬ä¸‰ä¸ªå‚æ•°ä¼ å…¥ä¸€ä¸ªå…ƒç´ xï¼Œåœ¨ä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†ä¸Šæ‰§è¡ŒäºŒåˆ†æŸ¥æ‰¾ï¼Œè¿”å›æŒ‡å‘ç¬¬ä¸€ä¸ªå¤§äºç­‰äºxçš„å…ƒç´ çš„ä½ç½®çš„è¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰ã€‚ upper_boundçš„ç”¨æ³•å’Œlower_boundå¤§è‡´ç›¸åŒï¼Œå”¯ä¸€çš„åŒºåˆ«æ˜¯æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå¤§äºxçš„å…ƒç´ ã€‚å½“ç„¶ï¼Œä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†åº”è¯¥æ˜¯æå‰æ’å¥½åºçš„ã€‚</li>
 <ol>
-<li>lower_bound/upper_bound ¶ş·Ö lower_boundµÄµÚÈı¸ö²ÎÊı´«ÈëÒ»¸öÔªËØx£¬ÔÚÁ½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÉÏÖ´ĞĞ¶ş·Ö²éÕÒ£¬·µ»ØÖ¸ÏòµÚÒ»¸ö´óÓÚµÈÓÚxµÄÔªËØµÄÎ»ÖÃµÄµü´úÆ÷£¨Ö¸Õë£©¡£  upper_boundµÄÓÃ·¨ºÍlower_bound´óÖÂÏàÍ¬£¬Î¨Ò»µÄÇø±ğÊÇ²éÕÒµÚÒ»¸ö´óÓÚxµÄÔªËØ¡£µ±È»£¬Á½¸öµü´úÆ÷£¨Ö¸Õë£©Ö¸¶¨µÄ²¿·ÖÓ¦¸ÃÊÇ[.]¡£ (see <a href="#2470">below)</a>
+<li>lower_bound/upper_bound äºŒåˆ† lower_boundçš„ç¬¬ä¸‰ä¸ªå‚æ•°ä¼ å…¥ä¸€ä¸ªå…ƒç´ xï¼Œåœ¨ä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†ä¸Šæ‰§è¡ŒäºŒåˆ†æŸ¥æ‰¾ï¼Œè¿”å›æŒ‡å‘ç¬¬ä¸€ä¸ªå¤§äºç­‰äºxçš„å…ƒç´ çš„ä½ç½®çš„è¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰ã€‚  upper_boundçš„ç”¨æ³•å’Œlower_boundå¤§è‡´ç›¸åŒï¼Œå”¯ä¸€çš„åŒºåˆ«æ˜¯æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå¤§äºxçš„å…ƒç´ ã€‚å½“ç„¶ï¼Œä¸¤ä¸ªè¿­ä»£å™¨ï¼ˆæŒ‡é’ˆï¼‰æŒ‡å®šçš„éƒ¨åˆ†åº”è¯¥æ˜¯[.]ã€‚ (see <a href="#2470">below)</a>
 </ol>
 </ul>
 </ul>
@@ -98,7 +98,7 @@ No download URL currently available
 <b>Contact data:</b></p>
 <p><b>Author: sm18-lazy-package</b><br>
 <a href="http://super-memory.com">super-memory.com</a><br>
-date: 4/27/2024 6:25:46 PM<br>
+date: 2024/4/28 16:47:54<br>
 Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
 </td>
 </tr>

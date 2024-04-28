@@ -1,15 +1,15 @@
 <html>
 
 <head>
-<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: �ڶ������Ķ�γ�ʼ�����⣬Ϊ�˱�����ָ����⣬�ڲ�����̳е�ʱ��ֱ������Ͳ�ε������๹�캯�� ֱ�Ӹ����������Ĺ��졣�������virtual�Ļ����ڹ��캯����˳���У�ÿ����ֻ�����Լ���ֱ�ӻ���ĳ�ʼ �������Ի��ǿ������ɶ���ġ�������virtual֮��Cֱ�Ӹ���Base��Ĺ��죬����Base��Ĺ��캯���������� ������private .">
-<meta http-equiv="keywords" content="SuperMemo, all in one, �ڶ������Ķ�γ�ʼ�����⣬Ϊ�˱�����ָ����⣬�ڲ�����̳е�ʱ��ֱ������Ͳ�ε������๹�캯�� ֱ�Ӹ����������Ĺ��졣�������virtual�Ļ����ڹ��캯����˳���У�ÿ����ֻ�����Լ���ֱ�ӻ���ĳ�ʼ �������Ի��ǿ������ɶ���ġ�������virtual֮��Cֱ�Ӹ���Base��Ĺ��죬����Base��Ĺ��캯���������� ������private .">
+<meta http-equiv="description" content="SuperMemo Collection: all in one, Page: 在对虚基类的多次初始化问题，为了避免出现该问题，在采用虚继承的时候，直接由最低层次的派生类构造函数 直接负责虚基类类的构造。如果不加virtual的话，在构造函数的顺序中，每个类只负责自己的直接基类的初始 化，所以还是可以生成对象的。加上了virtual之后，C直接负责Base类的构造，但是Base类的构造函数和析构函 数都是private .">
+<meta http-equiv="keywords" content="SuperMemo, all in one, 在对虚基类的多次初始化问题，为了避免出现该问题，在采用虚继承的时候，直接由最低层次的派生类构造函数 直接负责虚基类类的构造。如果不加virtual的话，在构造函数的顺序中，每个类只负责自己的直接基类的初始 化，所以还是可以生成对象的。加上了virtual之后，C直接负责Base类的构造，但是Base类的构造函数和析构函 数都是private .">
 <meta name="GENERATOR" content="SuperMemo for Windows (Build 18.05)">
-<title>all in one: �ڶ������Ķ�γ�ʼ�����⣬Ϊ�˱�����ָ����⣬�ڲ�����̳е�ʱ��ֱ������Ͳ�ε������๹�캯�� ... (SuperMemo collection)</title>
+<title>all in one: 在对虚基类的多次初始化问题，为了避免出现该问题，在采用虚继承的时候，直接由最低层次的派生类构造函数 ... (SuperMemo collection)</title>
 </head>
 
 <body>
 
-<p align="center"><b><font size="5">all in one: �ڶ������Ķ�γ�ʼ�����⣬Ϊ�˱�����ָ����⣬�ڲ�����̳е�ʱ��ֱ������Ͳ�ε������๹�캯�� ... </font></b><br>(1 elements)</p>
+<p align="center"><b><font size="5">all in one: 在对虚基类的多次初始化问题，为了避免出现该问题，在采用虚继承的时候，直接由最低层次的派生类构造函数 ... </font></b><br>(1 elements)</p>
 <a name="TopOfPages"> </a>
 <b>Contents:</b>
 <div align="center">
@@ -22,11 +22,11 @@
 <ul>
 <li><a href="index.htm">C++</a></li>
 <ul>
-<li><a href="2121.htm">MIO�ʼ�</a></li>
+<li><a href="2121.htm">MIO笔记</a></li>
 <ul>
-<li>This page: �ڶ������Ķ�γ�ʼ�����⣬Ϊ�˱�����ָ����⣬�ڲ�����̳е�ʱ��ֱ������Ͳ�ε������๹�캯�� ֱ�Ӹ����������Ĺ��졣�������virtual�Ļ����ڹ��캯����˳���У�ÿ����ֻ�����Լ���ֱ�ӻ���ĳ�ʼ �������Ի��ǿ������ɶ���ġ�������virtual֮��Cֱ�Ӹ���Base��Ĺ��죬����Base��Ĺ��캯���������� ������private .</li>
+<li>This page: 在对虚基类的多次初始化问题，为了避免出现该问题，在采用虚继承的时候，直接由最低层次的派生类构造函数 直接负责虚基类类的构造。如果不加virtual的话，在构造函数的顺序中，每个类只负责自己的直接基类的初始 化，所以还是可以生成对象的。加上了virtual之后，C直接负责Base类的构造，但是Base类的构造函数和析构函 数都是private .</li>
 <ol>
-<li>�ڲ�����̳е�ʱ��ֱ������Ͳ�ε������๹�캯��ֱ�Ӹ��������Ĺ��졣  �������virtual�Ļ����ڹ��캯����˳���У�ÿ����ֻ�����Լ���[.]����ĳ�ʼ�������Ի��ǿ������ɶ���ġ� ������virtual֮��Cֱ�Ӹ���Base��Ĺ��죬����Base��Ĺ��캯����������������private��C�޷����ʣ����Բ������ɶ��� ����ʾ���� . (see <a href="#3574">below)</a>
+<li>在采用虚继承的时候，直接由最低层次的派生类构造函数直接负责虚基类的构造。  如果不加virtual的话，在构造函数的顺序中，每个类只负责自己的[.]基类的初始化，所以还是可以生成对象的。 加上了virtual之后，C直接负责Base类的构造，但是Base类的构造函数和析构函数都是private，C无法访问，所以不能生成对象。 代码示例： . (see <a href="#3574">below)</a>
 </ol>
 </ul>
 </ul>
@@ -151,7 +151,7 @@ No download URL currently available
 <b>Contact data:</b></p>
 <p><b>Author: sm18-lazy-package</b><br>
 <a href="http://super-memory.com">super-memory.com</a><br>
-date: 4/27/2024 6:25:48 PM<br>
+date: 2024/4/28 16:47:56<br>
 Page generated with:<br> SuperMemo 18<br>Build: 18.05 of Oct 29, 2020
 </td>
 </tr>
