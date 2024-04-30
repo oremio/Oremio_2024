@@ -2,6 +2,8 @@
 #include <functional>
 #include <iostream>
 #include <memory>
+#include <queue>
+#include <stack>
 #include <string.h>
 #include <typeinfo>
 #include <vector>
@@ -218,5 +220,6 @@ namespace ns_virtual_inheritance
 
     // class C : public B {};
 }
+
 
 
