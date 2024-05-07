@@ -14,7 +14,7 @@ public:
     TreeNode(int x = 0, TreeNode *left = nullptr, TreeNode *right = nullptr)
         : val(x), left(left), right(right) {}
 
-    static TreeNode *construct_binary_tree(const std::string &input)
+    static TreeNode *ConstructBinaryTree(const std::string &input)
     {
         TreeNode *vecTree[1010];
         std::stringstream ss(input);

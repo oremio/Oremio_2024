@@ -31,7 +31,7 @@ public:
 int main()
 {
     string s{"3,9,20,null,null,15,7"};
-    TreeNode *root = TreeNode::construct_binary_tree(s);
+    TreeNode *root = TreeNode::ConstructBinaryTree(s);
     Solution so;
     cout << so.sumOfLeftLeaves(root);
     return 0;
