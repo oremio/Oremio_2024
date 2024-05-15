@@ -231,11 +231,4 @@ namespace ns_virtual_inheritance
     // class C : public B {};
 }
 
-int main()
-{
-    const char *a{"123456"};
-    char b[20];
-    memcpy(b, a, strlen(a) + 1);
-    cout << b << endl;
-    return 0;
-}
+
