@@ -1,26 +1,30 @@
-from PIL import Image
-import glob
+import os
+from PIL import Image, ImageChops
 
-for filepath in glob.iglob(r'*.jpg'):  # 修改为搜索 JPG 文件
-    im = Image.open(filepath)
-    # print("Processing: ", filepath, " ", im.format, im.size, im.mode)
-    box = im.convert('RGB').getbbox()
+# Name of outputted image
+output_folder = "cropped_images"
 
-    # 计算每个轴上的黑色边框大小
-    y1 = box[1]
-    y2 = im.size[1] - box[3]
+def remove_black_border(im):
+    # Thanks to https://stackoverflow.com/questions/19271692/removing-borders-from-an-image-in-python
+    # for the original code
+    bg = Image.new(im.mode, im.size, im.getpixel((0,0)))
+    diff = ImageChops.difference(im, bg)
+    diff = ImageChops.add(diff, diff, 2.0, -100)
+    bbox = diff.getbbox()
+    if bbox:
+        return im.crop(bbox)
 
-    # 如果上下边框任一不为零，则进行裁剪
-    if y1 != 0 or y2 != 0:
-        box = list(box)  # 否则无法覆盖元素
+# Check if output folder exists, if not, create it
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
-        # 仅修剪上下边框
-        box[1] = 0
-        box[3] = im.size[1]
-
-        cropped = im.crop(tuple(box))
-        print(filepath, im.format, im.mode)
-        print("裁剪: ", im.size, "->", cropped.size)
-        cropped.save(filepath)  # 保存为 JPG 格式
-    else:
-        print("未检测到边框，跳过...")
+# Process each JPG image in the current directory
+for filename in os.listdir("."):
+    if filename.endswith((".jpg", ".png", ".jpeg")):
+        input_image = Image.open(filename)
+        cropped_image = remove_black_border(input_image)
+        if cropped_image:
+            cropped_image.save(os.path.join(output_folder, filename))
+            print("Cropped", filename, "and saved to", os.path.join(output_folder, filename))
+        else:
+            print("No black border detected in", filename)
