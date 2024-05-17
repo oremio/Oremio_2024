@@ -118,5 +118,4 @@
         "variant": "cpp",
         "queue": "cpp"
     },
-    "cmake.sourceDirectory": "E:/program2022/Leetcode/CSBasics/LearnXInYMinutes", // 格式化时调整include的顺序（按字母排序）
 }

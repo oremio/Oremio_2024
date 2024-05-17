@@ -64,7 +64,8 @@ False - 5   # => -5
 0 == False # => True
 2 == True # => False
 1 == True # => True
--5 != False # => True
+# Avoid inequality comparisons to `False`; use `if -5:` for truth checks
+# -5 != False # => True
 
 # 使用布尔逻辑运算符对数字类型的值进行运算时，会把数值强制转换为布尔值进行运算
 # 但计算结果会返回它们的强制转换前的值
@@ -144,8 +145,11 @@ f"{name} is {len(name)} characters long." # => "Reiko is 5 characters long."
 None  # => None
 
 # 当与 None 进行比较时不要用 ==，要用 is。is 是用来比较两个变量是否指向同一个对象。
-"etc" is None  # => False
 None is None  # => True
+
+# Use `==` to compare constant literals
+# "etc" is None  # => False
+
 
 # None，0，空字符串，空列表，空字典，空元组都算是 False
 # 所有其他值都是 True
@@ -252,7 +256,7 @@ len(li)   # => 6
 # 元组类似列表，但是不允许修改
 tup = (1, 2, 3)
 tup[0]   # => 1
-tup[0] = 3  # 抛出 TypeError
+# tup[0] = 3  # 抛出 TypeError
 
 # 如果元素数量为 1 的元组必须在元素之后加一个逗号
 # 其他元素数量的元组，包括空元组，都不需要
@@ -283,7 +287,7 @@ filled_dict = {"one": 1, "two": 2, "three": 3}
 
 # 字典的 key 必须为不可变类型。 这是为了确保 key 被转换为唯一的哈希值以用于快速查询
 # 不可变类型包括整数、浮点、字符串、元组
-invalid_dict = {[1,2,3]: "123"}  # => 抛出 TypeError: unhashable type: 'list'
+# invalid_dict = {[1,2,3]: "123"}  # => 抛出 TypeError: unhashable type: 'list'
 valid_dict = {(1,2,3):[1,2,3]}   # 然而 value 可以是任何类型
 
 # 用[]取值
@@ -336,7 +340,7 @@ empty_set = set()
 some_set = {1, 1, 2, 2, 3, 4}   # some_set现在是 {1, 2, 3, 4}
 
 # 类似字典的 keys，set 的元素也必须是不可变类型
-invalid_set = {[1], 1}  # => Raises a TypeError: unhashable type: 'list'
+# invalid_set = {[1], 1}  # => Raises a TypeError: unhashable type: 'list'
 valid_set = {(1,), 1}
 
 # 可以把集合赋值于变量
@@ -516,7 +520,7 @@ for i in our_iterable:
     print(i)    # 打印 one, two, three
 
 # 但是不可以随机访问
-our_iterable[1]  # 抛出TypeError
+# our_iterable[1]  # 抛出TypeError
 
 # 可迭代对象知道怎么生成迭代器
 our_iterator = iter(our_iterable)
@@ -571,7 +575,6 @@ def keyword_args(**kwargs):
 
 # 我们来看看结果是什么：
 keyword_args(big="foot", loch="ness")   # => {"big": "foot", "loch": "ness"}
-
 
 # 这两种可变参数可以混着用
 def all_the_args(*args, **kwargs):
@@ -662,7 +665,30 @@ print(floor(3.7))  # => 3.0
 
 # 你可以导入模块中的所有的函数
 # 警告: 此操作不推荐
-from math import *
+"""
+在 Python 中使用 from math import * 这样的通配符导入通常是不推荐的，因为它会引入多个潜在的问题。
+Pylance 和 Ruff 都会对这种用法给出警告，虽然它们的警告信息不同，
+但目的都是帮助开发者写出更安全、可维护的代码。
+
+Pylance 的警告：不允许从库中导入通配符。这是因为：
+
+命名空间污染：from math import * 会将 math 模块中的所有公开符号导入当前命名空间，
+这可能会覆盖或冲突现有的变量或函数名。
+
+代码可读性差：使用通配符导入会使得代码的来源变得模糊，
+其他阅读代码的人不容易知道哪些符号是从哪个模块导入的。
+
+IDE 支持和静态分析工具：静态分析工具和 IDE 可能无法准确地推断出变量和函数的来源，
+这会导致代码自动补全和重构功能变得不可靠。
+
+Ruff 的警告：from math import * used; unable to detect undefined names。这是因为：
+
+未定义的名称：Ruff 无法确定哪些名称是在模块中定义的，这会导致对未定义名称的检测失效。
+也就是说，如果你在代码中使用了一个实际上并不存在于 math 模块中的符号，Ruff 可能无法给出正确的错误提示。
+
+静态分析困难：和 Pylance 类似，Ruff 也无法准确分析代码中哪些名称是从 math 模块导入的。
+"""
+# from math import *
 
 # 你可以对模块名进行简化
 import math as m
@@ -742,7 +768,7 @@ class Human:
 # 当 Python 解释器在读取源文件的时候，就会执行文件中所有的代码
 # 对 __name__ 的检查可以保证这块代码只会在这个模块是主程序的情况下被运行（而不是在引用时运行）
 if __name__ == '__main__':
-    #
+
     i = Human(name="Ian")
     i.say("hi")                     # "Ian: hi"
     j = Human("Joel")
@@ -786,7 +812,7 @@ if __name__ == '__main__':
 # 要从别的文件导入函数，需要使用以下的语句
 # from "filename-without-extension" import "function-or-class"
 
-from human import Human
+# from human import Human
 
 # 指定父类作为类初始化的参数
 class Superhero(Human):
@@ -794,6 +820,7 @@ class Superhero(Human):
     # 如果子类需要继承所有父类的定义，并且不需要做任何的修改，
     # 你可以直接使用 "pass" 关键字（并且不需要其他任何语句）
     # 但是在这个例子中会被注释掉，以用来生成不一样的子类。
+
     # pass
 
     # 子类可以重写父类定义的字段
@@ -891,8 +918,9 @@ if __name__ == '__main__':
 
 # 现在我们来定义一个类来同时继承 Superhero 和 Bat
 # superhero.py
-from superhero import Superhero
-from bat import Bat
+
+# from superhero import Superhero
+# from bat import Bat
 
 # 定义 Batman 作为子类，来同时继承 SuperHero 和 Bat
 class Batman(Superhero, Bat):
