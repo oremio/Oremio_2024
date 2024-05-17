@@ -931,8 +931,8 @@ class Batman(Superhero, Bat):
         # 然而在这里我们处理的是多重继承，而 super() 只会返回 MRO 列表的下一个基础类。
         # 因此，我们需要显式调用初始类的 __init__
         # *args 和 **kwargs 传递参数时更加清晰整洁，而对于父类而言像是 “剥了一层洋葱”
-        Superhero.__init__(self, 'anonymous', movie=True,
-                           superpowers=['Wealthy'], *args, **kwargs)
+        Superhero.__init__(self, 'anonymous', *args, movie=True,
+                           superpowers=['Wealthy'], **kwargs)
         Bat.__init__(self, *args, can_fly=False, **kwargs)
         # 重写了 name 字段
         self.name = 'Sad Affleck'
@@ -997,6 +997,33 @@ for i in double_numbers(range_):
 values = (-x for x in [1,2,3,4,5])
 gen_to_list = list(values)
 print(gen_to_list)  # => [-1, -2, -3, -4, -5]
+
+# 一个简单的生成器
+
+from typing import Generator, Union
+
+def process_numbers() -> Generator[int, Union[int, None], float]:
+    total = 0
+    count = 0
+    while True:
+        number = yield total  # 生成当前总计数并暂停
+        if number is None:  # 如果接收到 None，生成器完成并返回平均值
+            return total / count if count > 0 else 0.0
+        total += number  # 将接收到的整数加到总计数中
+        count += 1
+
+# 使用生成器
+gen = process_numbers()
+print(next(gen))  # 初始化生成器并获取第一个总计数 => 0
+
+print(gen.send(10))  # 发送 10 并获取新的总计数 => 10
+print(gen.send(20))  # 发送 20 并获取新的总计数 => 30
+print(gen.send(30))  # 发送 30 并获取新的总计数 => 60
+
+try:
+    print(gen.send(None))  # 发送 None 以结束生成器并获取平均值
+except StopIteration as e:
+    print(f"Average: {e.value}")  # 获取返回值 => Average: 20.0
 
 
 # 装饰器(decorators)
