@@ -1,121 +1,121 @@
 {
-    "files.defaultLanguage": "c", // ctrl+N新建文件后默认的语言
-    "editor.formatOnType": true,  // 输入分号(C/C++的语句结束标识)后自动格式化当前这一行的代码
-    "editor.suggest.snippetsPreventQuickSuggestions": false, // clangd的snippets有很多的跳转点，不用这个就必须手动触发Intellisense了
-    "editor.acceptSuggestionOnEnter": "off", // 我个人的习惯，按回车时一定是真正的换行，只有tab才会接受Intellisense
-    // "editor.snippetSuggestions": "top", // （可选）snippets显示在补全列表顶端，默认是inline
+  "files.defaultLanguage": "c", // ctrl+N新建文件后默认的语言
+  "editor.formatOnType": true, // 输入分号(C/C++的语句结束标识)后自动格式化当前这一行的代码
+  "editor.suggest.snippetsPreventQuickSuggestions": false, // clangd的snippets有很多的跳转点，不用这个就必须手动触发Intellisense了
+  "editor.acceptSuggestionOnEnter": "off", // 我个人的习惯，按回车时一定是真正的换行，只有tab才会接受Intellisense
+  // "editor.snippetSuggestions": "top", // （可选）snippets显示在补全列表顶端，默认是inline
 
-    "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
-    "code-runner.executorMap": {
-        "c": "gcc '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -lm -static-libgcc -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && &'./$fileNameWithoutExt.exe'",
-        "cpp": "g++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -static-libgcc -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'"
-        // "c": "gcc $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -lm -static-libgcc -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && $dir$fileNameWithoutExt.exe",
-        // "cpp": "g++ $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -static-libgcc -fexec-charset=GBK && $dir$fileNameWithoutExt.exe"
-    }, // 右键run code时运行的命令；未注释的仅适用于PowerShell（Win10默认）和pwsh，文件名中有空格也可以编译运行；注释掉的适用于cmd（win7默认）、PS和bash，但文件名中有空格时无法运行
-    "code-runner.saveFileBeforeRun": true, // run code前保存
-    "code-runner.preserveFocus": true,     // 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false
-    "code-runner.clearPreviousOutput": false, // 每次run code前清空属于code runner的终端消息，默认false
-    "code-runner.ignoreSelection": true,   // 默认为false，效果是鼠标选中一块代码后可以单独执行，但C是编译型语言，不适合这样用
-    "code-runner.fileDirectoryAsCwd": true, // 将code runner终端的工作目录切换到文件目录再运行，对依赖cwd的程序产生影响；如果为false，executorMap要加cd $dir
+  "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
+  "code-runner.executorMap": {
+    "c": "gcc '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -lm -static-libgcc -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && &'./$fileNameWithoutExt.exe'",
+    "cpp": "g++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -static-libgcc -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'"
+    // "c": "gcc $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -lm -static-libgcc -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && $dir$fileNameWithoutExt.exe",
+    // "cpp": "g++ $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -static-libgcc -fexec-charset=GBK && $dir$fileNameWithoutExt.exe"
+  }, // 右键run code时运行的命令；未注释的仅适用于PowerShell（Win10默认）和pwsh，文件名中有空格也可以编译运行；注释掉的适用于cmd（win7默认）、PS和bash，但文件名中有空格时无法运行
+  "code-runner.saveFileBeforeRun": true, // run code前保存
+  "code-runner.preserveFocus": true, // 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false
+  "code-runner.clearPreviousOutput": false, // 每次run code前清空属于code runner的终端消息，默认false
+  "code-runner.ignoreSelection": true, // 默认为false，效果是鼠标选中一块代码后可以单独执行，但C是编译型语言，不适合这样用
+  "code-runner.fileDirectoryAsCwd": true, // 将code runner终端的工作目录切换到文件目录再运行，对依赖cwd的程序产生影响；如果为false，executorMap要加cd $dir
 
-    "editor.fontFamily": "等距更纱黑体 SC", // 控制编辑器字体
-    "editor.fontSize": 16, // 同上
-    "editor.fontLigatures": true, // 连体字，效果不太好形容，见 https://typeof.net/Iosevka 最后一部分
-    "editor.minimap.enabled": false, // 我个人不用minimap，就是右边那个东西
-    "editor.dragAndDrop": false, // 选中文字后，可以拖动它们调整位置。我是不需要
-    "editor.cursorSmoothCaretAnimation": "on", // 移动光标时变得平滑
-    "editor.smoothScrolling": true, // 滚动平滑，不过效果很微弱
+  "editor.fontFamily": "等距更纱黑体 SC", // 控制编辑器字体
+  "editor.fontSize": 16, // 同上
+  "editor.fontLigatures": true, // 连体字，效果不太好形容，见 https://typeof.net/Iosevka 最后一部分
+  "editor.minimap.enabled": false, // 我个人不用minimap，就是右边那个东西
+  "editor.dragAndDrop": false, // 选中文字后，可以拖动它们调整位置。我是不需要
+  "editor.cursorSmoothCaretAnimation": "on", // 移动光标时变得平滑
+  "editor.smoothScrolling": true, // 滚动平滑，不过效果很微弱
 
-    "files.trimTrailingWhitespace": true, // 保存时，删除每一行末尾的空格
-    "files.insertFinalNewline": true, // 保存后文件最末尾加一整行空行，Linux下的习惯
-    "files.autoGuessEncoding": false, // 启用后，会在打开文件时尝试猜测字符集编码。我关闭的理由见6，默认也是禁用的
+  "files.trimTrailingWhitespace": true, // 保存时，删除每一行末尾的空格
+  "files.insertFinalNewline": true, // 保存后文件最末尾加一整行空行，Linux下的习惯
+  "files.autoGuessEncoding": false, // 启用后，会在打开文件时尝试猜测字符集编码。我关闭的理由见6，默认也是禁用的
 
-    "C_Cpp.clang_format_sortIncludes": true,
-    "files.associations": {
-        "vector": "cpp",
-        "ostream": "cpp",
-        "iosfwd": "cpp",
-        "iostream": "cpp",
-        "algorithm": "cpp",
-        "cstdlib": "cpp",
-        "fstream": "cpp",
-        "array": "cpp",
-        "bitset": "cpp",
-        "string_view": "cpp",
-        "hash_map": "cpp",
-        "hash_set": "cpp",
-        "slist": "cpp",
-        "initializer_list": "cpp",
-        "ranges": "cpp",
-        "utility": "cpp",
-        "atomic": "cpp",
-        "bit": "cpp",
-        "*.tcc": "cpp",
-        "cctype": "cpp",
-        "clocale": "cpp",
-        "cmath": "cpp",
-        "compare": "cpp",
-        "concepts": "cpp",
-        "cstdarg": "cpp",
-        "cstddef": "cpp",
-        "cstdint": "cpp",
-        "cstdio": "cpp",
-        "cstring": "cpp",
-        "ctime": "cpp",
-        "cwchar": "cpp",
-        "cwctype": "cpp",
-        "deque": "cpp",
-        "forward_list": "cpp",
-        "list": "cpp",
-        "map": "cpp",
-        "set": "cpp",
-        "unordered_map": "cpp",
-        "unordered_set": "cpp",
-        "exception": "cpp",
-        "functional": "cpp",
-        "iterator": "cpp",
-        "memory": "cpp",
-        "memory_resource": "cpp",
-        "numeric": "cpp",
-        "optional": "cpp",
-        "random": "cpp",
-        "string": "cpp",
-        "system_error": "cpp",
-        "tuple": "cpp",
-        "type_traits": "cpp",
-        "iomanip": "cpp",
-        "istream": "cpp",
-        "limits": "cpp",
-        "new": "cpp",
-        "sstream": "cpp",
-        "stdexcept": "cpp",
-        "streambuf": "cpp",
-        "typeinfo": "cpp",
-        "any": "cpp",
-        "cfenv": "cpp",
-        "charconv": "cpp",
-        "chrono": "cpp",
-        "cinttypes": "cpp",
-        "codecvt": "cpp",
-        "complex": "cpp",
-        "condition_variable": "cpp",
-        "coroutine": "cpp",
-        "csetjmp": "cpp",
-        "csignal": "cpp",
-        "cuchar": "cpp",
-        "ratio": "cpp",
-        "regex": "cpp",
-        "future": "cpp",
-        "mutex": "cpp",
-        "numbers": "cpp",
-        "scoped_allocator": "cpp",
-        "shared_mutex": "cpp",
-        "span": "cpp",
-        "stop_token": "cpp",
-        "thread": "cpp",
-        "typeindex": "cpp",
-        "valarray": "cpp",
-        "variant": "cpp",
-        "queue": "cpp"
-    },
+  "C_Cpp.clang_format_sortIncludes": true,
+  "files.associations": {
+    "vector": "cpp",
+    "ostream": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "algorithm": "cpp",
+    "cstdlib": "cpp",
+    "fstream": "cpp",
+    "array": "cpp",
+    "bitset": "cpp",
+    "string_view": "cpp",
+    "hash_map": "cpp",
+    "hash_set": "cpp",
+    "slist": "cpp",
+    "initializer_list": "cpp",
+    "ranges": "cpp",
+    "utility": "cpp",
+    "atomic": "cpp",
+    "bit": "cpp",
+    "*.tcc": "cpp",
+    "cctype": "cpp",
+    "clocale": "cpp",
+    "cmath": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "cstdarg": "cpp",
+    "cstddef": "cpp",
+    "cstdint": "cpp",
+    "cstdio": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "exception": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "memory": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "optional": "cpp",
+    "random": "cpp",
+    "string": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "iomanip": "cpp",
+    "istream": "cpp",
+    "limits": "cpp",
+    "new": "cpp",
+    "sstream": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "typeinfo": "cpp",
+    "any": "cpp",
+    "cfenv": "cpp",
+    "charconv": "cpp",
+    "chrono": "cpp",
+    "cinttypes": "cpp",
+    "codecvt": "cpp",
+    "complex": "cpp",
+    "condition_variable": "cpp",
+    "coroutine": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "cuchar": "cpp",
+    "ratio": "cpp",
+    "regex": "cpp",
+    "future": "cpp",
+    "mutex": "cpp",
+    "numbers": "cpp",
+    "scoped_allocator": "cpp",
+    "shared_mutex": "cpp",
+    "span": "cpp",
+    "stop_token": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp",
+    "valarray": "cpp",
+    "variant": "cpp",
+    "queue": "cpp"
+  }
 }
