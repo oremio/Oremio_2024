@@ -20,7 +20,7 @@ if not os.path.exists(output_folder):
 
 # Process each JPG image in the current directory
 for filename in os.listdir("."):
-    if filename.endswith((".jpg", ".png", ".jpeg")):
+    if filename.endswith((".jpg", ".png")):
         input_image = Image.open(filename)
         cropped_image = remove_black_border(input_image)
         if cropped_image:
