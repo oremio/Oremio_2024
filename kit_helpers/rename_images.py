@@ -57,9 +57,9 @@ for filename in os.listdir("."):
         # 尝试从文件名中提取时间戳
         timestamp = extract_timestamp_from_filename(filename)
 
-        # # 如果没有找到14个数字的时间戳，则从EXIF信息中获取（仅对支持的格式）
-        # if not timestamp and file_extension in ['.jpg', '.jpeg', '.png']:
-        #     timestamp = get_image_timestamp(filename)
+        # 如果没有找到14个数字的时间戳，则从EXIF信息中获取（仅对支持的格式）
+        if not timestamp and file_extension in ['.jpg', '.jpeg', '.png']:
+            timestamp = get_image_timestamp(filename)
 
         # 如果仍然没有找到时间戳，则使用文件的修改时间
         if not timestamp:
