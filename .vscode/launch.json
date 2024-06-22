@@ -8,6 +8,7 @@
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal"
+      // "args": ["252", "1262", "615", "1", "b"]
     },
     {
       "name": "(gdb) 启动", // 配置名称，将会在启动配置的下拉菜单中显示

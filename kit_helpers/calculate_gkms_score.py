@@ -32,18 +32,22 @@ def calculate_score(vocal, dance, visual, rank=1, level="a+"):
     # 根据 level 值确定 target
     if level == "a+":
         target = 11500
+    elif level == "a":
+        target = 10000
     elif level == "b":
         target = 6000
     elif level == "s":
         target = 13000
     else:
-        raise ValueError("Invalid level value. Accepted values are 'a+', 'b', 's'.")
+        raise ValueError(
+            "Invalid level value. Accepted values are 'a+', 'a', 'b', 's'."
+        )
 
     # 计算 gap
-    gap = target - sum
+    gap = max(target - sum, 0)
 
     # 根据 gap 计算 score
-    if 0 < gap <= 1500:
+    if 0 <= gap <= 1500:
         score = gap / 0.3
     elif 1500 < gap <= 2250:
         score = (gap - 750) / 0.15
