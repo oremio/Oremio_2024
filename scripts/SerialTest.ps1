@@ -1,7 +1,7 @@
 # PowerShell Script to Configure COM Port and Open Terminal Window
 
 # Set COM port configuration
-$portName = "COM4"
+$portName = "COM3"
 $baudRate = 115200
 $dataBits = 8
 $stopBits = 1
@@ -40,7 +40,7 @@ try {
 
         # 收到用户输入，处理输入
         $key = [console]::ReadKey($true)
-        if ($key.Key -eq 'Enter') {
+        if ($key.KeyChar -eq 'i') {
             $input = Read-Host "Enter command (type 'exit' to quit)"
 
             if ($input -eq 'exit') {
