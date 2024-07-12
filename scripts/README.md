@@ -12,7 +12,7 @@ del_all：批量删除文件，注意**硬编码一下要删除的文件夹**
 
 img_append_vertical：将**当前文件夹**里的所有图片纵向拼接（按照时间顺序），使用者保证图片的宽度一致
 
-mkv2gif.bat：写的是mkv，实际上并没有特别指定要求什么视频格式（实际得看ffmpeg支持哪些格式能转换成gif），一次转换一个视频文件，生成gif的参数是"fps=24, scale=540: -1 :flags=lanczos"，生成之后自动调用screen2gif进行后续编辑
+mkv2gif.bat：字面意思。直接转换当前目录下唯一的视频文件，生成gif的分辨率为800: -1，生成之后自动调用screen2gif（硬编码目录）进行后续编辑
 
 remove_black_borders：网上偷的。没用过
 
