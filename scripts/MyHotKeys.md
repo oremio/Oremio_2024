@@ -8,30 +8,30 @@
 
    Alt+A：截图，来源：Snipaste
 
-   Ctrl+A：tmux中输命令的前摇，顺便，-是上下切割，\是左右切割
+   Ctrl+B：tmux中输命令的前摇，顺便，-是上下切割，\是左右切割
 
    设置方法：
    
 ```xml
 # 保存到文件 ~/.tmux.conf
-set -g prefix C-a                                 
-unbind C-b                                        
-bind C-a send-prefix                              
-                                                  
-set -g mouse on                                   
+set -g mouse on
 unbind -n MouseDrag1Pane
 unbind -Tcopy-mode MouseDrag1Pane
 
-unbind '"'                                        
-bind - splitw -v -c '#{pane_current_path}'        
+unbind '"'
+bind - splitw -v -c '#{pane_current_path}'
 
-unbind %                                          
-bind \\ splitw -h -c '#{pane_current_path}'       
-setw -g mode-keys vi                              
+unbind %
+bind \\ splitw -h -c '#{pane_current_path}'
+setw -g mode-keys vi
 # tmux source ~/.tmux.conf
 ```
 
-   Alt+K：浏览器网页全文翻译，来源：沉浸式翻译
+   Alt+C：浏览器网页全文翻译，来源：沉浸式翻译
+
+   Alt+F：简悦，聚焦模式
+
+   Alt+G：规范复制，来源：自制Quicker动作
 
    ALt+L：剪切板最新内容翻译，弹出独立窗口，来源：沙拉查词+Quicker[动作](https://getquicker.net/Sharedaction?code=b0d1a134-8284-4a44-d1be-08d746da5869)
 
@@ -39,13 +39,11 @@ setw -g mode-keys vi
 
    Ctrl+Alt+↑↓←→P：网易云原生全局快捷键
 
-   Alt+R：Windows Game Bar的视频录制快捷键，但是Game Bar需要等待一段启动时间。顺便，在Potplayer中使用Ctrl+Alt+R进行录制，使用Ctrl+E（源画面）或Ctrl+Alt+E（实画面）进行截图
+   Alt+R：简悦，阅读模式
+
+   Win+Alt+R：Windows Game Bar的视频录制快捷键，但是Game Bar需要等待一段启动时间。顺便，在Potplayer中使用Ctrl+Alt+R进行录制，使用Ctrl+E（源画面）或Ctrl+Alt+E（实画面）进行截图
 
    Alt+O：OCR，来源：Quicker[动作](https://getquicker.net/Sharedaction?code=7f77f60e-8bd4-41d7-3817-08d69616d953)
-
-   Alt+P：规范粘贴，来源：Quicker[动作](https://getquicker.net/Sharedaction?code=cfc572a1-47c8-4fab-2457-08d6d7620f1e)
-
-   Ctrl+W：Chrome原生快捷键，关闭标签页
 
    Alt+Space：快速搜索，支持wox支持的功能，但是来源：Quicker
 
