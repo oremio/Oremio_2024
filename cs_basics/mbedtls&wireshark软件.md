@@ -431,6 +431,1008 @@ crt_parse_der_failed:
 通过Wireshark抓包，我们可以看到SSL/TLS握手过程中的具体消息和状态变化。虽然我们无法直接查看 `mbedtls_ssl_context` 的内容，但这些数据包反映了 `mbedtls_ssl_context` 在握手过程中的状态和操作。例如，握手消息（如 `Server Hello`、`Certificate`）反映了 `mbedtls_ssl_context` 中存储的握手状态信息，而警报消息（如 `Certificate Unknown`）反映了证书验证失败的结果。通过分析这些数据包，我们可以更好地理解SSL/TLS握手过程和 `mbedtls_ssl_context` 的作用。
 ```
 
+**user**: 
+
+```
+请你总结我们的对话。
+```
+
+**assistant**: 
+
+```
+当然，以下是我们对话的总结：
+
+1. **mbedTLS 代码分析**:
+   - 我们讨论了 `ssl_parse_certificate_chain` 函数的作用和流程。这个函数用于解析证书链，执行基本的校验，并留给调用者进行进一步的验证。
+   - 函数的参数包括 `mbedtls_ssl_context *ssl`（SSL上下文）和 `mbedtls_x509_crt *chain`（证书链）。
+   - 返回值主要是错误码，包括成功（0）或各种错误情况，如 `MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE` 表示接收到了意外的消息类型或内容。
+   - 函数流程包括消息类型检查、长度检查、证书链的解析和错误处理。
+
+2. **Wireshark 抓包分析**:
+   - 我们讨论了如何使用Wireshark来捕获和分析SSL/TLS通信数据。虽然Wireshark不能直接显示 `mbedtls_ssl_context` 结构体的内容，但它可以捕获网络传输的数据包。
+   - 可以通过设置过滤器来查看SSL/TLS相关的数据包，并可以进一步分析握手过程和加密数据。
+   - 如果有访问权限，可以配置Wireshark来解密SSL/TLS流量，以查看加密前的应用数据。
+
+3. **SSL/TLS 握手过程**:
+   - 我们分析了一系列Wireshark抓包记录，这些记录显示了SSL/TLS握手的一些关键步骤，包括服务器的 `Server Hello`、`Certificate`、`Server Key Exchange`、`Certificate Request` 和 `Server Hello Done`。
+   - 记录显示了客户端因无法识别服务器证书而发送的致命警报（`Certificate Unknown`），导致服务器关闭了连接。
+
+4. **mbedtls_ssl_context 在网络传输中的体现**:
+   - 我们讨论了 `mbedtls_ssl_context` 结构体在网络传输中的体现，以及它在握手阶段和数据传输阶段存储的状态信息和会话数据是如何在数据包中封装和传输的。
+   - 虽然不能直接查看 `mbedtls_ssl_context` 的内容，但通过分析Wireshark抓包记录可以推断出 `mbedtls_ssl_context` 在SSL/TLS通信过程中的作用和状态。
+
+整个对话旨在帮助你理解mbedTLS代码在SSL/TLS通信中的应用，以及如何使用Wireshark来分析SSL/TLS通信的数据包。
+```
+
+**user**: 
+
+```
+现在，让我们聚焦两个核心错误码：
+Certificate Unknown (46)，对应mbedtls中的ssl.h文件中的#define MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN          46  /* 0x2E */
+MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE (0x7700)，对应mbedtls中的ssl.h文件中的/** An unexpected message was received from our peer. */
+#define MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE                -0x7700
+由这两个错误码，我们大致可以定位到ssl_parse_certificate_chain最初的部分报错（对吗？），即：
+static int ssl_parse_certificate_chain(mbedtls_ssl_context *ssl,
+mbedtls_x509_crt *chain)
+{
+int ret = MBEDTLS_ERR_ERROR_CORRUPTION_DETECTED;
+#if defined(MBEDTLS_SSL_RENEGOTIATION) && defined(MBEDTLS_SSL_CLI_C)
+int crt_cnt = 0;
+#endif
+size_t i, n;
+uint8_t alert;
+
+if (ssl->in_msgtype != MBEDTLS_SSL_MSG_HANDSHAKE) {
+MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate message"));
+mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE);
+return MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE;
+}
+
+if (ssl->in_msg[0] != MBEDTLS_SSL_HS_CERTIFICATE) {
+mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE);
+return MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE;
+}
+如果要启用mbedtls调试，我们应该如何添加调试打印？
+
+```
+
+**assistant**: 
+
+```
+在mbedTLS中，错误码 `MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE` 和警报消息 `MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN` 通常指示不同的错误条件。
+
+### MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE
+这个错误码通常表示在SSL/TLS握手过程中收到了一个意外的消息。在 `ssl_parse_certificate_chain` 函数中，它会在以下两种情况下返回：
+
+1. 如果接收到的消息类型 `ssl->in_msgtype` 不是握手消息 (`MBEDTLS_SSL_MSG_HANDSHAKE`)。
+2. 如果握手消息的第一个字节 `ssl->in_msg[0]` 不是证书消息 (`MBEDTLS_SSL_HS_CERTIFICATE`)。
+
+### MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN
+这是一个警报消息，它指示证书无法被识别或者证书链验证失败。在Wireshark的抓包记录中，当客户端发送一个警报消息 `Alert (Level: Fatal, Description: Certificate Unknown)` 时，这个警报对应的就是 `MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN`。
+
+### 启用mbedTLS调试
+
+要在mbedTLS中启用调试输出，你需要做以下几步：
+
+1. **配置mbedTLS**:
+   - 确保在编译mbedTLS时启用了调试功能。在mbedTLS的配置文件 `config.h` 中，你需要启用 `MBEDTLS_DEBUG_C`。
+
+2. **设置调试等级**:
+   - 调用 `mbedtls_ssl_conf_dbg` 函数来设置调试回调函数和调试阈值。调试阈值是一个介于0到4的数字，它定义了输出的详细程度。等级4是最详细的。
+
+3. **实现调试回调函数**:
+   - 实现一个调试回调函数，这个函数将被mbedTLS用来输出调试信息。通常，这个函数会将调试信息输出到标准输出或者日志文件。
+
+
+void my_debug(void *ctx, int level, const char *file, int line, const char *str)
+{
+    if (level <= ((int *) ctx))
+    {
+        fprintf((FILE *) stderr, "%s:%04d: %s", file, line, str);
+        fflush((FILE *) stderr);
+    }
+}
+
+
+4. **配置SSL上下文**:
+   - 在设置SSL上下文时，调用上面定义的 `my_debug` 函数。
+
+
+mbedtls_ssl_conf_dbg(&ssl_conf, my_debug, stdout);
+mbedtls_ssl_conf_log_level(&ssl_conf, MBEDTLS_DEBUG_LEVEL);
+
+
+其中 `MBEDTLS_DEBUG_LEVEL` 是你希望的调试等级。
+
+### 总结
+你正确地指出，根据Wireshark抓包记录中的警报消息 `Certificate Unknown`，我们可以推断可能在 `ssl_parse_certificate_chain` 函数的最初部分报错。然而，这个警报消息更可能是在证书验证过程中产生的，而不是在消息类型检查时。如果要确切地定位问题，启用mbedTLS的调试功能并设置适当的调试等级将非常有帮助，这样你可以获得关于错误发生时上下文的详细信息。
+```
+
+**user**: 
+
+```
+你说得有道理。事实上，我的一个比较迷惑的点就是：在int mbedtls_ssl_parse_certificate(mbedtls_ssl_context *ssl)这个函数中有这么一段：
+    ret = ssl_parse_certificate_chain(ssl, chain);
+    if (ret != 0) {
+        goto exit;
+    }
+    ret = ssl_parse_certificate_verify(ssl, authmode,
+                                       chain, rs_ctx);
+    if (ret != 0) {
+        goto exit;
+    }
+其中，上面的函数你已经看过了，下面的函数包含这些内容（截取）：
+    if (ret != 0) {
+        uint8_t alert;
+
+        /* The certificate may have been rejected for several reasons.
+           Pick one and send the corresponding alert. Which alert to send
+           may be a subject of debate in some cases. */
+        if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_OTHER) {
+            alert = MBEDTLS_SSL_ALERT_MSG_ACCESS_DENIED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_CN_MISMATCH) {
+            alert = MBEDTLS_SSL_ALERT_MSG_BAD_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NS_CERT_TYPE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_PK) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_KEY) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXPIRED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_EXPIRED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_REVOKED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_REVOKED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NOT_TRUSTED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNKNOWN_CA;
+        } else {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN;
+        }
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       alert);
+    }
+可以观察到，二者都调用了mbedtls_ssl_send_alert_message这个函数，而实际上，抓到的报文内容是Certificate Unknown (46)，至于0x7700的错误是怎么报出来的，我可能还要查阅一下上层的日志代码。你怎么看？
+```
+
+**assistant**: 
+
+```
+你提出的疑惑很有道理。我们可以通过详细分析 `mbedtls_ssl_parse_certificate` 和相关函数的执行流程，来理解错误码和警报消息的产生过程。
+
+### 分析 `mbedtls_ssl_parse_certificate` 函数
+
+在 `mbedtls_ssl_parse_certificate` 函数中，主要的步骤包括：
+
+1. 调用 `ssl_parse_certificate_chain` 函数解析证书链。
+2. 如果解析失败，返回错误。
+3. 调用 `ssl_parse_certificate_verify` 函数验证证书。
+4. 如果验证失败，发送相应的警报消息并返回错误。
+
+### 具体代码分析
+
+#### `ssl_parse_certificate_chain` 函数
+
+
+int ssl_parse_certificate_chain(mbedtls_ssl_context *ssl, mbedtls_x509_crt *chain)
+{
+    int ret = MBEDTLS_ERR_ERROR_CORRUPTION_DETECTED;
+    size_t i, n;
+    uint8_t alert;
+
+    if (ssl->in_msgtype != MBEDTLS_SSL_MSG_HANDSHAKE) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate message"));
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE);
+        return MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE;
+    }
+
+    if (ssl->in_msg[0] != MBEDTLS_SSL_HS_CERTIFICATE) {
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE);
+        return MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE;
+    }
+
+    // 其他解析证书链的代码...
+
+    return 0;
+}
+
+
+#### `ssl_parse_certificate_verify` 函数
+
+
+int ssl_parse_certificate_verify(mbedtls_ssl_context *ssl, int authmode,
+                                 mbedtls_x509_crt *chain, void *rs_ctx)
+{
+    int ret = mbedtls_x509_crt_verify(chain, ssl->session_negotiate->ca_chain,
+                                      ssl->session_negotiate->ca_crl,
+                                      ssl->session_negotiate->peer_cert,
+                                      &ssl->session_negotiate->verify_result,
+                                      ssl->conf->f_vrfy, ssl->conf->p_vrfy);
+
+    if (ret != 0) {
+        uint8_t alert;
+
+        // 根据不同的证书验证错误，发送相应的警报消息
+        if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_OTHER) {
+            alert = MBEDTLS_SSL_ALERT_MSG_ACCESS_DENIED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_CN_MISMATCH) {
+            alert = MBEDTLS_SSL_ALERT_MSG_BAD_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NS_CERT_TYPE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_PK) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_KEY) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXPIRED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_EXPIRED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_REVOKED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_REVOKED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NOT_TRUSTED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNKNOWN_CA;
+        } else {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN;
+        }
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL, alert);
+    }
+
+    return ret;
+}
+
+
+### 错误码和警报消息的产生过程
+
+1. **`MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE` 错误码**:
+   - 在 `ssl_parse_certificate_chain` 函数中，如果接收到的消息类型不是握手消息 (`MBEDTLS_SSL_MSG_HANDSHAKE`) 或者握手消息的第一个字节不是证书消息 (`MBEDTLS_SSL_HS_CERTIFICATE`)，将发送一个 `MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE` 警报，并返回 `MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE` 错误码。
+
+2. **`MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN` 警报消息**:
+   - 在 `ssl_parse_certificate_verify` 函数中，如果证书验证失败，根据 `verify_result` 的不同，将发送不同的警报消息。如果没有匹配的具体错误类型，将发送 `MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN` 警报。
+
+### 启用mbedTLS调试
+
+要启用mbedTLS调试功能并添加调试打印，可以按照以下步骤进行：
+
+1. **在 `config.h` 中启用调试**:
+   - 确保在 `config.h` 文件中启用了调试功能：
+     
+     #define MBEDTLS_DEBUG_C
+     
+
+2. **实现调试回调函数**:
+   - 实现一个调试回调函数，例如：
+     
+     void my_debug(void *ctx, int level, const char *file, int line, const char *str)
+     {
+         fprintf((FILE *) ctx, "%s:%04d: %s", file, line, str);
+         fflush((FILE *) ctx);
+     }
+     
+
+3. **配置SSL上下文**:
+   - 在设置SSL上下文时，调用调试回调函数，并设置调试级别：
+     
+     mbedtls_ssl_conf_dbg(&ssl_conf, my_debug, stderr);
+     mbedtls_debug_set_threshold(4); // 设置调试级别为4（最详细）
+     
+
+通过启用调试功能，你可以获得详细的调试信息，帮助你更好地理解错误发生的上下文。
+
+### 总结
+
+你观察到的 `Certificate Unknown (46)` 警报消息是在证书验证过程中产生的，而 `MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE (0x7700)` 错误码则是在消息类型检查时产生的。这两个错误码和警报消息分别对应于不同的错误条件。通过启用mbedTLS的调试功能，你可以获得更多的调试信息，帮助你更好地定位和解决问题。
+```
+
+**user**: 
+
+```
+请详细解释你的my_debug回调函数。
+```
+
+**assistant**: 
+
+```
+当然，下面是对 `my_debug` 回调函数的详细解释。
+
+### `my_debug` 回调函数
+
+`my_debug` 回调函数是一个调试回调函数，用于处理和输出mbedTLS生成的调试信息。mbedTLS库在运行过程中会调用这个函数来输出调试信息。你可以自定义这个函数，以便将调试信息输出到你希望的位置（例如标准输出、日志文件等）。
+
+#### 函数定义
+
+
+void my_debug(void *ctx, int level, const char *file, int line, const char *str)
+{
+    fprintf((FILE *) ctx, "%s:%04d: %s", file, line, str);
+    fflush((FILE *) ctx);
+}
+
+
+#### 参数解释
+
+- `void *ctx`: 上下文指针，通常用于传递文件指针或其他输出目标。在配置调试回调函数时，你可以指定这个参数。例如，你可以将 `stderr` 或者一个文件指针传递给这个参数。
+- `int level`: 调试级别。mbedTLS会根据设置的调试级别调用这个回调函数。调试级别从0到4，0表示最少的调试信息，4表示最详细的调试信息。
+- `const char *file`: 源文件名。mbedTLS库输出调试信息时会包含源文件名，以便你知道调试信息来自哪个源文件。
+- `int line`: 源文件中的行号。mbedTLS库输出调试信息时会包含行号，以便你知道调试信息来自源文件的哪一行。
+- `const char *str`: 调试信息字符串。mbedTLS库生成的调试信息字符串。
+
+#### 函数实现
+
+
+void my_debug(void *ctx, int level, const char *file, int line, const char *str)
+{
+    fprintf((FILE *) ctx, "%s:%04d: %s", file, line, str);
+    fflush((FILE *) ctx);
+}
+
+
+- `fprintf((FILE *) ctx, "%s:%04d: %s", file, line, str);`
+  - 使用 `fprintf` 函数将调试信息输出到 `ctx` 指定的文件指针。`ctx` 通常是一个 `FILE *` 类型的指针，例如 `stderr` 或者一个打开的文件指针。
+  - 输出格式为：`文件名:行号: 调试信息`。例如：`ssl_tls.c:1234: handshake message received`。
+
+- `fflush((FILE *) ctx);`
+  - 使用 `fflush` 函数强制刷新输出缓冲区，确保调试信息立即被写入到指定的输出目标。这对于调试信息的实时性非常重要，尤其是在调试过程中，你希望立即看到输出的调试信息。
+
+### 配置调试回调函数
+
+在配置mbedTLS的SSL上下文时，你需要设置调试回调函数，并指定调试级别。以下是一个示例：
+
+
+mbedtls_ssl_context ssl;
+mbedtls_ssl_config conf;
+
+// 初始化SSL上下文和配置
+mbedtls_ssl_init(&ssl);
+mbedtls_ssl_config_init(&conf);
+
+// 配置SSL上下文
+mbedtls_ssl_setup(&ssl, &conf);
+
+// 设置调试回调函数
+mbedtls_ssl_conf_dbg(&conf, my_debug, stderr);
+
+// 设置调试级别
+mbedtls_debug_set_threshold(4); // 调试级别为4，最详细
+
+
+- `mbedtls_ssl_conf_dbg(&conf, my_debug, stderr);`
+  - 设置调试回调函数为 `my_debug`，并将 `stderr` 作为上下文指针传递给回调函数。这意味着调试信息将输出到标准错误输出。
+
+- `mbedtls_debug_set_threshold(4);`
+  - 设置调试级别为4，表示输出最详细的调试信息。
+
+### 总结
+
+`my_debug` 回调函数是一个简单而有效的调试工具，用于处理和输出mbedTLS库生成的调试信息。通过配置调试回调函数和设置调试级别，你可以获得详细的调试信息，帮助你理解和解决mbedTLS库在运行过程中遇到的问题。
+```
+
+**user**: 
+
+```
+请试着展示如何调试 ssl_parse_certificate_chain 函数和 ssl_parse_certificate_verify 函数。
+```
+
+**assistant**: 
+
+```
+好的，下面我将展示如何使用 `my_debug` 回调函数调试 `ssl_parse_certificate_chain` 和 `ssl_parse_certificate_verify` 函数。我们将通过添加调试信息来跟踪函数的执行流程和错误处理。
+
+### 设置调试环境
+
+首先，确保你已经启用了mbedTLS的调试功能，并配置了调试回调函数。以下是配置调试回调函数的代码示例：
+
+
+#include "mbedtls/debug.h"
+#include "mbedtls/ssl.h"
+#include "mbedtls/x509_crt.h"
+
+void my_debug(void *ctx, int level, const char *file, int line, const char *str)
+{
+    fprintf((FILE *) ctx, "%s:%04d: %s", file, line, str);
+    fflush((FILE *) ctx);
+}
+
+int main(void)
+{
+    mbedtls_ssl_context ssl;
+    mbedtls_ssl_config conf;
+
+    // 初始化SSL上下文和配置
+    mbedtls_ssl_init(&ssl);
+    mbedtls_ssl_config_init(&conf);
+
+    // 配置SSL上下文
+    mbedtls_ssl_setup(&ssl, &conf);
+
+    // 设置调试回调函数
+    mbedtls_ssl_conf_dbg(&conf, my_debug, stderr);
+
+    // 设置调试级别
+    mbedtls_debug_set_threshold(4); // 调试级别为4，最详细
+
+    // 其他SSL/TLS配置和操作...
+
+    return 0;
+}
+
+
+### 调试 `ssl_parse_certificate_chain` 函数
+
+在 `ssl_parse_certificate_chain` 函数中添加调试信息：
+
+
+int ssl_parse_certificate_chain(mbedtls_ssl_context *ssl, mbedtls_x509_crt *chain)
+{
+    int ret = MBEDTLS_ERR_ERROR_CORRUPTION_DETECTED;
+    size_t i, n;
+    uint8_t alert;
+
+    MBEDTLS_SSL_DEBUG_MSG(2, ("Entering ssl_parse_certificate_chain"));
+
+    if (ssl->in_msgtype != MBEDTLS_SSL_MSG_HANDSHAKE) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate message: in_msgtype = %d", ssl->in_msgtype));
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE);
+        return MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE;
+    }
+
+    if (ssl->in_msg[0] != MBEDTLS_SSL_HS_CERTIFICATE) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate message: in_msg[0] = %d", ssl->in_msg[0]));
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       MBEDTLS_SSL_ALERT_MSG_UNEXPECTED_MESSAGE);
+        return MBEDTLS_ERR_SSL_UNEXPECTED_MESSAGE;
+    }
+
+    // 其他解析证书链的代码...
+    MBEDTLS_SSL_DEBUG_MSG(2, ("Successfully parsed certificate chain"));
+
+    return 0;
+}
+
+
+### 调试 `ssl_parse_certificate_verify` 函数
+
+在 `ssl_parse_certificate_verify` 函数中添加调试信息：
+
+
+int ssl_parse_certificate_verify(mbedtls_ssl_context *ssl, int authmode,
+                                 mbedtls_x509_crt *chain, void *rs_ctx)
+{
+    int ret;
+    MBEDTLS_SSL_DEBUG_MSG(2, ("Entering ssl_parse_certificate_verify"));
+
+    ret = mbedtls_x509_crt_verify(chain, ssl->session_negotiate->ca_chain,
+                                  ssl->session_negotiate->ca_crl,
+                                  ssl->session_negotiate->peer_cert,
+                                  &ssl->session_negotiate->verify_result,
+                                  ssl->conf->f_vrfy, ssl->conf->p_vrfy);
+
+    if (ret != 0) {
+        uint8_t alert;
+        MBEDTLS_SSL_DEBUG_MSG(1, ("Certificate verification failed: ret = %d, verify_result = %d",
+                                  ret, ssl->session_negotiate->verify_result));
+
+        if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_OTHER) {
+            alert = MBEDTLS_SSL_ALERT_MSG_ACCESS_DENIED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_CN_MISMATCH) {
+            alert = MBEDTLS_SSL_ALERT_MSG_BAD_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NS_CERT_TYPE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_PK) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_KEY) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXPIRED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_EXPIRED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_REVOKED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_REVOKED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NOT_TRUSTED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNKNOWN_CA;
+        } else {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN;
+        }
+
+        MBEDTLS_SSL_DEBUG_MSG(1, ("Sending alert message: alert = %d", alert));
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL, alert);
+    } else {
+        MBEDTLS_SSL_DEBUG_MSG(2, ("Certificate verification succeeded"));
+    }
+
+    return ret;
+}
+
+
+### 运行调试
+
+在运行你的程序时，确保调试级别设置为4，以便输出最详细的调试信息：
+
+
+mbedtls_debug_set_threshold(4); // 设置调试级别为4，最详细
+
+
+### 查看调试输出
+
+运行你的程序后，调试信息将被输出到 `stderr`。你可以查看这些调试信息，了解 `ssl_parse_certificate_chain` 和 `ssl_parse_certificate_verify` 函数的执行流程和错误处理情况。例如：
+
+
+ssl_tls.c:1234: Entering ssl_parse_certificate_chain
+ssl_tls.c:1238: bad certificate message: in_msgtype = 22
+ssl_tls.c:1242: bad certificate message: in_msg[0] = 11
+ssl_tls.c:1250: Successfully parsed certificate chain
+ssl_tls.c:1304: Entering ssl_parse_certificate_verify
+ssl_tls.c:1310: Certificate verification failed: ret = -0x2700, verify_result = 0x0002
+ssl_tls.c:1330: Sending alert message: alert = 46
+ssl_tls.c:1340: Certificate verification succeeded
+
+
+这些调试信息将帮助你理解函数的执行流程，并定位错误发生的位置和原因。
+```
+
+**user**: 
+
+```
+还是给你看下完整函数吧：
+MBEDTLS_CHECK_RETURN_CRITICAL
+static int ssl_parse_certificate_verify(mbedtls_ssl_context *ssl,
+                                        int authmode,
+                                        mbedtls_x509_crt *chain,
+                                        void *rs_ctx)
+{
+    int ret = 0;
+    const mbedtls_ssl_ciphersuite_t *ciphersuite_info =
+        ssl->handshake->ciphersuite_info;
+    int have_ca_chain = 0;
+
+    int (*f_vrfy)(void *, mbedtls_x509_crt *, int, uint32_t *);
+    void *p_vrfy;
+
+    if (authmode == MBEDTLS_SSL_VERIFY_NONE) {
+        return 0;
+    }
+
+    if (ssl->f_vrfy != NULL) {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("Use context-specific verification callback"));
+        f_vrfy = ssl->f_vrfy;
+        p_vrfy = ssl->p_vrfy;
+    } else {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("Use configuration-specific verification callback"));
+        f_vrfy = ssl->conf->f_vrfy;
+        p_vrfy = ssl->conf->p_vrfy;
+    }
+
+    /*
+     * Main check: verify certificate
+     */
+#if defined(MBEDTLS_X509_TRUSTED_CERTIFICATE_CALLBACK)
+    if (ssl->conf->f_ca_cb != NULL) {
+        ((void) rs_ctx);
+        have_ca_chain = 1;
+
+        MBEDTLS_SSL_DEBUG_MSG(3, ("use CA callback for X.509 CRT verification"));
+        ret = mbedtls_x509_crt_verify_with_ca_cb(
+            chain,
+            ssl->conf->f_ca_cb,
+            ssl->conf->p_ca_cb,
+            ssl->conf->cert_profile,
+            ssl->hostname,
+            &ssl->session_negotiate->verify_result,
+            f_vrfy, p_vrfy);
+    } else
+#endif /* MBEDTLS_X509_TRUSTED_CERTIFICATE_CALLBACK */
+    {
+        mbedtls_x509_crt *ca_chain;
+        mbedtls_x509_crl *ca_crl;
+
+#if defined(MBEDTLS_SSL_SERVER_NAME_INDICATION)
+        if (ssl->handshake->sni_ca_chain != NULL) {
+            ca_chain = ssl->handshake->sni_ca_chain;
+            ca_crl   = ssl->handshake->sni_ca_crl;
+        } else
+#endif
+        {
+            ca_chain = ssl->conf->ca_chain;
+            ca_crl   = ssl->conf->ca_crl;
+        }
+
+        if (ca_chain != NULL) {
+            have_ca_chain = 1;
+        }
+
+        ret = mbedtls_x509_crt_verify_restartable(
+            chain,
+            ca_chain, ca_crl,
+            ssl->conf->cert_profile,
+            ssl->hostname,
+            &ssl->session_negotiate->verify_result,
+            f_vrfy, p_vrfy, rs_ctx);
+    }
+
+    if (ret != 0) {
+        MBEDTLS_SSL_DEBUG_RET(1, "x509_verify_cert", ret);
+    }
+
+#if defined(MBEDTLS_SSL_ECP_RESTARTABLE_ENABLED)
+    if (ret == MBEDTLS_ERR_ECP_IN_PROGRESS) {
+        return MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS;
+    }
+#endif
+
+    /*
+     * Secondary checks: always done, but change 'ret' only if it was 0
+     */
+
+#if defined(MBEDTLS_PK_HAVE_ECC_KEYS)
+    {
+        const mbedtls_pk_context *pk = &chain->pk;
+
+        /* If certificate uses an EC key, make sure the curve is OK.
+         * This is a public key, so it can't be opaque, so can_do() is a good
+         * enough check to ensure pk_ec() is safe to use here. */
+        if (mbedtls_pk_can_do(pk, MBEDTLS_PK_ECKEY)) {
+            /* and in the unlikely case the above assumption no longer holds
+             * we are making sure that pk_ec() here does not return a NULL
+             */
+            mbedtls_ecp_group_id grp_id = mbedtls_pk_get_ec_group_id(pk);
+            if (grp_id == MBEDTLS_ECP_DP_NONE) {
+                MBEDTLS_SSL_DEBUG_MSG(1, ("invalid group ID"));
+                return MBEDTLS_ERR_SSL_INTERNAL_ERROR;
+            }
+            if (mbedtls_ssl_check_curve(ssl, grp_id) != 0) {
+                ssl->session_negotiate->verify_result |=
+                    MBEDTLS_X509_BADCERT_BAD_KEY;
+
+                MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate (EC key curve)"));
+                if (ret == 0) {
+                    ret = MBEDTLS_ERR_SSL_BAD_CERTIFICATE;
+                }
+            }
+        }
+    }
+#endif /* MBEDTLS_PK_HAVE_ECC_KEYS */
+
+    if (mbedtls_ssl_check_cert_usage(chain,
+                                     ciphersuite_info,
+                                     !ssl->conf->endpoint,
+                                     &ssl->session_negotiate->verify_result) != 0) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate (usage extensions)"));
+        if (ret == 0) {
+            ret = MBEDTLS_ERR_SSL_BAD_CERTIFICATE;
+        }
+    }
+
+    /* mbedtls_x509_crt_verify_with_profile is supposed to report a
+     * verification failure through MBEDTLS_ERR_X509_CERT_VERIFY_FAILED,
+     * with details encoded in the verification flags. All other kinds
+     * of error codes, including those from the user provided f_vrfy
+     * functions, are treated as fatal and lead to a failure of
+     * ssl_parse_certificate even if verification was optional. */
+    if (authmode == MBEDTLS_SSL_VERIFY_OPTIONAL &&
+        (ret == MBEDTLS_ERR_X509_CERT_VERIFY_FAILED ||
+         ret == MBEDTLS_ERR_SSL_BAD_CERTIFICATE)) {
+        ret = 0;
+    }
+
+    if (have_ca_chain == 0 && authmode == MBEDTLS_SSL_VERIFY_REQUIRED) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("got no CA chain"));
+        ret = MBEDTLS_ERR_SSL_CA_CHAIN_REQUIRED;
+    }
+
+    if (ret != 0) {
+        uint8_t alert;
+
+        /* The certificate may have been rejected for several reasons.
+           Pick one and send the corresponding alert. Which alert to send
+           may be a subject of debate in some cases. */
+        if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_OTHER) {
+            alert = MBEDTLS_SSL_ALERT_MSG_ACCESS_DENIED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_CN_MISMATCH) {
+            alert = MBEDTLS_SSL_ALERT_MSG_BAD_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NS_CERT_TYPE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_PK) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_KEY) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXPIRED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_EXPIRED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_REVOKED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_REVOKED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NOT_TRUSTED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNKNOWN_CA;
+        } else {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN;
+        }
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       alert);
+    }
+
+#if defined(MBEDTLS_DEBUG_C)
+    if (ssl->session_negotiate->verify_result != 0) {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("! Certificate verification flags %08x",
+                                  (unsigned int) ssl->session_negotiate->verify_result));
+    } else {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("Certificate verification flags clear"));
+    }
+#endif /* MBEDTLS_DEBUG_C */
+
+    return ret;
+}
+你觉得应该如何调试？我觉得应该关注ssl->session_negotiate->verify_result。
+```
+
+**assistant**: 
+
+```
+你提出的关注点非常正确。`ssl->session_negotiate->verify_result` 包含了证书验证的详细结果，是调试 `ssl_parse_certificate_verify` 函数的重要信息。我们可以通过添加调试信息来跟踪 `verify_result` 的值，以及函数中各个关键步骤的执行情况。
+
+### 调试 `ssl_parse_certificate_verify` 函数
+
+以下是添加了详细调试信息的 `ssl_parse_certificate_verify` 函数：
+
+
+MBEDTLS_CHECK_RETURN_CRITICAL
+static int ssl_parse_certificate_verify(mbedtls_ssl_context *ssl,
+                                        int authmode,
+                                        mbedtls_x509_crt *chain,
+                                        void *rs_ctx)
+{
+    int ret = 0;
+    const mbedtls_ssl_ciphersuite_t *ciphersuite_info =
+        ssl->handshake->ciphersuite_info;
+    int have_ca_chain = 0;
+
+    int (*f_vrfy)(void *, mbedtls_x509_crt *, int, uint32_t *);
+    void *p_vrfy;
+
+    MBEDTLS_SSL_DEBUG_MSG(2, ("Entering ssl_parse_certificate_verify"));
+
+    if (authmode == MBEDTLS_SSL_VERIFY_NONE) {
+        MBEDTLS_SSL_DEBUG_MSG(2, ("Auth mode is VERIFY_NONE, skipping verification"));
+        return 0;
+    }
+
+    if (ssl->f_vrfy != NULL) {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("Use context-specific verification callback"));
+        f_vrfy = ssl->f_vrfy;
+        p_vrfy = ssl->p_vrfy;
+    } else {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("Use configuration-specific verification callback"));
+        f_vrfy = ssl->conf->f_vrfy;
+        p_vrfy = ssl->conf->p_vrfy;
+    }
+
+    /*
+     * Main check: verify certificate
+     */
+#if defined(MBEDTLS_X509_TRUSTED_CERTIFICATE_CALLBACK)
+    if (ssl->conf->f_ca_cb != NULL) {
+        ((void) rs_ctx);
+        have_ca_chain = 1;
+
+        MBEDTLS_SSL_DEBUG_MSG(3, ("use CA callback for X.509 CRT verification"));
+        ret = mbedtls_x509_crt_verify_with_ca_cb(
+            chain,
+            ssl->conf->f_ca_cb,
+            ssl->conf->p_ca_cb,
+            ssl->conf->cert_profile,
+            ssl->hostname,
+            &ssl->session_negotiate->verify_result,
+            f_vrfy, p_vrfy);
+    } else
+#endif /* MBEDTLS_X509_TRUSTED_CERTIFICATE_CALLBACK */
+    {
+        mbedtls_x509_crt *ca_chain;
+        mbedtls_x509_crl *ca_crl;
+
+#if defined(MBEDTLS_SSL_SERVER_NAME_INDICATION)
+        if (ssl->handshake->sni_ca_chain != NULL) {
+            ca_chain = ssl->handshake->sni_ca_chain;
+            ca_crl   = ssl->handshake->sni_ca_crl;
+            MBEDTLS_SSL_DEBUG_MSG(3, ("Using SNI-specific CA chain and CRL"));
+        } else
+#endif
+        {
+            ca_chain = ssl->conf->ca_chain;
+            ca_crl   = ssl->conf->ca_crl;
+            MBEDTLS_SSL_DEBUG_MSG(3, ("Using default CA chain and CRL"));
+        }
+
+        if (ca_chain != NULL) {
+            have_ca_chain = 1;
+        }
+
+        ret = mbedtls_x509_crt_verify_restartable(
+            chain,
+            ca_chain, ca_crl,
+            ssl->conf->cert_profile,
+            ssl->hostname,
+            &ssl->session_negotiate->verify_result,
+            f_vrfy, p_vrfy, rs_ctx);
+    }
+
+    if (ret != 0) {
+        MBEDTLS_SSL_DEBUG_RET(1, "x509_verify_cert", ret);
+    }
+
+#if defined(MBEDTLS_SSL_ECP_RESTARTABLE_ENABLED)
+    if (ret == MBEDTLS_ERR_ECP_IN_PROGRESS) {
+        MBEDTLS_SSL_DEBUG_MSG(2, ("ECP operation in progress"));
+        return MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS;
+    }
+#endif
+
+    /*
+     * Secondary checks: always done, but change 'ret' only if it was 0
+     */
+
+#if defined(MBEDTLS_PK_HAVE_ECC_KEYS)
+    {
+        const mbedtls_pk_context *pk = &chain->pk;
+
+        /* If certificate uses an EC key, make sure the curve is OK.
+         * This is a public key, so it can't be opaque, so can_do() is a good
+         * enough check to ensure pk_ec() is safe to use here. */
+        if (mbedtls_pk_can_do(pk, MBEDTLS_PK_ECKEY)) {
+            /* and in the unlikely case the above assumption no longer holds
+             * we are making sure that pk_ec() here does not return a NULL
+             */
+            mbedtls_ecp_group_id grp_id = mbedtls_pk_get_ec_group_id(pk);
+            if (grp_id == MBEDTLS_ECP_DP_NONE) {
+                MBEDTLS_SSL_DEBUG_MSG(1, ("invalid group ID"));
+                return MBEDTLS_ERR_SSL_INTERNAL_ERROR;
+            }
+            if (mbedtls_ssl_check_curve(ssl, grp_id) != 0) {
+                ssl->session_negotiate->verify_result |=
+                    MBEDTLS_X509_BADCERT_BAD_KEY;
+
+                MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate (EC key curve)"));
+                if (ret == 0) {
+                    ret = MBEDTLS_ERR_SSL_BAD_CERTIFICATE;
+                }
+            }
+        }
+    }
+#endif /* MBEDTLS_PK_HAVE_ECC_KEYS */
+
+    if (mbedtls_ssl_check_cert_usage(chain,
+                                     ciphersuite_info,
+                                     !ssl->conf->endpoint,
+                                     &ssl->session_negotiate->verify_result) != 0) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("bad certificate (usage extensions)"));
+        if (ret == 0) {
+            ret = MBEDTLS_ERR_SSL_BAD_CERTIFICATE;
+        }
+    }
+
+    /* mbedtls_x509_crt_verify_with_profile is supposed to report a
+     * verification failure through MBEDTLS_ERR_X509_CERT_VERIFY_FAILED,
+     * with details encoded in the verification flags. All other kinds
+     * of error codes, including those from the user provided f_vrfy
+     * functions, are treated as fatal and lead to a failure of
+     * ssl_parse_certificate even if verification was optional. */
+    if (authmode == MBEDTLS_SSL_VERIFY_OPTIONAL &&
+        (ret == MBEDTLS_ERR_X509_CERT_VERIFY_FAILED ||
+         ret == MBEDTLS_ERR_SSL_BAD_CERTIFICATE)) {
+        MBEDTLS_SSL_DEBUG_MSG(2, ("Verification failed but auth mode is OPTIONAL, ignoring error"));
+        ret = 0;
+    }
+
+    if (have_ca_chain == 0 && authmode == MBEDTLS_SSL_VERIFY_REQUIRED) {
+        MBEDTLS_SSL_DEBUG_MSG(1, ("got no CA chain"));
+        ret = MBEDTLS_ERR_SSL_CA_CHAIN_REQUIRED;
+    }
+
+    if (ret != 0) {
+        uint8_t alert;
+
+        /* The certificate may have been rejected for several reasons.
+           Pick one and send the corresponding alert. Which alert to send
+           may be a subject of debate in some cases. */
+        if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_OTHER) {
+            alert = MBEDTLS_SSL_ALERT_MSG_ACCESS_DENIED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_CN_MISMATCH) {
+            alert = MBEDTLS_SSL_ALERT_MSG_BAD_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXT_KEY_USAGE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NS_CERT_TYPE) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_PK) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_BAD_KEY) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNSUPPORTED_CERT;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_EXPIRED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_EXPIRED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_REVOKED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_REVOKED;
+        } else if (ssl->session_negotiate->verify_result & MBEDTLS_X509_BADCERT_NOT_TRUSTED) {
+            alert = MBEDTLS_SSL_ALERT_MSG_UNKNOWN_CA;
+        } else {
+            alert = MBEDTLS_SSL_ALERT_MSG_CERT_UNKNOWN;
+        }
+        MBEDTLS_SSL_DEBUG_MSG(1, ("Sending alert message: alert = %d", alert));
+        mbedtls_ssl_send_alert_message(ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
+                                       alert);
+    }
+
+#if defined(MBEDTLS_DEBUG_C)
+    if (ssl->session_negotiate->verify_result != 0) {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("! Certificate verification flags %08x",
+                                  (unsigned int) ssl->session_negotiate->verify_result));
+    } else {
+        MBEDTLS_SSL_DEBUG_MSG(3, ("Certificate verification flags clear"));
+    }
+#endif /* MBEDTLS_DEBUG_C */
+
+    MBEDTLS_SSL_DEBUG_MSG(2, ("Exiting ssl_parse_certificate_verify with ret = %d", ret));
+    return ret;
+}
+
+
+### 关键调试信息
+
+1. **进入和退出函数**：
+   - `MBEDTLS_SSL_DEBUG_MSG(2, ("Entering ssl_parse_certificate_verify"));`
+   - `MBEDTLS_SSL_DEBUG_MSG(2, ("Exiting ssl_parse_certificate_verify with ret = %d", ret));`
+
+2. **使用的验证回调**：
+   - `MBEDTLS_SSL_DEBUG_MSG(3, ("Use context-specific verification callback"));`
+   - `MBEDTLS_SSL_DEBUG_MSG(3, ("Use configuration-specific verification callback"));`
+
+3. **CA链和CRL的使用**：
+   - `MBEDTLS_SSL_DEBUG_MSG(3, ("Using SNI-specific CA chain and CRL"));`
+   - `MBEDTLS_SSL_DEBUG_MSG(3, ("Using default CA chain and CRL"));`
+
+4. **证书验证结果**：
+   - `MBEDTLS_SSL_DEBUG_RET(1, "x509_verify_cert", ret);`
+   - `MBEDTLS_SSL_DEBUG_MSG(3, ("! Certificate verification flags %08x", (unsigned int) ssl->session_negotiate->verify_result));`
+   - `MBEDTLS_SSL_DEBUG_MSG(3, ("Certificate verification flags clear"));`
+
+5. **发送警报消息**：
+   - `MBEDTLS_SSL_DEBUG_MSG(1, ("Sending alert message: alert = %d", alert));`
+
+### 运行调试
+
+确保调试级别设置为4，以便输出最详细的调试信息：
+
+
+mbedtls_debug_set_threshold(4); // 设置调试级别为4，最详细
+
+
+### 查看调试输出
+
+运行你的程序后，调试信息将被输出到 `stderr`。你可以查看这些调试信息，了解 `ssl_parse_certificate_verify` 函数的执行流程和错误处理情况。例如：
+
+
+ssl_tls.c:1234: Entering ssl_parse_certificate_verify
+ssl_tls.c:1240: Use configuration-specific verification callback
+ssl_tls.c:1250: Using default CA chain and CRL
+ssl_tls.c:1260: x509_verify_cert() returned -0x2700
+ssl_tls.c:1270: ! Certificate verification flags 00000001
+ssl_tls.c:1280: Sending alert message: alert = 46
+ssl_tls.c:1290: Exiting ssl_parse_certificate_verify with ret = -0x2700
+
+
+这些调试信息将帮助你理解函数的执行流程，并定位错误发生的位置和原因。特别是 `ssl->session_negotiate->verify_result` 的值，它会告诉你证书验证失败的具体原因。
+```
+
 
 
 --------------------
